@@ -57,3 +57,19 @@ test('10BB payoff zero-sum at showdown and correct boundary equities',()=>{
  assert.equal(payoff({stackBB:10,equity:1}).sbShoveBbCall,10);
  assert.equal(payoff({stackBB:10,equity:0}).sbShoveBbCall,-10);
 });
+
+test('fast evaluator agrees with reference on 2000 deterministic random seven-card hands',async()=>{
+ const {fastEvaluate7}=await import('./fast-equity.js');
+ const deck=[];for(const r of '23456789TJQKA')for(const suit of 'cdhs')deck.push(parseCard(r+suit));
+ let seed=123456;const rnd=()=>((seed=(1664525*seed+1013904223)>>>0)/4294967296);
+ for(let i=0;i<2000;i++){
+  const cards=[...deck];for(let j=0;j<7;j++){const k=j+Math.floor(rnd()*(52-j));[cards[j],cards[k]]=[cards[k],cards[j]]}
+  const hand=cards.slice(0,7);assert.deepEqual(fastEvaluate7(hand),evaluate(hand));
+ }
+});
+test('AA versus KK exact equity across all 1,712,304 boards',async()=>{
+ const {fastExactHeadsUpEquity}=await import('./fast-equity.js');
+ const result=fastExactHeadsUpEquity(['As','Ah'],['Kc','Kd']);
+ assert.deepEqual({wins:result.wins,ties:result.ties,losses:result.losses,total:result.total},{wins:1388072,ties:6538,losses:317694,total:1712304});
+ assert.ok(Math.abs(result.equity-0.8125548967940273)<1e-12);
+});
