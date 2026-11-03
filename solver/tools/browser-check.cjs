@@ -19,12 +19,21 @@ const server=http.createServer((req,res)=>{const target=path.resolve(root,'.'+de
   await page.locator('#ante').selectOption({label:'なし'});await page.locator('#heroStack').fill('9.5');assert.equal(await page.locator('#dataFlag').textContent(),'GTOデータ未接続');
   await page.locator('#hu10').click();await page.locator('#players').selectOption('9');assert.equal(await page.locator('#dataFlag').textContent(),'GTOデータ未接続');
   await page.locator('#close').click();await page.locator('#hu10').click();await page.locator('#tableToggle').click();assert.equal(await page.locator('.seat').count(),2);
-  assert.deepEqual(errors,[]);await page.locator('#tableToggle').click();
+  await page.locator('#tableToggle').click();
+  assert.equal(await page.locator('#huStack option').count(),16);
+  for(const S of ['5','8','12','15','20']){await page.locator('#huStack').selectOption(S);assert.equal(await page.locator('#dataFlag').textContent(),'検証済み · HU '+S+'BB');}
+  await page.locator('#huStack').selectOption('8');await page.locator('#toggle').click();await page.locator('#villainStack').fill('20');assert.equal(await page.locator('#stackLabel').textContent(),'8 BB');assert.match(await page.locator('#dataFlag').textContent(),/8BB/);
+  await page.getByRole('button',{name:'BB',exact:true}).click();await page.locator('#villainStack').fill('20');assert.match(await page.locator('#dataFlag').textContent(),/8BB/);
+  await page.locator('#heroStack').fill('8.5');assert.equal(await page.locator('#dataFlag').textContent(),'GTOデータ未接続');
+  await page.locator('#close').click();await page.locator('#huStack').selectOption('10');
+  await page.locator('#refreshApp').click();await page.waitForURL(/refresh=/);assert.equal(await page.locator('.cell').count(),169);assert.equal(await page.locator('#dataFlag').textContent(),'GTOデータ未接続');
+  await page.locator('#hu10').click();assert.match(await page.locator('#dataFlag').textContent(),/10BB/);assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
+  assert.deepEqual(errors,[]);
   if(process.env.POKER_SCREENSHOT&&width===390)await page.screenshot({path:process.env.POKER_SCREENSHOT,fullPage:true});
   await page.close();checks++;
  }
- const page=await browser.newPage();await page.route('**/hu10-strategy.js',r=>r.abort());await page.goto(url);await page.locator('#hu10').click();assert.equal(await page.locator('#dataFlag').textContent(),'GTOデータ未接続');await page.close();checks++;
- const noView=await browser.newPage();await noView.route('**/hu10-view.js',r=>r.abort());await noView.goto(url);await noView.locator('#hu10').click();assert.equal(await noView.locator('#dataFlag').textContent(),'GTOデータ未接続');await noView.close();checks++;
- console.log(JSON.stringify({passed:true,scenarios:checks,widths:[375,390,430],checks:'SB/BB roles, mixed frequencies, unsupported stack/ante/9max/actions, missing dataset/view, no horizontal overflow, table toggle'}));
+ const page=await browser.newPage();await page.route('**/hu-strategies.js*',r=>r.abort());await page.goto(url);assert.ok(await page.locator('#hu10').isDisabled());assert.equal(await page.locator('#dataFlag').textContent(),'GTOデータ未接続');await page.close();checks++;
+ const noView=await browser.newPage();await noView.route('**/hu10-view.js*',r=>r.abort());await noView.goto(url);await noView.locator('#hu10').click();assert.equal(await noView.locator('#dataFlag').textContent(),'GTOデータ未接続');await noView.close();checks++;
+ console.log(JSON.stringify({passed:true,scenarios:checks,widths:[375,390,430],checks:'SB/BB roles, 16-stack selector, unequal stacks, exact mixed frequencies, unsupported fractional stacks/ante/9max/actions, missing dataset/view, refresh button, no horizontal overflow, table toggle'}));
  }finally{await browser.close();await new Promise(r=>server.close(r));}
 })().catch(e=>{console.error(e);server.close();process.exitCode=1;});

@@ -8,6 +8,8 @@
     "certify": "node tools/certify.mjs",
     "regenerate": "bash tools/regenerate.sh",
     "test:browser": "node tools/browser-check.cjs",
-    "check:evaluator": "node tools/exhaustive-evaluator.mjs"
+    "check:evaluator": "node tools/exhaustive-evaluator.mjs",
+    "solve:range": "python tools/independent-lp.py --all",
+    "certify:range": "node tools/certify-range.mjs"
   }
 }

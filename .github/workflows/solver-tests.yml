@@ -30,9 +30,11 @@ jobs:
         run: |
           cd solver
           npm run solve:lp -- --check
+          npm run solve:range -- --check
           npm run check:equities
           npm run check:evaluator
           npm run certify
+          npm run certify:range
           git diff --exit-code -- data/
       - name: Re-enumerate entire exact matrix
         if: ${{ github.event_name == 'workflow_dispatch' && inputs.regenerate }}

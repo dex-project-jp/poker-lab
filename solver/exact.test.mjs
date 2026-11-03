@@ -87,7 +87,7 @@ test('UI only matches exact supported game; invalid frequencies never display',(
  const data={verified:true,model:'chipEV',players:2,hero:'BTN/SB',villain:'BB',heroBB:10,villainBB:10,ante:'なし',scenario:'open',game:{variant:'NLHE',model:'chipEV',players:2,stackBB:10,sbBlind:.5,bbBlind:1,ante:0,rake:0,actions:{SB:['shove','fold'],BB:['call','fold']}},certificate:{nashGap:1e-12}};
  const spot={model:'chipEV',players:2,hero:'BTN/SB',villain:'BB',heroBB:10,villainBB:10,ante:'なし',scenario:'open'};
  assert.ok(PokerLabView.match(data,spot));
- for(const [key,value] of [['players',9],['heroBB',9.5],['villainBB',11],['ante','BBアンティ'],['scenario','vsopen'],['hero','BB'],['model','ICM']])assert.equal(PokerLabView.match(data,{...spot,[key]:value}),false);
+ for(const [key,value] of [['players',9],['heroBB',9.5],['ante','BBアンティ'],['scenario','vsopen'],['hero','BB'],['model','ICM']])assert.equal(PokerLabView.match(data,{...spot,[key]:value}),false);
  assert.equal(PokerLabView.match({...data,verified:false},spot),false);
  assert.equal(PokerLabView.match({...data,certificate:{nashGap:.01}},spot),false);
  const f={'All-in':50,Raise:0,Call:0,Check:0,Fold:50};

@@ -1,0 +1,792 @@
+{
+  "schemaVersion": 1,
+  "matrixSha256": "9f2a641fbdfde0659533e68e3a38cafde4924d14143f9583978861d3591df40d",
+  "equityProof": "validation-report.json",
+  "supportedEffectiveStacks": [
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20
+  ],
+  "ante": 0,
+  "rake": 0,
+  "scope": "HU chipEV push/fold only; effective stack includes posted blinds",
+  "unequalStacks": "Return uncalled chips. Net called payoff is +/- min(SB,BB); fold payoffs remain -0.5/+1.",
+  "tolerances": {
+    "publishedNashGap": 1e-10,
+    "cfrNashGap": 1e-9,
+    "maxFrequencyDifference": 0.001,
+    "valueDifferenceBB": 1e-8
+  },
+  "solutions": [
+    {
+      "stackBB": 5,
+      "value": 0.056200670210601315,
+      "sbBestResponse": 0.056200670210601315,
+      "bbBestResponse": -0.05620067021060121,
+      "sbGain": 0,
+      "bbGain": 1.0408340855860843e-16,
+      "nashGap": 1.0408340855860843e-16,
+      "exploitability": 5.204170427930421e-17,
+      "cfr": {
+        "iterations": 154800,
+        "nashGap": 8.6587648162606e-10,
+        "value": 0.056200670201951124,
+        "history": [
+          {
+            "iterations": 100,
+            "nashGap": 0.00011343658439241094
+          },
+          {
+            "iterations": 1000,
+            "nashGap": 0.000002403870921839635
+          },
+          {
+            "iterations": 10000,
+            "nashGap": 8.736559380800868e-8
+          },
+          {
+            "iterations": 50000,
+            "nashGap": 1.275205424589032e-8
+          },
+          {
+            "iterations": 100000,
+            "nashGap": 4.094799693765694e-9
+          },
+          {
+            "iterations": 154800,
+            "nashGap": 8.6587648162606e-10
+          }
+        ]
+      },
+      "independent": {
+        "method": "independent primal/dual linear programs, scipy HiGHS",
+        "scipy": "1.17.0",
+        "maxFrequencyDifference": 0.000005602895743583858,
+        "valueDifferenceBB": 8.650191674064445e-12
+      },
+      "shovePercent": 71.48386267143873,
+      "callPercent": 62.067860574395084,
+      "verified": true
+    },
+    {
+      "stackBB": 6,
+      "value": 0.03815905389418392,
+      "sbBestResponse": 0.03815905389418392,
+      "bbBestResponse": -0.03815905389418376,
+      "sbGain": 0,
+      "bbGain": 1.5959455978986625e-16,
+      "nashGap": 1.5959455978986625e-16,
+      "exploitability": 7.979727989493313e-17,
+      "cfr": {
+        "iterations": 60500,
+        "nashGap": 9.977369833102934e-10,
+        "value": 0.038159053128035136,
+        "history": [
+          {
+            "iterations": 100,
+            "nashGap": 0.00014541782479828708
+          },
+          {
+            "iterations": 1000,
+            "nashGap": 0.000002796901530405238
+          },
+          {
+            "iterations": 10000,
+            "nashGap": 3.654626588162069e-8
+          },
+          {
+            "iterations": 50000,
+            "nashGap": 1.4608802362259254e-9
+          },
+          {
+            "iterations": 60500,
+            "nashGap": 9.977369833102934e-10
+          }
+        ]
+      },
+      "independent": {
+        "method": "independent primal/dual linear programs, scipy HiGHS",
+        "scipy": "1.17.0",
+        "maxFrequencyDifference": 0.00026255807271404174,
+        "valueDifferenceBB": 7.661487833043878e-10
+      },
+      "shovePercent": 68.31710133577282,
+      "callPercent": 54.448692963577685,
+      "verified": true
+    },
+    {
+      "stackBB": 7,
+      "value": 0.016862957279058014,
+      "sbBestResponse": 0.016862957279058042,
+      "bbBestResponse": -0.01686295727905793,
+      "sbGain": 2.7755575615628914e-17,
+      "bbGain": 8.326672684688674e-17,
+      "nashGap": 1.1102230246251565e-16,
+      "exploitability": 5.551115123125783e-17,
+      "cfr": {
+        "iterations": 446000,
+        "nashGap": 9.956756669149414e-10,
+        "value": 0.016862957276489957,
+        "history": [
+          {
+            "iterations": 100,
+            "nashGap": 0.00014543178713031374
+          },
+          {
+            "iterations": 1000,
+            "nashGap": 0.0000019075418161047797
+          },
+          {
+            "iterations": 10000,
+            "nashGap": 1.1016005709019172e-7
+          },
+          {
+            "iterations": 50000,
+            "nashGap": 1.1768844673104573e-8
+          },
+          {
+            "iterations": 100000,
+            "nashGap": 7.01312147591282e-9
+          },
+          {
+            "iterations": 446000,
+            "nashGap": 9.956756669149414e-10
+          }
+        ]
+      },
+      "independent": {
+        "method": "independent primal/dual linear programs, scipy HiGHS",
+        "scipy": "1.17.0",
+        "maxFrequencyDifference": 0.000016461373269160973,
+        "valueDifferenceBB": 2.5680568782604496e-12
+      },
+      "shovePercent": 66.31028629323788,
+      "callPercent": 48.61483556794093,
+      "verified": true
+    },
+    {
+      "stackBB": 8,
+      "value": -0.004137472447073656,
+      "sbBestResponse": -0.0041374724470736425,
+      "bbBestResponse": 0.004137472447073525,
+      "sbGain": 1.3877787807814457e-17,
+      "bbGain": 0,
+      "nashGap": 1.3877787807814457e-17,
+      "exploitability": 6.938893903907228e-18,
+      "cfr": {
+        "iterations": 315300,
+        "nashGap": 9.840697302171408e-10,
+        "value": -0.004137472457650669,
+        "history": [
+          {
+            "iterations": 100,
+            "nashGap": 0.00017336494824578882
+          },
+          {
+            "iterations": 1000,
+            "nashGap": 0.0000031835923743409045
+          },
+          {
+            "iterations": 10000,
+            "nashGap": 1.2549277296665384e-7
+          },
+          {
+            "iterations": 50000,
+            "nashGap": 1.929250123891557e-8
+          },
+          {
+            "iterations": 100000,
+            "nashGap": 8.56569930002965e-9
+          },
+          {
+            "iterations": 315300,
+            "nashGap": 9.840697302171408e-10
+          }
+        ]
+      },
+      "independent": {
+        "method": "independent primal/dual linear programs, scipy HiGHS",
+        "scipy": "1.17.0",
+        "maxFrequencyDifference": 0.000005785464415208885,
+        "valueDifferenceBB": 1.0577012356238757e-11
+      },
+      "shovePercent": 61.86276217336041,
+      "callPercent": 44.97296759966801,
+      "verified": true
+    },
+    {
+      "stackBB": 9,
+      "value": -0.02522687095060154,
+      "sbBestResponse": -0.02522687095060154,
+      "bbBestResponse": 0.025226870950601638,
+      "sbGain": 0,
+      "bbGain": 9.71445146547012e-17,
+      "nashGap": 9.71445146547012e-17,
+      "exploitability": 4.85722573273506e-17,
+      "cfr": {
+        "iterations": 60100,
+        "nashGap": 9.970841201301095e-10,
+        "value": -0.025226871650888803,
+        "history": [
+          {
+            "iterations": 100,
+            "nashGap": 0.00012707889500748748
+          },
+          {
+            "iterations": 1000,
+            "nashGap": 0.000003597938611574897
+          },
+          {
+            "iterations": 10000,
+            "nashGap": 3.60117643830038e-8
+          },
+          {
+            "iterations": 50000,
+            "nashGap": 1.4405861677169174e-9
+          },
+          {
+            "iterations": 60100,
+            "nashGap": 9.970841201301095e-10
+          }
+        ]
+      },
+      "independent": {
+        "method": "independent primal/dual linear programs, scipy HiGHS",
+        "scipy": "1.17.0",
+        "maxFrequencyDifference": 0.000052647875130533394,
+        "valueDifferenceBB": 7.002872622063894e-10
+      },
+      "shovePercent": 59.879336349924564,
+      "callPercent": 40.57315233785823,
+      "verified": true
+    },
+    {
+      "stackBB": 10,
+      "value": -0.04537075259279123,
+      "sbBestResponse": -0.045370752592791226,
+      "bbBestResponse": 0.045370752592791413,
+      "sbGain": 6.938893903907228e-18,
+      "bbGain": 1.8041124150158794e-16,
+      "nashGap": 1.8735013540549517e-16,
+      "exploitability": 9.367506770274758e-17,
+      "cfr": {
+        "iterations": 146800,
+        "nashGap": 9.703681677630804e-10,
+        "value": -0.04537075263030648,
+        "history": [
+          {
+            "iterations": 100,
+            "nashGap": 0.00015151550489923837
+          },
+          {
+            "iterations": 1000,
+            "nashGap": 0.0000017121534648320558
+          },
+          {
+            "iterations": 10000,
+            "nashGap": 3.944821234252993e-8
+          },
+          {
+            "iterations": 50000,
+            "nashGap": 6.718198893029825e-9
+          },
+          {
+            "iterations": 100000,
+            "nashGap": 3.4252158540026834e-9
+          },
+          {
+            "iterations": 146800,
+            "nashGap": 9.703681677630804e-10
+          }
+        ]
+      },
+      "independent": {
+        "method": "independent primal/dual linear programs, scipy HiGHS",
+        "scipy": "1.17.0",
+        "maxFrequencyDifference": 0.00008782685363634135,
+        "valueDifferenceBB": 3.7515247852670797e-11
+      },
+      "shovePercent": 58.28378512939517,
+      "callPercent": 37.376403970970834,
+      "verified": true
+    },
+    {
+      "stackBB": 11,
+      "value": -0.06466082069830828,
+      "sbBestResponse": -0.06466082069830828,
+      "bbBestResponse": 0.06466082069830884,
+      "sbGain": 0,
+      "bbGain": 5.551115123125783e-16,
+      "nashGap": 5.551115123125783e-16,
+      "exploitability": 2.7755575615628914e-16,
+      "cfr": {
+        "iterations": 95300,
+        "nashGap": 8.431150777532537e-10,
+        "value": -0.0646608207341379,
+        "history": [
+          {
+            "iterations": 100,
+            "nashGap": 0.00010019575374024814
+          },
+          {
+            "iterations": 1000,
+            "nashGap": 0.0000012314015976067072
+          },
+          {
+            "iterations": 10000,
+            "nashGap": 6.461476233232677e-8
+          },
+          {
+            "iterations": 50000,
+            "nashGap": 6.634978927388957e-9
+          },
+          {
+            "iterations": 95300,
+            "nashGap": 8.431150777532537e-10
+          }
+        ]
+      },
+      "independent": {
+        "method": "independent primal/dual linear programs, scipy HiGHS",
+        "scipy": "1.17.0",
+        "maxFrequencyDifference": 0.00003339271210778261,
+        "valueDifferenceBB": 3.582961705106413e-11
+      },
+      "shovePercent": 54.49899169468855,
+      "callPercent": 35.035985958500646,
+      "verified": true
+    },
+    {
+      "stackBB": 12,
+      "value": -0.08252891984590743,
+      "sbBestResponse": -0.08252891984590743,
+      "bbBestResponse": 0.08252891984590792,
+      "sbGain": 0,
+      "bbGain": 4.85722573273506e-16,
+      "nashGap": 4.85722573273506e-16,
+      "exploitability": 2.42861286636753e-16,
+      "cfr": {
+        "iterations": 37900,
+        "nashGap": 9.993512128936288e-10,
+        "value": -0.08252892015273187,
+        "history": [
+          {
+            "iterations": 100,
+            "nashGap": 0.00012781176015114193
+          },
+          {
+            "iterations": 1000,
+            "nashGap": 0.0000014340813039165345
+          },
+          {
+            "iterations": 10000,
+            "nashGap": 1.4353718810755645e-8
+          },
+          {
+            "iterations": 37900,
+            "nashGap": 9.993512128936288e-10
+          }
+        ]
+      },
+      "independent": {
+        "method": "independent primal/dual linear programs, scipy HiGHS",
+        "scipy": "1.17.0",
+        "maxFrequencyDifference": 0.000021167640826937863,
+        "valueDifferenceBB": 3.0682444085439187e-10
+      },
+      "shovePercent": 53.242835595776775,
+      "callPercent": 33.0316742081448,
+      "verified": true
+    },
+    {
+      "stackBB": 13,
+      "value": -0.09902148795085323,
+      "sbBestResponse": -0.09902148795085323,
+      "bbBestResponse": 0.09902148795085372,
+      "sbGain": 0,
+      "bbGain": 4.85722573273506e-16,
+      "nashGap": 4.85722573273506e-16,
+      "exploitability": 2.42861286636753e-16,
+      "cfr": {
+        "iterations": 57600,
+        "nashGap": 8.711991267285057e-10,
+        "value": -0.09902148803380778,
+        "history": [
+          {
+            "iterations": 100,
+            "nashGap": 0.00017325191943615148
+          },
+          {
+            "iterations": 1000,
+            "nashGap": 0.0000024823957202740887
+          },
+          {
+            "iterations": 10000,
+            "nashGap": 2.7672176980408913e-8
+          },
+          {
+            "iterations": 50000,
+            "nashGap": 3.94494875655127e-9
+          },
+          {
+            "iterations": 57600,
+            "nashGap": 8.711991267285057e-10
+          }
+        ]
+      },
+      "independent": {
+        "method": "independent primal/dual linear programs, scipy HiGHS",
+        "scipy": "1.17.0",
+        "maxFrequencyDifference": 0.000016109138525233213,
+        "valueDifferenceBB": 8.295454601014995e-11
+      },
+      "shovePercent": 51.56425689367058,
+      "callPercent": 30.952000847965177,
+      "verified": true
+    },
+    {
+      "stackBB": 14,
+      "value": -0.11382121107752974,
+      "sbBestResponse": -0.11382121107752972,
+      "bbBestResponse": 0.11382121107753028,
+      "sbGain": 1.3877787807814457e-17,
+      "bbGain": 5.412337245047638e-16,
+      "nashGap": 5.551115123125783e-16,
+      "exploitability": 2.7755575615628914e-16,
+      "cfr": {
+        "iterations": 67400,
+        "nashGap": 9.719355043014133e-10,
+        "value": -0.11382121124714478,
+        "history": [
+          {
+            "iterations": 100,
+            "nashGap": 0.00015465949820926694
+          },
+          {
+            "iterations": 1000,
+            "nashGap": 0.0000017526947857227082
+          },
+          {
+            "iterations": 10000,
+            "nashGap": 3.3054277245869734e-8
+          },
+          {
+            "iterations": 50000,
+            "nashGap": 2.164170800900145e-9
+          },
+          {
+            "iterations": 67400,
+            "nashGap": 9.719355043014133e-10
+          }
+        ]
+      },
+      "independent": {
+        "method": "independent primal/dual linear programs, scipy HiGHS",
+        "scipy": "1.17.0",
+        "maxFrequencyDifference": 0.000007111062926279388,
+        "valueDifferenceBB": 1.696150442320743e-10
+      },
+      "shovePercent": 48.37509458299601,
+      "callPercent": 29.299172611595914,
+      "verified": true
+    },
+    {
+      "stackBB": 15,
+      "value": -0.1272269992320573,
+      "sbBestResponse": -0.1272269992320573,
+      "bbBestResponse": 0.12722699923205796,
+      "sbGain": 0,
+      "bbGain": 6.661338147750939e-16,
+      "nashGap": 6.661338147750939e-16,
+      "exploitability": 3.3306690738754696e-16,
+      "cfr": {
+        "iterations": 111200,
+        "nashGap": 8.659473971217579e-10,
+        "value": -0.12722699931904935,
+        "history": [
+          {
+            "iterations": 100,
+            "nashGap": 0.00019841275738394226
+          },
+          {
+            "iterations": 1000,
+            "nashGap": 0.000001972666299060455
+          },
+          {
+            "iterations": 10000,
+            "nashGap": 6.87810620125795e-8
+          },
+          {
+            "iterations": 50000,
+            "nashGap": 8.611560409210739e-9
+          },
+          {
+            "iterations": 100000,
+            "nashGap": 5.769295652324757e-9
+          },
+          {
+            "iterations": 111200,
+            "nashGap": 8.659473971217579e-10
+          }
+        ]
+      },
+      "independent": {
+        "method": "independent primal/dual linear programs, scipy HiGHS",
+        "scipy": "1.17.0",
+        "maxFrequencyDifference": 0.000032346881701061925,
+        "valueDifferenceBB": 8.699205245044084e-11
+      },
+      "shovePercent": 45.65458027370276,
+      "callPercent": 28.547274915538186,
+      "verified": true
+    },
+    {
+      "stackBB": 16,
+      "value": -0.13932415753989597,
+      "sbBestResponse": -0.13932415753989594,
+      "bbBestResponse": 0.13932415753989677,
+      "sbGain": 2.7755575615628914e-17,
+      "bbGain": 8.049116928532385e-16,
+      "nashGap": 8.326672684688674e-16,
+      "exploitability": 4.163336342344337e-16,
+      "cfr": {
+        "iterations": 52900,
+        "nashGap": 9.978222692552663e-10,
+        "value": -0.13932415782548133,
+        "history": [
+          {
+            "iterations": 100,
+            "nashGap": 0.00020450432471327828
+          },
+          {
+            "iterations": 1000,
+            "nashGap": 0.0000026124178331699
+          },
+          {
+            "iterations": 10000,
+            "nashGap": 4.6047329782528124e-8
+          },
+          {
+            "iterations": 50000,
+            "nashGap": 1.5173880762997527e-9
+          },
+          {
+            "iterations": 52900,
+            "nashGap": 9.978222692552663e-10
+          }
+        ]
+      },
+      "independent": {
+        "method": "independent primal/dual linear programs, scipy HiGHS",
+        "scipy": "1.17.0",
+        "maxFrequencyDifference": 0.000512854274378749,
+        "valueDifferenceBB": 2.8558536091516373e-10
+      },
+      "shovePercent": 44.76092397441799,
+      "callPercent": 26.488000684637207,
+      "verified": true
+    },
+    {
+      "stackBB": 17,
+      "value": -0.15080711711782663,
+      "sbBestResponse": -0.1508071171178266,
+      "bbBestResponse": 0.15080711711782718,
+      "sbGain": 2.7755575615628914e-17,
+      "bbGain": 5.551115123125783e-16,
+      "nashGap": 5.828670879282072e-16,
+      "exploitability": 2.914335439641036e-16,
+      "cfr": {
+        "iterations": 398100,
+        "nashGap": 9.382216947795285e-10,
+        "value": -0.15080711712181832,
+        "history": [
+          {
+            "iterations": 100,
+            "nashGap": 0.0003141077140181858
+          },
+          {
+            "iterations": 1000,
+            "nashGap": 0.000004686545168136602
+          },
+          {
+            "iterations": 10000,
+            "nashGap": 2.0997802993583115e-7
+          },
+          {
+            "iterations": 50000,
+            "nashGap": 4.372975870303719e-8
+          },
+          {
+            "iterations": 100000,
+            "nashGap": 1.4779737184111852e-8
+          },
+          {
+            "iterations": 398100,
+            "nashGap": 9.382216947795285e-10
+          }
+        ]
+      },
+      "independent": {
+        "method": "independent primal/dual linear programs, scipy HiGHS",
+        "scipy": "1.17.0",
+        "maxFrequencyDifference": 0.0000026372308158384428,
+        "valueDifferenceBB": 3.991695862737288e-12
+      },
+      "shovePercent": 42.92421201865339,
+      "callPercent": 24.827428097259276,
+      "verified": true
+    },
+    {
+      "stackBB": 18,
+      "value": -0.16216213403409302,
+      "sbBestResponse": -0.16216213403409302,
+      "bbBestResponse": 0.16216213403409357,
+      "sbGain": 0,
+      "bbGain": 5.551115123125783e-16,
+      "nashGap": 5.551115123125783e-16,
+      "exploitability": 2.7755575615628914e-16,
+      "cfr": {
+        "iterations": 184500,
+        "nashGap": 9.321073080048592e-10,
+        "value": -0.16216213407090266,
+        "history": [
+          {
+            "iterations": 100,
+            "nashGap": 0.000228377762677201
+          },
+          {
+            "iterations": 1000,
+            "nashGap": 0.0000033652185016663783
+          },
+          {
+            "iterations": 10000,
+            "nashGap": 5.147202572497456e-8
+          },
+          {
+            "iterations": 50000,
+            "nashGap": 1.717299205616918e-8
+          },
+          {
+            "iterations": 100000,
+            "nashGap": 1.879080169242542e-9
+          },
+          {
+            "iterations": 184500,
+            "nashGap": 9.321073080048592e-10
+          }
+        ]
+      },
+      "independent": {
+        "method": "independent primal/dual linear programs, scipy HiGHS",
+        "scipy": "1.17.0",
+        "maxFrequencyDifference": 0.0001118630927733344,
+        "valueDifferenceBB": 3.6809638670476375e-11
+      },
+      "shovePercent": 42.34545423172058,
+      "callPercent": 23.769824890098672,
+      "verified": true
+    },
+    {
+      "stackBB": 19,
+      "value": -0.17290978359491793,
+      "sbBestResponse": -0.17290978359491793,
+      "bbBestResponse": 0.1729097835949181,
+      "sbGain": 0,
+      "bbGain": 1.6653345369377348e-16,
+      "nashGap": 1.6653345369377348e-16,
+      "exploitability": 8.326672684688674e-17,
+      "cfr": {
+        "iterations": 49500,
+        "nashGap": 9.980009596510797e-10,
+        "value": -0.17290978407189722,
+        "history": [
+          {
+            "iterations": 100,
+            "nashGap": 0.00024211883272912127
+          },
+          {
+            "iterations": 1000,
+            "nashGap": 0.0000024429572536288635
+          },
+          {
+            "iterations": 10000,
+            "nashGap": 2.4451557056881512e-8
+          },
+          {
+            "iterations": 49500,
+            "nashGap": 9.980009596510797e-10
+          }
+        ]
+      },
+      "independent": {
+        "method": "independent primal/dual linear programs, scipy HiGHS",
+        "scipy": "1.17.0",
+        "maxFrequencyDifference": 8.73999513746861e-7,
+        "valueDifferenceBB": 4.769792893988267e-10
+      },
+      "shovePercent": 40.874811463046754,
+      "callPercent": 22.624434389140276,
+      "verified": true
+    },
+    {
+      "stackBB": 20,
+      "value": -0.18318971652994442,
+      "sbBestResponse": -0.1831897165299444,
+      "bbBestResponse": 0.18318971652994487,
+      "sbGain": 2.7755575615628914e-17,
+      "bbGain": 4.440892098500626e-16,
+      "nashGap": 4.718447854656915e-16,
+      "exploitability": 2.3592239273284576e-16,
+      "cfr": {
+        "iterations": 64700,
+        "nashGap": 9.753504115472822e-10,
+        "value": -0.18318971676387225,
+        "history": [
+          {
+            "iterations": 100,
+            "nashGap": 0.0002372382570841325
+          },
+          {
+            "iterations": 1000,
+            "nashGap": 0.000002960661434486811
+          },
+          {
+            "iterations": 10000,
+            "nashGap": 4.5828010164505883e-8
+          },
+          {
+            "iterations": 50000,
+            "nashGap": 1.6946794245686903e-9
+          },
+          {
+            "iterations": 64700,
+            "nashGap": 9.753504115472822e-10
+          }
+        ]
+      },
+      "independent": {
+        "method": "independent primal/dual linear programs, scipy HiGHS",
+        "scipy": "1.17.0",
+        "maxFrequencyDifference": 0.0002618914506017367,
+        "valueDifferenceBB": 2.3392782155795544e-10
+      },
+      "shovePercent": 40.237016780316324,
+      "callPercent": 21.72505350410215,
+      "verified": true
+    }
+  ],
+  "verified": true
+}
