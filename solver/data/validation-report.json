@@ -1,0 +1,199 @@
+{
+  "schemaVersion": 1,
+  "game": {
+    "variant": "NLHE",
+    "model": "chipEV",
+    "players": 2,
+    "stackBB": 10,
+    "stackBaseline": "before posting blinds",
+    "sbBlind": 0.5,
+    "bbBlind": 1,
+    "ante": 0,
+    "rake": 0,
+    "actions": {
+      "SB": [
+        "shove",
+        "fold"
+      ],
+      "BB": [
+        "call",
+        "fold"
+      ]
+    },
+    "restriction": "No limp, non-all-in raise, ICM, or multiway play"
+  },
+  "matrix": {
+    "sha256": "9f2a641fbdfde0659533e68e3a38cafde4924d14143f9583978861d3591df40d",
+    "combos": 1326,
+    "compatibleOpponentsPerCombo": 1225,
+    "orderedDeals": 1624350,
+    "classes": 169,
+    "canonicalMatchups": 47008,
+    "boardsPerMatchup": 1712304,
+    "source": "ZorigoKH/nuts@bdd02c3a24a1e3ff458944ab5f8fa10ad808ff54",
+    "exactRegeneration": {
+      "method": "Complete native exact enumeration, byte-for-byte comparison against pinned matrix",
+      "sha256": "9f2a641fbdfde0659533e68e3a38cafde4924d14143f9583978861d3591df40d",
+      "matchups": 47008,
+      "boardsPerMatchup": 1712304,
+      "matched": true
+    }
+  },
+  "equityCrosscheck": {
+    "matrixSha256": "9f2a641fbdfde0659533e68e3a38cafde4924d14143f9583978861d3591df40d",
+    "sourceSha256": "c93b1caae412205dcba9e07c9d43b9adc7ec368da098659151434ce6b52dc4bd",
+    "method": "Poker Lab JavaScript exact board enumeration; independently implemented evaluator and suit permutation cache",
+    "results": [
+      {
+        "a": "AA",
+        "b": "AA",
+        "weight": 6,
+        "halfPots": 10273824,
+        "unique": 1,
+        "boardsPerMatchup": 1712304,
+        "matched": true
+      },
+      {
+        "a": "AA",
+        "b": "KK",
+        "weight": 36,
+        "halfPots": 101027916,
+        "unique": 3,
+        "boardsPerMatchup": 1712304,
+        "matched": true
+      },
+      {
+        "a": "AKs",
+        "b": "QQ",
+        "weight": 24,
+        "halfPots": 37847556,
+        "unique": 2,
+        "boardsPerMatchup": 1712304,
+        "matched": true
+      },
+      {
+        "a": "AKo",
+        "b": "22",
+        "weight": 72,
+        "halfPots": 116753796,
+        "unique": 4,
+        "boardsPerMatchup": 1712304,
+        "matched": true
+      },
+      {
+        "a": "KQs",
+        "b": "AJo",
+        "weight": 48,
+        "halfPots": 71796216,
+        "unique": 3,
+        "boardsPerMatchup": 1712304,
+        "matched": true
+      },
+      {
+        "a": "72o",
+        "b": "32o",
+        "weight": 108,
+        "halfPots": 241118760,
+        "unique": 5,
+        "boardsPerMatchup": 1712304,
+        "matched": true
+      }
+    ]
+  },
+  "evaluatorCrosscheck": {
+    "sourceSha256": "c93b1caae412205dcba9e07c9d43b9adc7ec368da098659151434ce6b52dc4bd",
+    "method": "Enumerate every C(52,7) hand using Poker Lab fastEvaluate7",
+    "total": 133784560,
+    "categories": [
+      "high card",
+      "pair",
+      "two pair",
+      "three of a kind",
+      "straight",
+      "flush",
+      "full house",
+      "four of a kind",
+      "straight flush"
+    ],
+    "counts": [
+      23294460,
+      58627800,
+      31433400,
+      6461620,
+      6180020,
+      4047644,
+      3473184,
+      224848,
+      41584
+    ],
+    "expected": [
+      23294460,
+      58627800,
+      31433400,
+      6461620,
+      6180020,
+      4047644,
+      3473184,
+      224848,
+      41584
+    ],
+    "matched": true
+  },
+  "cfr": {
+    "algorithm": "alternating CFR+ with linear averaging",
+    "iterations": 23300,
+    "nashGap": 8.336939721909076e-9,
+    "exploitability": 4.168469860954538e-9,
+    "value": -0.045370754083298895,
+    "history": [
+      {
+        "iterations": 100,
+        "nashGap": 0.00015151550489923837
+      },
+      {
+        "iterations": 1000,
+        "nashGap": 0.0000017121534648320558
+      },
+      {
+        "iterations": 5000,
+        "nashGap": 1.2368177900595745e-7
+      },
+      {
+        "iterations": 10000,
+        "nashGap": 3.944821234252993e-8
+      },
+      {
+        "iterations": 20000,
+        "nashGap": 2.4235209207523756e-8
+      },
+      {
+        "iterations": 23300,
+        "nashGap": 8.336939721909076e-9
+      }
+    ]
+  },
+  "independent": {
+    "method": "independent primal/dual linear programs, scipy HiGHS",
+    "scipy": "1.17.0",
+    "value": -0.04537075259279123,
+    "sbBestResponse": -0.045370752592791226,
+    "bbBestResponse": 0.045370752592791386,
+    "sbGain": 6.938893903907228e-18,
+    "bbGain": 1.5265566588595902e-16,
+    "nashGap": 1.5959455978986625e-16,
+    "exploitability": 7.979727989493313e-17,
+    "maxFrequencyDifference": 0.0004064643208266383
+  },
+  "strategy": {
+    "source": "independent LP, certified against CFR+",
+    "shovePercent": 58.28378512939517,
+    "callPercent": 37.37640397097083
+  },
+  "tolerances": {
+    "publishedNashGap": 1e-10,
+    "cfrNashGap": 1e-8,
+    "solverValueDifferenceBB": 1e-8,
+    "maxFrequencyDifference": 0.001
+  },
+  "verified": true
+}

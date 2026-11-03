@@ -1,10 +1,17 @@
-name: Solver unit tests
+name: Solver validation
 on:
   push:
     paths:
       - 'solver/**'
+      - 'index.html'
       - '.github/workflows/solver-tests.yml'
+  pull_request:
   workflow_dispatch:
+    inputs:
+      regenerate:
+        description: 'Re-enumerate all 47,008 exact matchups (several minutes)'
+        type: boolean
+        default: false
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -13,5 +20,31 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Run solver tests
-        run: cd solver && npm test
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install scipy==1.17.0
+      - name: Run all solver tests
+        run: npm test --prefix solver
+      - name: Recompute independent LP and JS exact cross-checks
+        run: |
+          cd solver
+          npm run solve:lp -- --check
+          npm run check:equities
+          npm run check:evaluator
+          npm run certify
+          git diff --exit-code -- data/
+      - name: Re-enumerate entire exact matrix
+        if: ${{ github.event_name == 'workflow_dispatch' && inputs.regenerate }}
+        run: npm run regenerate --prefix solver
+  mobile-ui:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install --no-save playwright@1.62.1
+      - run: npx playwright install --with-deps chromium
+      - name: Check mobile interactions and fail-closed display
+        run: node solver/tools/browser-check.cjs

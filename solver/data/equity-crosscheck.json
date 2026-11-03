@@ -1,0 +1,61 @@
+{
+  "matrixSha256": "9f2a641fbdfde0659533e68e3a38cafde4924d14143f9583978861d3591df40d",
+  "sourceSha256": "c93b1caae412205dcba9e07c9d43b9adc7ec368da098659151434ce6b52dc4bd",
+  "method": "Poker Lab JavaScript exact board enumeration; independently implemented evaluator and suit permutation cache",
+  "results": [
+    {
+      "a": "AA",
+      "b": "AA",
+      "weight": 6,
+      "halfPots": 10273824,
+      "unique": 1,
+      "boardsPerMatchup": 1712304,
+      "matched": true
+    },
+    {
+      "a": "AA",
+      "b": "KK",
+      "weight": 36,
+      "halfPots": 101027916,
+      "unique": 3,
+      "boardsPerMatchup": 1712304,
+      "matched": true
+    },
+    {
+      "a": "AKs",
+      "b": "QQ",
+      "weight": 24,
+      "halfPots": 37847556,
+      "unique": 2,
+      "boardsPerMatchup": 1712304,
+      "matched": true
+    },
+    {
+      "a": "AKo",
+      "b": "22",
+      "weight": 72,
+      "halfPots": 116753796,
+      "unique": 4,
+      "boardsPerMatchup": 1712304,
+      "matched": true
+    },
+    {
+      "a": "KQs",
+      "b": "AJo",
+      "weight": 48,
+      "halfPots": 71796216,
+      "unique": 3,
+      "boardsPerMatchup": 1712304,
+      "matched": true
+    },
+    {
+      "a": "72o",
+      "b": "32o",
+      "weight": 108,
+      "halfPots": 241118760,
+      "unique": 5,
+      "boardsPerMatchup": 1712304,
+      "matched": true
+    }
+  ]
+}

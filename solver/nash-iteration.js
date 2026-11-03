@@ -1,62 +1,31 @@
-// Heads-up push/fold approximate Nash solver by full-information regret matching.
-// Requires an externally validated exact combo-vs-combo equity matrix.
-// Input probabilities are unconditional combo deal weights; incompatible pairs use null.
-// The solver never labels output verified GTO: check exploitability and independent reference.
-import {bestResponses} from './best-response.js';
-export function solvePushFold({sbHands,bbHands,equity,stackBB,iterations=10000}){
- if(!Number.isFinite(stackBB)||stackBB<=1)throw Error('Invalid stack');
- const n=sbHands.length,m=bbHands.length;
+// Alternating CFR+, with linear averaging. A numerical convergence flag is not
+// permission to publish: equity provenance and independent validation are separate.
+import {prepareGame,evaluateGame} from './game.js';
+export function solvePushFold(options){
+ const {iterations=10000,targetGap=0,checkEvery=50}=options;
  if(!Number.isInteger(iterations)||iterations<1||iterations>1000000)throw Error('Invalid iterations');
- if(!n||!m||equity.length!==n)throw Error('Invalid matrix');
- const p=new Float64Array(n).fill(0.5),q=new Float64Array(m).fill(0.5);
- const rp=new Float64Array(n),rq=new Float64Array(m),sumP=new Float64Array(n),sumQ=new Float64Array(m);
- const weights=Array.from({length:n},(_,i)=>Array.from({length:m},(_,j)=>{
-  if(equity[i].length!==m)throw Error('Invalid matrix row');
-  const e=equity[i][j];if(e===null)return 0;
-  if(!Number.isFinite(e)||e<0||e>1)throw Error('Invalid equity');
-  const w=sbHands[i].probability*bbHands[j].probability;
-  if(!Number.isFinite(w)||w<0)throw Error('Invalid deal weight');
-  return w;
- }));
- let norm=0;for(const row of weights)for(const w of row)norm+=w;
- if(norm<=0)throw Error('No compatible deals');
- for(let t=0;t<iterations;t++){
-  const dP=new Float64Array(n),dQ=new Float64Array(m);
-  for(let i=0;i<n;i++)for(let j=0;j<m;j++){
-   const w=weights[i][j]/norm;if(!w)continue;
-   const showdown=(2*equity[i][j]-1)*stackBB;
-   // SB payoff: fold=-0.5; shove vs BB fold=+1; shove vs BB call=showdown.
-   const sbShove=(1-q[j])*1+q[j]*showdown;
-   dP[i]+=w*(sbShove+0.5);
-   // BB minimizes SB payoff: compare call vs fold, conditional on SB shove.
-   dQ[j]+=w*p[i]*(1-showdown);
+ if(!Number.isFinite(targetGap)||targetGap<0||!Number.isInteger(checkEvery)||checkEvery<1)throw Error('Invalid convergence options');
+ const game=prepareGame(options),{n,m,weights:w,called:c}=game;
+ const p=new Float64Array(n).fill(.5),q=new Float64Array(m).fill(.5),rp=new Float64Array(n),rf=new Float64Array(n),rq=new Float64Array(m),rs=new Float64Array(m),sp=new Float64Array(n),sq=new Float64Array(m);
+ let total=0,result,t=0;const history=[];
+ for(t=1;t<=iterations;t++){
+  for(let i=0;i<n;i++){
+   let advantage=0;for(let j=0;j<m;j++){const k=i*m+j;advantage+=w[k]*(1.5+q[j]*(c[k]-1));}
+   rp[i]=Math.max(0,rp[i]+(1-p[i])*advantage);rf[i]=Math.max(0,rf[i]-p[i]*advantage);
+   p[i]=rp[i]+rf[i]>0?rp[i]/(rp[i]+rf[i]):.5;
   }
-  // Positive regret means favor action 1 (SB shove / BB call).
-  for(let i=0;i<n;i++){rp[i]+=dP[i];sumP[i]+=p[i]}
-  for(let j=0;j<m;j++){rq[j]+=dQ[j];sumQ[j]+=q[j]}
-  for(let i=0;i<n;i++)p[i]=rp[i]>0?1:rp[i]<0?0:0.5;
-  for(let j=0;j<m;j++)q[j]=rq[j]>0?1:rq[j]<0?0:0.5;
- }
- const sbShove=Array.from(sumP,x=>x/iterations),bbCall=Array.from(sumQ,x=>x/iterations);
- // Nash gap: SB best response gain + BB best response gain, in BB per dealt hand.
- let value=0,sbBR=0,bbBR=0;
- for(let i=0;i<n;i++){
-  let fold=0,shove=0;
-  for(let j=0;j<m;j++){const w=weights[i][j]/norm;if(!w)continue;
-   fold+=w*(-0.5);
-   shove+=w*((1-bbCall[j])+bbCall[j]*(2*equity[i][j]-1)*stackBB);
+  for(let j=0;j<m;j++){
+   let advantage=0;for(let i=0;i<n;i++){const k=i*m+j;advantage+=w[k]*p[i]*(1-c[k]);}
+   rq[j]=Math.max(0,rq[j]+(1-q[j])*advantage);rs[j]=Math.max(0,rs[j]-q[j]*advantage);
+   q[j]=rq[j]+rs[j]>0?rq[j]/(rq[j]+rs[j]):.5;
   }
-  value+=sbShove[i]*shove+(1-sbShove[i])*fold;
-  sbBR+=Math.max(fold,shove);
- }
- for(let j=0;j<m;j++){
-  let fold=0,call=0;
-  for(let i=0;i<n;i++){const w=weights[i][j]/norm;if(!w)continue;
-   const sh=sbShove[i],showdown=(2*equity[i][j]-1)*stackBB;
-   fold+=w*((1-sh)*(-0.5)+sh*1);
-   call+=w*((1-sh)*(-0.5)+sh*showdown);
+  total+=t;for(let i=0;i<n;i++)sp[i]+=t*p[i];for(let j=0;j<m;j++)sq[j]+=t*q[j];
+  if(t%checkEvery===0||t===iterations){
+   const sbShove=Array.from(sp,x=>x/total),bbCall=Array.from(sq,x=>x/total);
+   result={sbShove,bbCall,...evaluateGame(game,sbShove,bbCall)};
+   history.push({iterations:t,nashGap:result.nashGap});
+   if(targetGap>0&&result.nashGap<=targetGap)break;
   }
-  bbBR+=Math.min(fold,call);
  }
- return {sbShove,bbCall,value,nashGap:sbBR-bbBR,iterations,verified:false};
+ return {...result,iterations:Math.min(t,iterations),converged:targetGap>0&&result.nashGap<=targetGap,history,verified:false};
 }

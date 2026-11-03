@@ -1,10 +1,10 @@
 // Fast seven-card Texas Hold'em evaluator. Returns same score vector as evaluate().
 // Validated against the exhaustive five-card-subset reference evaluator.
-import {parseCard,compare} from './hand-evaluator.js';
+import {parseCard,compare,normalizeCard} from './hand-evaluator.js';
 function straight(mask){for(let h=14;h>=5;h--){let ok=true;for(let j=0;j<5;j++){let r=h-j;if(r===1)r=14;if(!(mask&(1<<r))){ok=false;break}}if(ok)return h}return 0}
 export function fastEvaluate7(cards){
  if(cards.length!==7)throw Error('Expected 7 cards');
- const c=cards.map(x=>typeof x==='string'?parseCard(x):x);
+ const c=cards.map(normalizeCard);
  if(new Set(c.map(x=>x.id)).size!==7)throw Error('Duplicate cards');
  const counts=new Int8Array(15),suitCounts=new Int8Array(4),suitMasks=new Int32Array(4);let mask=0;
  for(const x of c){counts[x.rank]++;suitCounts[x.suit]++;mask|=1<<x.rank;suitMasks[x.suit]|=1<<x.rank}

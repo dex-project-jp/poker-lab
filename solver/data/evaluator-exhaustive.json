@@ -1,0 +1,39 @@
+{
+  "sourceSha256": "c93b1caae412205dcba9e07c9d43b9adc7ec368da098659151434ce6b52dc4bd",
+  "method": "Enumerate every C(52,7) hand using Poker Lab fastEvaluate7",
+  "total": 133784560,
+  "categories": [
+    "high card",
+    "pair",
+    "two pair",
+    "three of a kind",
+    "straight",
+    "flush",
+    "full house",
+    "four of a kind",
+    "straight flush"
+  ],
+  "counts": [
+    23294460,
+    58627800,
+    31433400,
+    6461620,
+    6180020,
+    4047644,
+    3473184,
+    224848,
+    41584
+  ],
+  "expected": [
+    23294460,
+    58627800,
+    31433400,
+    6461620,
+    6180020,
+    4047644,
+    3473184,
+    224848,
+    41584
+  ],
+  "matched": true
+}

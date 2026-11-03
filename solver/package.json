@@ -2,6 +2,12 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "test": "node --test solver.test.mjs"
+    "test": "node --test *.test.mjs",
+    "check:equities": "node tools/check-equities.mjs",
+    "solve:lp": "python tools/independent-lp.py",
+    "certify": "node tools/certify.mjs",
+    "regenerate": "bash tools/regenerate.sh",
+    "test:browser": "node tools/browser-check.cjs",
+    "check:evaluator": "node tools/exhaustive-evaluator.mjs"
   }
 }

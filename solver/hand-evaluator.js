@@ -8,9 +8,15 @@ export function parseCard(card){
  if(r<0||s<0)throw Error('Invalid card: '+card);
  return {id:r*4+s,rank:r+2,suit:s};
 }
+// Parsed card objects are public inputs too: never trust a forged id/rank/suit.
+export function normalizeCard(card){
+ if(typeof card==='string')return parseCard(card);
+ if(!card||!Number.isInteger(card.id)||card.id<0||card.id>=52||card.rank!==Math.floor(card.id/4)+2||card.suit!==card.id%4)throw Error('Invalid parsed card');
+ return card;
+}
 export function evaluate(cards){
  if(!Array.isArray(cards)||cards.length<5||cards.length>7)throw Error('Expected 5-7 cards');
- const c=cards.map(x=>typeof x==='string'?parseCard(x):x);
+ const c=cards.map(normalizeCard);
  if(new Set(c.map(x=>x.id)).size!==c.length)throw Error('Duplicate cards');
  let best=null;
  for(let a=0;a<c.length-4;a++)for(let b=a+1;b<c.length-3;b++)for(let d=b+1;d<c.length-2;d++)for(let e=d+1;e<c.length-1;e++)for(let f=e+1;f<c.length;f++){

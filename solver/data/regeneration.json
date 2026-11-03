@@ -1,0 +1,7 @@
+{
+  "method": "Complete native exact enumeration, byte-for-byte comparison against pinned matrix",
+  "sha256": "9f2a641fbdfde0659533e68e3a38cafde4924d14143f9583978861d3591df40d",
+  "matchups": 47008,
+  "boardsPerMatchup": 1712304,
+  "matched": true
+}
