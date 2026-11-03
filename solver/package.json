@@ -16,6 +16,7 @@
     "export:btn-mini": "node tools/export-btn-mini.mjs",
     "check:btn-mini": "python tools/check-btn-mini.py",
     "certify:btn-mini": "node tools/certify-btn-mini.mjs",
-    "status:practical": "node tools/practical-status.mjs"
+    "status:practical": "node tools/practical-status.mjs",
+    "audit:practical": "node tools/practical-audit.mjs"
   }
 }

@@ -356,6 +356,14 @@
     "documentation": "docs/PRACTICAL30.md",
     "reraiseDocumentation": "docs/RERAISES30.md"
   },
+  "conditionalAllInAudit": {
+    "available": true,
+    "gtoVerified": false,
+    "models": 3,
+    "seatPairs": 36,
+    "opponentRangesAreHypotheses": true,
+    "documentation": "docs/STRATEGY-AUDIT30.md"
+  },
   "implementation": "Practical categorical reference ranges plus separate verified HU and reduced-game laboratory. Full 9-max MTT GTO remains unverified.",
   "blockers": [
     "No independently validated full-game 9-max 30BB strategy dataset with redistribution rights.",

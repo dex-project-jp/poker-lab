@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "revision": 7,
-  "version": "0.7.0",
-  "build": "reraises-7"
+  "revision": 8,
+  "version": "0.8.0",
+  "build": "audit-8"
 }

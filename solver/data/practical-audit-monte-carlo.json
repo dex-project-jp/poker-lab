@@ -1,0 +1,159 @@
+{
+  "method": "Independent physical combo rejection sampling and JS evaluator vs native exhaustive matrix counts",
+  "seedHex": "591a8e31",
+  "sourceSha256": "c7506a2b6b45699dcf45fec4074856c56fa8681403768e68693ca926526cb12f",
+  "matrixSha256": "9f2a641fbdfde0659533e68e3a38cafde4924d14143f9583978861d3591df40d",
+  "warning": "Monte Carlo check only. Error bound assumes independent uniform samples; seeded PRNG is used. Exact actions use integer enumeration counts, never the samples.",
+  "results": [
+    {
+      "hand": "QQ",
+      "model": "value",
+      "hero": [
+        "Qc",
+        "Qd"
+      ],
+      "compatibleVillainCombos": 29,
+      "samples": 60000,
+      "sampleEquity": 0.403675,
+      "exactEquity": 0.40207126852434516,
+      "absoluteError": 0.001603731475654846,
+      "nominalSimultaneousErrorBound": 0.009084550783489576,
+      "passed": true
+    },
+    {
+      "hand": "AKo",
+      "model": "value",
+      "hero": [
+        "Ac",
+        "Kd"
+      ],
+      "compatibleVillainCombos": 21,
+      "samples": 60000,
+      "sampleEquity": 0.3857,
+      "exactEquity": 0.38824406013351437,
+      "absoluteError": 0.002544060133514381,
+      "nominalSimultaneousErrorBound": 0.009084550783489576,
+      "passed": true
+    },
+    {
+      "hand": "AQs",
+      "model": "value",
+      "hero": [
+        "Ac",
+        "Qc"
+      ],
+      "compatibleVillainCombos": 24,
+      "samples": 60000,
+      "sampleEquity": 0.28644166666666665,
+      "exactEquity": 0.28607372727039126,
+      "absoluteError": 0.0003679393962753852,
+      "nominalSimultaneousErrorBound": 0.009084550783489576,
+      "passed": true
+    },
+    {
+      "hand": "JJ",
+      "model": "value",
+      "hero": [
+        "Jc",
+        "Jd"
+      ],
+      "compatibleVillainCombos": 34,
+      "samples": 60000,
+      "sampleEquity": 0.3616333333333333,
+      "exactEquity": 0.3619009997125304,
+      "absoluteError": 0.0002676663791971179,
+      "nominalSimultaneousErrorBound": 0.009084550783489576,
+      "passed": true
+    },
+    {
+      "hand": "22",
+      "model": "value",
+      "hero": [
+        "2c",
+        "2d"
+      ],
+      "compatibleVillainCombos": 34,
+      "samples": 60000,
+      "sampleEquity": 0.33925833333333333,
+      "exactEquity": 0.34028123029830326,
+      "absoluteError": 0.0010228969649699327,
+      "nominalSimultaneousErrorBound": 0.009084550783489576,
+      "passed": true
+    },
+    {
+      "hand": "A5s",
+      "model": "value",
+      "hero": [
+        "Ac",
+        "5c"
+      ],
+      "compatibleVillainCombos": 27,
+      "samples": 60000,
+      "sampleEquity": 0.30141666666666667,
+      "exactEquity": 0.30152534570704476,
+      "absoluteError": 0.00010867904037809017,
+      "nominalSimultaneousErrorBound": 0.009084550783489576,
+      "passed": true
+    },
+    {
+      "hand": "KQo",
+      "model": "value",
+      "hero": [
+        "Kc",
+        "Qd"
+      ],
+      "compatibleVillainCombos": 24,
+      "samples": 60000,
+      "sampleEquity": 0.208625,
+      "exactEquity": 0.2075129596341148,
+      "absoluteError": 0.0011120403658851918,
+      "nominalSimultaneousErrorBound": 0.009084550783489576,
+      "passed": true
+    },
+    {
+      "hand": "KJs",
+      "model": "value",
+      "hero": [
+        "Kc",
+        "Jc"
+      ],
+      "compatibleVillainCombos": 27,
+      "samples": 60000,
+      "sampleEquity": 0.2525,
+      "exactEquity": 0.2575837065796209,
+      "absoluteError": 0.0050837065796208725,
+      "nominalSimultaneousErrorBound": 0.009084550783489576,
+      "passed": true
+    },
+    {
+      "hand": "QJs",
+      "model": "value",
+      "hero": [
+        "Qc",
+        "Jc"
+      ],
+      "compatibleVillainCombos": 31,
+      "samples": 60000,
+      "sampleEquity": 0.2865333333333333,
+      "exactEquity": 0.28432992867712065,
+      "absoluteError": 0.0022034046562126597,
+      "nominalSimultaneousErrorBound": 0.009084550783489576,
+      "passed": true
+    },
+    {
+      "hand": "AKs",
+      "model": "tight",
+      "hero": [
+        "Ac",
+        "Kc"
+      ],
+      "compatibleVillainCombos": 9,
+      "samples": 60000,
+      "sampleEquity": 0.31905833333333333,
+      "exactEquity": 0.32082299638381967,
+      "absoluteError": 0.001764663050486337,
+      "nominalSimultaneousErrorBound": 0.009084550783489576,
+      "passed": true
+    }
+  ]
+}
