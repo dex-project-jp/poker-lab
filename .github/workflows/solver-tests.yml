@@ -4,6 +4,8 @@ on:
     paths:
       - 'solver/**'
       - 'index.html'
+      - 'app/**'
+      - 'version.json'
       - '.github/workflows/solver-tests.yml'
   pull_request:
   workflow_dispatch:
@@ -70,6 +72,11 @@ jobs:
         if: ${{ github.event_name == 'workflow_dispatch' && inputs.regenerate }}
         run: npm run regenerate --prefix solver
   mobile-ui:
+    strategy:
+      matrix:
+        browser: [chromium, webkit]
+    env:
+      POKER_BROWSER: ${{ matrix.browser }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -77,6 +84,6 @@ jobs:
         with:
           node-version: '22'
       - run: npm install --no-save playwright@1.62.1
-      - run: npx playwright install --with-deps chromium
+      - run: npx playwright install --with-deps ${{ matrix.browser }}
       - name: Check mobile interactions and fail-closed display
         run: node solver/tools/browser-check.cjs

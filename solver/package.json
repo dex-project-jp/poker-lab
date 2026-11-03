@@ -2,7 +2,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "test": "node --test *.test.mjs",
+    "test": "node --test *.test.mjs ../app/*.test.mjs",
     "check:equities": "node tools/check-equities.mjs",
     "solve:lp": "python tools/independent-lp.py",
     "certify": "node tools/certify.mjs",
