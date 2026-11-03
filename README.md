@@ -147,3 +147,12 @@ Call/Foldと条件付きEVを比較できます。初期値は従来参考表で
 [監査結果・資料・利用条件・全差分](docs/STRATEGY-AUDIT30.md) を参照してください。
 再生成確認は `npm run audit:practical --prefix solver -- --check`、独立照合は
 `node solver/tools/practical-audit-monte-carlo.mjs --check` です。
+
+
+## v0.9 iPhoneの段階選択と自由サイズ
+
+「状況 → 役割・位置 → サイズ」の順に必要な欄を開き、選択済み見出しから再編集できます。
+スタック・アンティ・学習モードは設定シートへ移動。レンジと選択ハンドを主役に保ちます。
+サイズはプリセットと0.01BB単位の自由入力。ポット・追加Call・残り・最小レイズを再計算し、
+未対応サイズには「このサイズの推奨レンジは未検証」と表示して既存レンジを流用しません。
+[操作と計算の仕様](docs/PROGRESSIVE-UI.md) を参照してください。

@@ -32,7 +32,7 @@
   const current=validate(JSON.parse(config.textContent)),status=doc.getElementById('updateStatus'),panel=doc.getElementById('updatePanel'),checkButton=doc.getElementById('checkUpdate'),refreshButton=doc.getElementById('refreshApp');
   doc.getElementById('installedVersion').textContent='Poker Lab v'+current.version;
   const api=create({current,baseURL:win.location.href,fetch:win.fetch.bind(win),navigate:url=>win.location.replace(url),notify:s=>{
-   panel.dataset.state=s.state;const newer=s.latest.revision>s.current.revision;
+   panel.dataset.state=s.state;if(s.state==='available')panel.open=true;const newer=s.latest.revision>s.current.revision;
    const texts={checking:'更新を確認中…',current:'最新版です。',available:'新しい版 v'+s.latest.version+' があります。更新ボタンで読み込めます。',offline:newer?'新しい版があります。通信できません。接続後に更新してください。':'更新を確認できません。通信を確認して再試行してください。',reloading:'最新版を読み込んでいます…'};
    status.textContent=texts[s.state];checkButton.disabled=s.state==='checking'||s.state==='reloading';refreshButton.disabled=s.state==='reloading';refreshButton.textContent=newer?'↻ v'+s.latest.version+' に更新':'↻ 最新版を読み込む';
   }});
