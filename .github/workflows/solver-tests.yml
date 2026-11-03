@@ -40,7 +40,7 @@ jobs:
           except subprocess.CalledProcessError:
               files = ['solver/game.js']
           mtt_only = {'solver/mtt-model.js', 'solver/mtt.test.mjs', 'solver/tools/mtt-status.mjs', 'solver/tools/check-mtt-bundle.mjs', 'solver/tools/browser-check.cjs'}
-          hu_math = any(p.startswith('solver/') and p not in mtt_only and 'practical' not in p and p != 'solver/package.json' and not p.startswith('solver/btn-mini') and '/btn-mini' not in p and 'btn-mini' not in p and not p.startswith('solver/data/mtt') for p in files)
+          hu_math = any(p.startswith('solver/') and p not in mtt_only and 'practical' not in p and p != 'solver/package.json' and not p.startswith('solver/btn-mini') and '/btn-mini' not in p and 'btn-mini' not in p and not p.startswith('solver/data/mtt') and 'mtt10' not in p and 'multiplayer' not in p for p in files)
           with open(os.environ['GITHUB_OUTPUT'], 'a') as f:
               f.write('hu_math=' + str(hu_math).lower() + '\n')
           PYTHON
@@ -62,6 +62,13 @@ jobs:
           npm run check:btn-mini -- --check
           npm run certify:btn-mini
           git diff --exit-code -- data/btn-mini-strategy.js data/btn-mini-validation.json
+      - name: Independently verify all nine restricted-game best responses
+        run: |
+          cd solver
+          npm run export:mtt10
+          npm run check:mtt10 -- --check
+          npm run certify:mtt10
+          git diff --exit-code -- data/mtt10-strategy.js data/mtt10-validation.json
       - name: Verify conditional all-in audit and source data
         run: |
           npm run audit:practical --prefix solver -- --check

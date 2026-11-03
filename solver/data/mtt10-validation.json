@@ -1,0 +1,284 @@
+{
+  "scope": "nine-player-restricted-known-board-only",
+  "quality": "approximate-computation",
+  "fullMTTGTO": false,
+  "config": {
+    "id": "mtt9-10bb-known-board-drop-one-v1",
+    "players": 9,
+    "seats": [
+      "UTG",
+      "UTG+1",
+      "UTG+2",
+      "LJ",
+      "HJ",
+      "CO",
+      "BTN",
+      "SB",
+      "BB"
+    ],
+    "stacksBeforePostsBB": [
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10
+    ],
+    "sbBlind": 0.5,
+    "bbBlind": 1,
+    "bbAnte": 1,
+    "model": "chipEV",
+    "rake": 0,
+    "icm": false,
+    "bounty": false,
+    "board": [
+      "2c",
+      "2d",
+      "2h",
+      "3c",
+      "3d"
+    ],
+    "boardKnownBeforeBetting": true,
+    "privateHandModel": "18 equiprobable chance tickets over 10 distinct rank worlds: world 0 (UTG has 55) has 9 tickets, worlds 1..9 one ticket each. In world w<9 seat w has 55 instead of its base pair; world 9 is the base AA..66 allocation. Each pair has six equally weighted suit combos.",
+    "rankWorlds": 10,
+    "chanceTickets": 18,
+    "physicalDeals": "100776960",
+    "chanceReduction": "10 distinct worlds * 6^9; chance weights 9:1:1:1:1:1:1:1:1:1; pair ranks across seats and board are disjoint, suits have identical showdown order",
+    "actions": [
+      "fold",
+      "allin",
+      "call"
+    ],
+    "overcalls": true,
+    "postflop": "none; known board showdown",
+    "fullDeckGTO": false
+  },
+  "nodes": 18378,
+  "informationSets": 1020,
+  "uiViews": 128,
+  "search": {
+    "algorithm": "simultaneous multiplayer CFR+; current and linear-average checked; no convergence theorem claimed",
+    "target": 0.00001,
+    "iterations": 20000,
+    "selectedIteration": 20000,
+    "selectedPolicy": "linear-average",
+    "targetReached": false,
+    "history": [
+      {
+        "iteration": 1000,
+        "epsilon": 0.00998410302404551,
+        "nashConv": 0.024829475168133743
+      },
+      {
+        "iteration": 2000,
+        "epsilon": 0.0060974476672320255,
+        "nashConv": 0.010604449641066795
+      },
+      {
+        "iteration": 3000,
+        "epsilon": 0.0049578386245994754,
+        "nashConv": 0.007914193079264123
+      },
+      {
+        "iteration": 4000,
+        "epsilon": 0.004247410763257797,
+        "nashConv": 0.00847353247277557
+      },
+      {
+        "iteration": 5000,
+        "epsilon": 0.003713955231720245,
+        "nashConv": 0.007916123885076315
+      },
+      {
+        "iteration": 6000,
+        "epsilon": 0.0033367085725762857,
+        "nashConv": 0.004906340875647126
+      },
+      {
+        "iteration": 7000,
+        "epsilon": 0.0030603784847436644,
+        "nashConv": 0.006257554578636178
+      },
+      {
+        "iteration": 8000,
+        "epsilon": 0.0028523567755066037,
+        "nashConv": 0.004537064979043133
+      },
+      {
+        "iteration": 9000,
+        "epsilon": 0.00266531240905038,
+        "nashConv": 0.003467728428706623
+      },
+      {
+        "iteration": 10000,
+        "epsilon": 0.00252455309041133,
+        "nashConv": 0.003293972189390331
+      },
+      {
+        "iteration": 11000,
+        "epsilon": 0.0023988180712174456,
+        "nashConv": 0.004773036143590655
+      },
+      {
+        "iteration": 12000,
+        "epsilon": 0.002303410290560526,
+        "nashConv": 0.004287844425952529
+      },
+      {
+        "iteration": 13000,
+        "epsilon": 0.002211930162843101,
+        "nashConv": 0.00329752900919858
+      },
+      {
+        "iteration": 14000,
+        "epsilon": 0.0021301494622341655,
+        "nashConv": 0.003082189780245785
+      },
+      {
+        "iteration": 15000,
+        "epsilon": 0.0020535713577974346,
+        "nashConv": 0.003829640529986078
+      },
+      {
+        "iteration": 16000,
+        "epsilon": 0.0019739593440851744,
+        "nashConv": 0.003095820167980831
+      },
+      {
+        "iteration": 17000,
+        "epsilon": 0.0019261732379246,
+        "nashConv": 0.0031255219482921584
+      },
+      {
+        "iteration": 18000,
+        "epsilon": 0.0018540315999912016,
+        "nashConv": 0.0034361910080959704
+      },
+      {
+        "iteration": 19000,
+        "epsilon": 0.0018038101131667705,
+        "nashConv": 0.0028463601574884962
+      },
+      {
+        "iteration": 20000,
+        "epsilon": 0.0017566462863988774,
+        "nashConv": 0.0023342812120105217
+      }
+    ]
+  },
+  "resources": {
+    "nodeVersion": "v24.22.1",
+    "platform": "linux",
+    "arch": "x64",
+    "buildMs": 117.79254600000002,
+    "elapsedMs": 48564.687362000004,
+    "maxRSSMiB": 224.48046875,
+    "heapUsedMiB": 53.269981384277344,
+    "nodes": 18378,
+    "informationSets": 1020
+  },
+  "verifiedBound": {
+    "method": "Independent Python tree rebuild, five-card-subset evaluator, half-BB pot slices, sparse LP and exact rational unilateral best responses",
+    "passed": true,
+    "candidateSha256": "9722b5021d16924dda35c03c89b6743719dbe517119057e6db97cae0facd98d3",
+    "treeSha256": "caaf0b95511908b8a3efd73bace054038004f3ca78a5ce0826894177cee08def",
+    "physicalDealsDistinct": 100776960,
+    "chanceTickets": 18,
+    "terminalsAudited": 9198,
+    "values": [
+      2.025197305021906,
+      0.4764645226383508,
+      -0.0000012697042299957475,
+      -0.0000015996942569572527,
+      -0.0000017115876800146543,
+      -0.0000017802232673237889,
+      -0.0000015304814253522493,
+      -0.5017566451472368,
+      -1.9998972908221604
+    ],
+    "bestResponses": [
+      2.025386943165209,
+      0.47646533072912645,
+      1.2307084432792523e-9,
+      3.016972441311615e-18,
+      7.145055974351673e-27,
+      1.6512334096604675e-35,
+      3.74691124179009e-44,
+      -0.5,
+      -1.9995180092815183
+    ],
+    "lpBestResponses": [
+      2.025386943165209,
+      0.47646533072912645,
+      1.2307084432792526e-9,
+      -1.4274719942439411e-18,
+      -3.6203709970495116e-17,
+      -6.351863939462006e-17,
+      -9.845720525782436e-17,
+      -0.5000000000000002,
+      -1.999518009281519
+    ],
+    "gains": [
+      0.00018963814330321568,
+      8.080907756074922e-7,
+      0.0000012709349384390268,
+      0.0000015996942569602696,
+      0.0000017115876800146543,
+      0.0000017802232673237889,
+      0.0000015304814253522493,
+      0.0017566451472367816,
+      0.00037928154064200423
+    ],
+    "epsilon": 0.0017566451472367816,
+    "nashConv": 0.0023342658435256992,
+    "toleranceBB": 0.002,
+    "exactRational": {
+      "epsilonNumerator": "54895160851149427219306768107123696837409217388517233986379871659091045065267",
+      "epsilonDenominator": "31250000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "nashConvNumerator": "21008392591731291533496442332995228215563094653155147401403771403255637",
+      "nashConvDenominator": "9000000000000000000000000000000000000000000000000000000000000000000000000",
+      "passed": true
+    }
+  },
+  "evaluation": {
+    "values": [
+      2.025197305021906,
+      0.4764645226383509,
+      -0.0000012697042299957451,
+      -0.0000015996942569572512,
+      -0.000001711587680014653,
+      -0.0000017802232673237901,
+      -0.0000015304814253522512,
+      -0.501756645147237,
+      -1.9998972908221593
+    ],
+    "bestResponses": [
+      2.0253869431652087,
+      0.4764653307291264,
+      1.2307084432792523e-9,
+      3.0169724413116134e-18,
+      7.145055974351673e-27,
+      1.6512334096604675e-35,
+      3.746911241790092e-44,
+      -0.5000000000000001,
+      -1.9995180092815181
+    ],
+    "gains": [
+      0.00018963814330286155,
+      8.08090775517023e-7,
+      0.0000012709349384390245,
+      0.0000015996942569602682,
+      0.000001711587680014653,
+      0.0000017802232673237901,
+      0.0000015304814253522512,
+      0.001756645147236835,
+      0.00037928154064115205
+    ],
+    "nashConv": 0.0023342658435244554,
+    "epsilon": 0.001756645147236835,
+    "unit": "BB/dealt-hand"
+  }
+}

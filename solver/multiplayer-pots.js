@@ -1,0 +1,10 @@
+// General chip-slice settlement, independent of training or hand abstractions.
+import{fastEvaluate7}from'./fast-equity.js';import{compare,parseCard}from'./hand-evaluator.js';
+export function distribute({live,ante,folded},scores){const n=live.length;if(n<2||ante.length!==n||folded.length!==n||scores.length!==n||scores.some(s=>!Array.isArray(s)||s.length<2||s.some(x=>!Number.isFinite(x)))||live.some(x=>!Number.isFinite(x)||x<0)||ante.some(x=>!Number.isFinite(x)||x<0)||folded.some(x=>typeof x!=='boolean'))throw Error('Invalid pot inputs');
+ const active=folded.map((f,p)=>!f?p:-1).filter(p=>p>=0);if(!active.length)throw Error('No active hand');const awards=Array(n).fill(0),refunds=Array(n).fill(0),pots=[];
+ function award(amount,eligible,kind){if(!eligible.length)throw Error('No eligible hand');let best=eligible[0];for(const p of eligible)if(compare(scores[p],scores[best])>0)best=p;const winners=eligible.filter(p=>compare(scores[p],scores[best])===0);for(const p of winners)awards[p]+=amount/winners.length;pots.push({amount,eligible,winners,kind});}
+ award(ante.reduce((a,b)=>a+b,0),active,'dead-ante');let prev=0;
+ for(const level of [...new Set(live.filter(v=>v>0))].sort((a,b)=>a-b)){const payers=live.map((v,p)=>v>=level?p:-1).filter(p=>p>=0),amount=(level-prev)*payers.length;if(payers.length===1){awards[payers[0]]+=amount;refunds[payers[0]]+=amount;pots.push({amount,eligible:payers,winners:payers,kind:'uncalled-return'});}else award(amount,payers.filter(p=>!folded[p]),'live-pot');prev=level;}
+ const utility=awards.map((a,p)=>a-live[p]-ante[p]);if(Math.abs(utility.reduce((a,b)=>a+b,0))>1e-9)throw Error('Chip conservation failure');return{awards,refunds,utility,pots};
+}
+export function showdown(state,hands,board){if(board?.length!==5||hands?.length!==state.live.length||hands.some(h=>h?.length!==2))throw Error('Invalid showdown');const all=[...hands.flat(),...board].map(parseCard);if(new Set(all.map(c=>c.id)).size!==all.length)throw Error('Overlapping cards');return distribute(state,hands.map(h=>fastEvaluate7([...h,...board])));}

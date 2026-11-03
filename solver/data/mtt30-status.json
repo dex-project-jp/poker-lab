@@ -356,6 +356,17 @@
     "documentation": "docs/PRACTICAL30.md",
     "reraiseDocumentation": "docs/RERAISES30.md"
   },
+  "ninePlayerTenBBLab": {
+    "available": true,
+    "fullMTTGTO": false,
+    "quality": "approximate-computation",
+    "knownBoard": true,
+    "specialPrivateDealWorlds": 10,
+    "allNinePlayersActive": true,
+    "epsilonBoundBB": 0.002,
+    "documentation": "docs/MTT10-ENGINE.md",
+    "validation": "solver/data/mtt10-validation.json"
+  },
   "conditionalAllInAudit": {
     "available": true,
     "gtoVerified": false,

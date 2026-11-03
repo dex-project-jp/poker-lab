@@ -17,6 +17,10 @@
     "check:btn-mini": "python tools/check-btn-mini.py",
     "certify:btn-mini": "node tools/certify-btn-mini.mjs",
     "status:practical": "node tools/practical-status.mjs",
-    "audit:practical": "node tools/practical-audit.mjs"
+    "audit:practical": "node tools/practical-audit.mjs",
+    "solve:mtt10": "node tools/solve-mtt10.mjs",
+    "export:mtt10": "node tools/export-mtt10.mjs",
+    "check:mtt10": "python tools/check-mtt10.py",
+    "certify:mtt10": "node tools/certify-mtt10.mjs"
   }
 }
