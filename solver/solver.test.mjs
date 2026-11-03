@@ -73,3 +73,17 @@ test('AA versus KK exact equity across all 1,712,304 boards',async()=>{
  assert.deepEqual({wins:result.wins,ties:result.ties,losses:result.losses,total:result.total},{wins:1388072,ties:6538,losses:317694,total:1712304});
  assert.ok(Math.abs(result.equity-0.8125548967940273)<1e-12);
 });
+
+test('best response uses opponent call frequency and matchup equity',async()=>{
+ const {bestResponses}=await import('./best-response.js');
+ const sbHands=[{probability:1,cards:[0,1]}],bbHands=[{probability:1,cards:[2,3]}];
+ const r=bestResponses({sbHands,bbHands,equity:[[0.8]],stackBB:10,sbShove:[1],bbCall:[1]});
+ assert.ok(Math.abs(r.sbEV[0].shove-6)<1e-12);
+ assert.equal(r.sbBest[0],1);assert.equal(r.bbBest[0],0);
+});
+test('blocked matchups are excluded and BB can have no facing shove',async()=>{
+ const {bestResponses}=await import('./best-response.js');
+ const sbHands=[{probability:0.5},{probability:0.5}],bbHands=[{probability:0.5},{probability:0.5}];
+ const r=bestResponses({sbHands,bbHands,equity:[[null,0.8],[0.2,null]],stackBB:10,sbShove:[0,0],bbCall:[0,0]});
+ assert.equal(r.sbEV[0].shove,1);assert.equal(r.bbBest[0],null);
+});
