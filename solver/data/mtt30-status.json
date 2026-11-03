@@ -342,7 +342,16 @@
     "documentation": "docs/BTN30-SOLVER.md",
     "validation": "solver/data/btn-mini-validation.json"
   },
-  "implementation": "Configuration, open nodes, exact-condition matching, structural validation and UI only. No multiway solver implemented.",
+  "practicalReferences": {
+    "available": true,
+    "kind": "original-strategy-design",
+    "gtoVerified": false,
+    "openPositions": 8,
+    "responseSpots": 36,
+    "handsPerSpot": 169,
+    "documentation": "docs/PRACTICAL30.md"
+  },
+  "implementation": "Practical categorical reference ranges plus separate verified HU and reduced-game laboratory. Full 9-max MTT GTO remains unverified.",
   "blockers": [
     "No independently validated full-game 9-max 30BB strategy dataset with redistribution rights.",
     "Existing HU push/fold solver cannot solve normal opens and postflop continuations."
