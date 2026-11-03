@@ -114,3 +114,17 @@ test('iterative solver validates effective stack',async()=>{
  const {solvePushFold}=await import('./nash-iteration.js');
  assert.throws(()=>solvePushFold({sbHands:[{probability:1}],bbHands:[{probability:1}],equity:[[0.5]],stackBB:1}));
 });
+
+test('1326 unique combos and exactly 1225 compatible opponents',async()=>{
+ const {allCombos,overlaps}=await import('./equity-matrix.js');
+ const hands=allCombos();assert.equal(hands.length,1326);
+ assert.equal(new Set(hands.map(x=>x.join(''))).size,1326);
+ assert.equal(hands.filter(h=>!overlaps(hands[0],h)).length,1225);
+});
+test('equity batch validates bounds and reports incomplete',async()=>{
+ const {buildEquityBatch}=await import('./equity-matrix.js');
+ const hands=[['As','Ah']];
+ assert.throws(()=>buildEquityBatch({sbHands:hands,bbHands:hands,start:2,count:1}));
+ const r=buildEquityBatch({sbHands:hands,bbHands:hands,start:0,count:1});
+ assert.deepEqual(r.rows,[[null]]);assert.equal(r.verified,false);
+});
