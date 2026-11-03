@@ -1,0 +1,345 @@
+{
+  "schemaVersion": 1,
+  "priority": "9-max MTT 30BB opens",
+  "game": {
+    "variant": "NLHE",
+    "format": "MTT",
+    "model": "chipEV",
+    "players": 9,
+    "positions": [
+      "UTG",
+      "UTG+1",
+      "UTG+2",
+      "LJ",
+      "HJ",
+      "CO",
+      "BTN",
+      "SB",
+      "BB"
+    ],
+    "stacksBeforePostsBB": {
+      "UTG": 30,
+      "UTG+1": 30,
+      "UTG+2": 30,
+      "LJ": 30,
+      "HJ": 30,
+      "CO": 30,
+      "BTN": 30,
+      "SB": 30,
+      "BB": 30
+    },
+    "stackBaseline": "before blinds and antes",
+    "sbBlind": 0.5,
+    "bbBlind": 1,
+    "ante": {
+      "type": "big-blind",
+      "amountBB": 1
+    },
+    "rake": 0,
+    "openRaiseToBB": 2,
+    "sbRaiseToBB": 2.5,
+    "limps": "SB-only",
+    "bounty": false,
+    "icm": false
+  },
+  "posting": {
+    "potBB": 2.5,
+    "contributions": {
+      "UTG": 0,
+      "UTG+1": 0,
+      "UTG+2": 0,
+      "LJ": 0,
+      "HJ": 0,
+      "CO": 0,
+      "BTN": 0,
+      "SB": 0.5,
+      "BB": 2
+    },
+    "remaining": {
+      "UTG": 30,
+      "UTG+1": 30,
+      "UTG+2": 30,
+      "LJ": 30,
+      "HJ": 30,
+      "CO": 30,
+      "BTN": 30,
+      "SB": 29.5,
+      "BB": 28
+    }
+  },
+  "positions": [
+    {
+      "hero": "UTG",
+      "node": {
+        "hero": "UTG",
+        "history": [],
+        "toAct": [
+          "UTG",
+          "UTG+1",
+          "UTG+2",
+          "LJ",
+          "HJ",
+          "CO",
+          "BTN",
+          "SB",
+          "BB"
+        ]
+      },
+      "status": "pending",
+      "raiseToBB": 2,
+      "frequencies": null
+    },
+    {
+      "hero": "UTG+1",
+      "node": {
+        "hero": "UTG+1",
+        "history": [
+          {
+            "seat": "UTG",
+            "action": "fold"
+          }
+        ],
+        "toAct": [
+          "UTG+1",
+          "UTG+2",
+          "LJ",
+          "HJ",
+          "CO",
+          "BTN",
+          "SB",
+          "BB"
+        ]
+      },
+      "status": "pending",
+      "raiseToBB": 2,
+      "frequencies": null
+    },
+    {
+      "hero": "UTG+2",
+      "node": {
+        "hero": "UTG+2",
+        "history": [
+          {
+            "seat": "UTG",
+            "action": "fold"
+          },
+          {
+            "seat": "UTG+1",
+            "action": "fold"
+          }
+        ],
+        "toAct": [
+          "UTG+2",
+          "LJ",
+          "HJ",
+          "CO",
+          "BTN",
+          "SB",
+          "BB"
+        ]
+      },
+      "status": "pending",
+      "raiseToBB": 2,
+      "frequencies": null
+    },
+    {
+      "hero": "LJ",
+      "node": {
+        "hero": "LJ",
+        "history": [
+          {
+            "seat": "UTG",
+            "action": "fold"
+          },
+          {
+            "seat": "UTG+1",
+            "action": "fold"
+          },
+          {
+            "seat": "UTG+2",
+            "action": "fold"
+          }
+        ],
+        "toAct": [
+          "LJ",
+          "HJ",
+          "CO",
+          "BTN",
+          "SB",
+          "BB"
+        ]
+      },
+      "status": "pending",
+      "raiseToBB": 2,
+      "frequencies": null
+    },
+    {
+      "hero": "HJ",
+      "node": {
+        "hero": "HJ",
+        "history": [
+          {
+            "seat": "UTG",
+            "action": "fold"
+          },
+          {
+            "seat": "UTG+1",
+            "action": "fold"
+          },
+          {
+            "seat": "UTG+2",
+            "action": "fold"
+          },
+          {
+            "seat": "LJ",
+            "action": "fold"
+          }
+        ],
+        "toAct": [
+          "HJ",
+          "CO",
+          "BTN",
+          "SB",
+          "BB"
+        ]
+      },
+      "status": "pending",
+      "raiseToBB": 2,
+      "frequencies": null
+    },
+    {
+      "hero": "CO",
+      "node": {
+        "hero": "CO",
+        "history": [
+          {
+            "seat": "UTG",
+            "action": "fold"
+          },
+          {
+            "seat": "UTG+1",
+            "action": "fold"
+          },
+          {
+            "seat": "UTG+2",
+            "action": "fold"
+          },
+          {
+            "seat": "LJ",
+            "action": "fold"
+          },
+          {
+            "seat": "HJ",
+            "action": "fold"
+          }
+        ],
+        "toAct": [
+          "CO",
+          "BTN",
+          "SB",
+          "BB"
+        ]
+      },
+      "status": "pending",
+      "raiseToBB": 2,
+      "frequencies": null
+    },
+    {
+      "hero": "BTN",
+      "node": {
+        "hero": "BTN",
+        "history": [
+          {
+            "seat": "UTG",
+            "action": "fold"
+          },
+          {
+            "seat": "UTG+1",
+            "action": "fold"
+          },
+          {
+            "seat": "UTG+2",
+            "action": "fold"
+          },
+          {
+            "seat": "LJ",
+            "action": "fold"
+          },
+          {
+            "seat": "HJ",
+            "action": "fold"
+          },
+          {
+            "seat": "CO",
+            "action": "fold"
+          }
+        ],
+        "toAct": [
+          "BTN",
+          "SB",
+          "BB"
+        ]
+      },
+      "status": "pending",
+      "raiseToBB": 2,
+      "frequencies": null
+    },
+    {
+      "hero": "SB",
+      "node": {
+        "hero": "SB",
+        "history": [
+          {
+            "seat": "UTG",
+            "action": "fold"
+          },
+          {
+            "seat": "UTG+1",
+            "action": "fold"
+          },
+          {
+            "seat": "UTG+2",
+            "action": "fold"
+          },
+          {
+            "seat": "LJ",
+            "action": "fold"
+          },
+          {
+            "seat": "HJ",
+            "action": "fold"
+          },
+          {
+            "seat": "CO",
+            "action": "fold"
+          },
+          {
+            "seat": "BTN",
+            "action": "fold"
+          }
+        ],
+        "toAct": [
+          "SB",
+          "BB"
+        ]
+      },
+      "status": "pending",
+      "raiseToBB": 2.5,
+      "frequencies": null
+    },
+    {
+      "hero": "BB",
+      "node": null,
+      "status": "not-applicable",
+      "raiseToBB": null,
+      "frequencies": null
+    }
+  ],
+  "numericalRangesPublished": false,
+  "implementation": "Configuration, open nodes, exact-condition matching, structural validation and UI only. No multiway solver implemented.",
+  "blockers": [
+    "No independently validated full-game 9-max 30BB strategy dataset with redistribution rights.",
+    "Existing HU push/fold solver cannot solve normal opens and postflop continuations."
+  ],
+  "additionalFeesIncurred": false
+}

@@ -10,6 +10,7 @@
     "test:browser": "node tools/browser-check.cjs",
     "check:evaluator": "node tools/exhaustive-evaluator.mjs",
     "solve:range": "python tools/independent-lp.py --all",
-    "certify:range": "node tools/certify-range.mjs"
+    "certify:range": "node tools/certify-range.mjs",
+    "status:mtt": "node tools/mtt-status.mjs"
   }
 }

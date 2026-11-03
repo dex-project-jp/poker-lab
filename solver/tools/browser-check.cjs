@@ -5,35 +5,33 @@ const root=path.resolve(__dirname,'../..');
 const server=http.createServer((req,res)=>{const target=path.resolve(root,'.'+decodeURIComponent(new URL(req.url,'http://localhost').pathname));if(!target.startsWith(root+path.sep)&&target!==root){res.writeHead(403);return res.end();}try{const file=target===root?path.join(root,'index.html'):target;res.setHeader('Content-Type',file.endsWith('.js')?'text/javascript':file.endsWith('.html')?'text/html':'application/octet-stream');res.end(fs.readFileSync(file));}catch{res.writeHead(404);res.end();}});
 (async()=>{
  await new Promise(r=>server.listen(0,'127.0.0.1',r));const url=`http://127.0.0.1:${server.address().port}/index.html`,browser=await chromium.launch({headless:true});
- let checks=0;try{
+ let checks=0;
+ const flag=page=>page.locator('#dataFlag').textContent();
+ async function initial(page){assert.equal(await page.locator('#studyMode').inputValue(),'mtt9');assert.equal(await page.locator('#mttStack').inputValue(),'30');assert.equal(await page.locator('#players').inputValue(),'9');assert.equal(await page.locator('#positions button').count(),9);assert.equal(await page.locator('#positions button.active').textContent(),'UTG');assert.equal(await flag(page),'30BB · 検証待ち');assert.match(await page.locator('#mttConditions').textContent(),/BBアンティ 1BB/);assert.match(await page.locator('#mttConditions').textContent(),/開始ポット 2.5BB/);assert.match(await page.locator('#mttConditions').textContent(),/Chip EV/);}
+ try{
  for(const width of [375,390,430]){
-  const page=await browser.newPage({viewport:{width,height:844},isMobile:true,hasTouch:true});const errors=[];page.on('pageerror',e=>errors.push(e.message));
-  await page.goto(url);assert.equal(await page.locator('.cell').count(),169);assert.equal(await page.locator('#dataFlag').textContent(),'GTOデータ未接続');
-  await page.locator('#hu10').click();assert.match(await page.locator('#dataFlag').textContent(),/検証済み/);
+  const page=await browser.newPage({viewport:{width,height:844},isMobile:true,hasTouch:true}),errors=[];page.on('pageerror',e=>errors.push(e.message));
+  await page.goto(url);await initial(page);assert.equal(await page.locator('.cell').count(),169);assert.equal(await page.locator('#mttStack option').count(),91);
+  for(const pos of ['UTG','UTG+1','UTG+2','LJ','HJ','CO','BTN','SB']){await page.locator('#positions').getByRole('button',{name:pos,exact:true}).click();assert.equal(await flag(page),'30BB · 検証待ち');assert.ok((await page.locator('.actionPercent').allTextContents()).every(t=>t==='— %'));}
+  await page.locator('#positions').getByRole('button',{name:'BB',exact:true}).click();assert.equal(await flag(page),'オープン対象外');
+  await page.locator('#mttStack').selectOption('100');assert.match(await page.locator('#mttStack option:checked').textContent(),/未対応/);await page.locator('#positions').getByRole('button',{name:'UTG',exact:true}).click();assert.equal(await flag(page),'未対応');
+  await page.locator('#mttStack').selectOption('30');await page.locator('#toggle').click();await page.locator('#openRaise').fill('2.2');assert.equal(await flag(page),'未対応');await page.locator('#openRaise').fill('2');assert.equal(await flag(page),'30BB · 検証待ち');await page.locator('#anteAmount').fill('.5');assert.match(await page.locator('#mttConditions').textContent(),/開始ポット 2BB/);assert.equal(await flag(page),'未対応');await page.locator('#close').click();
+  await page.locator('#scenario').selectOption('vs3bet');assert.equal(await flag(page),'未対応');
+  await page.locator('#studyMode').selectOption('hu');assert.match(await flag(page),/10BB/);
   await page.getByRole('button',{name:'43s',exact:true}).click();assert.equal(await page.locator('.actionPercent').first().textContent(),'71.1 %');
-  assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
-  await page.getByRole('button',{name:'BB',exact:true}).click();assert.equal(await page.locator('#scenario').inputValue(),'vsshove');
-  await page.getByRole('button',{name:'AA',exact:true}).click();assert.equal(await page.locator('.actionPercent').nth(2).textContent(),'100.0 %');
-  await page.locator('#scenario').selectOption('vsopen');assert.equal(await page.locator('#dataFlag').textContent(),'GTOデータ未接続');assert.equal(await page.locator('.actionPercent').nth(2).textContent(),'— %');
-  await page.locator('#hu10').click();await page.locator('#toggle').click();await page.locator('#ante').selectOption({label:'BBアンティ'});assert.equal(await page.locator('#dataFlag').textContent(),'GTOデータ未接続');
-  await page.locator('#ante').selectOption({label:'なし'});await page.locator('#heroStack').fill('9.5');assert.equal(await page.locator('#dataFlag').textContent(),'GTOデータ未接続');
-  await page.locator('#hu10').click();await page.locator('#players').selectOption('9');assert.equal(await page.locator('#dataFlag').textContent(),'GTOデータ未接続');
-  await page.locator('#close').click();await page.locator('#hu10').click();await page.locator('#tableToggle').click();assert.equal(await page.locator('.seat').count(),2);
-  await page.locator('#tableToggle').click();
-  assert.equal(await page.locator('#huStack option').count(),16);
-  for(const S of ['5','8','12','15','20']){await page.locator('#huStack').selectOption(S);assert.equal(await page.locator('#dataFlag').textContent(),'検証済み · HU '+S+'BB');}
-  await page.locator('#huStack').selectOption('8');await page.locator('#toggle').click();await page.locator('#villainStack').fill('20');assert.equal(await page.locator('#stackLabel').textContent(),'8 BB');assert.match(await page.locator('#dataFlag').textContent(),/8BB/);
-  await page.getByRole('button',{name:'BB',exact:true}).click();await page.locator('#villainStack').fill('20');assert.match(await page.locator('#dataFlag').textContent(),/8BB/);
-  await page.locator('#heroStack').fill('8.5');assert.equal(await page.locator('#dataFlag').textContent(),'GTOデータ未接続');
-  await page.locator('#close').click();await page.locator('#huStack').selectOption('10');
-  await page.locator('#refreshApp').click();await page.waitForURL(/refresh=/);assert.equal(await page.locator('.cell').count(),169);assert.equal(await page.locator('#dataFlag').textContent(),'GTOデータ未接続');
-  await page.locator('#hu10').click();assert.match(await page.locator('#dataFlag').textContent(),/10BB/);assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
-  assert.deepEqual(errors,[]);
-  if(process.env.POKER_SCREENSHOT&&width===390)await page.screenshot({path:process.env.POKER_SCREENSHOT,fullPage:true});
-  await page.close();checks++;
+  await page.getByRole('button',{name:'BB',exact:true}).click();assert.equal(await page.locator('#scenario').inputValue(),'vsshove');await page.getByRole('button',{name:'AA',exact:true}).click();assert.equal(await page.locator('.actionPercent').nth(2).textContent(),'100.0 %');
+  await page.locator('#scenario').selectOption('vsopen');assert.equal(await flag(page),'GTOデータ未接続');
+  await page.locator('#hu10').click();await page.locator('#toggle').click();await page.locator('#ante').selectOption({label:'BBアンティ'});assert.equal(await flag(page),'GTOデータ未接続');await page.locator('#ante').selectOption({label:'なし'});await page.locator('#heroStack').fill('9.5');assert.equal(await flag(page),'GTOデータ未接続');
+  await page.locator('#hu10').click();await page.locator('#players').selectOption('9');assert.equal(await flag(page),'GTOデータ未接続');await page.locator('#close').click();await page.locator('#hu10').click();await page.locator('#tableToggle').click();assert.equal(await page.locator('.seat').count(),2);await page.locator('#tableToggle').click();
+  assert.equal(await page.locator('#huStack option').count(),16);for(const S of ['5','8','12','15','20']){await page.locator('#huStack').selectOption(S);assert.equal(await flag(page),'検証済み · HU '+S+'BB');}
+  await page.locator('#huStack').selectOption('8');await page.locator('#toggle').click();await page.locator('#villainStack').fill('20');assert.equal(await page.locator('#stackLabel').textContent(),'8 BB');assert.match(await flag(page),/8BB/);await page.getByRole('button',{name:'BB',exact:true}).click();await page.locator('#villainStack').fill('20');assert.match(await flag(page),/8BB/);await page.locator('#heroStack').fill('8.5');assert.equal(await flag(page),'GTOデータ未接続');await page.locator('#close').click();
+  await page.locator('#studyMode').selectOption('mtt9');await page.locator('#positions').getByRole('button',{name:'UTG',exact:true}).click();await initial(page);await page.locator('#tableToggle').click();assert.equal(await page.locator('.seat').count(),9);await page.locator('.seat').filter({hasText:'CO'}).click();await page.locator('#seatInput').fill('29');await page.locator('#saveSeat').click();assert.equal(await flag(page),'未対応');await page.locator('#tableToggle').click();
+  await page.locator('#refreshApp').click();await page.waitForURL(/refresh=/);await initial(page);assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));assert.deepEqual(errors,[]);
+  if(process.env.POKER_SCREENSHOT&&width===390)await page.screenshot({path:process.env.POKER_SCREENSHOT,fullPage:true});await page.close();checks++;
  }
- const page=await browser.newPage();await page.route('**/hu-strategies.js*',r=>r.abort());await page.goto(url);assert.ok(await page.locator('#hu10').isDisabled());assert.equal(await page.locator('#dataFlag').textContent(),'GTOデータ未接続');await page.close();checks++;
- const noView=await browser.newPage();await noView.route('**/hu10-view.js*',r=>r.abort());await noView.goto(url);await noView.locator('#hu10').click();assert.equal(await noView.locator('#dataFlag').textContent(),'GTOデータ未接続');await noView.close();checks++;
- console.log(JSON.stringify({passed:true,scenarios:checks,widths:[375,390,430],checks:'SB/BB roles, 16-stack selector, unequal stacks, exact mixed frequencies, unsupported fractional stacks/ante/9max/actions, missing dataset/view, refresh button, no horizontal overflow, table toggle'}));
+ const page=await browser.newPage();await page.route('**/hu-strategies.js*',r=>r.abort());await page.goto(url);await initial(page);await page.locator('#studyMode').selectOption('hu');assert.ok(await page.locator('#hu10').isDisabled());assert.equal(await flag(page),'GTOデータ未接続');await page.close();checks++;
+ const noView=await browser.newPage();await noView.route('**/hu10-view.js*',r=>r.abort());await noView.goto(url);await noView.locator('#studyMode').selectOption('hu');await noView.locator('#hu10').click();assert.equal(await flag(noView),'GTOデータ未接続');await noView.close();checks++;
+ const noMTT=await browser.newPage();await noMTT.route('**/mtt-model.js*',r=>r.abort());await noMTT.goto(url);assert.equal(await flag(noMTT),'未対応');assert.ok((await noMTT.locator('.actionPercent').allTextContents()).every(t=>t==='— %'));await noMTT.locator('#studyMode').selectOption('hu');assert.match(await flag(noMTT),/10BB/);await noMTT.close();checks++;
+ console.log(JSON.stringify({passed:true,scenarios:checks,widths:[375,390,430],checks:'MTT 9max/30BB default; eight unopened nodes; BB walk; 100BB and mismatched nine-stack/ante/sizing unsupported; no fabricated data; preserved HU 5..20BB; refresh; missing scripts; no overflow'}));
  }finally{await browser.close();await new Promise(r=>server.close(r));}
 })().catch(e=>{console.error(e);server.close();process.exitCode=1;});
