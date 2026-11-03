@@ -101,3 +101,16 @@ test('iterative solver rejects missing and invalid equity',async()=>{
  assert.throws(()=>solvePushFold({sbHands:[{probability:1}],bbHands:[{probability:1}],equity:[[null]],stackBB:10}));
  assert.throws(()=>solvePushFold({sbHands:[{probability:1}],bbHands:[{probability:1}],equity:[[1.1]],stackBB:10}));
 });
+
+test('iterative solver has low Nash gap in symmetric two-by-two toy game',async()=>{
+ const {solvePushFold}=await import('./nash-iteration.js');
+ const hands=[{probability:0.5},{probability:0.5}];
+ const r=solvePushFold({sbHands:hands,bbHands:hands,equity:[[0.2,0.8],[0.8,0.2]],stackBB:10,iterations:30000});
+ assert.ok(r.nashGap>=-1e-9&&r.nashGap<0.01);
+ assert.ok(r.sbShove.every(p=>p>=0&&p<=1));
+ assert.ok(r.bbCall.every(p=>p>=0&&p<=1));
+});
+test('iterative solver validates effective stack',async()=>{
+ const {solvePushFold}=await import('./nash-iteration.js');
+ assert.throws(()=>solvePushFold({sbHands:[{probability:1}],bbHands:[{probability:1}],equity:[[0.5]],stackBB:1}));
+});
