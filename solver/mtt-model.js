@@ -3,6 +3,7 @@
  const positions=['UTG','UTG+1','UTG+2','LJ','HJ','CO','BTN','SB','BB'];
  const ranks='AKQJT98765432',hands=Array.from({length:169},(_,k)=>{const a=Math.floor(k/13),b=k%13;return a===b?ranks[a]+ranks[b]:a<b?ranks[a]+ranks[b]+'s':ranks[b]+ranks[a]+'o';});
  const actions=['All-in','Raise','Call','Check','Fold'];
+ const isHash=v=>typeof v==='string'&&/^[a-f0-9]{64}$/.test(v);
  function defaults(stackBB=30){return {variant:'NLHE',format:'MTT',model:'chipEV',players:9,positions:[...positions],stacksBeforePostsBB:Object.fromEntries(positions.map(p=>[p,stackBB])),stackBaseline:'before blinds and antes',sbBlind:.5,bbBlind:1,ante:{type:'big-blind',amountBB:1},rake:0,openRaiseToBB:2,sbRaiseToBB:2.5,limps:'SB-only',bounty:false,icm:false};}
  function errors(c){
   const result=[];
@@ -28,8 +29,8 @@
   if(!sig||!n)return {ok:false,reasons:['Unsupported configuration or node']};
   if(!data||data.schemaVersion!==1||data.verified!==true||signature(data.game)!==sig||JSON.stringify(data.node)!==JSON.stringify(n))return {ok:false,reasons:['No exact verified dataset']};
   const v=data.validation,s=data.source;
-  if(!s?.name||!/^https:\/\//.test(s.url||'')||!s.solverVersion||!s.artifactSha256?.match(/^[a-f0-9]{64}$/)||s.redistributionAllowed!==true||!s.licenseReference)reasons.push('Missing source or redistribution evidence');
-  if(!v||v.method!=='full-game-unilateral-best-response-bounds'||v.unit!=='BB/dealt-hand'||!Number.isFinite(v.toleranceBB)||v.toleranceBB<=0||v.toleranceBB>1e-4||!v.fullBettingTreeSha256?.match(/^[a-f0-9]{64}$/)||v.postflopIncluded!==true||v.fullGameAbstractionErrorIncluded!==true||!v.evidenceSha256?.match(/^[a-f0-9]{64}$/)||!/^https:\/\//.test(v.independentReference||'')||!Number.isFinite(v.independentMaxDifference)||v.independentMaxDifference>.001||v.independentMaxDifference<0)reasons.push('Missing full-game validation');
+  if(!s?.name||!/^https:\/\//.test(s.url||'')||!s.solverVersion||!isHash(s.artifactSha256)||s.redistributionAllowed!==true||!s.licenseReference)reasons.push('Missing source or redistribution evidence');
+  if(!v||v.method!=='full-game-unilateral-best-response-bounds'||v.unit!=='BB/dealt-hand'||!Number.isFinite(v.toleranceBB)||v.toleranceBB<=0||v.toleranceBB>1e-4||!isHash(v.fullBettingTreeSha256)||v.postflopIncluded!==true||v.fullGameAbstractionErrorIncluded!==true||!isHash(v.evidenceSha256)||!/^https:\/\//.test(v.independentReference||'')||!Number.isFinite(v.independentMaxDifference)||v.independentMaxDifference>.001||v.independentMaxDifference<0)reasons.push('Missing full-game validation');
   if(!v?.bestResponseGainUpperBoundsBB||Object.keys(v.bestResponseGainUpperBoundsBB).length!==9||positions.some(p=>!Number.isFinite(v.bestResponseGainUpperBoundsBB[p])||v.bestResponseGainUpperBoundsBB[p]<0||v.bestResponseGainUpperBoundsBB[p]>v.toleranceBB))reasons.push('Missing nine-player deviation bounds');
   if(!data.hands||Object.keys(data.hands).length!==169||hands.some(h=>!frequencies(data.hands[h])))reasons.push('Incomplete 169-hand frequencies');
   else if(hands.some(h=>data.hands[h].Check!==0||(hero!=='SB'&&data.hands[h].Call!==0)))reasons.push('Illegal unopened-pot action');

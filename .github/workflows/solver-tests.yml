@@ -17,6 +17,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
@@ -26,7 +28,22 @@ jobs:
       - run: pip install scipy==1.17.0
       - name: Run all solver tests
         run: npm test --prefix solver
+      - name: Detect changes to HU math and certified data
+        id: scope
+        run: |
+          python - <<'PYTHON'
+          import os, subprocess
+          try:
+              files = subprocess.check_output(['git', 'diff', '--name-only', 'HEAD^', 'HEAD'], text=True).splitlines()
+          except subprocess.CalledProcessError:
+              files = ['solver/game.js']
+          mtt_only = {'solver/mtt-model.js', 'solver/mtt.test.mjs', 'solver/tools/mtt-status.mjs', 'solver/tools/check-mtt-bundle.mjs', 'solver/tools/browser-check.cjs'}
+          hu_math = any(p.startswith('solver/') and p not in mtt_only and not p.startswith('solver/data/mtt') for p in files)
+          with open(os.environ['GITHUB_OUTPUT'], 'a') as f:
+              f.write('hu_math=' + str(hu_math).lower() + '\n')
+          PYTHON
       - name: Recompute independent LP and JS exact cross-checks
+        if: steps.scope.outputs.hu_math == 'true' || github.event_name == 'workflow_dispatch'
         run: |
           cd solver
           npm run solve:lp -- --check
@@ -35,8 +52,11 @@ jobs:
           npm run check:evaluator
           npm run certify
           npm run certify:range
-          npm run status:mtt
           git diff --exit-code -- data/
+      - name: Verify MTT availability report
+        run: |
+          npm run status:mtt --prefix solver
+          git diff --exit-code -- solver/data/mtt30-status.json
       - name: Re-enumerate entire exact matrix
         if: ${{ github.event_name == 'workflow_dispatch' && inputs.regenerate }}
         run: npm run regenerate --prefix solver
