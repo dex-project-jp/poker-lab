@@ -4,6 +4,7 @@
 // The solver never labels output verified GTO: check exploitability and independent reference.
 import {bestResponses} from './best-response.js';
 export function solvePushFold({sbHands,bbHands,equity,stackBB,iterations=10000}){
+ if(!Number.isFinite(stackBB)||stackBB<=1)throw Error('Invalid stack');
  const n=sbHands.length,m=bbHands.length;
  if(!Number.isInteger(iterations)||iterations<1||iterations>1000000)throw Error('Invalid iterations');
  if(!n||!m||equity.length!==n)throw Error('Invalid matrix');
