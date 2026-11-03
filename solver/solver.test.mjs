@@ -33,3 +33,27 @@ test('10BB payoff and BB call threshold',()=>{
  assert.equal(bbCallEquityThreshold(10),0.45);
  assert.throws(()=>payoff({stackBB:10,equity:1.1}));
 });
+
+test('straight flush requires same suit and wheel straight flush is five-high',()=>{
+ assert.deepEqual(evaluate(['As','2s','3s','4s','5s']),[8,5]);
+ assert.equal(evaluate(['As','Ks','Qs','Js','Td'])[0],4);
+ assert.equal(evaluate(['As','Ks','Qs','Js','9s'])[0],5);
+});
+test('kickers break ties correctly',()=>{
+ assert.ok(compare(evaluate(['Ah','Ad','Kc','Qd','2s']),evaluate(['As','Ac','Kc','Jd','2h']))>0);
+ assert.ok(compare(evaluate(['Ah','Ad','Kh','Kd','Qs']),evaluate(['As','Ac','Ks','Kc','Jh']))>0);
+ assert.ok(compare(evaluate(['Ah','Ad','Ac','Ks','Qd']),evaluate(['As','Ad','Ac','Kh','Jd']))>0);
+});
+test('board quads tie and no duplicate cards allowed',()=>{
+ assert.equal(showdown(['2c','3d'],['4c','5d'],['As','Ah','Ad','Ac','Ks']),0);
+ assert.throws(()=>showdown(['As','Kd'],['Qh','Jc'],['As','2h','3d','4c','5s']));
+});
+test('10BB payoff zero-sum at showdown and correct boundary equities',()=>{
+ for(const equity of [0,0.1,0.45,0.5,0.9,1]){
+  const p=payoff({stackBB:10,equity});
+  assert.ok(Math.abs(p.sbShoveBbCall+p.bbCallVsShove)<1e-12);
+  assert.equal(p.sbShoveBbFold,1);
+ }
+ assert.equal(payoff({stackBB:10,equity:1}).sbShoveBbCall,10);
+ assert.equal(payoff({stackBB:10,equity:0}).sbShoveBbCall,-10);
+});
