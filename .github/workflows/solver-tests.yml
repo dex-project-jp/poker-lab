@@ -38,7 +38,7 @@ jobs:
           except subprocess.CalledProcessError:
               files = ['solver/game.js']
           mtt_only = {'solver/mtt-model.js', 'solver/mtt.test.mjs', 'solver/tools/mtt-status.mjs', 'solver/tools/check-mtt-bundle.mjs', 'solver/tools/browser-check.cjs'}
-          hu_math = any(p.startswith('solver/') and p not in mtt_only and not p.startswith('solver/data/mtt') for p in files)
+          hu_math = any(p.startswith('solver/') and p not in mtt_only and p != 'solver/package.json' and not p.startswith('solver/btn-mini') and '/btn-mini' not in p and 'btn-mini' not in p and not p.startswith('solver/data/mtt') for p in files)
           with open(os.environ['GITHUB_OUTPUT'], 'a') as f:
               f.write('hu_math=' + str(hu_math).lower() + '\n')
           PYTHON
@@ -53,6 +53,13 @@ jobs:
           npm run certify
           npm run certify:range
           git diff --exit-code -- data/
+      - name: Independently verify the restricted BTN three-player game
+        run: |
+          cd solver
+          npm run export:btn-mini
+          npm run check:btn-mini -- --check
+          npm run certify:btn-mini
+          git diff --exit-code -- data/btn-mini-strategy.js data/btn-mini-validation.json
       - name: Verify MTT availability report
         run: |
           npm run status:mtt --prefix solver

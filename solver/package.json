@@ -11,6 +11,10 @@
     "check:evaluator": "node tools/exhaustive-evaluator.mjs",
     "solve:range": "python tools/independent-lp.py --all",
     "certify:range": "node tools/certify-range.mjs",
-    "status:mtt": "node tools/mtt-status.mjs"
+    "status:mtt": "node tools/mtt-status.mjs",
+    "solve:btn-mini": "node tools/solve-btn-mini.mjs",
+    "export:btn-mini": "node tools/export-btn-mini.mjs",
+    "check:btn-mini": "python tools/check-btn-mini.py",
+    "certify:btn-mini": "node tools/certify-btn-mini.mjs"
   }
 }
