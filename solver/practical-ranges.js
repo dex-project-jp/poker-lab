@@ -74,7 +74,7 @@
   const heroBlind=hero==='BB'?1:hero==='SB'?.5:0,openerTo=opener==='SB'?2.5:2,openerBlind=opener==='SB'?.5:0;
   const math=scenario==='vsopen'?{potBeforeCallBB:2.5+openerTo-openerBlind,additionalCallBB:openerTo-heroBlind,definition:'Immediate pot odds only; ignores equity realization and future actions'}:null;
   if(math)math.rawCallEquityThreshold=math.additionalCallBB/(math.potBeforeCallBB+math.additionalCallBB);
-  return {state:'reference',hero,opener:scenario==='vsopen'?opener:null,scenario,metadata,hands:rows,stats,math,totalCombos:1326,note:scenario==='open'?(hero==='SB'?'SBは簡略化した価値レイズ＋リンプ。強い手のトラップやBBの頻繁なアイソレイズへの対抗は未計算。':'全員フォールド時の保守的な基本表。30BBのオープンジャムは本設計では採用しません。'):'単独オープンのみ・間のプレイヤーは全員フォールド。コールドコール、スクイーズ、3bet後の応答、ICMは対象外。'};
+  return {state:'reference',hero,opener:scenario==='vsopen'?opener:null,scenario,metadata,hands:rows,stats,math,totalCombos:1326,note:scenario==='open'?(hero==='SB'?'SBは簡略化した価値レイズ＋リンプ。強い手のトラップやBBの頻繁なアイソレイズへの対抗は未計算。':'全員フォールド時の保守的な基本表。30BBのオープンジャムは本設計では採用しません。'):'単独オープンのみ・間のプレイヤーは全員フォールド。コールドコール、スクイーズ、ICMは対象外。3bet後の応答は別シナリオで選択します。'};
  }
  root.PokerLabPractical={metadata,positions,hands,display,alias,expand,comboCount,table};
 })(globalThis);

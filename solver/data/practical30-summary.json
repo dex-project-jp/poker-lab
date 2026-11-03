@@ -23,7 +23,7 @@
       }
     ]
   },
-  "sourceSha256": "c455ee3f7bb094d041b7c03cd03bb4ebdb053869ac0392d92951a3715ba73383",
+  "sourceSha256": "04186d81e673353ac04e9331aed9f2768721f7f5a7d8716dd78949e78ee7c8df",
   "gtoVerified": false,
   "evCalculated": false,
   "mixedFrequenciesCalculated": false,
@@ -8529,5 +8529,5174 @@
         "rawCallEquityThreshold": 0.25
       }
     }
-  ]
+  ],
+  "reraises": [
+    {
+      "hero": "UTG",
+      "opener": "UTG",
+      "threeBettor": "UTG+1",
+      "scenario": "vs3bet",
+      "fourBetAllIn": false,
+      "handCount": 169,
+      "actionComboCounts": {
+        "4-bet": 12,
+        "4-bet All-in": 16,
+        "Call": 16,
+        "Fold": 132,
+        "Outside history": 1150
+      },
+      "money": {
+        "opener": "UTG",
+        "threeBettor": "UTG+1",
+        "hero": "UTG",
+        "opponent": "UTG+1",
+        "stage": 3,
+        "openToBB": 2,
+        "threeBetToBB": 6,
+        "fourBetToBB": 14,
+        "liveBetsBB": {
+          "UTG": 2,
+          "UTG+1": 6
+        },
+        "liveCapsBB": {
+          "UTG": 30,
+          "UTG+1": 30
+        },
+        "deadMoneyBB": 2.5,
+        "potBeforeActionBB": 10.5,
+        "remainingBB": {
+          "UTG": 28,
+          "UTG+1": 24
+        },
+        "minimumRaiseToBB": 10,
+        "opponentAllIn": false,
+        "call": {
+          "toBB": 6,
+          "additionalBB": 4,
+          "uncalledReturnBB": 0,
+          "potAfterCallBB": 14.5,
+          "remainingBB": 24,
+          "rawEquityThreshold": 0.27586206896551724
+        }
+      }
+    },
+    {
+      "hero": "UTG+1",
+      "opener": "UTG",
+      "threeBettor": "UTG+1",
+      "scenario": "vs4bet",
+      "fourBetAllIn": false,
+      "handCount": 169,
+      "actionComboCounts": {
+        "5-bet All-in": 12,
+        "Call": 22,
+        "Outside history": 1292
+      },
+      "money": {
+        "opener": "UTG",
+        "threeBettor": "UTG+1",
+        "hero": "UTG+1",
+        "opponent": "UTG",
+        "stage": 4,
+        "openToBB": 2,
+        "threeBetToBB": 6,
+        "fourBetToBB": 14,
+        "liveBetsBB": {
+          "UTG": 14,
+          "UTG+1": 6
+        },
+        "liveCapsBB": {
+          "UTG": 30,
+          "UTG+1": 30
+        },
+        "deadMoneyBB": 2.5,
+        "potBeforeActionBB": 22.5,
+        "remainingBB": {
+          "UTG": 16,
+          "UTG+1": 24
+        },
+        "minimumRaiseToBB": 22,
+        "opponentAllIn": false,
+        "call": {
+          "toBB": 14,
+          "additionalBB": 8,
+          "uncalledReturnBB": 0,
+          "potAfterCallBB": 30.5,
+          "remainingBB": 16,
+          "rawEquityThreshold": 0.26229508196721313
+        }
+      }
+    },
+    {
+      "hero": "UTG+1",
+      "opener": "UTG",
+      "threeBettor": "UTG+1",
+      "scenario": "vs4bet",
+      "fourBetAllIn": true,
+      "handCount": 169,
+      "actionComboCounts": {
+        "Call": 16,
+        "Outside history": 1292,
+        "Fold": 18
+      },
+      "money": {
+        "opener": "UTG",
+        "threeBettor": "UTG+1",
+        "hero": "UTG+1",
+        "opponent": "UTG",
+        "stage": 4,
+        "openToBB": 2,
+        "threeBetToBB": 6,
+        "fourBetToBB": 30,
+        "liveBetsBB": {
+          "UTG": 30,
+          "UTG+1": 6
+        },
+        "liveCapsBB": {
+          "UTG": 30,
+          "UTG+1": 30
+        },
+        "deadMoneyBB": 2.5,
+        "potBeforeActionBB": 38.5,
+        "remainingBB": {
+          "UTG": 0,
+          "UTG+1": 24
+        },
+        "minimumRaiseToBB": 54,
+        "opponentAllIn": true,
+        "call": {
+          "toBB": 30,
+          "additionalBB": 24,
+          "uncalledReturnBB": 0,
+          "potAfterCallBB": 62.5,
+          "remainingBB": 0,
+          "rawEquityThreshold": 0.384
+        }
+      }
+    },
+    {
+      "hero": "UTG",
+      "opener": "UTG",
+      "threeBettor": "UTG+2",
+      "scenario": "vs3bet",
+      "fourBetAllIn": false,
+      "handCount": 169,
+      "actionComboCounts": {
+        "4-bet": 12,
+        "4-bet All-in": 16,
+        "Call": 16,
+        "Fold": 132,
+        "Outside history": 1150
+      },
+      "money": {
+        "opener": "UTG",
+        "threeBettor": "UTG+2",
+        "hero": "UTG",
+        "opponent": "UTG+2",
+        "stage": 3,
+        "openToBB": 2,
+        "threeBetToBB": 6,
+        "fourBetToBB": 14,
+        "liveBetsBB": {
+          "UTG": 2,
+          "UTG+2": 6
+        },
+        "liveCapsBB": {
+          "UTG": 30,
+          "UTG+2": 30
+        },
+        "deadMoneyBB": 2.5,
+        "potBeforeActionBB": 10.5,
+        "remainingBB": {
+          "UTG": 28,
+          "UTG+2": 24
+        },
+        "minimumRaiseToBB": 10,
+        "opponentAllIn": false,
+        "call": {
+          "toBB": 6,
+          "additionalBB": 4,
+          "uncalledReturnBB": 0,
+          "potAfterCallBB": 14.5,
+          "remainingBB": 24,
+          "rawEquityThreshold": 0.27586206896551724
+        }
+      }
+    },
+    {
+      "hero": "UTG+2",
+      "opener": "UTG",
+      "threeBettor": "UTG+2",
+      "scenario": "vs4bet",
+      "fourBetAllIn": false,
+      "handCount": 169,
+      "actionComboCounts": {
+        "5-bet All-in": 12,
+        "Call": 22,
+        "Outside history": 1292
+      },
+      "money": {
+        "opener": "UTG",
+        "threeBettor": "UTG+2",
+        "hero": "UTG+2",
+        "opponent": "UTG",
+        "stage": 4,
+        "openToBB": 2,
+        "threeBetToBB": 6,
+        "fourBetToBB": 14,
+        "liveBetsBB": {
+          "UTG": 14,
+          "UTG+2": 6
+        },
+        "liveCapsBB": {
+          "UTG": 30,
+          "UTG+2": 30
+        },
+        "deadMoneyBB": 2.5,
+        "potBeforeActionBB": 22.5,
+        "remainingBB": {
+          "UTG": 16,
+          "UTG+2": 24
+        },
+        "minimumRaiseToBB": 22,
+        "opponentAllIn": false,
+        "call": {
+          "toBB": 14,
+          "additionalBB": 8,
+          "uncalledReturnBB": 0,
+          "potAfterCallBB": 30.5,
+          "remainingBB": 16,
+          "rawEquityThreshold": 0.26229508196721313
+        }
+      }
+    },
+    {
+      "hero": "UTG+2",
+      "opener": "UTG",
+      "threeBettor": "UTG+2",
+      "scenario": "vs4bet",
+      "fourBetAllIn": true,
+      "handCount": 169,
+      "actionComboCounts": {
+        "Call": 16,
+        "Outside history": 1292,
+        "Fold": 18
+      },
+      "money": {
+        "opener": "UTG",
+        "threeBettor": "UTG+2",
+        "hero": "UTG+2",
+        "opponent": "UTG",
+        "stage": 4,
+        "openToBB": 2,
+        "threeBetToBB": 6,
+        "fourBetToBB": 30,
+        "liveBetsBB": {
+          "UTG": 30,
+          "UTG+2": 6
+        },
+        "liveCapsBB": {
+          "UTG": 30,
+          "UTG+2": 30
+        },
+        "deadMoneyBB": 2.5,
+        "potBeforeActionBB": 38.5,
+        "remainingBB": {
+          "UTG": 0,
+          "UTG+2": 24
+        },
+        "minimumRaiseToBB": 54,
+        "opponentAllIn": true,
+        "call": {
+          "toBB": 30,
+          "additionalBB": 24,
+          "uncalledReturnBB": 0,
+          "potAfterCallBB": 62.5,
+          "remainingBB": 0,
+          "rawEquityThreshold": 0.384
+        }
+      }
+    },
+    {
+      "hero": "UTG",
+      "opener": "UTG",
+      "threeBettor": "LJ",
+      "scenario": "vs3bet",
+      "fourBetAllIn": false,
+      "handCount": 169,
+      "actionComboCounts": {
+        "4-bet": 12,
+        "4-bet All-in": 16,
+        "Call": 16,
+        "Fold": 132,
+        "Outside history": 1150
+      },
+      "money": {
+        "opener": "UTG",
+        "threeBettor": "LJ",
+        "hero": "UTG",
+        "opponent": "LJ",
+        "stage": 3,
+        "openToBB": 2,
+        "threeBetToBB": 6,
+        "fourBetToBB": 14,
+        "liveBetsBB": {
+          "UTG": 2,
+          "LJ": 6
+        },
+        "liveCapsBB": {
+          "UTG": 30,
+          "LJ": 30
+        },
+        "deadMoneyBB": 2.5,
+        "potBeforeActionBB": 10.5,
+        "remainingBB": {
+          "UTG": 28,
+          "LJ": 24
+        },
+        "minimumRaiseToBB": 10,
+        "opponentAllIn": false,
+        "call": {
+          "toBB": 6,
+          "additionalBB": 4,
+          "uncalledReturnBB": 0,
+          "potAfterCallBB": 14.5,
+          "remainingBB": 24,
+          "rawEquityThreshold": 0.27586206896551724
+        }
+      }
+    },
+    {
+      "hero": "LJ",
+      "opener": "UTG",
+      "threeBettor": "LJ",
+      "scenario": "vs4bet",
+      "fourBetAllIn": false,
+      "handCount": 169,
+      "actionComboCounts": {
+        "5-bet All-in": 12,
+        "Call": 22,
+        "Outside history": 1292
+      },
+      "money": {
+        "opener": "UTG",
+        "threeBettor": "LJ",
+        "hero": "LJ",
+        "opponent": "UTG",
+        "stage": 4,
+        "openToBB": 2,
+        "threeBetToBB": 6,
+        "fourBetToBB": 14,
+        "liveBetsBB": {
+          "UTG": 14,
+          "LJ": 6
+        },
+        "liveCapsBB": {
+          "UTG": 30,
+          "LJ": 30
+        },
+        "deadMoneyBB": 2.5,
+        "potBeforeActionBB": 22.5,
+        "remainingBB": {
+          "UTG": 16,
+          "LJ": 24
+        },
+        "minimumRaiseToBB": 22,
+        "opponentAllIn": false,
+        "call": {
+          "toBB": 14,
+          "additionalBB": 8,
+          "uncalledReturnBB": 0,
+          "potAfterCallBB": 30.5,
+          "remainingBB": 16,
+          "rawEquityThreshold": 0.26229508196721313
+        }
+      }
+    },
+    {
+      "hero": "LJ",
+      "opener": "UTG",
+      "threeBettor": "LJ",
+      "scenario": "vs4bet",
+      "fourBetAllIn": true,
+      "handCount": 169,
+      "actionComboCounts": {
+        "Call": 16,
+        "Outside history": 1292,
+        "Fold": 18
+      },
+      "money": {
+        "opener": "UTG",
+        "threeBettor": "LJ",
+        "hero": "LJ",
+        "opponent": "UTG",
+        "stage": 4,
+        "openToBB": 2,
+        "threeBetToBB": 6,
+        "fourBetToBB": 30,
+        "liveBetsBB": {
+          "UTG": 30,
+          "LJ": 6
+        },
+        "liveCapsBB": {
+          "UTG": 30,
+          "LJ": 30
+        },
+        "deadMoneyBB": 2.5,
+        "potBeforeActionBB": 38.5,
+        "remainingBB": {
+          "UTG": 0,
+          "LJ": 24
+        },
+        "minimumRaiseToBB": 54,
+        "opponentAllIn": true,
+        "call": {
+          "toBB": 30,
+          "additionalBB": 24,
+          "uncalledReturnBB": 0,
+          "potAfterCallBB": 62.5,
+          "remainingBB": 0,
+          "rawEquityThreshold": 0.384
+        }
+      }
+    },
+    {
+      "hero": "UTG",
+      "opener": "UTG",
+      "threeBettor": "HJ",
+      "scenario": "vs3bet",
+      "fourBetAllIn": false,
+      "handCount": 169,
+      "actionComboCounts": {
+        "4-bet": 12,
+        "4-bet All-in": 16,
+        "Call": 16,
+        "Fold": 132,
+        "Outside history": 1150
+      },
+      "money": {
+        "opener": "UTG",
+        "threeBettor": "HJ",
+        "hero": "UTG",
+        "opponent": "HJ",
+        "stage": 3,
+        "openToBB": 2,
+        "threeBetToBB": 6,
+        "fourBetToBB": 14,
+        "liveBetsBB": {
+          "UTG": 2,
+          "HJ": 6
+        },
+        "liveCapsBB": {
+          "UTG": 30,
+          "HJ": 30
+        },
+        "deadMoneyBB": 2.5,
+        "potBeforeActionBB": 10.5,
+        "remainingBB": {
+          "UTG": 28,
+          "HJ": 24
+        },
+        "minimumRaiseToBB": 10,
+        "opponentAllIn": false,
+        "call": {
+          "toBB": 6,
+          "additionalBB": 4,
+          "uncalledReturnBB": 0,
+          "potAfterCallBB": 14.5,
+          "remainingBB": 24,
+          "rawEquityThreshold": 0.27586206896551724
+        }
+      }
+    },
+    {
+      "hero": "HJ",
+      "opener": "UTG",
+      "threeBettor": "HJ",
+      "scenario": "vs4bet",
+      "fourBetAllIn": false,
+      "handCount": 169,
+      "actionComboCounts": {
+        "5-bet All-in": 12,
+        "Call": 22,
+        "Outside history": 1292
+      },
+      "money": {
+        "opener": "UTG",
+        "threeBettor": "HJ",
+        "hero": "HJ",
+        "opponent": "UTG",
+        "stage": 4,
+        "openToBB": 2,
+        "threeBetToBB": 6,
+        "fourBetToBB": 14,
+        "liveBetsBB": {
+          "UTG": 14,
+          "HJ": 6
+        },
+        "liveCapsBB": {
+          "UTG": 30,
+          "HJ": 30
+        },
+        "deadMoneyBB": 2.5,
+        "potBeforeActionBB": 22.5,
+        "remainingBB": {
+          "UTG": 16,
+          "HJ": 24
+        },
+        "minimumRaiseToBB": 22,
+        "opponentAllIn": false,
+        "call": {
+          "toBB": 14,
+          "additionalBB": 8,
+          "uncalledReturnBB": 0,
+          "potAfterCallBB": 30.5,
+          "remainingBB": 16,
+          "rawEquityThreshold": 0.26229508196721313
+        }
+      }
+    },
+    {
+      "hero": "HJ",
+      "opener": "UTG",
+      "threeBettor": "HJ",
+      "scenario": "vs4bet",
+      "fourBetAllIn": true,
+      "handCount": 169,
+      "actionComboCounts": {
+        "Call": 16,
+        "Outside history": 1292,
+        "Fold": 18
+      },
+      "money": {
+        "opener": "UTG",
+        "threeBettor": "HJ",
+        "hero": "HJ",
+        "opponent": "UTG",
+        "stage": 4,
+        "openToBB": 2,
+        "threeBetToBB": 6,
+        "fourBetToBB": 30,
+        "liveBetsBB": {
+          "UTG": 30,
+          "HJ": 6
+        },
+        "liveCapsBB": {
+          "UTG": 30,
+          "HJ": 30
+        },
+        "deadMoneyBB": 2.5,
+        "potBeforeActionBB": 38.5,
+        "remainingBB": {
+          "UTG": 0,
+          "HJ": 24
+        },
+        "minimumRaiseToBB": 54,
+        "opponentAllIn": true,
+        "call": {
+          "toBB": 30,
+          "additionalBB": 24,
+          "uncalledReturnBB": 0,
+          "potAfterCallBB": 62.5,
+          "remainingBB": 0,
+          "rawEquityThreshold": 0.384
+        }
+      }
+    },
+    {
+      "hero": "UTG",
+      "opener": "UTG",
+      "threeBettor": "CO",
+      "scenario": "vs3bet",
+      "fourBetAllIn": false,
+      "handCount": 169,
+      "actionComboCounts": {
+        "4-bet": 12,
+        "4-bet All-in": 16,
+        "Call": 16,
+        "Fold": 132,
+        "Outside history": 1150
+      },
+      "money": {
+        "opener": "UTG",
+        "threeBettor": "CO",
+        "hero": "UTG",
+        "opponent": "CO",
+        "stage": 3,
+        "openToBB": 2,
+        "threeBetToBB": 6,
+        "fourBetToBB": 14,
+        "liveBetsBB": {
+          "UTG": 2,
+          "CO": 6
+        },
+        "liveCapsBB": {
+          "UTG": 30,
+          "CO": 30
+        },
+        "deadMoneyBB": 2.5,
+        "potBeforeActionBB": 10.5,
+        "remainingBB": {
+          "UTG": 28,
+          "CO": 24
+        },
+        "minimumRaiseToBB": 10,
+        "opponentAllIn": false,
+        "call": {
+          "toBB": 6,
+          "additionalBB": 4,
+          "uncalledReturnBB": 0,
+          "potAfterCallBB": 14.5,
+          "remainingBB": 24,
+          "rawEquityThreshold": 0.27586206896551724
+        }
+      }
+    },
+    {
+      "hero": "CO",
+      "opener": "UTG",
+      "threeBettor": "CO",
+      "scenario": "vs4bet",
+      "fourBetAllIn": false,
+      "handCount": 169,
+      "actionComboCounts": {
+        "5-bet All-in": 12,
+        "Call": 22,
+        "Outside history": 1292
+      },
+      "money": {
+        "opener": "UTG",
+        "threeBettor": "CO",
+        "hero": "CO",
+        "opponent": "UTG",
+        "stage": 4,
+        "openToBB": 2,
+        "threeBetToBB": 6,
+        "fourBetToBB": 14,
+        "liveBetsBB": {
+          "UTG": 14,
+          "CO": 6
+        },
+        "liveCapsBB": {
+          "UTG": 30,
+          "CO": 30
+        },
+        "deadMoneyBB": 2.5,
+        "potBeforeActionBB": 22.5,
+        "remainingBB": {
+          "UTG": 16,
+          "CO": 24
+        },
+        "minimumRaiseToBB": 22,
+        "opponentAllIn": false,
+        "call": {
+          "toBB": 14,
+          "additionalBB": 8,
+          "uncalledReturnBB": 0,
+          "potAfterCallBB": 30.5,
+          "remainingBB": 16,
+          "rawEquityThreshold": 0.26229508196721313
+        }
+      }
+    },
+    {
+      "hero": "CO",
+      "opener": "UTG",
+      "threeBettor": "CO",
+      "scenario": "vs4bet",
+      "fourBetAllIn": true,
+      "handCount": 169,
+      "actionComboCounts": {
+        "Call": 16,
+        "Outside history": 1292,
+        "Fold": 18
+      },
+      "money": {
+        "opener": "UTG",
+        "threeBettor": "CO",
+        "hero": "CO",
+        "opponent": "UTG",
+        "stage": 4,
+        "openToBB": 2,
+        "threeBetToBB": 6,
+        "fourBetToBB": 30,
+        "liveBetsBB": {
+          "UTG": 30,
+          "CO": 6
+        },
+        "liveCapsBB": {
+          "UTG": 30,
+          "CO": 30
+        },
+        "deadMoneyBB": 2.5,
+        "potBeforeActionBB": 38.5,
+        "remainingBB": {
+          "UTG": 0,
+          "CO": 24
+        },
+        "minimumRaiseToBB": 54,
+        "opponentAllIn": true,
+        "call": {
+          "toBB": 30,
+          "additionalBB": 24,
+          "uncalledReturnBB": 0,
+          "potAfterCallBB": 62.5,
+          "remainingBB": 0,
+          "rawEquityThreshold": 0.384
+        }
+      }
+    },
+    {
+      "hero": "UTG",
+      "opener": "UTG",
+      "threeBettor": "BTN",
+      "scenario": "vs3bet",
+      "fourBetAllIn": false,
+      "handCount": 169,
+      "actionComboCounts": {
+        "4-bet": 12,
+        "4-bet All-in": 16,
+        "Call": 16,
+        "Fold": 132,
+        "Outside history": 1150
+      },
+      "money": {
+        "opener": "UTG",
+        "threeBettor": "BTN",
+        "hero": "UTG",
+        "opponent": "BTN",
+        "stage": 3,
+        "openToBB": 2,
+        "threeBetToBB": 6,
+        "fourBetToBB": 14,
+        "liveBetsBB": {
+          "UTG": 2,
+          "BTN": 6
+        },
+        "liveCapsBB": {
+          "UTG": 30,
+          "BTN": 30
+        },
+        "deadMoneyBB": 2.5,
+        "potBeforeActionBB": 10.5,
+        "remainingBB": {
+          "UTG": 28,
+          "BTN": 24
+        },
+        "minimumRaiseToBB": 10,
+        "opponentAllIn": false,
+        "call": {
+          "toBB": 6,
+          "additionalBB": 4,
+          "uncalledReturnBB": 0,
+          "potAfterCallBB": 14.5,
+          "remainingBB": 24,
+          "rawEquityThreshold": 0.27586206896551724
+        }
+      }
+    },
+    {
+      "hero": "BTN",
+      "opener": "UTG",
+      "threeBettor": "BTN",
+      "scenario": "vs4bet",
+      "fourBetAllIn": false,
+      "handCount": 169,
+      "actionComboCounts": {
+        "5-bet All-in": 12,
+        "Call": 22,
+        "Outside history": 1292
+      },
+      "money": {
+        "opener": "UTG",
+        "threeBettor": "BTN",
+        "hero": "BTN",
+        "opponent": "UTG",
+        "stage": 4,
+        "openToBB": 2,
+        "threeBetToBB": 6,
+        "fourBetToBB": 14,
+        "liveBetsBB": {
+          "UTG": 14,
+          "BTN": 6
+        },
+        "liveCapsBB": {
+          "UTG": 30,
+          "BTN": 30
+        },
+        "deadMoneyBB": 2.5,
+        "potBeforeActionBB": 22.5,
+        "remainingBB": {
+          "UTG": 16,
+          "BTN": 24
+        },
+        "minimumRaiseToBB": 22,
+        "opponentAllIn": false,
+        "call": {
+          "toBB": 14,
+          "additionalBB": 8,
+          "uncalledReturnBB": 0,
+          "potAfterCallBB": 30.5,
+          "remainingBB": 16,
+          "rawEquityThreshold": 0.26229508196721313
+        }
+      }
+    },
+    {
+      "hero": "BTN",
+      "opener": "UTG",
+      "threeBettor": "BTN",
+      "scenario": "vs4bet",
+      "fourBetAllIn": true,
+      "handCount": 169,
+      "actionComboCounts": {
+        "Call": 16,
+        "Outside history": 1292,
+        "Fold": 18
+      },
+      "money": {
+        "opener": "UTG",
+        "threeBettor": "BTN",
+        "hero": "BTN",
+        "opponent": "UTG",
+        "stage": 4,
+        "openToBB": 2,
+        "threeBetToBB": 6,
+        "fourBetToBB": 30,
+        "liveBetsBB": {
+          "UTG": 30,
+          "BTN": 6
+        },
+        "liveCapsBB": {
+          "UTG": 30,
+          "BTN": 30
+        },
+        "deadMoneyBB": 2.5,
+        "potBeforeActionBB": 38.5,
+        "remainingBB": {
+          "UTG": 0,
+          "BTN": 24
+        },
+        "minimumRaiseToBB": 54,
+        "opponentAllIn": true,
+        "call": {
+          "toBB": 30,
+          "additionalBB": 24,
+          "uncalledReturnBB": 0,
+          "potAfterCallBB": 62.5,
+          "remainingBB": 0,
+          "rawEquityThreshold": 0.384
+        }
+      }
+    },
+    {
+      "hero": "UTG",
+      "opener": "UTG",
+      "threeBettor": "SB",
+      "scenario": "vs3bet",
+      "fourBetAllIn": false,
+      "handCount": 169,
+      "actionComboCounts": {
+        "4-bet": 12,
+        "4-bet All-in": 16,
+        "Call": 16,
+        "Fold": 132,
+        "Outside history": 1150
+      },
+      "money": {
+        "opener": "UTG",
+        "threeBettor": "SB",
+        "hero": "UTG",
+        "opponent": "SB",
+        "stage": 3,
+        "openToBB": 2,
+        "threeBetToBB": 7,
+        "fourBetToBB": 14,
+        "liveBetsBB": {
+          "UTG": 2,
+          "SB": 7
+        },
+        "liveCapsBB": {
+          "UTG": 30,
+          "SB": 30
+        },
+        "deadMoneyBB": 2,
+        "potBeforeActionBB": 11,
+        "remainingBB": {
+          "UTG": 28,
+          "SB": 23
+        },
+        "minimumRaiseToBB": 12,
+        "opponentAllIn": false,
+        "call": {
+          "toBB": 7,
+          "additionalBB": 5,
+          "uncalledReturnBB": 0,
+          "potAfterCallBB": 16,
+          "remainingBB": 23,
+          "rawEquityThreshold": 0.3125
+        }
+      }
+    },
+    {
+      "hero": "SB",
+      "opener": "UTG",
+      "threeBettor": "SB",
+      "scenario": "vs4bet",
+      "fourBetAllIn": false,
+      "handCount": 169,
+      "actionComboCounts": {
+        "5-bet All-in": 12,
+        "Call": 22,
+        "Fold": 10,
+        "Outside history": 1282
+      },
+      "money": {
+        "opener": "UTG",
+        "threeBettor": "SB",
+        "hero": "SB",
+        "opponent": "UTG",
+        "stage": 4,
+        "openToBB": 2,
+        "threeBetToBB": 7,
+        "fourBetToBB": 14,
+        "liveBetsBB": {
+          "UTG": 14,
+          "SB": 7
+        },
+        "liveCapsBB": {
+          "UTG": 30,
+          "SB": 30
+        },
+        "deadMoneyBB": 2,
+        "potBeforeActionBB": 23,
+        "remainingBB": {
+          "UTG": 16,
+          "SB": 23
+        },
+        "minimumRaiseToBB": 21,
+        "opponentAllIn": false,
+        "call": {
+          "toBB": 14,
+          "additionalBB": 7,
+          "uncalledReturnBB": 0,
+          "potAfterCallBB": 30,
+          "remainingBB": 16,
+          "rawEquityThreshold": 0.23333333333333334
+        }
+      }
+    },
+    {
+      "hero": "SB",
+      "opener": "UTG",
+      "threeBettor": "SB",
+      "scenario": "vs4bet",
+      "fourBetAllIn": true,
+      "handCount": 169,
+      "actionComboCounts": {
+        "Call": 16,
+        "Fold": 28,
+        "Outside history": 1282
+      },
+      "money": {
+        "opener": "UTG",
+        "threeBettor": "SB",
+        "hero": "SB",
+        "opponent": "UTG",
+        "stage": 4,
+        "openToBB": 2,
+        "threeBetToBB": 7,
+        "fourBetToBB": 30,
+        "liveBetsBB": {
+          "UTG": 30,
+          "SB": 7
+        },
+        "liveCapsBB": {
+          "UTG": 30,
+          "SB": 30
+        },
+        "deadMoneyBB": 2,
+        "potBeforeActionBB": 39,
+        "remainingBB": {
+          "UTG": 0,
+          "SB": 23
+        },
+        "minimumRaiseToBB": 53,
+        "opponentAllIn": true,
+        "call": {
+          "toBB": 30,
+          "additionalBB": 23,
+          "uncalledReturnBB": 0,
+          "potAfterCallBB": 62,
+          "remainingBB": 0,
+          "rawEquityThreshold": 0.3709677419354839
+        }
+      }
+    },
+    {
+      "hero": "UTG",
+      "opener": "UTG",
+      "threeBettor": "BB",
+      "scenario": "vs3bet",
+      "fourBetAllIn": false,
+      "handCount": 169,
+      "actionComboCounts": {
+        "4-bet": 12,
+        "4-bet All-in": 16,
+        "Call": 16,
+        "Fold": 132,
+        "Outside history": 1150
+      },
+      "money": {
+        "opener": "UTG",
+        "threeBettor": "BB",
+        "hero": "UTG",
+        "opponent": "BB",
+        "stage": 3,
+        "openToBB": 2,
+        "threeBetToBB": 7,
+        "fourBetToBB": 14,
+        "liveBetsBB": {
+          "UTG": 2,
+          "BB": 7
+        },
+        "liveCapsBB": {
+          "UTG": 30,
+          "BB": 29
+        },
+        "deadMoneyBB": 1.5,
+        "potBeforeActionBB": 10.5,
+        "remainingBB": {
+          "UTG": 28,
+          "BB": 22
+        },
+        "minimumRaiseToBB": 12,
+        "opponentAllIn": false,
+        "call": {
+          "toBB": 7,
+          "additionalBB": 5,
+          "uncalledReturnBB": 0,
+          "potAfterCallBB": 15.5,
+          "remainingBB": 23,
+          "rawEquityThreshold": 0.3225806451612903
+        }
+      }
+    },
+    {
+      "hero": "BB",
+      "opener": "UTG",
+      "threeBettor": "BB",
+      "scenario": "vs4bet",
+      "fourBetAllIn": false,
+      "handCount": 169,
+      "actionComboCounts": {
+        "5-bet All-in": 12,
+        "Call": 22,
+        "Outside history": 1292
+      },
+      "money": {
+        "opener": "UTG",
+        "threeBettor": "BB",
+        "hero": "BB",
+        "opponent": "UTG",
+        "stage": 4,
+        "openToBB": 2,
+        "threeBetToBB": 7,
+        "fourBetToBB": 14,
+        "liveBetsBB": {
+          "UTG": 14,
+          "BB": 7
+        },
+        "liveCapsBB": {
+          "UTG": 30,
+          "BB": 29
+        },
+        "deadMoneyBB": 1.5,
+        "potBeforeActionBB": 22.5,
+        "remainingBB": {
+          "UTG": 16,
+          "BB": 22
+        },
+        "minimumRaiseToBB": 21,
+        "opponentAllIn": false,
+        "call": {
+          "toBB": 14,
+          "additionalBB": 7,
+          "uncalledReturnBB": 0,
+          "potAfterCallBB": 29.5,
+          "remainingBB": 15,
+          "rawEquityThreshold": 0.23728813559322035
+        }
+      }
+    },
+    {
+      "hero": "BB",
+      "opener": "UTG",
+      "threeBettor": "BB",
+      "scenario": "vs4bet",
+      "fourBetAllIn": true,
+      "handCount": 169,
+      "actionComboCounts": {
+        "Call": 16,
+        "Outside history": 1292,
+        "Fold": 18
+      },
+      "money": {
+        "opener": "UTG",
+        "threeBettor": "BB",
+        "hero": "BB",
+        "opponent": "UTG",
+        "stage": 4,
+        "openToBB": 2,
+        "threeBetToBB": 7,
+        "fourBetToBB": 30,
+        "liveBetsBB": {
+          "UTG": 30,
+          "BB": 7
+        },
+        "liveCapsBB": {
+          "UTG": 30,
+          "BB": 29
+        },
+        "deadMoneyBB": 1.5,
+        "potBeforeActionBB": 38.5,
+        "remainingBB": {
+          "UTG": 0,
+          "BB": 22
+        },
+        "minimumRaiseToBB": 53,
+        "opponentAllIn": true,
+        "call": {
+          "toBB": 29,
+          "additionalBB": 22,
+          "uncalledReturnBB": 1,
+          "potAfterCallBB": 59.5,
+          "remainingBB": 0,
+          "rawEquityThreshold": 0.3697478991596639
+        }
+      }
+    },
+    {
+      "hero": "UTG+1",
+      "opener": "UTG+1",
+      "threeBettor": "UTG+2",
+      "scenario": "vs3bet",
+      "fourBetAllIn": false,
+      "handCount": 169,
+      "actionComboCounts": {
+        "4-bet": 12,
+        "4-bet All-in": 16,
+        "Call": 16,
+        "Fold": 170,
+        "Outside history": 1112
+      },
+      "money": {
+        "opener": "UTG+1",
+        "threeBettor": "UTG+2",
+        "hero": "UTG+1",
+        "opponent": "UTG+2",
+        "stage": 3,
+        "openToBB": 2,
+        "threeBetToBB": 6,
+        "fourBetToBB": 14,
+        "liveBetsBB": {
+          "UTG+1": 2,
+          "UTG+2": 6
+        },
+        "liveCapsBB": {
+          "UTG+1": 30,
+          "UTG+2": 30
+        },
+        "deadMoneyBB": 2.5,
+        "potBeforeActionBB": 10.5,
+        "remainingBB": {
+          "UTG+1": 28,
+          "UTG+2": 24
+        },
+        "minimumRaiseToBB": 10,
+        "opponentAllIn": false,
+        "call": {
+          "toBB": 6,
+          "additionalBB": 4,
+          "uncalledReturnBB": 0,
+          "potAfterCallBB": 14.5,
+          "remainingBB": 24,
+          "rawEquityThreshold": 0.27586206896551724
+        }
+      }
+    },
+    {
+      "hero": "UTG+2",
+      "opener": "UTG+1",
+      "threeBettor": "UTG+2",
+      "scenario": "vs4bet",
+      "fourBetAllIn": false,
+      "handCount": 169,
+      "actionComboCounts": {
+        "5-bet All-in": 12,
+        "Call": 22,
+        "Outside history": 1292
+      },
+      "money": {
+        "opener": "UTG+1",
+        "threeBettor": "UTG+2",
+        "hero": "UTG+2",
+        "opponent": "UTG+1",
+        "stage": 4,
+        "openToBB": 2,
+        "threeBetToBB": 6,
+        "fourBetToBB": 14,
+        "liveBetsBB": {
+          "UTG+1": 14,
+          "UTG+2": 6
+        },
+        "liveCapsBB": {
+          "UTG+1": 30,
+          "UTG+2": 30
+        },
+        "deadMoneyBB": 2.5,
+        "potBeforeActionBB": 22.5,
+        "remainingBB": {
+          "UTG+1": 16,
+          "UTG+2": 24
+        },
+        "minimumRaiseToBB": 22,
+        "opponentAllIn": false,
+        "call": {
+          "toBB": 14,
+          "additionalBB": 8,
+          "uncalledReturnBB": 0,
+          "potAfterCallBB": 30.5,
+          "remainingBB": 16,
+          "rawEquityThreshold": 0.26229508196721313
+        }
+      }
+    },
+    {
+      "hero": "UTG+2",
+      "opener": "UTG+1",
+      "threeBettor": "UTG+2",
+      "scenario": "vs4bet",
+      "fourBetAllIn": true,
+      "handCount": 169,
+      "actionComboCounts": {
+        "Call": 16,
+        "Outside history": 1292,
+        "Fold": 18
+      },
+      "money": {
+        "opener": "UTG+1",
+        "threeBettor": "UTG+2",
+        "hero": "UTG+2",
+        "opponent": "UTG+1",
+        "stage": 4,
+        "openToBB": 2,
+        "threeBetToBB": 6,
+        "fourBetToBB": 30,
+        "liveBetsBB": {
+          "UTG+1": 30,
+          "UTG+2": 6
+        },
+        "liveCapsBB": {
+          "UTG+1": 30,
+          "UTG+2": 30
+        },
+        "deadMoneyBB": 2.5,
+        "potBeforeActionBB": 38.5,
+        "remainingBB": {
+          "UTG+1": 0,
+          "UTG+2": 24
+        },
+        "minimumRaiseToBB": 54,
+        "opponentAllIn": true,
+        "call": {
+          "toBB": 30,
+          "additionalBB": 24,
+          "uncalledReturnBB": 0,
+          "potAfterCallBB": 62.5,
+          "remainingBB": 0,
+          "rawEquityThreshold": 0.384
+        }
+      }
+    },
+    {
+      "hero": "UTG+1",
+      "opener": "UTG+1",
+      "threeBettor": "LJ",
+      "scenario": "vs3bet",
+      "fourBetAllIn": false,
+      "handCount": 169,
+      "actionComboCounts": {
+        "4-bet": 12,
+        "4-bet All-in": 16,
+        "Call": 16,
+        "Fold": 170,
+        "Outside history": 1112
+      },
+      "money": {
+        "opener": "UTG+1",
+        "threeBettor": "LJ",
+        "hero": "UTG+1",
+        "opponent": "LJ",
+        "stage": 3,
+        "openToBB": 2,
+        "threeBetToBB": 6,
+        "fourBetToBB": 14,
+        "liveBetsBB": {
+          "UTG+1": 2,
+          "LJ": 6
+        },
+        "liveCapsBB": {
+          "UTG+1": 30,
+          "LJ": 30
+        },
+        "deadMoneyBB": 2.5,
+        "potBeforeActionBB": 10.5,
+        "remainingBB": {
+          "UTG+1": 28,
+          "LJ": 24
+        },
+        "minimumRaiseToBB": 10,
+        "opponentAllIn": false,
+        "call": {
+          "toBB": 6,
+          "additionalBB": 4,
+          "uncalledReturnBB": 0,
+          "potAfterCallBB": 14.5,
+          "remainingBB": 24,
+          "rawEquityThreshold": 0.27586206896551724
+        }
+      }
+    },
+    {
+      "hero": "LJ",
+      "opener": "UTG+1",
+      "threeBettor": "LJ",
+      "scenario": "vs4bet",
+      "fourBetAllIn": false,
+      "handCount": 169,
+      "actionComboCounts": {
+        "5-bet All-in": 12,
+        "Call": 22,
+        "Outside history": 1292
+      },
+      "money": {
+        "opener": "UTG+1",
+        "threeBettor": "LJ",
+        "hero": "LJ",
+        "opponent": "UTG+1",
+        "stage": 4,
+        "openToBB": 2,
+        "threeBetToBB": 6,
+        "fourBetToBB": 14,
+        "liveBetsBB": {
+          "UTG+1": 14,
+          "LJ": 6
+        },
+        "liveCapsBB": {
+          "UTG+1": 30,
+          "LJ": 30
+        },
+        "deadMoneyBB": 2.5,
+        "potBeforeActionBB": 22.5,
+        "remainingBB": {
+          "UTG+1": 16,
+          "LJ": 24
+        },
+        "minimumRaiseToBB": 22,
+        "opponentAllIn": false,
+        "call": {
+          "toBB": 14,
+          "additionalBB": 8,
+          "uncalledReturnBB": 0,
+          "potAfterCallBB": 30.5,
+          "remainingBB": 16,
+          "rawEquityThreshold": 0.26229508196721313
+        }
+      }
+    },
+    {
+      "hero": "LJ",
+      "opener": "UTG+1",
+      "threeBettor": "LJ",
+      "scenario": "vs4bet",
+      "fourBetAllIn": true,
+      "handCount": 169,
+      "actionComboCounts": {
+        "Call": 16,
+        "Outside history": 1292,
+        "Fold": 18
+      },
+      "money": {
+        "opener": "UTG+1",
+        "threeBettor": "LJ",
+        "hero": "LJ",
+        "opponent": "UTG+1",
+        "stage": 4,
+        "openToBB": 2,
+        "threeBetToBB": 6,
+        "fourBetToBB": 30,
+        "liveBetsBB": {
+          "UTG+1": 30,
+          "LJ": 6
+        },
+        "liveCapsBB": {
+          "UTG+1": 30,
+          "LJ": 30
+        },
+        "deadMoneyBB": 2.5,
+        "potBeforeActionBB": 38.5,
+        "remainingBB": {
+          "UTG+1": 0,
+          "LJ": 24
+        },
+        "minimumRaiseToBB": 54,
+        "opponentAllIn": true,
+        "call": {
+          "toBB": 30,
+          "additionalBB": 24,
+          "uncalledReturnBB": 0,
+          "potAfterCallBB": 62.5,
+          "remainingBB": 0,
+          "rawEquityThreshold": 0.384
+        }
+      }
+    },
+    {
+      "hero": "UTG+1",
+      "opener": "UTG+1",
+      "threeBettor": "HJ",
+      "scenario": "vs3bet",
+      "fourBetAllIn": false,
+      "handCount": 169,
+      "actionComboCounts": {
+        "4-bet": 12,
+        "4-bet All-in": 16,
+        "Call": 16,
+        "Fold": 170,
+        "Outside history": 1112
+      },
+      "money": {
+        "opener": "UTG+1",
+        "threeBettor": "HJ",
+        "hero": "UTG+1",
+        "opponent": "HJ",
+        "stage": 3,
+        "openToBB": 2,
+        "threeBetToBB": 6,
+        "fourBetToBB": 14,
+        "liveBetsBB": {
+          "UTG+1": 2,
+          "HJ": 6
+        },
+        "liveCapsBB": {
+          "UTG+1": 30,
+          "HJ": 30
+        },
+        "deadMoneyBB": 2.5,
+        "potBeforeActionBB": 10.5,
+        "remainingBB": {
+          "UTG+1": 28,
+          "HJ": 24
+        },
+        "minimumRaiseToBB": 10,
+        "opponentAllIn": false,
+        "call": {
+          "toBB": 6,
+          "additionalBB": 4,
+          "uncalledReturnBB": 0,
+          "potAfterCallBB": 14.5,
+          "remainingBB": 24,
+          "rawEquityThreshold": 0.27586206896551724
+        }
+      }
+    },
+    {
+      "hero": "HJ",
+      "opener": "UTG+1",
+      "threeBettor": "HJ",
+      "scenario": "vs4bet",
+      "fourBetAllIn": false,
+      "handCount": 169,
+      "actionComboCounts": {
+        "5-bet All-in": 12,
+        "Call": 22,
+        "Outside history": 1292
+      },
+      "money": {
+        "opener": "UTG+1",
+        "threeBettor": "HJ",
+        "hero": "HJ",
+        "opponent": "UTG+1",
+        "stage": 4,
+        "openToBB": 2,
+        "threeBetToBB": 6,
+        "fourBetToBB": 14,
+        "liveBetsBB": {
+          "UTG+1": 14,
+          "HJ": 6
+        },
+        "liveCapsBB": {
+          "UTG+1": 30,
+          "HJ": 30
+        },
+        "deadMoneyBB": 2.5,
+        "potBeforeActionBB": 22.5,
+        "remainingBB": {
+          "UTG+1": 16,
+          "HJ": 24
+        },
+        "minimumRaiseToBB": 22,
+        "opponentAllIn": false,
+        "call": {
+          "toBB": 14,
+          "additionalBB": 8,
+          "uncalledReturnBB": 0,
+          "potAfterCallBB": 30.5,
+          "remainingBB": 16,
+          "rawEquityThreshold": 0.26229508196721313
+        }
+      }
+    },
+    {
+      "hero": "HJ",
+      "opener": "UTG+1",
+      "threeBettor": "HJ",
+      "scenario": "vs4bet",
+      "fourBetAllIn": true,
+      "handCount": 169,
+      "actionComboCounts": {
+        "Call": 16,
+        "Outside history": 1292,
+        "Fold": 18
+      },
+      "money": {
+        "opener": "UTG+1",
+        "threeBettor": "HJ",
+        "hero": "HJ",
+        "opponent": "UTG+1",
+        "stage": 4,
+        "openToBB": 2,
+        "threeBetToBB": 6,
+        "fourBetToBB": 30,
+        "liveBetsBB": {
+          "UTG+1": 30,
+          "HJ": 6
+        },
+        "liveCapsBB": {
+          "UTG+1": 30,
+          "HJ": 30
+        },
+        "deadMoneyBB": 2.5,
+        "potBeforeActionBB": 38.5,
+        "remainingBB": {
+          "UTG+1": 0,
+          "HJ": 24
+        },
+        "minimumRaiseToBB": 54,
+        "opponentAllIn": true,
+        "call": {
+          "toBB": 30,
+          "additionalBB": 24,
+          "uncalledReturnBB": 0,
+          "potAfterCallBB": 62.5,
+          "remainingBB": 0,
+          "rawEquityThreshold": 0.384
+        }
+      }
+    },
+    {
+      "hero": "UTG+1",
+      "opener": "UTG+1",
+      "threeBettor": "CO",
+      "scenario": "vs3bet",
+      "fourBetAllIn": false,
+      "handCount": 169,
+      "actionComboCounts": {
+        "4-bet": 12,
+        "4-bet All-in": 16,
+        "Call": 16,
+        "Fold": 170,
+        "Outside history": 1112
+      },
+      "money": {
+        "opener": "UTG+1",
+        "threeBettor": "CO",
+        "hero": "UTG+1",
+        "opponent": "CO",
+        "stage": 3,
+        "openToBB": 2,
+        "threeBetToBB": 6,
+        "fourBetToBB": 14,
+        "liveBetsBB": {
+          "UTG+1": 2,
+          "CO": 6
+        },
+        "liveCapsBB": {
+          "UTG+1": 30,
+          "CO": 30
+        },
+        "deadMoneyBB": 2.5,
+        "potBeforeActionBB": 10.5,
+        "remainingBB": {
+          "UTG+1": 28,
+          "CO": 24
+        },
+        "minimumRaiseToBB": 10,
+        "opponentAllIn": false,
+        "call": {
+          "toBB": 6,
+          "additionalBB": 4,
+          "uncalledReturnBB": 0,
+          "potAfterCallBB": 14.5,
+          "remainingBB": 24,
+          "rawEquityThreshold": 0.27586206896551724
+        }
+      }
+    },
+    {
+      "hero": "CO",
+      "opener": "UTG+1",
+      "threeBettor": "CO",
+      "scenario": "vs4bet",
+      "fourBetAllIn": false,
+      "handCount": 169,
+      "actionComboCounts": {
+        "5-bet All-in": 12,
+        "Call": 22,
+        "Outside history": 1292
+      },
+      "money": {
+        "opener": "UTG+1",
+        "threeBettor": "CO",
+        "hero": "CO",
+        "opponent": "UTG+1",
+        "stage": 4,
+        "openToBB": 2,
+        "threeBetToBB": 6,
+        "fourBetToBB": 14,
+        "liveBetsBB": {
+          "UTG+1": 14,
+          "CO": 6
+        },
+        "liveCapsBB": {
+          "UTG+1": 30,
+          "CO": 30
+        },
+        "deadMoneyBB": 2.5,
+        "potBeforeActionBB": 22.5,
+        "remainingBB": {
+          "UTG+1": 16,
+          "CO": 24
+        },
+        "minimumRaiseToBB": 22,
+        "opponentAllIn": false,
+        "call": {
+          "toBB": 14,
+          "additionalBB": 8,
+          "uncalledReturnBB": 0,
+          "potAfterCallBB": 30.5,
+          "remainingBB": 16,
+          "rawEquityThreshold": 0.26229508196721313
+        }
+      }
+    },
+    {
+      "hero": "CO",
+      "opener": "UTG+1",
+      "threeBettor": "CO",
+      "scenario": "vs4bet",
+      "fourBetAllIn": true,
+      "handCount": 169,
+      "actionComboCounts": {
+        "Call": 16,
+        "Outside history": 1292,
+        "Fold": 18
+      },
+      "money": {
+        "opener": "UTG+1",
+        "threeBettor": "CO",
+        "hero": "CO",
+        "opponent": "UTG+1",
+        "stage": 4,
+        "openToBB": 2,
+        "threeBetToBB": 6,
+        "fourBetToBB": 30,
+        "liveBetsBB": {
+          "UTG+1": 30,
+          "CO": 6
+        },
+        "liveCapsBB": {
+          "UTG+1": 30,
+          "CO": 30
+        },
+        "deadMoneyBB": 2.5,
+        "potBeforeActionBB": 38.5,
+        "remainingBB": {
+          "UTG+1": 0,
+          "CO": 24
+        },
+        "minimumRaiseToBB": 54,
+        "opponentAllIn": true,
+        "call": {
+          "toBB": 30,
+          "additionalBB": 24,
+          "uncalledReturnBB": 0,
+          "potAfterCallBB": 62.5,
+          "remainingBB": 0,
+          "rawEquityThreshold": 0.384
+        }
+      }
+    },
+    {
+      "hero": "UTG+1",
+      "opener": "UTG+1",
+      "threeBettor": "BTN",
+      "scenario": "vs3bet",
+      "fourBetAllIn": false,
+      "handCount": 169,
+      "actionComboCounts": {
+        "4-bet": 12,
+        "4-bet All-in": 16,
+        "Call": 16,
+        "Fold": 170,
+        "Outside history": 1112
+      },
+      "money": {
+        "opener": "UTG+1",
+        "threeBettor": "BTN",
+        "hero": "UTG+1",
+        "opponent": "BTN",
+        "stage": 3,
+        "openToBB": 2,
+        "threeBetToBB": 6,
+        "fourBetToBB": 14,
+        "liveBetsBB": {
+          "UTG+1": 2,
+          "BTN": 6
+        },
+        "liveCapsBB": {
+          "UTG+1": 30,
+          "BTN": 30
+        },
+        "deadMoneyBB": 2.5,
+        "potBeforeActionBB": 10.5,
+        "remainingBB": {
+          "UTG+1": 28,
+          "BTN": 24
+        },
+        "minimumRaiseToBB": 10,
+        "opponentAllIn": false,
+        "call": {
+          "toBB": 6,
+          "additionalBB": 4,
+          "uncalledReturnBB": 0,
+          "potAfterCallBB": 14.5,
+          "remainingBB": 24,
+          "rawEquityThreshold": 0.27586206896551724
+        }
+      }
+    },
+    {
+      "hero": "BTN",
+      "opener": "UTG+1",
+      "threeBettor": "BTN",
+      "scenario": "vs4bet",
+      "fourBetAllIn": false,
+      "handCount": 169,
+      "actionComboCounts": {
+        "5-bet All-in": 12,
+        "Call": 22,
+        "Outside history": 1292
+      },
+      "money": {
+        "opener": "UTG+1",
+        "threeBettor": "BTN",
+        "hero": "BTN",
+        "opponent": "UTG+1",
+        "stage": 4,
+        "openToBB": 2,
+        "threeBetToBB": 6,
+        "fourBetToBB": 14,
+        "liveBetsBB": {
+          "UTG+1": 14,
+          "BTN": 6
+        },
+        "liveCapsBB": {
+          "UTG+1": 30,
+          "BTN": 30
+        },
+        "deadMoneyBB": 2.5,
+        "potBeforeActionBB": 22.5,
+        "remainingBB": {
+          "UTG+1": 16,
+          "BTN": 24
+        },
+        "minimumRaiseToBB": 22,
+        "opponentAllIn": false,
+        "call": {
+          "toBB": 14,
+          "additionalBB": 8,
+          "uncalledReturnBB": 0,
+          "potAfterCallBB": 30.5,
+          "remainingBB": 16,
+          "rawEquityThreshold": 0.26229508196721313
+        }
+      }
+    },
+    {
+      "hero": "BTN",
+      "opener": "UTG+1",
+      "threeBettor": "BTN",
+      "scenario": "vs4bet",
+      "fourBetAllIn": true,
+      "handCount": 169,
+      "actionComboCounts": {
+        "Call": 16,
+        "Outside history": 1292,
+        "Fold": 18
+      },
+      "money": {
+        "opener": "UTG+1",
+        "threeBettor": "BTN",
+        "hero": "BTN",
+        "opponent": "UTG+1",
+        "stage": 4,
+        "openToBB": 2,
+        "threeBetToBB": 6,
+        "fourBetToBB": 30,
+        "liveBetsBB": {
+          "UTG+1": 30,
+          "BTN": 6
+        },
+        "liveCapsBB": {
+          "UTG+1": 30,
+          "BTN": 30
+        },
+        "deadMoneyBB": 2.5,
+        "potBeforeActionBB": 38.5,
+        "remainingBB": {
+          "UTG+1": 0,
+          "BTN": 24
+        },
+        "minimumRaiseToBB": 54,
+        "opponentAllIn": true,
+        "call": {
+          "toBB": 30,
+          "additionalBB": 24,
+          "uncalledReturnBB": 0,
+          "potAfterCallBB": 62.5,
+          "remainingBB": 0,
+          "rawEquityThreshold": 0.384
+        }
+      }
+    },
+    {
+      "hero": "UTG+1",
+      "opener": "UTG+1",
+      "threeBettor": "SB",
+      "scenario": "vs3bet",
+      "fourBetAllIn": false,
+      "handCount": 169,
+      "actionComboCounts": {
+        "4-bet": 12,
+        "4-bet All-in": 16,
+        "Call": 16,
+        "Fold": 170,
+        "Outside history": 1112
+      },
+      "money": {
+        "opener": "UTG+1",
+        "threeBettor": "SB",
+        "hero": "UTG+1",
+        "opponent": "SB",
+        "stage": 3,
+        "openToBB": 2,
+        "threeBetToBB": 7,
+        "fourBetToBB": 14,
+        "liveBetsBB": {
+          "UTG+1": 2,
+          "SB": 7
+        },
+        "liveCapsBB": {
+          "UTG+1": 30,
+          "SB": 30
+        },
+        "deadMoneyBB": 2,
+        "potBeforeActionBB": 11,
+        "remainingBB": {
+          "UTG+1": 28,
+          "SB": 23
+        },
+        "minimumRaiseToBB": 12,
+        "opponentAllIn": false,
+        "call": {
+          "toBB": 7,
+          "additionalBB": 5,
+          "uncalledReturnBB": 0,
+          "potAfterCallBB": 16,
+          "remainingBB": 23,
+          "rawEquityThreshold": 0.3125
+        }
+      }
+    },
+    {
+      "hero": "SB",
+      "opener": "UTG+1",
+      "threeBettor": "SB",
+      "scenario": "vs4bet",
+      "fourBetAllIn": false,
+      "handCount": 169,
+      "actionComboCounts": {
+        "5-bet All-in": 12,
+        "Call": 22,
+        "Fold": 10,
+        "Outside history": 1282
+      },
+      "money": {
+        "opener": "UTG+1",
+        "threeBettor": "SB",
+        "hero": "SB",
+        "opponent": "UTG+1",
+        "stage": 4,
+        "openToBB": 2,
+        "threeBetToBB": 7,
+        "fourBetToBB": 14,
+        "liveBetsBB": {
+          "UTG+1": 14,
+          "SB": 7
+        },
+        "liveCapsBB": {
+          "UTG+1": 30,
+          "SB": 30
+        },
+        "deadMoneyBB": 2,
+        "potBeforeActionBB": 23,
+        "remainingBB": {
+          "UTG+1": 16,
+          "SB": 23
+        },
+        "minimumRaiseToBB": 21,
+        "opponentAllIn": false,
+        "call": {
+          "toBB": 14,
+          "additionalBB": 7,
+          "uncalledReturnBB": 0,
+          "potAfterCallBB": 30,
+          "remainingBB": 16,
+          "rawEquityThreshold": 0.23333333333333334
+        }
+      }
+    },
+    {
+      "hero": "SB",
+      "opener": "UTG+1",
+      "threeBettor": "SB",
+      "scenario": "vs4bet",
+      "fourBetAllIn": true,
+      "handCount": 169,
+      "actionComboCounts": {
+        "Call": 16,
+        "Fold": 28,
+        "Outside history": 1282
+      },
+      "money": {
+        "opener": "UTG+1",
+        "threeBettor": "SB",
+        "hero": "SB",
+        "opponent": "UTG+1",
+        "stage": 4,
+        "openToBB": 2,
+        "threeBetToBB": 7,
+        "fourBetToBB": 30,
+        "liveBetsBB": {
+          "UTG+1": 30,
+          "SB": 7
+        },
+        "liveCapsBB": {
+          "UTG+1": 30,
+          "SB": 30
+        },
+        "deadMoneyBB": 2,
+        "potBeforeActionBB": 39,
+        "remainingBB": {
+          "UTG+1": 0,
+          "SB": 23
+        },
+        "minimumRaiseToBB": 53,
+        "opponentAllIn": true,
+        "call": {
+          "toBB": 30,
+          "additionalBB": 23,
+          "uncalledReturnBB": 0,
+          "potAfterCallBB": 62,
+          "remainingBB": 0,
+          "rawEquityThreshold": 0.3709677419354839
+        }
+      }
+    },
+    {
+      "hero": "UTG+1",
+      "opener": "UTG+1",
+      "threeBettor": "BB",
+      "scenario": "vs3bet",
+      "fourBetAllIn": false,
+      "handCount": 169,
+      "actionComboCounts": {
+        "4-bet": 12,
+        "4-bet All-in": 16,
+        "Call": 16,
+        "Fold": 170,
+        "Outside history": 1112
+      },
+      "money": {
+        "opener": "UTG+1",
+        "threeBettor": "BB",
+        "hero": "UTG+1",
+        "opponent": "BB",
+        "stage": 3,
+        "openToBB": 2,
+        "threeBetToBB": 7,
+        "fourBetToBB": 14,
+        "liveBetsBB": {
+          "UTG+1": 2,
+          "BB": 7
+        },
+        "liveCapsBB": {
+          "UTG+1": 30,
+          "BB": 29
+        },
+        "deadMoneyBB": 1.5,
+        "potBeforeActionBB": 10.5,
+        "remainingBB": {
+          "UTG+1": 28,
+          "BB": 22
+        },
+        "minimumRaiseToBB": 12,
+        "opponentAllIn": false,
+        "call": {
+          "toBB": 7,
+          "additionalBB": 5,
+          "uncalledReturnBB": 0,
+          "potAfterCallBB": 15.5,
+          "remainingBB": 23,
+          "rawEquityThreshold": 0.3225806451612903
+        }
+      }
+    },
+    {
+      "hero": "BB",
+      "opener": "UTG+1",
+      "threeBettor": "BB",
+      "scenario": "vs4bet",
+      "fourBetAllIn": false,
+      "handCount": 169,
+      "actionComboCounts": {
+        "5-bet All-in": 12,
+        "Call": 22,
+        "Outside history": 1292
+      },
+      "money": {
+        "opener": "UTG+1",
+        "threeBettor": "BB",
+        "hero": "BB",
+        "opponent": "UTG+1",
+        "stage": 4,
+        "openToBB": 2,
+        "threeBetToBB": 7,
+        "fourBetToBB": 14,
+        "liveBetsBB": {
+          "UTG+1": 14,
+          "BB": 7
+        },
+        "liveCapsBB": {
+          "UTG+1": 30,
+          "BB": 29
+        },
+        "deadMoneyBB": 1.5,
+        "potBeforeActionBB": 22.5,
+        "remainingBB": {
+          "UTG+1": 16,
+          "BB": 22
+        },
+        "minimumRaiseToBB": 21,
+        "opponentAllIn": false,
+        "call": {
+          "toBB": 14,
+          "additionalBB": 7,
+          "uncalledReturnBB": 0,
+          "potAfterCallBB": 29.5,
+          "remainingBB": 15,
+          "rawEquityThreshold": 0.23728813559322035
+        }
+      }
+    },
+    {
+      "hero": "BB",
+      "opener": "UTG+1",
+      "threeBettor": "BB",
+      "scenario": "vs4bet",
+      "fourBetAllIn": true,
+      "handCount": 169,
+      "actionComboCounts": {
+        "Call": 16,
+        "Outside history": 1292,
+        "Fold": 18
+      },
+      "money": {
+        "opener": "UTG+1",
+        "threeBettor": "BB",
+        "hero": "BB",
+        "opponent": "UTG+1",
+        "stage": 4,
+        "openToBB": 2,
+        "threeBetToBB": 7,
+        "fourBetToBB": 30,
+        "liveBetsBB": {
+          "UTG+1": 30,
+          "BB": 7
+        },
+        "liveCapsBB": {
+          "UTG+1": 30,
+          "BB": 29
+        },
+        "deadMoneyBB": 1.5,
+        "potBeforeActionBB": 38.5,
+        "remainingBB": {
+          "UTG+1": 0,
+          "BB": 22
+        },
+        "minimumRaiseToBB": 53,
+        "opponentAllIn": true,
+        "call": {
+          "toBB": 29,
+          "additionalBB": 22,
+          "uncalledReturnBB": 1,
+          "potAfterCallBB": 59.5,
+          "remainingBB": 0,
+          "rawEquityThreshold": 0.3697478991596639
+        }
+      }
+    },
+    {
+      "hero": "UTG+2",
+      "opener": "UTG+2",
+      "threeBettor": "LJ",
+      "scenario": "vs3bet",
+      "fourBetAllIn": false,
+      "handCount": 169,
+      "actionComboCounts": {
+        "4-bet": 12,
+        "4-bet All-in": 16,
+        "Call": 16,
+        "Fold": 216,
+        "Outside history": 1066
+      },
+      "money": {
+        "opener": "UTG+2",
+        "threeBettor": "LJ",
+        "hero": "UTG+2",
+        "opponent": "LJ",
+        "stage": 3,
+        "openToBB": 2,
+        "threeBetToBB": 6,
+        "fourBetToBB": 14,
+        "liveBetsBB": {
+          "UTG+2": 2,
+          "LJ": 6
+        },
+        "liveCapsBB": {
+          "UTG+2": 30,
+          "LJ": 30
+        },
+        "deadMoneyBB": 2.5,
+        "potBeforeActionBB": 10.5,
+        "remainingBB": {
+          "UTG+2": 28,
+          "LJ": 24
+        },
+        "minimumRaiseToBB": 10,
+        "opponentAllIn": false,
+        "call": {
+          "toBB": 6,
+          "additionalBB": 4,
+          "uncalledReturnBB": 0,
+          "potAfterCallBB": 14.5,
+          "remainingBB": 24,
+          "rawEquityThreshold": 0.27586206896551724
+        }
+      }
+    },
+    {
+      "hero": "LJ",
+      "opener": "UTG+2",
+      "threeBettor": "LJ",
+      "scenario": "vs4bet",
+      "fourBetAllIn": false,
+      "handCount": 169,
+      "actionComboCounts": {
+        "5-bet All-in": 12,
+        "Call": 22,
+        "Outside history": 1292
+      },
+      "money": {
+        "opener": "UTG+2",
+        "threeBettor": "LJ",
+        "hero": "LJ",
+        "opponent": "UTG+2",
+        "stage": 4,
+        "openToBB": 2,
+        "threeBetToBB": 6,
+        "fourBetToBB": 14,
+        "liveBetsBB": {
+          "UTG+2": 14,
+          "LJ": 6
+        },
+        "liveCapsBB": {
+          "UTG+2": 30,
+          "LJ": 30
+        },
+        "deadMoneyBB": 2.5,
+        "potBeforeActionBB": 22.5,
+        "remainingBB": {
+          "UTG+2": 16,
+          "LJ": 24
+        },
+        "minimumRaiseToBB": 22,
+        "opponentAllIn": false,
+        "call": {
+          "toBB": 14,
+          "additionalBB": 8,
+          "uncalledReturnBB": 0,
+          "potAfterCallBB": 30.5,
+          "remainingBB": 16,
+          "rawEquityThreshold": 0.26229508196721313
+        }
+      }
+    },
+    {
+      "hero": "LJ",
+      "opener": "UTG+2",
+      "threeBettor": "LJ",
+      "scenario": "vs4bet",
+      "fourBetAllIn": true,
+      "handCount": 169,
+      "actionComboCounts": {
+        "Call": 16,
+        "Outside history": 1292,
+        "Fold": 18
+      },
+      "money": {
+        "opener": "UTG+2",
+        "threeBettor": "LJ",
+        "hero": "LJ",
+        "opponent": "UTG+2",
+        "stage": 4,
+        "openToBB": 2,
+        "threeBetToBB": 6,
+        "fourBetToBB": 30,
+        "liveBetsBB": {
+          "UTG+2": 30,
+          "LJ": 6
+        },
+        "liveCapsBB": {
+          "UTG+2": 30,
+          "LJ": 30
+        },
+        "deadMoneyBB": 2.5,
+        "potBeforeActionBB": 38.5,
+        "remainingBB": {
+          "UTG+2": 0,
+          "LJ": 24
+        },
+        "minimumRaiseToBB": 54,
+        "opponentAllIn": true,
+        "call": {
+          "toBB": 30,
+          "additionalBB": 24,
+          "uncalledReturnBB": 0,
+          "potAfterCallBB": 62.5,
+          "remainingBB": 0,
+          "rawEquityThreshold": 0.384
+        }
+      }
+    },
+    {
+      "hero": "UTG+2",
+      "opener": "UTG+2",
+      "threeBettor": "HJ",
+      "scenario": "vs3bet",
+      "fourBetAllIn": false,
+      "handCount": 169,
+      "actionComboCounts": {
+        "4-bet": 12,
+        "4-bet All-in": 16,
+        "Call": 16,
+        "Fold": 216,
+        "Outside history": 1066
+      },
+      "money": {
+        "opener": "UTG+2",
+        "threeBettor": "HJ",
+        "hero": "UTG+2",
+        "opponent": "HJ",
+        "stage": 3,
+        "openToBB": 2,
+        "threeBetToBB": 6,
+        "fourBetToBB": 14,
+        "liveBetsBB": {
+          "UTG+2": 2,
+          "HJ": 6
+        },
+        "liveCapsBB": {
+          "UTG+2": 30,
+          "HJ": 30
+        },
+        "deadMoneyBB": 2.5,
+        "potBeforeActionBB": 10.5,
+        "remainingBB": {
+          "UTG+2": 28,
+          "HJ": 24
+        },
+        "minimumRaiseToBB": 10,
+        "opponentAllIn": false,
+        "call": {
+          "toBB": 6,
+          "additionalBB": 4,
+          "uncalledReturnBB": 0,
+          "potAfterCallBB": 14.5,
+          "remainingBB": 24,
+          "rawEquityThreshold": 0.27586206896551724
+        }
+      }
+    },
+    {
+      "hero": "HJ",
+      "opener": "UTG+2",
+      "threeBettor": "HJ",
+      "scenario": "vs4bet",
+      "fourBetAllIn": false,
+      "handCount": 169,
+      "actionComboCounts": {
+        "5-bet All-in": 12,
+        "Call": 22,
+        "Outside history": 1292
+      },
+      "money": {
+        "opener": "UTG+2",
+        "threeBettor": "HJ",
+        "hero": "HJ",
+        "opponent": "UTG+2",
+        "stage": 4,
+        "openToBB": 2,
+        "threeBetToBB": 6,
+        "fourBetToBB": 14,
+        "liveBetsBB": {
+          "UTG+2": 14,
+          "HJ": 6
+        },
+        "liveCapsBB": {
+          "UTG+2": 30,
+          "HJ": 30
+        },
+        "deadMoneyBB": 2.5,
+        "potBeforeActionBB": 22.5,
+        "remainingBB": {
+          "UTG+2": 16,
+          "HJ": 24
+        },
+        "minimumRaiseToBB": 22,
+        "opponentAllIn": false,
+        "call": {
+          "toBB": 14,
+          "additionalBB": 8,
+          "uncalledReturnBB": 0,
+          "potAfterCallBB": 30.5,
+          "remainingBB": 16,
+          "rawEquityThreshold": 0.26229508196721313
+        }
+      }
+    },
+    {
+      "hero": "HJ",
+      "opener": "UTG+2",
+      "threeBettor": "HJ",
+      "scenario": "vs4bet",
+      "fourBetAllIn": true,
+      "handCount": 169,
+      "actionComboCounts": {
+        "Call": 16,
+        "Outside history": 1292,
+        "Fold": 18
+      },
+      "money": {
+        "opener": "UTG+2",
+        "threeBettor": "HJ",
+        "hero": "HJ",
+        "opponent": "UTG+2",
+        "stage": 4,
+        "openToBB": 2,
+        "threeBetToBB": 6,
+        "fourBetToBB": 30,
+        "liveBetsBB": {
+          "UTG+2": 30,
+          "HJ": 6
+        },
+        "liveCapsBB": {
+          "UTG+2": 30,
+          "HJ": 30
+        },
+        "deadMoneyBB": 2.5,
+        "potBeforeActionBB": 38.5,
+        "remainingBB": {
+          "UTG+2": 0,
+          "HJ": 24
+        },
+        "minimumRaiseToBB": 54,
+        "opponentAllIn": true,
+        "call": {
+          "toBB": 30,
+          "additionalBB": 24,
+          "uncalledReturnBB": 0,
+          "potAfterCallBB": 62.5,
+          "remainingBB": 0,
+          "rawEquityThreshold": 0.384
+        }
+      }
+    },
+    {
+      "hero": "UTG+2",
+      "opener": "UTG+2",
+      "threeBettor": "CO",
+      "scenario": "vs3bet",
+      "fourBetAllIn": false,
+      "handCount": 169,
+      "actionComboCounts": {
+        "4-bet": 12,
+        "4-bet All-in": 16,
+        "Call": 16,
+        "Fold": 216,
+        "Outside history": 1066
+      },
+      "money": {
+        "opener": "UTG+2",
+        "threeBettor": "CO",
+        "hero": "UTG+2",
+        "opponent": "CO",
+        "stage": 3,
+        "openToBB": 2,
+        "threeBetToBB": 6,
+        "fourBetToBB": 14,
+        "liveBetsBB": {
+          "UTG+2": 2,
+          "CO": 6
+        },
+        "liveCapsBB": {
+          "UTG+2": 30,
+          "CO": 30
+        },
+        "deadMoneyBB": 2.5,
+        "potBeforeActionBB": 10.5,
+        "remainingBB": {
+          "UTG+2": 28,
+          "CO": 24
+        },
+        "minimumRaiseToBB": 10,
+        "opponentAllIn": false,
+        "call": {
+          "toBB": 6,
+          "additionalBB": 4,
+          "uncalledReturnBB": 0,
+          "potAfterCallBB": 14.5,
+          "remainingBB": 24,
+          "rawEquityThreshold": 0.27586206896551724
+        }
+      }
+    },
+    {
+      "hero": "CO",
+      "opener": "UTG+2",
+      "threeBettor": "CO",
+      "scenario": "vs4bet",
+      "fourBetAllIn": false,
+      "handCount": 169,
+      "actionComboCounts": {
+        "5-bet All-in": 12,
+        "Call": 22,
+        "Outside history": 1292
+      },
+      "money": {
+        "opener": "UTG+2",
+        "threeBettor": "CO",
+        "hero": "CO",
+        "opponent": "UTG+2",
+        "stage": 4,
+        "openToBB": 2,
+        "threeBetToBB": 6,
+        "fourBetToBB": 14,
+        "liveBetsBB": {
+          "UTG+2": 14,
+          "CO": 6
+        },
+        "liveCapsBB": {
+          "UTG+2": 30,
+          "CO": 30
+        },
+        "deadMoneyBB": 2.5,
+        "potBeforeActionBB": 22.5,
+        "remainingBB": {
+          "UTG+2": 16,
+          "CO": 24
+        },
+        "minimumRaiseToBB": 22,
+        "opponentAllIn": false,
+        "call": {
+          "toBB": 14,
+          "additionalBB": 8,
+          "uncalledReturnBB": 0,
+          "potAfterCallBB": 30.5,
+          "remainingBB": 16,
+          "rawEquityThreshold": 0.26229508196721313
+        }
+      }
+    },
+    {
+      "hero": "CO",
+      "opener": "UTG+2",
+      "threeBettor": "CO",
+      "scenario": "vs4bet",
+      "fourBetAllIn": true,
+      "handCount": 169,
+      "actionComboCounts": {
+        "Call": 16,
+        "Outside history": 1292,
+        "Fold": 18
+      },
+      "money": {
+        "opener": "UTG+2",
+        "threeBettor": "CO",
+        "hero": "CO",
+        "opponent": "UTG+2",
+        "stage": 4,
+        "openToBB": 2,
+        "threeBetToBB": 6,
+        "fourBetToBB": 30,
+        "liveBetsBB": {
+          "UTG+2": 30,
+          "CO": 6
+        },
+        "liveCapsBB": {
+          "UTG+2": 30,
+          "CO": 30
+        },
+        "deadMoneyBB": 2.5,
+        "potBeforeActionBB": 38.5,
+        "remainingBB": {
+          "UTG+2": 0,
+          "CO": 24
+        },
+        "minimumRaiseToBB": 54,
+        "opponentAllIn": true,
+        "call": {
+          "toBB": 30,
+          "additionalBB": 24,
+          "uncalledReturnBB": 0,
+          "potAfterCallBB": 62.5,
+          "remainingBB": 0,
+          "rawEquityThreshold": 0.384
+        }
+      }
+    },
+    {
+      "hero": "UTG+2",
+      "opener": "UTG+2",
+      "threeBettor": "BTN",
+      "scenario": "vs3bet",
+      "fourBetAllIn": false,
+      "handCount": 169,
+      "actionComboCounts": {
+        "4-bet": 12,
+        "4-bet All-in": 16,
+        "Call": 16,
+        "Fold": 216,
+        "Outside history": 1066
+      },
+      "money": {
+        "opener": "UTG+2",
+        "threeBettor": "BTN",
+        "hero": "UTG+2",
+        "opponent": "BTN",
+        "stage": 3,
+        "openToBB": 2,
+        "threeBetToBB": 6,
+        "fourBetToBB": 14,
+        "liveBetsBB": {
+          "UTG+2": 2,
+          "BTN": 6
+        },
+        "liveCapsBB": {
+          "UTG+2": 30,
+          "BTN": 30
+        },
+        "deadMoneyBB": 2.5,
+        "potBeforeActionBB": 10.5,
+        "remainingBB": {
+          "UTG+2": 28,
+          "BTN": 24
+        },
+        "minimumRaiseToBB": 10,
+        "opponentAllIn": false,
+        "call": {
+          "toBB": 6,
+          "additionalBB": 4,
+          "uncalledReturnBB": 0,
+          "potAfterCallBB": 14.5,
+          "remainingBB": 24,
+          "rawEquityThreshold": 0.27586206896551724
+        }
+      }
+    },
+    {
+      "hero": "BTN",
+      "opener": "UTG+2",
+      "threeBettor": "BTN",
+      "scenario": "vs4bet",
+      "fourBetAllIn": false,
+      "handCount": 169,
+      "actionComboCounts": {
+        "5-bet All-in": 12,
+        "Call": 22,
+        "Outside history": 1292
+      },
+      "money": {
+        "opener": "UTG+2",
+        "threeBettor": "BTN",
+        "hero": "BTN",
+        "opponent": "UTG+2",
+        "stage": 4,
+        "openToBB": 2,
+        "threeBetToBB": 6,
+        "fourBetToBB": 14,
+        "liveBetsBB": {
+          "UTG+2": 14,
+          "BTN": 6
+        },
+        "liveCapsBB": {
+          "UTG+2": 30,
+          "BTN": 30
+        },
+        "deadMoneyBB": 2.5,
+        "potBeforeActionBB": 22.5,
+        "remainingBB": {
+          "UTG+2": 16,
+          "BTN": 24
+        },
+        "minimumRaiseToBB": 22,
+        "opponentAllIn": false,
+        "call": {
+          "toBB": 14,
+          "additionalBB": 8,
+          "uncalledReturnBB": 0,
+          "potAfterCallBB": 30.5,
+          "remainingBB": 16,
+          "rawEquityThreshold": 0.26229508196721313
+        }
+      }
+    },
+    {
+      "hero": "BTN",
+      "opener": "UTG+2",
+      "threeBettor": "BTN",
+      "scenario": "vs4bet",
+      "fourBetAllIn": true,
+      "handCount": 169,
+      "actionComboCounts": {
+        "Call": 16,
+        "Outside history": 1292,
+        "Fold": 18
+      },
+      "money": {
+        "opener": "UTG+2",
+        "threeBettor": "BTN",
+        "hero": "BTN",
+        "opponent": "UTG+2",
+        "stage": 4,
+        "openToBB": 2,
+        "threeBetToBB": 6,
+        "fourBetToBB": 30,
+        "liveBetsBB": {
+          "UTG+2": 30,
+          "BTN": 6
+        },
+        "liveCapsBB": {
+          "UTG+2": 30,
+          "BTN": 30
+        },
+        "deadMoneyBB": 2.5,
+        "potBeforeActionBB": 38.5,
+        "remainingBB": {
+          "UTG+2": 0,
+          "BTN": 24
+        },
+        "minimumRaiseToBB": 54,
+        "opponentAllIn": true,
+        "call": {
+          "toBB": 30,
+          "additionalBB": 24,
+          "uncalledReturnBB": 0,
+          "potAfterCallBB": 62.5,
+          "remainingBB": 0,
+          "rawEquityThreshold": 0.384
+        }
+      }
+    },
+    {
+      "hero": "UTG+2",
+      "opener": "UTG+2",
+      "threeBettor": "SB",
+      "scenario": "vs3bet",
+      "fourBetAllIn": false,
+      "handCount": 169,
+      "actionComboCounts": {
+        "4-bet": 12,
+        "4-bet All-in": 16,
+        "Call": 16,
+        "Fold": 216,
+        "Outside history": 1066
+      },
+      "money": {
+        "opener": "UTG+2",
+        "threeBettor": "SB",
+        "hero": "UTG+2",
+        "opponent": "SB",
+        "stage": 3,
+        "openToBB": 2,
+        "threeBetToBB": 7,
+        "fourBetToBB": 14,
+        "liveBetsBB": {
+          "UTG+2": 2,
+          "SB": 7
+        },
+        "liveCapsBB": {
+          "UTG+2": 30,
+          "SB": 30
+        },
+        "deadMoneyBB": 2,
+        "potBeforeActionBB": 11,
+        "remainingBB": {
+          "UTG+2": 28,
+          "SB": 23
+        },
+        "minimumRaiseToBB": 12,
+        "opponentAllIn": false,
+        "call": {
+          "toBB": 7,
+          "additionalBB": 5,
+          "uncalledReturnBB": 0,
+          "potAfterCallBB": 16,
+          "remainingBB": 23,
+          "rawEquityThreshold": 0.3125
+        }
+      }
+    },
+    {
+      "hero": "SB",
+      "opener": "UTG+2",
+      "threeBettor": "SB",
+      "scenario": "vs4bet",
+      "fourBetAllIn": false,
+      "handCount": 169,
+      "actionComboCounts": {
+        "5-bet All-in": 12,
+        "Call": 22,
+        "Fold": 10,
+        "Outside history": 1282
+      },
+      "money": {
+        "opener": "UTG+2",
+        "threeBettor": "SB",
+        "hero": "SB",
+        "opponent": "UTG+2",
+        "stage": 4,
+        "openToBB": 2,
+        "threeBetToBB": 7,
+        "fourBetToBB": 14,
+        "liveBetsBB": {
+          "UTG+2": 14,
+          "SB": 7
+        },
+        "liveCapsBB": {
+          "UTG+2": 30,
+          "SB": 30
+        },
+        "deadMoneyBB": 2,
+        "potBeforeActionBB": 23,
+        "remainingBB": {
+          "UTG+2": 16,
+          "SB": 23
+        },
+        "minimumRaiseToBB": 21,
+        "opponentAllIn": false,
+        "call": {
+          "toBB": 14,
+          "additionalBB": 7,
+          "uncalledReturnBB": 0,
+          "potAfterCallBB": 30,
+          "remainingBB": 16,
+          "rawEquityThreshold": 0.23333333333333334
+        }
+      }
+    },
+    {
+      "hero": "SB",
+      "opener": "UTG+2",
+      "threeBettor": "SB",
+      "scenario": "vs4bet",
+      "fourBetAllIn": true,
+      "handCount": 169,
+      "actionComboCounts": {
+        "Call": 16,
+        "Fold": 28,
+        "Outside history": 1282
+      },
+      "money": {
+        "opener": "UTG+2",
+        "threeBettor": "SB",
+        "hero": "SB",
+        "opponent": "UTG+2",
+        "stage": 4,
+        "openToBB": 2,
+        "threeBetToBB": 7,
+        "fourBetToBB": 30,
+        "liveBetsBB": {
+          "UTG+2": 30,
+          "SB": 7
+        },
+        "liveCapsBB": {
+          "UTG+2": 30,
+          "SB": 30
+        },
+        "deadMoneyBB": 2,
+        "potBeforeActionBB": 39,
+        "remainingBB": {
+          "UTG+2": 0,
+          "SB": 23
+        },
+        "minimumRaiseToBB": 53,
+        "opponentAllIn": true,
+        "call": {
+          "toBB": 30,
+          "additionalBB": 23,
+          "uncalledReturnBB": 0,
+          "potAfterCallBB": 62,
+          "remainingBB": 0,
+          "rawEquityThreshold": 0.3709677419354839
+        }
+      }
+    },
+    {
+      "hero": "UTG+2",
+      "opener": "UTG+2",
+      "threeBettor": "BB",
+      "scenario": "vs3bet",
+      "fourBetAllIn": false,
+      "handCount": 169,
+      "actionComboCounts": {
+        "4-bet": 12,
+        "4-bet All-in": 16,
+        "Call": 16,
+        "Fold": 216,
+        "Outside history": 1066
+      },
+      "money": {
+        "opener": "UTG+2",
+        "threeBettor": "BB",
+        "hero": "UTG+2",
+        "opponent": "BB",
+        "stage": 3,
+        "openToBB": 2,
+        "threeBetToBB": 7,
+        "fourBetToBB": 14,
+        "liveBetsBB": {
+          "UTG+2": 2,
+          "BB": 7
+        },
+        "liveCapsBB": {
+          "UTG+2": 30,
+          "BB": 29
+        },
+        "deadMoneyBB": 1.5,
+        "potBeforeActionBB": 10.5,
+        "remainingBB": {
+          "UTG+2": 28,
+          "BB": 22
+        },
+        "minimumRaiseToBB": 12,
+        "opponentAllIn": false,
+        "call": {
+          "toBB": 7,
+          "additionalBB": 5,
+          "uncalledReturnBB": 0,
+          "potAfterCallBB": 15.5,
+          "remainingBB": 23,
+          "rawEquityThreshold": 0.3225806451612903
+        }
+      }
+    },
+    {
+      "hero": "BB",
+      "opener": "UTG+2",
+      "threeBettor": "BB",
+      "scenario": "vs4bet",
+      "fourBetAllIn": false,
+      "handCount": 169,
+      "actionComboCounts": {
+        "5-bet All-in": 12,
+        "Call": 22,
+        "Outside history": 1292
+      },
+      "money": {
+        "opener": "UTG+2",
+        "threeBettor": "BB",
+        "hero": "BB",
+        "opponent": "UTG+2",
+        "stage": 4,
+        "openToBB": 2,
+        "threeBetToBB": 7,
+        "fourBetToBB": 14,
+        "liveBetsBB": {
+          "UTG+2": 14,
+          "BB": 7
+        },
+        "liveCapsBB": {
+          "UTG+2": 30,
+          "BB": 29
+        },
+        "deadMoneyBB": 1.5,
+        "potBeforeActionBB": 22.5,
+        "remainingBB": {
+          "UTG+2": 16,
+          "BB": 22
+        },
+        "minimumRaiseToBB": 21,
+        "opponentAllIn": false,
+        "call": {
+          "toBB": 14,
+          "additionalBB": 7,
+          "uncalledReturnBB": 0,
+          "potAfterCallBB": 29.5,
+          "remainingBB": 15,
+          "rawEquityThreshold": 0.23728813559322035
+        }
+      }
+    },
+    {
+      "hero": "BB",
+      "opener": "UTG+2",
+      "threeBettor": "BB",
+      "scenario": "vs4bet",
+      "fourBetAllIn": true,
+      "handCount": 169,
+      "actionComboCounts": {
+        "Call": 16,
+        "Outside history": 1292,
+        "Fold": 18
+      },
+      "money": {
+        "opener": "UTG+2",
+        "threeBettor": "BB",
+        "hero": "BB",
+        "opponent": "UTG+2",
+        "stage": 4,
+        "openToBB": 2,
+        "threeBetToBB": 7,
+        "fourBetToBB": 30,
+        "liveBetsBB": {
+          "UTG+2": 30,
+          "BB": 7
+        },
+        "liveCapsBB": {
+          "UTG+2": 30,
+          "BB": 29
+        },
+        "deadMoneyBB": 1.5,
+        "potBeforeActionBB": 38.5,
+        "remainingBB": {
+          "UTG+2": 0,
+          "BB": 22
+        },
+        "minimumRaiseToBB": 53,
+        "opponentAllIn": true,
+        "call": {
+          "toBB": 29,
+          "additionalBB": 22,
+          "uncalledReturnBB": 1,
+          "potAfterCallBB": 59.5,
+          "remainingBB": 0,
+          "rawEquityThreshold": 0.3697478991596639
+        }
+      }
+    },
+    {
+      "hero": "LJ",
+      "opener": "LJ",
+      "threeBettor": "HJ",
+      "scenario": "vs3bet",
+      "fourBetAllIn": false,
+      "handCount": 169,
+      "actionComboCounts": {
+        "4-bet": 12,
+        "4-bet All-in": 22,
+        "Call": 20,
+        "Fold": 256,
+        "Outside history": 1016
+      },
+      "money": {
+        "opener": "LJ",
+        "threeBettor": "HJ",
+        "hero": "LJ",
+        "opponent": "HJ",
+        "stage": 3,
+        "openToBB": 2,
+        "threeBetToBB": 6,
+        "fourBetToBB": 14,
+        "liveBetsBB": {
+          "LJ": 2,
+          "HJ": 6
+        },
+        "liveCapsBB": {
+          "LJ": 30,
+          "HJ": 30
+        },
+        "deadMoneyBB": 2.5,
+        "potBeforeActionBB": 10.5,
+        "remainingBB": {
+          "LJ": 28,
+          "HJ": 24
+        },
+        "minimumRaiseToBB": 10,
+        "opponentAllIn": false,
+        "call": {
+          "toBB": 6,
+          "additionalBB": 4,
+          "uncalledReturnBB": 0,
+          "potAfterCallBB": 14.5,
+          "remainingBB": 24,
+          "rawEquityThreshold": 0.27586206896551724
+        }
+      }
+    },
+    {
+      "hero": "HJ",
+      "opener": "LJ",
+      "threeBettor": "HJ",
+      "scenario": "vs4bet",
+      "fourBetAllIn": false,
+      "handCount": 169,
+      "actionComboCounts": {
+        "5-bet All-in": 12,
+        "Call": 22,
+        "Fold": 14,
+        "Outside history": 1278
+      },
+      "money": {
+        "opener": "LJ",
+        "threeBettor": "HJ",
+        "hero": "HJ",
+        "opponent": "LJ",
+        "stage": 4,
+        "openToBB": 2,
+        "threeBetToBB": 6,
+        "fourBetToBB": 14,
+        "liveBetsBB": {
+          "LJ": 14,
+          "HJ": 6
+        },
+        "liveCapsBB": {
+          "LJ": 30,
+          "HJ": 30
+        },
+        "deadMoneyBB": 2.5,
+        "potBeforeActionBB": 22.5,
+        "remainingBB": {
+          "LJ": 16,
+          "HJ": 24
+        },
+        "minimumRaiseToBB": 22,
+        "opponentAllIn": false,
+        "call": {
+          "toBB": 14,
+          "additionalBB": 8,
+          "uncalledReturnBB": 0,
+          "potAfterCallBB": 30.5,
+          "remainingBB": 16,
+          "rawEquityThreshold": 0.26229508196721313
+        }
+      }
+    },
+    {
+      "hero": "HJ",
+      "opener": "LJ",
+      "threeBettor": "HJ",
+      "scenario": "vs4bet",
+      "fourBetAllIn": true,
+      "handCount": 169,
+      "actionComboCounts": {
+        "Call": 34,
+        "Fold": 14,
+        "Outside history": 1278
+      },
+      "money": {
+        "opener": "LJ",
+        "threeBettor": "HJ",
+        "hero": "HJ",
+        "opponent": "LJ",
+        "stage": 4,
+        "openToBB": 2,
+        "threeBetToBB": 6,
+        "fourBetToBB": 30,
+        "liveBetsBB": {
+          "LJ": 30,
+          "HJ": 6
+        },
+        "liveCapsBB": {
+          "LJ": 30,
+          "HJ": 30
+        },
+        "deadMoneyBB": 2.5,
+        "potBeforeActionBB": 38.5,
+        "remainingBB": {
+          "LJ": 0,
+          "HJ": 24
+        },
+        "minimumRaiseToBB": 54,
+        "opponentAllIn": true,
+        "call": {
+          "toBB": 30,
+          "additionalBB": 24,
+          "uncalledReturnBB": 0,
+          "potAfterCallBB": 62.5,
+          "remainingBB": 0,
+          "rawEquityThreshold": 0.384
+        }
+      }
+    },
+    {
+      "hero": "LJ",
+      "opener": "LJ",
+      "threeBettor": "CO",
+      "scenario": "vs3bet",
+      "fourBetAllIn": false,
+      "handCount": 169,
+      "actionComboCounts": {
+        "4-bet": 12,
+        "4-bet All-in": 22,
+        "Call": 20,
+        "Fold": 256,
+        "Outside history": 1016
+      },
+      "money": {
+        "opener": "LJ",
+        "threeBettor": "CO",
+        "hero": "LJ",
+        "opponent": "CO",
+        "stage": 3,
+        "openToBB": 2,
+        "threeBetToBB": 6,
+        "fourBetToBB": 14,
+        "liveBetsBB": {
+          "LJ": 2,
+          "CO": 6
+        },
+        "liveCapsBB": {
+          "LJ": 30,
+          "CO": 30
+        },
+        "deadMoneyBB": 2.5,
+        "potBeforeActionBB": 10.5,
+        "remainingBB": {
+          "LJ": 28,
+          "CO": 24
+        },
+        "minimumRaiseToBB": 10,
+        "opponentAllIn": false,
+        "call": {
+          "toBB": 6,
+          "additionalBB": 4,
+          "uncalledReturnBB": 0,
+          "potAfterCallBB": 14.5,
+          "remainingBB": 24,
+          "rawEquityThreshold": 0.27586206896551724
+        }
+      }
+    },
+    {
+      "hero": "CO",
+      "opener": "LJ",
+      "threeBettor": "CO",
+      "scenario": "vs4bet",
+      "fourBetAllIn": false,
+      "handCount": 169,
+      "actionComboCounts": {
+        "5-bet All-in": 12,
+        "Call": 22,
+        "Fold": 14,
+        "Outside history": 1278
+      },
+      "money": {
+        "opener": "LJ",
+        "threeBettor": "CO",
+        "hero": "CO",
+        "opponent": "LJ",
+        "stage": 4,
+        "openToBB": 2,
+        "threeBetToBB": 6,
+        "fourBetToBB": 14,
+        "liveBetsBB": {
+          "LJ": 14,
+          "CO": 6
+        },
+        "liveCapsBB": {
+          "LJ": 30,
+          "CO": 30
+        },
+        "deadMoneyBB": 2.5,
+        "potBeforeActionBB": 22.5,
+        "remainingBB": {
+          "LJ": 16,
+          "CO": 24
+        },
+        "minimumRaiseToBB": 22,
+        "opponentAllIn": false,
+        "call": {
+          "toBB": 14,
+          "additionalBB": 8,
+          "uncalledReturnBB": 0,
+          "potAfterCallBB": 30.5,
+          "remainingBB": 16,
+          "rawEquityThreshold": 0.26229508196721313
+        }
+      }
+    },
+    {
+      "hero": "CO",
+      "opener": "LJ",
+      "threeBettor": "CO",
+      "scenario": "vs4bet",
+      "fourBetAllIn": true,
+      "handCount": 169,
+      "actionComboCounts": {
+        "Call": 34,
+        "Fold": 14,
+        "Outside history": 1278
+      },
+      "money": {
+        "opener": "LJ",
+        "threeBettor": "CO",
+        "hero": "CO",
+        "opponent": "LJ",
+        "stage": 4,
+        "openToBB": 2,
+        "threeBetToBB": 6,
+        "fourBetToBB": 30,
+        "liveBetsBB": {
+          "LJ": 30,
+          "CO": 6
+        },
+        "liveCapsBB": {
+          "LJ": 30,
+          "CO": 30
+        },
+        "deadMoneyBB": 2.5,
+        "potBeforeActionBB": 38.5,
+        "remainingBB": {
+          "LJ": 0,
+          "CO": 24
+        },
+        "minimumRaiseToBB": 54,
+        "opponentAllIn": true,
+        "call": {
+          "toBB": 30,
+          "additionalBB": 24,
+          "uncalledReturnBB": 0,
+          "potAfterCallBB": 62.5,
+          "remainingBB": 0,
+          "rawEquityThreshold": 0.384
+        }
+      }
+    },
+    {
+      "hero": "LJ",
+      "opener": "LJ",
+      "threeBettor": "BTN",
+      "scenario": "vs3bet",
+      "fourBetAllIn": false,
+      "handCount": 169,
+      "actionComboCounts": {
+        "4-bet": 12,
+        "4-bet All-in": 22,
+        "Call": 20,
+        "Fold": 256,
+        "Outside history": 1016
+      },
+      "money": {
+        "opener": "LJ",
+        "threeBettor": "BTN",
+        "hero": "LJ",
+        "opponent": "BTN",
+        "stage": 3,
+        "openToBB": 2,
+        "threeBetToBB": 6,
+        "fourBetToBB": 14,
+        "liveBetsBB": {
+          "LJ": 2,
+          "BTN": 6
+        },
+        "liveCapsBB": {
+          "LJ": 30,
+          "BTN": 30
+        },
+        "deadMoneyBB": 2.5,
+        "potBeforeActionBB": 10.5,
+        "remainingBB": {
+          "LJ": 28,
+          "BTN": 24
+        },
+        "minimumRaiseToBB": 10,
+        "opponentAllIn": false,
+        "call": {
+          "toBB": 6,
+          "additionalBB": 4,
+          "uncalledReturnBB": 0,
+          "potAfterCallBB": 14.5,
+          "remainingBB": 24,
+          "rawEquityThreshold": 0.27586206896551724
+        }
+      }
+    },
+    {
+      "hero": "BTN",
+      "opener": "LJ",
+      "threeBettor": "BTN",
+      "scenario": "vs4bet",
+      "fourBetAllIn": false,
+      "handCount": 169,
+      "actionComboCounts": {
+        "5-bet All-in": 12,
+        "Call": 22,
+        "Fold": 14,
+        "Outside history": 1278
+      },
+      "money": {
+        "opener": "LJ",
+        "threeBettor": "BTN",
+        "hero": "BTN",
+        "opponent": "LJ",
+        "stage": 4,
+        "openToBB": 2,
+        "threeBetToBB": 6,
+        "fourBetToBB": 14,
+        "liveBetsBB": {
+          "LJ": 14,
+          "BTN": 6
+        },
+        "liveCapsBB": {
+          "LJ": 30,
+          "BTN": 30
+        },
+        "deadMoneyBB": 2.5,
+        "potBeforeActionBB": 22.5,
+        "remainingBB": {
+          "LJ": 16,
+          "BTN": 24
+        },
+        "minimumRaiseToBB": 22,
+        "opponentAllIn": false,
+        "call": {
+          "toBB": 14,
+          "additionalBB": 8,
+          "uncalledReturnBB": 0,
+          "potAfterCallBB": 30.5,
+          "remainingBB": 16,
+          "rawEquityThreshold": 0.26229508196721313
+        }
+      }
+    },
+    {
+      "hero": "BTN",
+      "opener": "LJ",
+      "threeBettor": "BTN",
+      "scenario": "vs4bet",
+      "fourBetAllIn": true,
+      "handCount": 169,
+      "actionComboCounts": {
+        "Call": 34,
+        "Fold": 14,
+        "Outside history": 1278
+      },
+      "money": {
+        "opener": "LJ",
+        "threeBettor": "BTN",
+        "hero": "BTN",
+        "opponent": "LJ",
+        "stage": 4,
+        "openToBB": 2,
+        "threeBetToBB": 6,
+        "fourBetToBB": 30,
+        "liveBetsBB": {
+          "LJ": 30,
+          "BTN": 6
+        },
+        "liveCapsBB": {
+          "LJ": 30,
+          "BTN": 30
+        },
+        "deadMoneyBB": 2.5,
+        "potBeforeActionBB": 38.5,
+        "remainingBB": {
+          "LJ": 0,
+          "BTN": 24
+        },
+        "minimumRaiseToBB": 54,
+        "opponentAllIn": true,
+        "call": {
+          "toBB": 30,
+          "additionalBB": 24,
+          "uncalledReturnBB": 0,
+          "potAfterCallBB": 62.5,
+          "remainingBB": 0,
+          "rawEquityThreshold": 0.384
+        }
+      }
+    },
+    {
+      "hero": "LJ",
+      "opener": "LJ",
+      "threeBettor": "SB",
+      "scenario": "vs3bet",
+      "fourBetAllIn": false,
+      "handCount": 169,
+      "actionComboCounts": {
+        "4-bet": 12,
+        "4-bet All-in": 22,
+        "Call": 36,
+        "Fold": 240,
+        "Outside history": 1016
+      },
+      "money": {
+        "opener": "LJ",
+        "threeBettor": "SB",
+        "hero": "LJ",
+        "opponent": "SB",
+        "stage": 3,
+        "openToBB": 2,
+        "threeBetToBB": 7,
+        "fourBetToBB": 14,
+        "liveBetsBB": {
+          "LJ": 2,
+          "SB": 7
+        },
+        "liveCapsBB": {
+          "LJ": 30,
+          "SB": 30
+        },
+        "deadMoneyBB": 2,
+        "potBeforeActionBB": 11,
+        "remainingBB": {
+          "LJ": 28,
+          "SB": 23
+        },
+        "minimumRaiseToBB": 12,
+        "opponentAllIn": false,
+        "call": {
+          "toBB": 7,
+          "additionalBB": 5,
+          "uncalledReturnBB": 0,
+          "potAfterCallBB": 16,
+          "remainingBB": 23,
+          "rawEquityThreshold": 0.3125
+        }
+      }
+    },
+    {
+      "hero": "SB",
+      "opener": "LJ",
+      "threeBettor": "SB",
+      "scenario": "vs4bet",
+      "fourBetAllIn": false,
+      "handCount": 169,
+      "actionComboCounts": {
+        "5-bet All-in": 12,
+        "Call": 22,
+        "Fold": 40,
+        "Outside history": 1252
+      },
+      "money": {
+        "opener": "LJ",
+        "threeBettor": "SB",
+        "hero": "SB",
+        "opponent": "LJ",
+        "stage": 4,
+        "openToBB": 2,
+        "threeBetToBB": 7,
+        "fourBetToBB": 14,
+        "liveBetsBB": {
+          "LJ": 14,
+          "SB": 7
+        },
+        "liveCapsBB": {
+          "LJ": 30,
+          "SB": 30
+        },
+        "deadMoneyBB": 2,
+        "potBeforeActionBB": 23,
+        "remainingBB": {
+          "LJ": 16,
+          "SB": 23
+        },
+        "minimumRaiseToBB": 21,
+        "opponentAllIn": false,
+        "call": {
+          "toBB": 14,
+          "additionalBB": 7,
+          "uncalledReturnBB": 0,
+          "potAfterCallBB": 30,
+          "remainingBB": 16,
+          "rawEquityThreshold": 0.23333333333333334
+        }
+      }
+    },
+    {
+      "hero": "SB",
+      "opener": "LJ",
+      "threeBettor": "SB",
+      "scenario": "vs4bet",
+      "fourBetAllIn": true,
+      "handCount": 169,
+      "actionComboCounts": {
+        "Call": 34,
+        "Fold": 40,
+        "Outside history": 1252
+      },
+      "money": {
+        "opener": "LJ",
+        "threeBettor": "SB",
+        "hero": "SB",
+        "opponent": "LJ",
+        "stage": 4,
+        "openToBB": 2,
+        "threeBetToBB": 7,
+        "fourBetToBB": 30,
+        "liveBetsBB": {
+          "LJ": 30,
+          "SB": 7
+        },
+        "liveCapsBB": {
+          "LJ": 30,
+          "SB": 30
+        },
+        "deadMoneyBB": 2,
+        "potBeforeActionBB": 39,
+        "remainingBB": {
+          "LJ": 0,
+          "SB": 23
+        },
+        "minimumRaiseToBB": 53,
+        "opponentAllIn": true,
+        "call": {
+          "toBB": 30,
+          "additionalBB": 23,
+          "uncalledReturnBB": 0,
+          "potAfterCallBB": 62,
+          "remainingBB": 0,
+          "rawEquityThreshold": 0.3709677419354839
+        }
+      }
+    },
+    {
+      "hero": "LJ",
+      "opener": "LJ",
+      "threeBettor": "BB",
+      "scenario": "vs3bet",
+      "fourBetAllIn": false,
+      "handCount": 169,
+      "actionComboCounts": {
+        "4-bet": 12,
+        "4-bet All-in": 22,
+        "Call": 36,
+        "Fold": 240,
+        "Outside history": 1016
+      },
+      "money": {
+        "opener": "LJ",
+        "threeBettor": "BB",
+        "hero": "LJ",
+        "opponent": "BB",
+        "stage": 3,
+        "openToBB": 2,
+        "threeBetToBB": 7,
+        "fourBetToBB": 14,
+        "liveBetsBB": {
+          "LJ": 2,
+          "BB": 7
+        },
+        "liveCapsBB": {
+          "LJ": 30,
+          "BB": 29
+        },
+        "deadMoneyBB": 1.5,
+        "potBeforeActionBB": 10.5,
+        "remainingBB": {
+          "LJ": 28,
+          "BB": 22
+        },
+        "minimumRaiseToBB": 12,
+        "opponentAllIn": false,
+        "call": {
+          "toBB": 7,
+          "additionalBB": 5,
+          "uncalledReturnBB": 0,
+          "potAfterCallBB": 15.5,
+          "remainingBB": 23,
+          "rawEquityThreshold": 0.3225806451612903
+        }
+      }
+    },
+    {
+      "hero": "BB",
+      "opener": "LJ",
+      "threeBettor": "BB",
+      "scenario": "vs4bet",
+      "fourBetAllIn": false,
+      "handCount": 169,
+      "actionComboCounts": {
+        "5-bet All-in": 12,
+        "Call": 22,
+        "Fold": 14,
+        "Outside history": 1278
+      },
+      "money": {
+        "opener": "LJ",
+        "threeBettor": "BB",
+        "hero": "BB",
+        "opponent": "LJ",
+        "stage": 4,
+        "openToBB": 2,
+        "threeBetToBB": 7,
+        "fourBetToBB": 14,
+        "liveBetsBB": {
+          "LJ": 14,
+          "BB": 7
+        },
+        "liveCapsBB": {
+          "LJ": 30,
+          "BB": 29
+        },
+        "deadMoneyBB": 1.5,
+        "potBeforeActionBB": 22.5,
+        "remainingBB": {
+          "LJ": 16,
+          "BB": 22
+        },
+        "minimumRaiseToBB": 21,
+        "opponentAllIn": false,
+        "call": {
+          "toBB": 14,
+          "additionalBB": 7,
+          "uncalledReturnBB": 0,
+          "potAfterCallBB": 29.5,
+          "remainingBB": 15,
+          "rawEquityThreshold": 0.23728813559322035
+        }
+      }
+    },
+    {
+      "hero": "BB",
+      "opener": "LJ",
+      "threeBettor": "BB",
+      "scenario": "vs4bet",
+      "fourBetAllIn": true,
+      "handCount": 169,
+      "actionComboCounts": {
+        "Call": 34,
+        "Fold": 14,
+        "Outside history": 1278
+      },
+      "money": {
+        "opener": "LJ",
+        "threeBettor": "BB",
+        "hero": "BB",
+        "opponent": "LJ",
+        "stage": 4,
+        "openToBB": 2,
+        "threeBetToBB": 7,
+        "fourBetToBB": 30,
+        "liveBetsBB": {
+          "LJ": 30,
+          "BB": 7
+        },
+        "liveCapsBB": {
+          "LJ": 30,
+          "BB": 29
+        },
+        "deadMoneyBB": 1.5,
+        "potBeforeActionBB": 38.5,
+        "remainingBB": {
+          "LJ": 0,
+          "BB": 22
+        },
+        "minimumRaiseToBB": 53,
+        "opponentAllIn": true,
+        "call": {
+          "toBB": 29,
+          "additionalBB": 22,
+          "uncalledReturnBB": 1,
+          "potAfterCallBB": 59.5,
+          "remainingBB": 0,
+          "rawEquityThreshold": 0.3697478991596639
+        }
+      }
+    },
+    {
+      "hero": "HJ",
+      "opener": "HJ",
+      "threeBettor": "CO",
+      "scenario": "vs3bet",
+      "fourBetAllIn": false,
+      "handCount": 169,
+      "actionComboCounts": {
+        "4-bet": 12,
+        "4-bet All-in": 22,
+        "Call": 20,
+        "Fold": 312,
+        "Outside history": 960
+      },
+      "money": {
+        "opener": "HJ",
+        "threeBettor": "CO",
+        "hero": "HJ",
+        "opponent": "CO",
+        "stage": 3,
+        "openToBB": 2,
+        "threeBetToBB": 6,
+        "fourBetToBB": 14,
+        "liveBetsBB": {
+          "HJ": 2,
+          "CO": 6
+        },
+        "liveCapsBB": {
+          "HJ": 30,
+          "CO": 30
+        },
+        "deadMoneyBB": 2.5,
+        "potBeforeActionBB": 10.5,
+        "remainingBB": {
+          "HJ": 28,
+          "CO": 24
+        },
+        "minimumRaiseToBB": 10,
+        "opponentAllIn": false,
+        "call": {
+          "toBB": 6,
+          "additionalBB": 4,
+          "uncalledReturnBB": 0,
+          "potAfterCallBB": 14.5,
+          "remainingBB": 24,
+          "rawEquityThreshold": 0.27586206896551724
+        }
+      }
+    },
+    {
+      "hero": "CO",
+      "opener": "HJ",
+      "threeBettor": "CO",
+      "scenario": "vs4bet",
+      "fourBetAllIn": false,
+      "handCount": 169,
+      "actionComboCounts": {
+        "5-bet All-in": 12,
+        "Call": 22,
+        "Fold": 14,
+        "Outside history": 1278
+      },
+      "money": {
+        "opener": "HJ",
+        "threeBettor": "CO",
+        "hero": "CO",
+        "opponent": "HJ",
+        "stage": 4,
+        "openToBB": 2,
+        "threeBetToBB": 6,
+        "fourBetToBB": 14,
+        "liveBetsBB": {
+          "HJ": 14,
+          "CO": 6
+        },
+        "liveCapsBB": {
+          "HJ": 30,
+          "CO": 30
+        },
+        "deadMoneyBB": 2.5,
+        "potBeforeActionBB": 22.5,
+        "remainingBB": {
+          "HJ": 16,
+          "CO": 24
+        },
+        "minimumRaiseToBB": 22,
+        "opponentAllIn": false,
+        "call": {
+          "toBB": 14,
+          "additionalBB": 8,
+          "uncalledReturnBB": 0,
+          "potAfterCallBB": 30.5,
+          "remainingBB": 16,
+          "rawEquityThreshold": 0.26229508196721313
+        }
+      }
+    },
+    {
+      "hero": "CO",
+      "opener": "HJ",
+      "threeBettor": "CO",
+      "scenario": "vs4bet",
+      "fourBetAllIn": true,
+      "handCount": 169,
+      "actionComboCounts": {
+        "Call": 34,
+        "Fold": 14,
+        "Outside history": 1278
+      },
+      "money": {
+        "opener": "HJ",
+        "threeBettor": "CO",
+        "hero": "CO",
+        "opponent": "HJ",
+        "stage": 4,
+        "openToBB": 2,
+        "threeBetToBB": 6,
+        "fourBetToBB": 30,
+        "liveBetsBB": {
+          "HJ": 30,
+          "CO": 6
+        },
+        "liveCapsBB": {
+          "HJ": 30,
+          "CO": 30
+        },
+        "deadMoneyBB": 2.5,
+        "potBeforeActionBB": 38.5,
+        "remainingBB": {
+          "HJ": 0,
+          "CO": 24
+        },
+        "minimumRaiseToBB": 54,
+        "opponentAllIn": true,
+        "call": {
+          "toBB": 30,
+          "additionalBB": 24,
+          "uncalledReturnBB": 0,
+          "potAfterCallBB": 62.5,
+          "remainingBB": 0,
+          "rawEquityThreshold": 0.384
+        }
+      }
+    },
+    {
+      "hero": "HJ",
+      "opener": "HJ",
+      "threeBettor": "BTN",
+      "scenario": "vs3bet",
+      "fourBetAllIn": false,
+      "handCount": 169,
+      "actionComboCounts": {
+        "4-bet": 12,
+        "4-bet All-in": 22,
+        "Call": 20,
+        "Fold": 312,
+        "Outside history": 960
+      },
+      "money": {
+        "opener": "HJ",
+        "threeBettor": "BTN",
+        "hero": "HJ",
+        "opponent": "BTN",
+        "stage": 3,
+        "openToBB": 2,
+        "threeBetToBB": 6,
+        "fourBetToBB": 14,
+        "liveBetsBB": {
+          "HJ": 2,
+          "BTN": 6
+        },
+        "liveCapsBB": {
+          "HJ": 30,
+          "BTN": 30
+        },
+        "deadMoneyBB": 2.5,
+        "potBeforeActionBB": 10.5,
+        "remainingBB": {
+          "HJ": 28,
+          "BTN": 24
+        },
+        "minimumRaiseToBB": 10,
+        "opponentAllIn": false,
+        "call": {
+          "toBB": 6,
+          "additionalBB": 4,
+          "uncalledReturnBB": 0,
+          "potAfterCallBB": 14.5,
+          "remainingBB": 24,
+          "rawEquityThreshold": 0.27586206896551724
+        }
+      }
+    },
+    {
+      "hero": "BTN",
+      "opener": "HJ",
+      "threeBettor": "BTN",
+      "scenario": "vs4bet",
+      "fourBetAllIn": false,
+      "handCount": 169,
+      "actionComboCounts": {
+        "5-bet All-in": 12,
+        "Call": 22,
+        "Fold": 14,
+        "Outside history": 1278
+      },
+      "money": {
+        "opener": "HJ",
+        "threeBettor": "BTN",
+        "hero": "BTN",
+        "opponent": "HJ",
+        "stage": 4,
+        "openToBB": 2,
+        "threeBetToBB": 6,
+        "fourBetToBB": 14,
+        "liveBetsBB": {
+          "HJ": 14,
+          "BTN": 6
+        },
+        "liveCapsBB": {
+          "HJ": 30,
+          "BTN": 30
+        },
+        "deadMoneyBB": 2.5,
+        "potBeforeActionBB": 22.5,
+        "remainingBB": {
+          "HJ": 16,
+          "BTN": 24
+        },
+        "minimumRaiseToBB": 22,
+        "opponentAllIn": false,
+        "call": {
+          "toBB": 14,
+          "additionalBB": 8,
+          "uncalledReturnBB": 0,
+          "potAfterCallBB": 30.5,
+          "remainingBB": 16,
+          "rawEquityThreshold": 0.26229508196721313
+        }
+      }
+    },
+    {
+      "hero": "BTN",
+      "opener": "HJ",
+      "threeBettor": "BTN",
+      "scenario": "vs4bet",
+      "fourBetAllIn": true,
+      "handCount": 169,
+      "actionComboCounts": {
+        "Call": 34,
+        "Fold": 14,
+        "Outside history": 1278
+      },
+      "money": {
+        "opener": "HJ",
+        "threeBettor": "BTN",
+        "hero": "BTN",
+        "opponent": "HJ",
+        "stage": 4,
+        "openToBB": 2,
+        "threeBetToBB": 6,
+        "fourBetToBB": 30,
+        "liveBetsBB": {
+          "HJ": 30,
+          "BTN": 6
+        },
+        "liveCapsBB": {
+          "HJ": 30,
+          "BTN": 30
+        },
+        "deadMoneyBB": 2.5,
+        "potBeforeActionBB": 38.5,
+        "remainingBB": {
+          "HJ": 0,
+          "BTN": 24
+        },
+        "minimumRaiseToBB": 54,
+        "opponentAllIn": true,
+        "call": {
+          "toBB": 30,
+          "additionalBB": 24,
+          "uncalledReturnBB": 0,
+          "potAfterCallBB": 62.5,
+          "remainingBB": 0,
+          "rawEquityThreshold": 0.384
+        }
+      }
+    },
+    {
+      "hero": "HJ",
+      "opener": "HJ",
+      "threeBettor": "SB",
+      "scenario": "vs3bet",
+      "fourBetAllIn": false,
+      "handCount": 169,
+      "actionComboCounts": {
+        "4-bet": 12,
+        "4-bet All-in": 22,
+        "Call": 36,
+        "Fold": 296,
+        "Outside history": 960
+      },
+      "money": {
+        "opener": "HJ",
+        "threeBettor": "SB",
+        "hero": "HJ",
+        "opponent": "SB",
+        "stage": 3,
+        "openToBB": 2,
+        "threeBetToBB": 7,
+        "fourBetToBB": 14,
+        "liveBetsBB": {
+          "HJ": 2,
+          "SB": 7
+        },
+        "liveCapsBB": {
+          "HJ": 30,
+          "SB": 30
+        },
+        "deadMoneyBB": 2,
+        "potBeforeActionBB": 11,
+        "remainingBB": {
+          "HJ": 28,
+          "SB": 23
+        },
+        "minimumRaiseToBB": 12,
+        "opponentAllIn": false,
+        "call": {
+          "toBB": 7,
+          "additionalBB": 5,
+          "uncalledReturnBB": 0,
+          "potAfterCallBB": 16,
+          "remainingBB": 23,
+          "rawEquityThreshold": 0.3125
+        }
+      }
+    },
+    {
+      "hero": "SB",
+      "opener": "HJ",
+      "threeBettor": "SB",
+      "scenario": "vs4bet",
+      "fourBetAllIn": false,
+      "handCount": 169,
+      "actionComboCounts": {
+        "5-bet All-in": 12,
+        "Call": 22,
+        "Fold": 40,
+        "Outside history": 1252
+      },
+      "money": {
+        "opener": "HJ",
+        "threeBettor": "SB",
+        "hero": "SB",
+        "opponent": "HJ",
+        "stage": 4,
+        "openToBB": 2,
+        "threeBetToBB": 7,
+        "fourBetToBB": 14,
+        "liveBetsBB": {
+          "HJ": 14,
+          "SB": 7
+        },
+        "liveCapsBB": {
+          "HJ": 30,
+          "SB": 30
+        },
+        "deadMoneyBB": 2,
+        "potBeforeActionBB": 23,
+        "remainingBB": {
+          "HJ": 16,
+          "SB": 23
+        },
+        "minimumRaiseToBB": 21,
+        "opponentAllIn": false,
+        "call": {
+          "toBB": 14,
+          "additionalBB": 7,
+          "uncalledReturnBB": 0,
+          "potAfterCallBB": 30,
+          "remainingBB": 16,
+          "rawEquityThreshold": 0.23333333333333334
+        }
+      }
+    },
+    {
+      "hero": "SB",
+      "opener": "HJ",
+      "threeBettor": "SB",
+      "scenario": "vs4bet",
+      "fourBetAllIn": true,
+      "handCount": 169,
+      "actionComboCounts": {
+        "Call": 34,
+        "Fold": 40,
+        "Outside history": 1252
+      },
+      "money": {
+        "opener": "HJ",
+        "threeBettor": "SB",
+        "hero": "SB",
+        "opponent": "HJ",
+        "stage": 4,
+        "openToBB": 2,
+        "threeBetToBB": 7,
+        "fourBetToBB": 30,
+        "liveBetsBB": {
+          "HJ": 30,
+          "SB": 7
+        },
+        "liveCapsBB": {
+          "HJ": 30,
+          "SB": 30
+        },
+        "deadMoneyBB": 2,
+        "potBeforeActionBB": 39,
+        "remainingBB": {
+          "HJ": 0,
+          "SB": 23
+        },
+        "minimumRaiseToBB": 53,
+        "opponentAllIn": true,
+        "call": {
+          "toBB": 30,
+          "additionalBB": 23,
+          "uncalledReturnBB": 0,
+          "potAfterCallBB": 62,
+          "remainingBB": 0,
+          "rawEquityThreshold": 0.3709677419354839
+        }
+      }
+    },
+    {
+      "hero": "HJ",
+      "opener": "HJ",
+      "threeBettor": "BB",
+      "scenario": "vs3bet",
+      "fourBetAllIn": false,
+      "handCount": 169,
+      "actionComboCounts": {
+        "4-bet": 12,
+        "4-bet All-in": 22,
+        "Call": 36,
+        "Fold": 296,
+        "Outside history": 960
+      },
+      "money": {
+        "opener": "HJ",
+        "threeBettor": "BB",
+        "hero": "HJ",
+        "opponent": "BB",
+        "stage": 3,
+        "openToBB": 2,
+        "threeBetToBB": 7,
+        "fourBetToBB": 14,
+        "liveBetsBB": {
+          "HJ": 2,
+          "BB": 7
+        },
+        "liveCapsBB": {
+          "HJ": 30,
+          "BB": 29
+        },
+        "deadMoneyBB": 1.5,
+        "potBeforeActionBB": 10.5,
+        "remainingBB": {
+          "HJ": 28,
+          "BB": 22
+        },
+        "minimumRaiseToBB": 12,
+        "opponentAllIn": false,
+        "call": {
+          "toBB": 7,
+          "additionalBB": 5,
+          "uncalledReturnBB": 0,
+          "potAfterCallBB": 15.5,
+          "remainingBB": 23,
+          "rawEquityThreshold": 0.3225806451612903
+        }
+      }
+    },
+    {
+      "hero": "BB",
+      "opener": "HJ",
+      "threeBettor": "BB",
+      "scenario": "vs4bet",
+      "fourBetAllIn": false,
+      "handCount": 169,
+      "actionComboCounts": {
+        "5-bet All-in": 12,
+        "Call": 22,
+        "Fold": 14,
+        "Outside history": 1278
+      },
+      "money": {
+        "opener": "HJ",
+        "threeBettor": "BB",
+        "hero": "BB",
+        "opponent": "HJ",
+        "stage": 4,
+        "openToBB": 2,
+        "threeBetToBB": 7,
+        "fourBetToBB": 14,
+        "liveBetsBB": {
+          "HJ": 14,
+          "BB": 7
+        },
+        "liveCapsBB": {
+          "HJ": 30,
+          "BB": 29
+        },
+        "deadMoneyBB": 1.5,
+        "potBeforeActionBB": 22.5,
+        "remainingBB": {
+          "HJ": 16,
+          "BB": 22
+        },
+        "minimumRaiseToBB": 21,
+        "opponentAllIn": false,
+        "call": {
+          "toBB": 14,
+          "additionalBB": 7,
+          "uncalledReturnBB": 0,
+          "potAfterCallBB": 29.5,
+          "remainingBB": 15,
+          "rawEquityThreshold": 0.23728813559322035
+        }
+      }
+    },
+    {
+      "hero": "BB",
+      "opener": "HJ",
+      "threeBettor": "BB",
+      "scenario": "vs4bet",
+      "fourBetAllIn": true,
+      "handCount": 169,
+      "actionComboCounts": {
+        "Call": 34,
+        "Fold": 14,
+        "Outside history": 1278
+      },
+      "money": {
+        "opener": "HJ",
+        "threeBettor": "BB",
+        "hero": "BB",
+        "opponent": "HJ",
+        "stage": 4,
+        "openToBB": 2,
+        "threeBetToBB": 7,
+        "fourBetToBB": 30,
+        "liveBetsBB": {
+          "HJ": 30,
+          "BB": 7
+        },
+        "liveCapsBB": {
+          "HJ": 30,
+          "BB": 29
+        },
+        "deadMoneyBB": 1.5,
+        "potBeforeActionBB": 38.5,
+        "remainingBB": {
+          "HJ": 0,
+          "BB": 22
+        },
+        "minimumRaiseToBB": 53,
+        "opponentAllIn": true,
+        "call": {
+          "toBB": 29,
+          "additionalBB": 22,
+          "uncalledReturnBB": 1,
+          "potAfterCallBB": 59.5,
+          "remainingBB": 0,
+          "rawEquityThreshold": 0.3697478991596639
+        }
+      }
+    },
+    {
+      "hero": "CO",
+      "opener": "CO",
+      "threeBettor": "BTN",
+      "scenario": "vs3bet",
+      "fourBetAllIn": false,
+      "handCount": 169,
+      "actionComboCounts": {
+        "4-bet": 12,
+        "4-bet All-in": 22,
+        "Call": 42,
+        "Fold": 354,
+        "Outside history": 896
+      },
+      "money": {
+        "opener": "CO",
+        "threeBettor": "BTN",
+        "hero": "CO",
+        "opponent": "BTN",
+        "stage": 3,
+        "openToBB": 2,
+        "threeBetToBB": 6,
+        "fourBetToBB": 14,
+        "liveBetsBB": {
+          "CO": 2,
+          "BTN": 6
+        },
+        "liveCapsBB": {
+          "CO": 30,
+          "BTN": 30
+        },
+        "deadMoneyBB": 2.5,
+        "potBeforeActionBB": 10.5,
+        "remainingBB": {
+          "CO": 28,
+          "BTN": 24
+        },
+        "minimumRaiseToBB": 10,
+        "opponentAllIn": false,
+        "call": {
+          "toBB": 6,
+          "additionalBB": 4,
+          "uncalledReturnBB": 0,
+          "potAfterCallBB": 14.5,
+          "remainingBB": 24,
+          "rawEquityThreshold": 0.27586206896551724
+        }
+      }
+    },
+    {
+      "hero": "BTN",
+      "opener": "CO",
+      "threeBettor": "BTN",
+      "scenario": "vs4bet",
+      "fourBetAllIn": false,
+      "handCount": 169,
+      "actionComboCounts": {
+        "5-bet All-in": 12,
+        "Call": 22,
+        "Fold": 44,
+        "Outside history": 1248
+      },
+      "money": {
+        "opener": "CO",
+        "threeBettor": "BTN",
+        "hero": "BTN",
+        "opponent": "CO",
+        "stage": 4,
+        "openToBB": 2,
+        "threeBetToBB": 6,
+        "fourBetToBB": 14,
+        "liveBetsBB": {
+          "CO": 14,
+          "BTN": 6
+        },
+        "liveCapsBB": {
+          "CO": 30,
+          "BTN": 30
+        },
+        "deadMoneyBB": 2.5,
+        "potBeforeActionBB": 22.5,
+        "remainingBB": {
+          "CO": 16,
+          "BTN": 24
+        },
+        "minimumRaiseToBB": 22,
+        "opponentAllIn": false,
+        "call": {
+          "toBB": 14,
+          "additionalBB": 8,
+          "uncalledReturnBB": 0,
+          "potAfterCallBB": 30.5,
+          "remainingBB": 16,
+          "rawEquityThreshold": 0.26229508196721313
+        }
+      }
+    },
+    {
+      "hero": "BTN",
+      "opener": "CO",
+      "threeBettor": "BTN",
+      "scenario": "vs4bet",
+      "fourBetAllIn": true,
+      "handCount": 169,
+      "actionComboCounts": {
+        "Call": 44,
+        "Fold": 34,
+        "Outside history": 1248
+      },
+      "money": {
+        "opener": "CO",
+        "threeBettor": "BTN",
+        "hero": "BTN",
+        "opponent": "CO",
+        "stage": 4,
+        "openToBB": 2,
+        "threeBetToBB": 6,
+        "fourBetToBB": 30,
+        "liveBetsBB": {
+          "CO": 30,
+          "BTN": 6
+        },
+        "liveCapsBB": {
+          "CO": 30,
+          "BTN": 30
+        },
+        "deadMoneyBB": 2.5,
+        "potBeforeActionBB": 38.5,
+        "remainingBB": {
+          "CO": 0,
+          "BTN": 24
+        },
+        "minimumRaiseToBB": 54,
+        "opponentAllIn": true,
+        "call": {
+          "toBB": 30,
+          "additionalBB": 24,
+          "uncalledReturnBB": 0,
+          "potAfterCallBB": 62.5,
+          "remainingBB": 0,
+          "rawEquityThreshold": 0.384
+        }
+      }
+    },
+    {
+      "hero": "CO",
+      "opener": "CO",
+      "threeBettor": "SB",
+      "scenario": "vs3bet",
+      "fourBetAllIn": false,
+      "handCount": 169,
+      "actionComboCounts": {
+        "4-bet": 12,
+        "4-bet All-in": 32,
+        "Call": 50,
+        "Fold": 336,
+        "Outside history": 896
+      },
+      "money": {
+        "opener": "CO",
+        "threeBettor": "SB",
+        "hero": "CO",
+        "opponent": "SB",
+        "stage": 3,
+        "openToBB": 2,
+        "threeBetToBB": 7,
+        "fourBetToBB": 14,
+        "liveBetsBB": {
+          "CO": 2,
+          "SB": 7
+        },
+        "liveCapsBB": {
+          "CO": 30,
+          "SB": 30
+        },
+        "deadMoneyBB": 2,
+        "potBeforeActionBB": 11,
+        "remainingBB": {
+          "CO": 28,
+          "SB": 23
+        },
+        "minimumRaiseToBB": 12,
+        "opponentAllIn": false,
+        "call": {
+          "toBB": 7,
+          "additionalBB": 5,
+          "uncalledReturnBB": 0,
+          "potAfterCallBB": 16,
+          "remainingBB": 23,
+          "rawEquityThreshold": 0.3125
+        }
+      }
+    },
+    {
+      "hero": "SB",
+      "opener": "CO",
+      "threeBettor": "SB",
+      "scenario": "vs4bet",
+      "fourBetAllIn": false,
+      "handCount": 169,
+      "actionComboCounts": {
+        "5-bet All-in": 12,
+        "Call": 32,
+        "Fold": 64,
+        "Outside history": 1218
+      },
+      "money": {
+        "opener": "CO",
+        "threeBettor": "SB",
+        "hero": "SB",
+        "opponent": "CO",
+        "stage": 4,
+        "openToBB": 2,
+        "threeBetToBB": 7,
+        "fourBetToBB": 14,
+        "liveBetsBB": {
+          "CO": 14,
+          "SB": 7
+        },
+        "liveCapsBB": {
+          "CO": 30,
+          "SB": 30
+        },
+        "deadMoneyBB": 2,
+        "potBeforeActionBB": 23,
+        "remainingBB": {
+          "CO": 16,
+          "SB": 23
+        },
+        "minimumRaiseToBB": 21,
+        "opponentAllIn": false,
+        "call": {
+          "toBB": 14,
+          "additionalBB": 7,
+          "uncalledReturnBB": 0,
+          "potAfterCallBB": 30,
+          "remainingBB": 16,
+          "rawEquityThreshold": 0.23333333333333334
+        }
+      }
+    },
+    {
+      "hero": "SB",
+      "opener": "CO",
+      "threeBettor": "SB",
+      "scenario": "vs4bet",
+      "fourBetAllIn": true,
+      "handCount": 169,
+      "actionComboCounts": {
+        "Call": 44,
+        "Fold": 64,
+        "Outside history": 1218
+      },
+      "money": {
+        "opener": "CO",
+        "threeBettor": "SB",
+        "hero": "SB",
+        "opponent": "CO",
+        "stage": 4,
+        "openToBB": 2,
+        "threeBetToBB": 7,
+        "fourBetToBB": 30,
+        "liveBetsBB": {
+          "CO": 30,
+          "SB": 7
+        },
+        "liveCapsBB": {
+          "CO": 30,
+          "SB": 30
+        },
+        "deadMoneyBB": 2,
+        "potBeforeActionBB": 39,
+        "remainingBB": {
+          "CO": 0,
+          "SB": 23
+        },
+        "minimumRaiseToBB": 53,
+        "opponentAllIn": true,
+        "call": {
+          "toBB": 30,
+          "additionalBB": 23,
+          "uncalledReturnBB": 0,
+          "potAfterCallBB": 62,
+          "remainingBB": 0,
+          "rawEquityThreshold": 0.3709677419354839
+        }
+      }
+    },
+    {
+      "hero": "CO",
+      "opener": "CO",
+      "threeBettor": "BB",
+      "scenario": "vs3bet",
+      "fourBetAllIn": false,
+      "handCount": 169,
+      "actionComboCounts": {
+        "4-bet": 12,
+        "4-bet All-in": 32,
+        "Call": 50,
+        "Fold": 336,
+        "Outside history": 896
+      },
+      "money": {
+        "opener": "CO",
+        "threeBettor": "BB",
+        "hero": "CO",
+        "opponent": "BB",
+        "stage": 3,
+        "openToBB": 2,
+        "threeBetToBB": 7,
+        "fourBetToBB": 14,
+        "liveBetsBB": {
+          "CO": 2,
+          "BB": 7
+        },
+        "liveCapsBB": {
+          "CO": 30,
+          "BB": 29
+        },
+        "deadMoneyBB": 1.5,
+        "potBeforeActionBB": 10.5,
+        "remainingBB": {
+          "CO": 28,
+          "BB": 22
+        },
+        "minimumRaiseToBB": 12,
+        "opponentAllIn": false,
+        "call": {
+          "toBB": 7,
+          "additionalBB": 5,
+          "uncalledReturnBB": 0,
+          "potAfterCallBB": 15.5,
+          "remainingBB": 23,
+          "rawEquityThreshold": 0.3225806451612903
+        }
+      }
+    },
+    {
+      "hero": "BB",
+      "opener": "CO",
+      "threeBettor": "BB",
+      "scenario": "vs4bet",
+      "fourBetAllIn": false,
+      "handCount": 169,
+      "actionComboCounts": {
+        "5-bet All-in": 12,
+        "Call": 32,
+        "Fold": 34,
+        "Outside history": 1248
+      },
+      "money": {
+        "opener": "CO",
+        "threeBettor": "BB",
+        "hero": "BB",
+        "opponent": "CO",
+        "stage": 4,
+        "openToBB": 2,
+        "threeBetToBB": 7,
+        "fourBetToBB": 14,
+        "liveBetsBB": {
+          "CO": 14,
+          "BB": 7
+        },
+        "liveCapsBB": {
+          "CO": 30,
+          "BB": 29
+        },
+        "deadMoneyBB": 1.5,
+        "potBeforeActionBB": 22.5,
+        "remainingBB": {
+          "CO": 16,
+          "BB": 22
+        },
+        "minimumRaiseToBB": 21,
+        "opponentAllIn": false,
+        "call": {
+          "toBB": 14,
+          "additionalBB": 7,
+          "uncalledReturnBB": 0,
+          "potAfterCallBB": 29.5,
+          "remainingBB": 15,
+          "rawEquityThreshold": 0.23728813559322035
+        }
+      }
+    },
+    {
+      "hero": "BB",
+      "opener": "CO",
+      "threeBettor": "BB",
+      "scenario": "vs4bet",
+      "fourBetAllIn": true,
+      "handCount": 169,
+      "actionComboCounts": {
+        "Call": 44,
+        "Fold": 34,
+        "Outside history": 1248
+      },
+      "money": {
+        "opener": "CO",
+        "threeBettor": "BB",
+        "hero": "BB",
+        "opponent": "CO",
+        "stage": 4,
+        "openToBB": 2,
+        "threeBetToBB": 7,
+        "fourBetToBB": 30,
+        "liveBetsBB": {
+          "CO": 30,
+          "BB": 7
+        },
+        "liveCapsBB": {
+          "CO": 30,
+          "BB": 29
+        },
+        "deadMoneyBB": 1.5,
+        "potBeforeActionBB": 38.5,
+        "remainingBB": {
+          "CO": 0,
+          "BB": 22
+        },
+        "minimumRaiseToBB": 53,
+        "opponentAllIn": true,
+        "call": {
+          "toBB": 29,
+          "additionalBB": 22,
+          "uncalledReturnBB": 1,
+          "potAfterCallBB": 59.5,
+          "remainingBB": 0,
+          "rawEquityThreshold": 0.3697478991596639
+        }
+      }
+    },
+    {
+      "hero": "BTN",
+      "opener": "BTN",
+      "threeBettor": "SB",
+      "scenario": "vs3bet",
+      "fourBetAllIn": false,
+      "handCount": 169,
+      "actionComboCounts": {
+        "4-bet": 12,
+        "4-bet All-in": 32,
+        "Call": 50,
+        "Fold": 500,
+        "Outside history": 732
+      },
+      "money": {
+        "opener": "BTN",
+        "threeBettor": "SB",
+        "hero": "BTN",
+        "opponent": "SB",
+        "stage": 3,
+        "openToBB": 2,
+        "threeBetToBB": 7,
+        "fourBetToBB": 14,
+        "liveBetsBB": {
+          "BTN": 2,
+          "SB": 7
+        },
+        "liveCapsBB": {
+          "BTN": 30,
+          "SB": 30
+        },
+        "deadMoneyBB": 2,
+        "potBeforeActionBB": 11,
+        "remainingBB": {
+          "BTN": 28,
+          "SB": 23
+        },
+        "minimumRaiseToBB": 12,
+        "opponentAllIn": false,
+        "call": {
+          "toBB": 7,
+          "additionalBB": 5,
+          "uncalledReturnBB": 0,
+          "potAfterCallBB": 16,
+          "remainingBB": 23,
+          "rawEquityThreshold": 0.3125
+        }
+      }
+    },
+    {
+      "hero": "SB",
+      "opener": "BTN",
+      "threeBettor": "SB",
+      "scenario": "vs4bet",
+      "fourBetAllIn": false,
+      "handCount": 169,
+      "actionComboCounts": {
+        "5-bet All-in": 12,
+        "Call": 32,
+        "Fold": 64,
+        "Outside history": 1218
+      },
+      "money": {
+        "opener": "BTN",
+        "threeBettor": "SB",
+        "hero": "SB",
+        "opponent": "BTN",
+        "stage": 4,
+        "openToBB": 2,
+        "threeBetToBB": 7,
+        "fourBetToBB": 14,
+        "liveBetsBB": {
+          "BTN": 14,
+          "SB": 7
+        },
+        "liveCapsBB": {
+          "BTN": 30,
+          "SB": 30
+        },
+        "deadMoneyBB": 2,
+        "potBeforeActionBB": 23,
+        "remainingBB": {
+          "BTN": 16,
+          "SB": 23
+        },
+        "minimumRaiseToBB": 21,
+        "opponentAllIn": false,
+        "call": {
+          "toBB": 14,
+          "additionalBB": 7,
+          "uncalledReturnBB": 0,
+          "potAfterCallBB": 30,
+          "remainingBB": 16,
+          "rawEquityThreshold": 0.23333333333333334
+        }
+      }
+    },
+    {
+      "hero": "SB",
+      "opener": "BTN",
+      "threeBettor": "SB",
+      "scenario": "vs4bet",
+      "fourBetAllIn": true,
+      "handCount": 169,
+      "actionComboCounts": {
+        "Call": 44,
+        "Fold": 64,
+        "Outside history": 1218
+      },
+      "money": {
+        "opener": "BTN",
+        "threeBettor": "SB",
+        "hero": "SB",
+        "opponent": "BTN",
+        "stage": 4,
+        "openToBB": 2,
+        "threeBetToBB": 7,
+        "fourBetToBB": 30,
+        "liveBetsBB": {
+          "BTN": 30,
+          "SB": 7
+        },
+        "liveCapsBB": {
+          "BTN": 30,
+          "SB": 30
+        },
+        "deadMoneyBB": 2,
+        "potBeforeActionBB": 39,
+        "remainingBB": {
+          "BTN": 0,
+          "SB": 23
+        },
+        "minimumRaiseToBB": 53,
+        "opponentAllIn": true,
+        "call": {
+          "toBB": 30,
+          "additionalBB": 23,
+          "uncalledReturnBB": 0,
+          "potAfterCallBB": 62,
+          "remainingBB": 0,
+          "rawEquityThreshold": 0.3709677419354839
+        }
+      }
+    },
+    {
+      "hero": "BTN",
+      "opener": "BTN",
+      "threeBettor": "BB",
+      "scenario": "vs3bet",
+      "fourBetAllIn": false,
+      "handCount": 169,
+      "actionComboCounts": {
+        "4-bet": 12,
+        "4-bet All-in": 32,
+        "Call": 50,
+        "Fold": 500,
+        "Outside history": 732
+      },
+      "money": {
+        "opener": "BTN",
+        "threeBettor": "BB",
+        "hero": "BTN",
+        "opponent": "BB",
+        "stage": 3,
+        "openToBB": 2,
+        "threeBetToBB": 7,
+        "fourBetToBB": 14,
+        "liveBetsBB": {
+          "BTN": 2,
+          "BB": 7
+        },
+        "liveCapsBB": {
+          "BTN": 30,
+          "BB": 29
+        },
+        "deadMoneyBB": 1.5,
+        "potBeforeActionBB": 10.5,
+        "remainingBB": {
+          "BTN": 28,
+          "BB": 22
+        },
+        "minimumRaiseToBB": 12,
+        "opponentAllIn": false,
+        "call": {
+          "toBB": 7,
+          "additionalBB": 5,
+          "uncalledReturnBB": 0,
+          "potAfterCallBB": 15.5,
+          "remainingBB": 23,
+          "rawEquityThreshold": 0.3225806451612903
+        }
+      }
+    },
+    {
+      "hero": "BB",
+      "opener": "BTN",
+      "threeBettor": "BB",
+      "scenario": "vs4bet",
+      "fourBetAllIn": false,
+      "handCount": 169,
+      "actionComboCounts": {
+        "5-bet All-in": 12,
+        "Call": 32,
+        "Fold": 34,
+        "Outside history": 1248
+      },
+      "money": {
+        "opener": "BTN",
+        "threeBettor": "BB",
+        "hero": "BB",
+        "opponent": "BTN",
+        "stage": 4,
+        "openToBB": 2,
+        "threeBetToBB": 7,
+        "fourBetToBB": 14,
+        "liveBetsBB": {
+          "BTN": 14,
+          "BB": 7
+        },
+        "liveCapsBB": {
+          "BTN": 30,
+          "BB": 29
+        },
+        "deadMoneyBB": 1.5,
+        "potBeforeActionBB": 22.5,
+        "remainingBB": {
+          "BTN": 16,
+          "BB": 22
+        },
+        "minimumRaiseToBB": 21,
+        "opponentAllIn": false,
+        "call": {
+          "toBB": 14,
+          "additionalBB": 7,
+          "uncalledReturnBB": 0,
+          "potAfterCallBB": 29.5,
+          "remainingBB": 15,
+          "rawEquityThreshold": 0.23728813559322035
+        }
+      }
+    },
+    {
+      "hero": "BB",
+      "opener": "BTN",
+      "threeBettor": "BB",
+      "scenario": "vs4bet",
+      "fourBetAllIn": true,
+      "handCount": 169,
+      "actionComboCounts": {
+        "Call": 44,
+        "Fold": 34,
+        "Outside history": 1248
+      },
+      "money": {
+        "opener": "BTN",
+        "threeBettor": "BB",
+        "hero": "BB",
+        "opponent": "BTN",
+        "stage": 4,
+        "openToBB": 2,
+        "threeBetToBB": 7,
+        "fourBetToBB": 30,
+        "liveBetsBB": {
+          "BTN": 30,
+          "BB": 7
+        },
+        "liveCapsBB": {
+          "BTN": 30,
+          "BB": 29
+        },
+        "deadMoneyBB": 1.5,
+        "potBeforeActionBB": 38.5,
+        "remainingBB": {
+          "BTN": 0,
+          "BB": 22
+        },
+        "minimumRaiseToBB": 53,
+        "opponentAllIn": true,
+        "call": {
+          "toBB": 29,
+          "additionalBB": 22,
+          "uncalledReturnBB": 1,
+          "potAfterCallBB": 59.5,
+          "remainingBB": 0,
+          "rawEquityThreshold": 0.3697478991596639
+        }
+      }
+    },
+    {
+      "hero": "SB",
+      "opener": "SB",
+      "threeBettor": "BB",
+      "scenario": "vs3bet",
+      "fourBetAllIn": false,
+      "handCount": 169,
+      "actionComboCounts": {
+        "4-bet": 12,
+        "4-bet All-in": 32,
+        "Call": 50,
+        "Fold": 118,
+        "Outside history": 1114
+      },
+      "money": {
+        "opener": "SB",
+        "threeBettor": "BB",
+        "hero": "SB",
+        "opponent": "BB",
+        "stage": 3,
+        "openToBB": 2.5,
+        "threeBetToBB": 8,
+        "fourBetToBB": 14,
+        "liveBetsBB": {
+          "SB": 2.5,
+          "BB": 8
+        },
+        "liveCapsBB": {
+          "SB": 30,
+          "BB": 29
+        },
+        "deadMoneyBB": 1,
+        "potBeforeActionBB": 11.5,
+        "remainingBB": {
+          "SB": 27.5,
+          "BB": 21
+        },
+        "minimumRaiseToBB": 13.5,
+        "opponentAllIn": false,
+        "call": {
+          "toBB": 8,
+          "additionalBB": 5.5,
+          "uncalledReturnBB": 0,
+          "potAfterCallBB": 17,
+          "remainingBB": 22,
+          "rawEquityThreshold": 0.3235294117647059
+        }
+      }
+    },
+    {
+      "hero": "BB",
+      "opener": "SB",
+      "threeBettor": "BB",
+      "scenario": "vs4bet",
+      "fourBetAllIn": false,
+      "handCount": 169,
+      "actionComboCounts": {
+        "5-bet All-in": 12,
+        "Call": 32,
+        "Fold": 64,
+        "Outside history": 1218
+      },
+      "money": {
+        "opener": "SB",
+        "threeBettor": "BB",
+        "hero": "BB",
+        "opponent": "SB",
+        "stage": 4,
+        "openToBB": 2.5,
+        "threeBetToBB": 8,
+        "fourBetToBB": 14,
+        "liveBetsBB": {
+          "SB": 14,
+          "BB": 8
+        },
+        "liveCapsBB": {
+          "SB": 30,
+          "BB": 29
+        },
+        "deadMoneyBB": 1,
+        "potBeforeActionBB": 23,
+        "remainingBB": {
+          "SB": 16,
+          "BB": 21
+        },
+        "minimumRaiseToBB": 20,
+        "opponentAllIn": false,
+        "call": {
+          "toBB": 14,
+          "additionalBB": 6,
+          "uncalledReturnBB": 0,
+          "potAfterCallBB": 29,
+          "remainingBB": 15,
+          "rawEquityThreshold": 0.20689655172413793
+        }
+      }
+    },
+    {
+      "hero": "BB",
+      "opener": "SB",
+      "threeBettor": "BB",
+      "scenario": "vs4bet",
+      "fourBetAllIn": true,
+      "handCount": 169,
+      "actionComboCounts": {
+        "Call": 44,
+        "Fold": 64,
+        "Outside history": 1218
+      },
+      "money": {
+        "opener": "SB",
+        "threeBettor": "BB",
+        "hero": "BB",
+        "opponent": "SB",
+        "stage": 4,
+        "openToBB": 2.5,
+        "threeBetToBB": 8,
+        "fourBetToBB": 30,
+        "liveBetsBB": {
+          "SB": 30,
+          "BB": 8
+        },
+        "liveCapsBB": {
+          "SB": 30,
+          "BB": 29
+        },
+        "deadMoneyBB": 1,
+        "potBeforeActionBB": 39,
+        "remainingBB": {
+          "SB": 0,
+          "BB": 21
+        },
+        "minimumRaiseToBB": 52,
+        "opponentAllIn": true,
+        "call": {
+          "toBB": 29,
+          "additionalBB": 21,
+          "uncalledReturnBB": 1,
+          "potAfterCallBB": 59,
+          "remainingBB": 0,
+          "rawEquityThreshold": 0.3559322033898305
+        }
+      }
+    }
+  ],
+  "reraiseSourceSha256": "99f5385ed73e1c3defc9d58d722fdba8af3bf0d525e747953e8a5be6460c02a6"
 }

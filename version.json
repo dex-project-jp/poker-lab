@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "revision": 6,
-  "version": "0.6.0",
-  "build": "mobile-6"
+  "revision": 7,
+  "version": "0.7.0",
+  "build": "reraises-7"
 }

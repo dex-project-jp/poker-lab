@@ -348,8 +348,13 @@
     "gtoVerified": false,
     "openPositions": 8,
     "responseSpots": 36,
+    "vs3betSpots": 36,
+    "vs4betSpots": 36,
+    "vs4betAllInSpots": 36,
+    "cold4bet": false,
     "handsPerSpot": 169,
-    "documentation": "docs/PRACTICAL30.md"
+    "documentation": "docs/PRACTICAL30.md",
+    "reraiseDocumentation": "docs/RERAISES30.md"
   },
   "implementation": "Practical categorical reference ranges plus separate verified HU and reduced-game laboratory. Full 9-max MTT GTO remains unverified.",
   "blockers": [
