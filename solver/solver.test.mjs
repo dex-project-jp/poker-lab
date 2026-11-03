@@ -87,3 +87,17 @@ test('blocked matchups are excluded and BB can have no facing shove',async()=>{
  const r=bestResponses({sbHands,bbHands,equity:[[null,0.8],[0.2,null]],stackBB:10,sbShove:[0,0],bbCall:[0,0]});
  assert.equal(r.sbEV[0].shove,1);assert.equal(r.bbBest[0],null);
 });
+
+test('iterative solver converges on a dominated shove/call toy game',async()=>{
+ const {solvePushFold}=await import('./nash-iteration.js');
+ const r=solvePushFold({sbHands:[{probability:1}],bbHands:[{probability:1}],equity:[[0.8]],stackBB:10,iterations:2000});
+ assert.ok(r.sbShove[0]>0.99);
+ assert.ok(r.bbCall[0]<0.01);
+ assert.ok(r.nashGap<0.02);
+ assert.equal(r.verified,false);
+});
+test('iterative solver rejects missing and invalid equity',async()=>{
+ const {solvePushFold}=await import('./nash-iteration.js');
+ assert.throws(()=>solvePushFold({sbHands:[{probability:1}],bbHands:[{probability:1}],equity:[[null]],stackBB:10}));
+ assert.throws(()=>solvePushFold({sbHands:[{probability:1}],bbHands:[{probability:1}],equity:[[1.1]],stackBB:10}));
+});
