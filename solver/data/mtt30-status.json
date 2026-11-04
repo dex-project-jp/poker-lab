@@ -367,6 +367,14 @@
     "documentation": "docs/MTT10-ENGINE.md",
     "validation": "solver/data/mtt10-validation.json"
   },
+  "fullDeckTenBBDiagnostic": {
+    "available": true,
+    "fullMTTGTO": false,
+    "strategyPublished": false,
+    "showdownSamples": 60000,
+    "documentation": "docs/MTT10-DECK.md",
+    "validation": "solver/data/mtt10-deck-validation.json"
+  },
   "conditionalAllInAudit": {
     "available": true,
     "gtoVerified": false,

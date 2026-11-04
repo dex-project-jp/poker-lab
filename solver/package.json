@@ -21,6 +21,10 @@
     "solve:mtt10": "node tools/solve-mtt10.mjs",
     "export:mtt10": "node tools/export-mtt10.mjs",
     "check:mtt10": "python tools/check-mtt10.py",
-    "certify:mtt10": "node tools/certify-mtt10.mjs"
+    "certify:mtt10": "node tools/certify-mtt10.mjs",
+    "sample:mtt10-deck": "node tools/run-mtt10-deck.mjs",
+    "export:mtt10-deck": "node tools/export-mtt10-deck.mjs",
+    "check:mtt10-deck": "python tools/check-mtt10-deck.py",
+    "certify:mtt10-deck": "node tools/certify-mtt10-deck.mjs"
   }
 }

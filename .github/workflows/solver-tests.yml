@@ -4,6 +4,7 @@ on:
     paths:
       - 'solver/**'
       - 'index.html'
+      - 'engine-validation.html'
       - 'app/**'
       - 'version.json'
       - '.github/workflows/solver-tests.yml'
@@ -69,6 +70,13 @@ jobs:
           npm run check:mtt10 -- --check
           npm run certify:mtt10
           git diff --exit-code -- data/mtt10-strategy.js data/mtt10-validation.json
+      - name: Verify full-deck showdown sampling and empirical diagnostic
+        run: |
+          cd solver
+          npm run export:mtt10-deck
+          npm run check:mtt10-deck -- --check
+          npm run certify:mtt10-deck
+          git diff --exit-code -- data/mtt10-deck-validation.json data/mtt10-deck-report.js
       - name: Verify conditional all-in audit and source data
         run: |
           npm run audit:practical --prefix solver -- --check

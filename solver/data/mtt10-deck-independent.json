@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "passed": true,
+  "candidateSha256": "02d570f24fc63558381856b2773965e1379c7d0d43467a867a0f571f7870cea6",
+  "treeSha256": "af06262602a8ad37d663818afd144db876a742acec0e1fd867202d9da23d8dc6",
+  "independentMethod": "Python removal-shuffle replay, 21 five-card subsets, half-BB pot slices, per-information-set empirical best responses",
+  "scenarios": [
+    {
+      "id": "all-nine-random",
+      "showdownsChecked": 20000,
+      "equityMaxDifference": 0.0,
+      "utilityMaxDifferenceBB": 5.551115123125783e-17,
+      "equityRadius": 0.012130647170957281
+    },
+    {
+      "id": "utg-AA-vs-BB-random",
+      "showdownsChecked": 20000,
+      "equityMaxDifference": 0.0,
+      "utilityMaxDifferenceBB": 0.0,
+      "equityRadius": 0.012130647170957281
+    },
+    {
+      "id": "AA-overcall-three-way",
+      "showdownsChecked": 20000,
+      "equityMaxDifference": 0.0,
+      "utilityMaxDifferenceBB": 0.0,
+      "equityRadius": 0.012130647170957281
+    }
+  ],
+  "empirical": {
+    "terminalsChecked": 8176,
+    "values": [
+      0.5208333333333334,
+      0.390625,
+      0.390625,
+      0.2552083333333333,
+      0.0,
+      0.3645833333333333,
+      0.15625,
+      -0.1875,
+      -1.890625
+    ],
+    "bestResponses": [
+      0.5208333333333334,
+      0.390625,
+      0.390625,
+      0.2552083333333333,
+      0.0,
+      0.3645833333333333,
+      0.15625,
+      -0.1875,
+      -1.890625
+    ],
+    "epsilonOnTrainingTicketsBB": 0,
+    "fullDeckBestResponseVerified": false
+  },
+  "fullMTTGTO": false,
+  "strategyPublished": false
+}
