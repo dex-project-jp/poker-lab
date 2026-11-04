@@ -10,6 +10,6 @@ else if(data.type==='saving'){running=true;status('計算状態を保存中…')
 else if(data.type==='checkpoint'){status('端末に計算状態を保存中…');try{await persist(data.packet);saved=data.packet;status(data.iterations.toLocaleString()+'回の計算状態を保存しました。');}catch(error){status('保存できませんでした：'+error.message);}running=false;}
 else if(data.type==='error'){running=false;status('計算を停止しました：'+data.message);}controls();};worker.onerror=()=>{running=false;status('計算Workerを起動できません。ページを再読込してください。');controls();};
 $('labStart').onclick=()=>{running=true;controls();command('new',{seed:Number($('labSeed').value),mode:$('labMode').value,count:10000});};$('labRun').onclick=()=>{running=true;controls();command('run',{count:10000});};$('labPause').onclick=()=>command('pause');$('labSave').onclick=()=>{running=true;controls();command('save');};$('labLoad').onclick=()=>{running=true;controls();command('load',{packet:saved});};
-document.addEventListener('visibilitychange',()=>{if(document.hidden&&running)command('save');});
+document.addEventListener('visibilitychange',()=>{if(document.hidden&&(running||hasTrainer))command('save');});
 db=await database();saved=await new Promise((resolve,reject)=>{const tx=db.transaction('checkpoints'),req=tx.objectStore('checkpoints').get('latest');req.onsuccess=()=>resolve(req.result);req.onerror=()=>reject(req.error);});controls();
 }catch(error){status('この環境では計算・保存を開始できません：'+error.message);for(const id of ['labStart','labRun','labPause','labSave','labLoad'])$(id).disabled=true;}
