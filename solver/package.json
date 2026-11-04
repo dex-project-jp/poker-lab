@@ -25,6 +25,10 @@
     "sample:mtt10-deck": "node tools/run-mtt10-deck.mjs",
     "export:mtt10-deck": "node tools/export-mtt10-deck.mjs",
     "check:mtt10-deck": "python tools/check-mtt10-deck.py",
-    "certify:mtt10-deck": "node tools/certify-mtt10-deck.mjs"
+    "certify:mtt10-deck": "node tools/certify-mtt10-deck.mjs",
+    "train:mtt10-mccfr": "node tools/run-mtt10-mccfr.mjs",
+    "export:mtt10-mccfr": "node tools/export-mtt10-mccfr.mjs",
+    "check:mtt10-mccfr": "python tools/check-mtt10-mccfr.py",
+    "certify:mtt10-mccfr": "node tools/certify-mtt10-mccfr.mjs"
   }
 }

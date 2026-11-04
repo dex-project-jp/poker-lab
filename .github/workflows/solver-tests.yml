@@ -5,6 +5,7 @@ on:
       - 'solver/**'
       - 'index.html'
       - 'engine-validation.html'
+      - 'mccfr-validation.html'
       - 'app/**'
       - 'version.json'
       - '.github/workflows/solver-tests.yml'
@@ -77,6 +78,13 @@ jobs:
           npm run check:mtt10-deck -- --check
           npm run certify:mtt10-deck
           git diff --exit-code -- data/mtt10-deck-validation.json data/mtt10-deck-report.js
+      - name: Verify chance-sampled MCCFR and independent holdout audit
+        run: |
+          cd solver
+          npm run export:mtt10-mccfr
+          npm run check:mtt10-mccfr -- --check
+          npm run certify:mtt10-mccfr
+          git diff --exit-code -- data/mtt10-mccfr-validation.json data/mtt10-mccfr-report.js
       - name: Verify conditional all-in audit and source data
         run: |
           npm run audit:practical --prefix solver -- --check

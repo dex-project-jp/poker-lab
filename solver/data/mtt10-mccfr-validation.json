@@ -1,0 +1,467 @@
+{
+  "schemaVersion": 1,
+  "quality": "research-learning-diagnostic-only",
+  "implementationChecked": true,
+  "fullMTTGTO": false,
+  "strategyPublishedToApp": false,
+  "nashConvergenceVerified": false,
+  "fullDeckBestResponseUpperBound": null,
+  "candidateSha256": "8fbf92d1fd7942ce302c631b89ac563e6b318fdd4302cc2e77a69384380dbc2d",
+  "conditions": {
+    "players": 9,
+    "stacksBeforePostsBB": [
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10
+    ],
+    "sbBlindBB": 0.5,
+    "bbBlindBB": 1,
+    "bbAnteBB": 1,
+    "utility": "chipEV",
+    "rake": 0,
+    "icm": false,
+    "bounty": false,
+    "classes": 169,
+    "deck": 52,
+    "actions": [
+      "fold",
+      "allin",
+      "call"
+    ],
+    "boardKnownBeforeBetting": false
+  },
+  "algorithm": "simultaneous chance-sampled MCCFR, unclipped cumulative regrets, conditional uniform average; all actions traversed",
+  "training": {
+    "seed": 120101,
+    "iterations": 100000,
+    "checkpoints": [
+      {
+        "iteration": 1000,
+        "elapsedMs": 196.67724300000003,
+        "minClassVisits": 0,
+        "maxClassVisits": 21,
+        "sampledPositiveCounterfactualRegretPerIteration": [
+          2.104305216374012,
+          2.9098095585737593,
+          3.5055787931719546,
+          4.463899958308279,
+          5.131968494743042,
+          4.834255218038746,
+          5.802875571033294,
+          6.035677947400201,
+          5.6362384880062395
+        ],
+        "encoding": "gzip+base64"
+      },
+      {
+        "iteration": 10000,
+        "elapsedMs": 1491.906894,
+        "minClassVisits": 16,
+        "maxClassVisits": 121,
+        "sampledPositiveCounterfactualRegretPerIteration": [
+          0.610223288699183,
+          0.9067415189395036,
+          1.2789727242848905,
+          1.7911564475602584,
+          2.4015017465582145,
+          2.989528493614302,
+          3.657080560007861,
+          4.311261021307362,
+          4.496273406715689
+        ],
+        "encoding": "gzip+base64"
+      },
+      {
+        "iteration": 100000,
+        "elapsedMs": 14711.513109,
+        "minClassVisits": 255,
+        "maxClassVisits": 1006,
+        "sampledPositiveCounterfactualRegretPerIteration": [
+          0.107718490320549,
+          0.19686709538167455,
+          0.31735801374994194,
+          0.4585178896782846,
+          0.665053741012174,
+          0.944268727662491,
+          1.2910158295817744,
+          1.7159598014343798,
+          2.0194606628112695
+        ],
+        "encoding": "gzip+base64"
+      }
+    ]
+  },
+  "response": {
+    "samples": 100000,
+    "seed": 120201,
+    "kind": "empirical 169-class fitted deviations; not exact full-deck best responses"
+  },
+  "evaluations": [
+    {
+      "samples": 10000,
+      "seed": 120401,
+      "alpha": 0.05,
+      "unseenInformationSetEvaluations": 0,
+      "meanValuesBB": [
+        0.689256775563323,
+        0.395018299671158,
+        0.4622328997348013,
+        0.2676976770969584,
+        0.24569229127085873,
+        0.08340706590812133,
+        0.0632040658925493,
+        -0.3439866573623088,
+        -1.862522417775459
+      ],
+      "meanDeviationValuesBB": [
+        0.6525387059437632,
+        0.5104734395731464,
+        0.5664322005667467,
+        0.4804602696388579,
+        0.47802199431234066,
+        0.3674971767610255,
+        0.3367617960073172,
+        -0.09979412619037688,
+        -1.6961252047482667
+      ],
+      "gains": [
+        {
+          "player": 0,
+          "meanBB": -0.03671806961955991,
+          "standardErrorBB": 0.04423128471977219,
+          "lowerBB": -3.1246767045350685,
+          "upperBB": 3.0512405652959487
+        },
+        {
+          "player": 1,
+          "meanBB": 0.11545513990198887,
+          "standardErrorBB": 0.045477799581265715,
+          "lowerBB": -2.9725034950135196,
+          "upperBB": 3.2034137748174976
+        },
+        {
+          "player": 2,
+          "meanBB": 0.1041993008319477,
+          "standardErrorBB": 0.04332001524052119,
+          "lowerBB": -2.983759334083561,
+          "upperBB": 3.1921579357474563
+        },
+        {
+          "player": 3,
+          "meanBB": 0.21276259254189916,
+          "standardErrorBB": 0.0471001394446618,
+          "lowerBB": -2.8751960423736094,
+          "upperBB": 3.300721227457408
+        },
+        {
+          "player": 4,
+          "meanBB": 0.23232970304148212,
+          "standardErrorBB": 0.047290081015391144,
+          "lowerBB": -2.8556289318740267,
+          "upperBB": 3.3202883379569905
+        },
+        {
+          "player": 5,
+          "meanBB": 0.28409011085290464,
+          "standardErrorBB": 0.04516301622131939,
+          "lowerBB": -2.803868524062604,
+          "upperBB": 3.372048745768413
+        },
+        {
+          "player": 6,
+          "meanBB": 0.2735577301147687,
+          "standardErrorBB": 0.04468309128712703,
+          "lowerBB": -2.81440090480074,
+          "upperBB": 3.361516365030277
+        },
+        {
+          "player": 7,
+          "meanBB": 0.24419253117193152,
+          "standardErrorBB": 0.04256199806200788,
+          "lowerBB": -2.843766103743577,
+          "upperBB": 3.3321511660874403
+        },
+        {
+          "player": 8,
+          "meanBB": 0.16639721302719673,
+          "standardErrorBB": 0.03587193686712608,
+          "lowerBB": -2.921561421888312,
+          "upperBB": 3.2543558479427053
+        }
+      ],
+      "hoeffdingRadiusBB": 3.0879586349155086,
+      "scope": "fixed fitted deviations only; NOT an upper bound on true best response",
+      "iidAssumption": "ideal independent uniform draws; deterministic PRNG not an IID proof"
+    },
+    {
+      "samples": 10000,
+      "seed": 120402,
+      "alpha": 0.05,
+      "unseenInformationSetEvaluations": 0,
+      "meanValuesBB": [
+        0.513339331757523,
+        0.2412334068229078,
+        0.5235348021517052,
+        0.46811557007814864,
+        0.2056810837076861,
+        0.13560248453523482,
+        0.06357339530284417,
+        -0.3411153902991369,
+        -1.8099646840569026
+      ],
+      "meanDeviationValuesBB": [
+        0.591797795872886,
+        0.4115410593501526,
+        0.6116766416692981,
+        0.6571598940563065,
+        0.4550441424845167,
+        0.3800950320052813,
+        0.3856701767540213,
+        -0.08549985955348703,
+        -1.6304050267660568
+      ],
+      "gains": [
+        {
+          "player": 0,
+          "meanBB": 0.07845846411536428,
+          "standardErrorBB": 0.04318538341589973,
+          "lowerBB": -3.0095001708001443,
+          "upperBB": 3.166417099030873
+        },
+        {
+          "player": 1,
+          "meanBB": 0.17030765252724625,
+          "standardErrorBB": 0.044360698319315134,
+          "lowerBB": -2.9176509823882624,
+          "upperBB": 3.258266287442755
+        },
+        {
+          "player": 2,
+          "meanBB": 0.0881418395175944,
+          "standardErrorBB": 0.044406911451218625,
+          "lowerBB": -2.9998167953979142,
+          "upperBB": 3.176100474433103
+        },
+        {
+          "player": 3,
+          "meanBB": 0.18904432397815704,
+          "standardErrorBB": 0.04470388679457736,
+          "lowerBB": -2.8989143109373514,
+          "upperBB": 3.2770029588936658
+        },
+        {
+          "player": 4,
+          "meanBB": 0.2493630587768318,
+          "standardErrorBB": 0.04737502167037776,
+          "lowerBB": -2.838595576138677,
+          "upperBB": 3.33732169369234
+        },
+        {
+          "player": 5,
+          "meanBB": 0.24449254747004825,
+          "standardErrorBB": 0.04540001161699982,
+          "lowerBB": -2.8434660874454605,
+          "upperBB": 3.3324511823855567
+        },
+        {
+          "player": 6,
+          "meanBB": 0.3220967814511752,
+          "standardErrorBB": 0.04523829200694808,
+          "lowerBB": -2.7658618534643336,
+          "upperBB": 3.4100554163666836
+        },
+        {
+          "player": 7,
+          "meanBB": 0.2556155307456499,
+          "standardErrorBB": 0.04240341656441911,
+          "lowerBB": -2.832343104169859,
+          "upperBB": 3.3435741656611584
+        },
+        {
+          "player": 8,
+          "meanBB": 0.17955965729085074,
+          "standardErrorBB": 0.0357027026956774,
+          "lowerBB": -2.9083989776246577,
+          "upperBB": 3.2675182922063595
+        }
+      ],
+      "hoeffdingRadiusBB": 3.0879586349155086,
+      "scope": "fixed fitted deviations only; NOT an upper bound on true best response",
+      "iidAssumption": "ideal independent uniform draws; deterministic PRNG not an IID proof"
+    },
+    {
+      "samples": 10000,
+      "seed": 120403,
+      "alpha": 0.05,
+      "unseenInformationSetEvaluations": 0,
+      "meanValuesBB": [
+        0.6434869115704022,
+        0.46351305826336475,
+        0.3616702073762652,
+        0.3601283349703634,
+        0.30843263788614644,
+        0.011833396736885259,
+        0.03136868665687666,
+        -0.4070588749623735,
+        -1.77337435849793
+      ],
+      "meanDeviationValuesBB": [
+        0.7099497062746496,
+        0.5887449172033545,
+        0.542423646679791,
+        0.5384005802513909,
+        0.5379127572459587,
+        0.24126653047906838,
+        0.32436612983992136,
+        -0.08586584683819831,
+        -1.6133036571039983
+      ],
+      "gains": [
+        {
+          "player": 0,
+          "meanBB": 0.06646279470424704,
+          "standardErrorBB": 0.044086978033117716,
+          "lowerBB": -3.0214958402112617,
+          "upperBB": 3.1544214296197555
+        },
+        {
+          "player": 1,
+          "meanBB": 0.12523185893998962,
+          "standardErrorBB": 0.043680540098541845,
+          "lowerBB": -2.962726775975519,
+          "upperBB": 3.2131904938554983
+        },
+        {
+          "player": 2,
+          "meanBB": 0.1807534393035264,
+          "standardErrorBB": 0.045038266941870735,
+          "lowerBB": -2.907205195611982,
+          "upperBB": 3.268712074219035
+        },
+        {
+          "player": 3,
+          "meanBB": 0.17827224528102717,
+          "standardErrorBB": 0.045430020578470155,
+          "lowerBB": -2.9096863896344813,
+          "upperBB": 3.266230880196536
+        },
+        {
+          "player": 4,
+          "meanBB": 0.2294801193598118,
+          "standardErrorBB": 0.04714593816928888,
+          "lowerBB": -2.8584785155556967,
+          "upperBB": 3.3174387542753205
+        },
+        {
+          "player": 5,
+          "meanBB": 0.22943313374218488,
+          "standardErrorBB": 0.04498418429345253,
+          "lowerBB": -2.8585255011733235,
+          "upperBB": 3.3173917686576937
+        },
+        {
+          "player": 6,
+          "meanBB": 0.2929974431830435,
+          "standardErrorBB": 0.044861833699803726,
+          "lowerBB": -2.7949611917324653,
+          "upperBB": 3.380956078098552
+        },
+        {
+          "player": 7,
+          "meanBB": 0.32119302812417533,
+          "standardErrorBB": 0.04281143915528498,
+          "lowerBB": -2.766765606791333,
+          "upperBB": 3.409151663039684
+        },
+        {
+          "player": 8,
+          "meanBB": 0.1600707013939335,
+          "standardErrorBB": 0.03620283414490126,
+          "lowerBB": -2.9278879335215753,
+          "upperBB": 3.248029336309442
+        }
+      ],
+      "hoeffdingRadiusBB": 3.0879586349155086,
+      "scope": "fixed fitted deviations only; NOT an upper bound on true best response",
+      "iidAssumption": "ideal independent uniform draws; deterministic PRNG not an IID proof"
+    }
+  ],
+  "separation": {
+    "phaseCounts": {
+      "train": 100000,
+      "fit": 100000,
+      "test:120401": 10000,
+      "test:120402": 10000,
+      "test:120403": 10000
+    },
+    "distinctJointDeals": 230000,
+    "crossPhaseOverlap": 0,
+    "canonicalLedgerSha256": "6581adb1433eb7eb34390b09034aaa8398a7bddc07e96f9d11b76e2de1c181c2"
+  },
+  "independent": {
+    "schemaVersion": 1,
+    "passed": true,
+    "candidateSha256": "8fbf92d1fd7942ce302c631b89ac563e6b318fdd4302cc2e77a69384380dbc2d",
+    "method": "independent Python shuffle, five-card subsets, rebuilt public tree, half-BB pots, standard sampled regret updates and paired fixed-deviation values",
+    "trainingAuditIterations": 32,
+    "maxRegretUpdateDifference": 1.7763568394002505e-15,
+    "fitAuditSamples": 32,
+    "maxFitChoiceLossBB": 0,
+    "physicalDealSeparationChecked": 230000,
+    "canonicalLedgerSha256": "6581adb1433eb7eb34390b09034aaa8398a7bddc07e96f9d11b76e2de1c181c2",
+    "holdoutAudits": [
+      {
+        "seed": 120401,
+        "samplesChecked": 128,
+        "maxPairedGainDifferenceBB": 0
+      },
+      {
+        "seed": 120402,
+        "samplesChecked": 128,
+        "maxPairedGainDifferenceBB": 0
+      },
+      {
+        "seed": 120403,
+        "samplesChecked": 128,
+        "maxPairedGainDifferenceBB": 0
+      }
+    ],
+    "fullDeckBestResponseUpperBoundVerified": false,
+    "nashConvergenceVerified": false,
+    "strategyPublishedToApp": false
+  },
+  "resources": {
+    "elapsedMs": 60302.643859,
+    "maxRSSMiB": 357.85546875,
+    "nodeVersion": "v24.22.1",
+    "publicNodes": 1021,
+    "publicInformationSets": 510
+  },
+  "validationPlan": {
+    "pilotSeeds": [
+      120301,
+      120302,
+      120303
+    ],
+    "finalTestSeeds": [
+      120401,
+      120402,
+      120403
+    ],
+    "fitSizeChosenAfterPilot": true,
+    "finalCheckpointPrecommitted": 100000,
+    "checkpointSelectionOnFinalTests": false
+  },
+  "limits": [
+    "Fitted deviation improvement is not full-game Nash exploitability.",
+    "Distinct deterministic seeds are role-separated streams, not proof of independent physical deals.",
+    "169-class policy space, fold/jam/call restricted game only.",
+    "Training checkpoints do not imply convergence or per-hand accuracy."
+  ]
+}

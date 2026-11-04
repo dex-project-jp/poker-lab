@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "passed": true,
+  "candidateSha256": "8fbf92d1fd7942ce302c631b89ac563e6b318fdd4302cc2e77a69384380dbc2d",
+  "method": "independent Python shuffle, five-card subsets, rebuilt public tree, half-BB pots, standard sampled regret updates and paired fixed-deviation values",
+  "trainingAuditIterations": 32,
+  "maxRegretUpdateDifference": 1.7763568394002505e-15,
+  "fitAuditSamples": 32,
+  "maxFitChoiceLossBB": 0.0,
+  "physicalDealSeparationChecked": 230000,
+  "canonicalLedgerSha256": "6581adb1433eb7eb34390b09034aaa8398a7bddc07e96f9d11b76e2de1c181c2",
+  "holdoutAudits": [
+    {
+      "seed": 120401,
+      "samplesChecked": 128,
+      "maxPairedGainDifferenceBB": 0.0
+    },
+    {
+      "seed": 120402,
+      "samplesChecked": 128,
+      "maxPairedGainDifferenceBB": 0.0
+    },
+    {
+      "seed": 120403,
+      "samplesChecked": 128,
+      "maxPairedGainDifferenceBB": 0.0
+    }
+  ],
+  "fullDeckBestResponseUpperBoundVerified": false,
+  "nashConvergenceVerified": false,
+  "strategyPublishedToApp": false
+}
