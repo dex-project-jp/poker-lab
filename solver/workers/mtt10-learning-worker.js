@@ -1,0 +1,10 @@
+import {createTrainer} from '../mtt10-learning.js';import {encodeCheckpoint,decodeCheckpoint} from '../mtt10-checkpoint.js';
+let trainer=null,active=false,loading=false,generation=0,target=0,lastProgress=0;
+const send=(type,extra={})=>self.postMessage({type,iterations:trainer?.iterations??0,...extra});
+function pause(){active=false;generation++;}
+function run(count){if(!trainer||!Number.isInteger(count)||count<1||count>1000000||trainer.iterations+count>1e8)throw Error('Invalid batch');target=trainer.iterations+count;active=true;const gen=++generation;send('running',{target});function tick(){if(!active||gen!==generation)return;const end=performance.now()+12;let n=0;while(trainer.iterations<target&&n++<64&&performance.now()<end)trainer.step();if(performance.now()-lastProgress>100){send('progress',{target});lastProgress=performance.now();}if(trainer.iterations<target)setTimeout(tick,0);else{pause();send('done',{target});}}setTimeout(tick,0);}
+self.onmessage=async({data})=>{if(loading){send('busy');return;}try{if(!data||typeof data.type!=='string')throw Error('Invalid command');if(data.type==='pause'){pause();send('paused');return;}if(loading)throw Error('Checkpoint operation in progress');if(data.type==='new'){if(active)throw Error('Pause before restarting');trainer=createTrainer(data.seed,{mode:data.mode});run(data.count);}
+else if(data.type==='run'){if(active)throw Error('Already running');run(data.count);}
+else if(data.type==='save'){pause();if(!trainer)throw Error('No learning state');loading=true;send('saving');const packet=await encodeCheckpoint(trainer.save());send('checkpoint',{packet});}
+else if(data.type==='load'){if(active)throw Error('Pause before loading');loading=true;const state=await decodeCheckpoint(data.packet);trainer=createTrainer(state.seed,{mode:state.mode,checkpoint:state});send('loaded',{seed:state.seed,mode:state.mode});}
+else throw Error('Unknown command');}catch(error){pause();send('error',{message:error.message});}finally{loading=false;}};
