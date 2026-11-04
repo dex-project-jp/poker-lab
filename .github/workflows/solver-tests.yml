@@ -86,6 +86,8 @@ jobs:
           npm run check:mtt10-mccfr -- --check
           npm run certify:mtt10-mccfr
           git diff --exit-code -- data/mtt10-mccfr-validation.json data/mtt10-mccfr-report.js
+      - name: Check v1.5 learned range data and display contracts
+        run: npm run check:mtt10-learned --prefix solver
       - name: Check v1.4 learning comparison and checkpoint integrity
         run: npm run check:mtt10-learning --prefix solver
       - name: Replay v1.3 convergence diagnostics

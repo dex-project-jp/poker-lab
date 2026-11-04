@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "datasetVersion": "mtt10-learned-v1",
+  "path": "mtt10-learned.json",
+  "sha256": "8d36ff384f404bb9f00382c3345aa15f33d82ad00018e917168df7864f0b9bea",
+  "bytes": 833093,
+  "modelId": "mtt9-10bb-bba1-fold-jam-call-v14",
+  "seed": 140101,
+  "iterations": 1000000
+}
