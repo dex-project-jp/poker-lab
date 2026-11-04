@@ -29,6 +29,8 @@
     "train:mtt10-mccfr": "node tools/run-mtt10-mccfr.mjs",
     "export:mtt10-mccfr": "node tools/export-mtt10-mccfr.mjs",
     "check:mtt10-mccfr": "python tools/check-mtt10-mccfr.py",
-    "certify:mtt10-mccfr": "node tools/certify-mtt10-mccfr.mjs"
+    "certify:mtt10-mccfr": "node tools/certify-mtt10-mccfr.mjs",
+    "validate:mccfr-accuracy": "node tools/validate-mccfr-accuracy.mjs",
+    "check:mccfr-accuracy": "node tools/check-mccfr-accuracy.mjs"
   }
 }

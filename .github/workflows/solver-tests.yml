@@ -85,6 +85,8 @@ jobs:
           npm run check:mtt10-mccfr -- --check
           npm run certify:mtt10-mccfr
           git diff --exit-code -- data/mtt10-mccfr-validation.json data/mtt10-mccfr-report.js
+      - name: Replay v1.3 convergence diagnostics
+        run: npm run check:mccfr-accuracy --prefix solver
       - name: Verify conditional all-in audit and source data
         run: |
           npm run audit:practical --prefix solver -- --check
