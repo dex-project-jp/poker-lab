@@ -1,0 +1,55 @@
+{
+  "url": "https://www.holdemresources.net/hune",
+  "retrievedOn": "2026-11-05",
+  "description": "Small illustrative subset of published no-ante HU pusher thresholds. Threshold >10 implies shove at 10BB; threshold <10 implies fold. No boundary or disjoint-range cases included.",
+  "conditions": {
+    "players": 2,
+    "stacksBeforePostsBB": [
+      10,
+      10
+    ],
+    "sbBlindBB": 0.5,
+    "bbBlindBB": 1,
+    "bbAnteBB": 0,
+    "utility": "chipEV",
+    "icm": false,
+    "rake": 0,
+    "actions": [
+      "fold",
+      "allin",
+      "call"
+    ]
+  },
+  "rows": [
+    {
+      "row": 1183,
+      "hand": "AA",
+      "publishedThresholdBB": 20,
+      "aggressiveProbability": 1
+    },
+    {
+      "row": 1346,
+      "hand": "72o",
+      "publishedThresholdBB": 1.6,
+      "aggressiveProbability": 0
+    },
+    {
+      "row": 1247,
+      "hand": "T2s",
+      "publishedThresholdBB": 6.5,
+      "aggressiveProbability": 0
+    },
+    {
+      "row": 1338,
+      "hand": "32s",
+      "publishedThresholdBB": 1.7,
+      "aggressiveProbability": 0
+    }
+  ],
+  "limitations": [
+    "Different number of players and ante",
+    "Nine-player SB range is conditioned on seven folds, with card removal from those policies",
+    "Only four illustrative hands, not a complete reference range",
+    "Reference is threshold guidance, not measured mixed frequencies"
+  ]
+}
