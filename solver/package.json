@@ -31,6 +31,9 @@
     "check:mtt10-mccfr": "python tools/check-mtt10-mccfr.py",
     "certify:mtt10-mccfr": "node tools/certify-mtt10-mccfr.mjs",
     "validate:mccfr-accuracy": "node tools/validate-mccfr-accuracy.mjs",
-    "check:mccfr-accuracy": "node tools/check-mccfr-accuracy.mjs"
+    "check:mccfr-accuracy": "node tools/check-mccfr-accuracy.mjs",
+    "compare:mtt10-learning": "node tools/compare-mtt10-learning.mjs",
+    "train:mtt10-learning": "node tools/train-mtt10-learning.mjs",
+    "check:mtt10-learning": "node tools/check-mtt10-learning.mjs"
   }
 }
