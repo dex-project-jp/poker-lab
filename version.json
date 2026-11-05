@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "revision": 23,
-  "version": "2.0.0",
-  "build": "units-23"
+  "revision": 24,
+  "version": "2.0.1",
+  "build": "direct-24"
 }
