@@ -86,8 +86,7 @@ export function setupPotCalculator({pot, toggle, panel, current, expression, res
   insert.onclick = () => {
     const value = pot.valueAsNumber;
     if (!Number.isFinite(value) || value < 0) return;
-    // Start a new expression when the previous entry ends in a number.
-    edit((/[+−×÷]$/.test(formula) ? formula : '') + String(value));
+    edit(`${value}+`);
   };
   apply.onclick = () => {
     if (pending === null) return;
