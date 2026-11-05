@@ -1,4 +1,4 @@
-import {ranks, classes, validate} from '../solver/simple-analysis.js?v=analysis-20';
+import {ranks, classes, validate} from '../solver/simple-analysis.js?v=nav-21';
 
 const $ = id => document.getElementById(id);
 const suits = {s: '♠', h: '♥', c: '♣', d: '♦'};
@@ -258,7 +258,7 @@ $('calculate').onclick = () => {
       bet: $('bet').valueAsNumber
     };
     validate(input);
-    const current = new Worker(new URL('./simple-analysis-worker.js?v=analysis-20', import.meta.url), {type: 'module'});
+    const current = new Worker(new URL('./simple-analysis-worker.js?v=nav-21', import.meta.url), {type: 'module'});
     worker = current;
     $('cancel').disabled = false;
     $('cancel').hidden = false;

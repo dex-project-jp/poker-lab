@@ -27,6 +27,14 @@ const server=http.createServer((req,res)=>{let p=path.resolve(root,'.'+new URL(r
   await page.locator('#autoNext').uncheck();
   await page.locator('#suitOptions [data-suit=h]').tap();
   for(const [i,c] of ['Ac','Ad','2c','3d','4h'].entries()) await choose(i+2,c);
+  const suits = {s: 'rgb(21, 25, 34)', h: 'rgb(167, 25, 48)', c: 'rgb(17, 101, 62)', d: 'rgb(24, 85, 165)'};
+  for (const [index, suit] of ['s', 'h', 'c', 'd'].entries()) {
+   const colors = await page.locator('#card' + index).evaluate(card => {
+    const style = getComputedStyle(card);
+    return [style.backgroundColor, style.color];
+   });
+   assert.deepEqual(colors, ['rgb(255, 255, 255)', suits[suit]]);
+  }
   await page.locator('#pot').fill('100');await page.locator('#bet').fill('50');
   assert.ok(await page.locator('.amounts').evaluate(el=>el.children[0].getBoundingClientRect().top===el.children[1].getBoundingClientRect().top));
   await page.locator('#calculate').tap();
@@ -47,6 +55,7 @@ const server=http.createServer((req,res)=>{let p=path.resolve(root,'.'+new URL(r
   await page.locator('[data-hand=KK]').tap();await page.locator('#calculate').tap();
   await page.waitForFunction(()=>!document.querySelector('#result').hidden);
   assert.equal(await page.locator('#verdict').textContent(),'コール有利');
+  const callBackground = await page.locator('#verdict').evaluate(el => getComputedStyle(el).backgroundColor);
   assert.equal(await page.locator('#equity').textContent(),'100.000%');
   assert.equal(await page.locator('#callEV').textContent(),'150.0000 BB');
   assert.equal(await page.locator('#breakdown').isVisible(),false);
@@ -78,9 +87,44 @@ const server=http.createServer((req,res)=>{let p=path.resolve(root,'.'+new URL(r
   await page.locator('#pot').fill('11.9');await page.locator('#calculate').tap();
   await page.waitForFunction(()=>!document.querySelector('#result').hidden);
   assert.equal(await page.locator('#verdict').textContent(),'フォールド有利');
+  assert.notEqual(await page.locator('#verdict').evaluate(el => getComputedStyle(el).backgroundColor), callBackground);
   await choose(6,'3c');
   assert.equal(await page.locator('#result').isVisible(),false);
-  assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));assert.deepEqual(errors,[]);await page.close();
+  const nav = page.getByRole('navigation', {name: 'メインナビゲーション'});
+  const checkNav = async active => {
+   assert.deepEqual(await nav.getByRole('link').allTextContents(), ['GTOレンジ', 'ハンド分析', '学習']);
+   assert.equal(await nav.locator('[aria-current]').textContent(), active);
+   assert.ok(await nav.evaluate(el => {
+    const links = [...el.querySelectorAll('a')];
+    const activeLink = el.querySelector('[aria-current]');
+    const activeColor = getComputedStyle(activeLink).backgroundColor;
+    return links.every(link => {
+     const rect = link.getBoundingClientRect();
+     return rect.height >= 44 && rect.left >= 0 && rect.right <= innerWidth &&
+       (link === activeLink || getComputedStyle(link).backgroundColor !== activeColor);
+    }) && document.documentElement.scrollWidth <= innerWidth;
+   }));
+  };
+  await checkNav('ハンド分析');
+  await nav.getByRole('link', {name: '学習', exact: true}).tap();
+  await page.waitForURL('**/mccfr-learning.html');
+  await checkNav('学習');
+  await page.getByRole('link', {name: 'v1.3の精度基準', exact: true}).tap();
+  await page.waitForURL('**/mccfr-validation.html');
+  await checkNav('学習');
+  await nav.getByRole('link', {name: '学習', exact: true}).tap();
+  await page.waitForURL('**/mccfr-learning.html');
+  await page.getByRole('link', {name: '通常デッキの検証結果', exact: true}).tap();
+  await page.waitForURL('**/engine-validation.html');
+  await checkNav('学習');
+  await nav.getByRole('link', {name: 'GTOレンジ', exact: true}).tap();
+  await page.waitForURL('**/index.html');
+  await checkNav('GTOレンジ');
+  await nav.getByRole('link', {name: 'ハンド分析', exact: true}).tap();
+  await page.waitForURL('**/simple-analysis.html');
+  await checkNav('ハンド分析');
+  assert.deepEqual(errors,[]);
+  await page.close();
  }
  console.log(engine+': simple analysis passed at 375/390/430px');
 }finally{await browser?.close();server.close();}})().catch(e=>{console.error(e);process.exitCode=1});
