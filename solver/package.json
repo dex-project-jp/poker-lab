@@ -38,6 +38,8 @@
     "export:mtt10-learned": "node tools/export-mtt10-learned.mjs",
     "check:mtt10-learned": "node tools/check-mtt10-learned.mjs",
     "diagnose:mtt10-br": "node tools/run-mtt10-br-coverage.mjs",
-    "check:mtt10-br": "node tools/run-mtt10-br-coverage.mjs --check"
+    "check:mtt10-br": "node tools/run-mtt10-br-coverage.mjs --check",
+    "experiment:mtt10-br-sampling": "node tools/run-mtt10-br-sampling-lab.mjs",
+    "check:mtt10-br-sampling": "node tools/run-mtt10-br-sampling-lab.mjs --check && python3 tools/check-mtt10-br-sampling-lab.py"
   }
 }

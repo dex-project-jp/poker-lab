@@ -90,6 +90,8 @@ jobs:
         run: npm run check:mtt10-learned --prefix solver
       - name: Check v1.4 learning comparison and checkpoint integrity
         run: npm run check:mtt10-learning --prefix solver
+      - name: Verify finite conditional BR sampling against independent rational oracle
+        run: npm run check:mtt10-br-sampling --prefix solver
       - name: Replay counterfactual reach coverage diagnostics
         run: npm run check:mtt10-br --prefix solver
       - name: Replay v1.3 convergence diagnostics
