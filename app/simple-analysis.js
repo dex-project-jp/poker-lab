@@ -1,4 +1,5 @@
-import {ranks, classes, validate} from '../solver/simple-analysis.js?v=direct-24';
+import {ranks, classes, validate} from '../solver/simple-analysis.js?v=pot-25';
+import {setupPotCalculator} from './pot-calculator.js?v=pot-25';
 
 const $ = id => document.getElementById(id);
 const suits = {s: '♠', h: '♥', c: '♣', d: '♦'};
@@ -247,6 +248,18 @@ function showResult(result) {
   $('result').hidden = false;
 }
 
+const resetPotCalculator = setupPotCalculator({
+  pot: $('pot'),
+  toggle: $('potCalcToggle'),
+  panel: $('potCalculator'),
+  current: $('potCalcCurrent'),
+  expression: $('potCalcExpression'),
+  result: $('potCalcResult'),
+  insert: $('potCalcInsert'),
+  apply: $('potCalcApply'),
+  unit: () => pointsMode ? '点' : 'BB'
+});
+
 function selectUnit(usePoints) {
   if (pointsMode === usePoints) return;
   pointsMode = usePoints;
@@ -255,6 +268,7 @@ function selectUnit(usePoints) {
   document.querySelectorAll('[data-amount-unit]').forEach(element => { element.textContent = label; });
   $('unitBB').setAttribute('aria-pressed', String(!pointsMode));
   $('unitPoints').setAttribute('aria-pressed', String(pointsMode));
+  resetPotCalculator();
   invalidate();
 }
 
@@ -278,7 +292,7 @@ $('calculate').onclick = () => {
       bet: $('bet').valueAsNumber
     };
     validate(input);
-    const current = new Worker(new URL('./simple-analysis-worker.js?v=direct-24', import.meta.url), {type: 'module'});
+    const current = new Worker(new URL('./simple-analysis-worker.js?v=pot-25', import.meta.url), {type: 'module'});
     worker = current;
     $('cancel').disabled = false;
     $('cancel').hidden = false;
