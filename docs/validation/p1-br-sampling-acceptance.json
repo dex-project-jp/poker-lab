@@ -1,0 +1,101 @@
+{
+  "date": "2026-11-05",
+  "scope": "Finite conditional BR sampling experiment only; not full-deck nine-player MTT",
+  "baseline": "678f44cd52f20209a49815a50f85bd31593e7931",
+  "implementationHead": "05bf1ad100427a211cce21c571df6c5d05cb6467",
+  "mainMerge": "977814441efca408f6850fb9d2fbf8382e0338c6",
+  "testedTree": "6c85cbbb8948afe951b50ed8d7da4230779c296b",
+  "pullRequest": "https://github.com/dex-project-jp/poker-lab/pull/5",
+  "localChecks": {
+    "tests": {
+      "passed": 148,
+      "failed": 0
+    },
+    "finiteFullReplay": "passed before interruption",
+    "independentPythonRationalOracle": "passed before interruption",
+    "previousReachReplay": "passed before interruption",
+    "v13EVDeviationReplay": "passed before interruption",
+    "v14ReportIntegrity": "passed before interruption",
+    "v15DistributionDisplayContracts": "passed before interruption",
+    "whitespace": "passed"
+  },
+  "ci": {
+    "branch": "https://github.com/dex-project-jp/poker-lab/actions/runs/41943349279",
+    "branchConclusion": "success",
+    "main": "https://github.com/dex-project-jp/poker-lab/actions/runs/41943900704",
+    "mainConclusion": "success",
+    "mainJobs": {
+      "test": "success",
+      "chromium": "success",
+      "webkit": "success"
+    },
+    "skipped": [
+      "HU full exact cross-checks: unchanged math scope",
+      "Optional entire exact matrix regeneration: not requested"
+    ]
+  },
+  "pages": {
+    "run": "https://github.com/dex-project-jp/poker-lab/actions/runs/41943900810",
+    "conclusion": "success",
+    "publicVerification": "HTTP byte/SHA256 comparison completed before interruption; Pages success reconfirmed on resume",
+    "publicFiles": [
+      {
+        "path": "solver/data/mtt10-br-sampling-lab.json",
+        "bytes": 111300,
+        "sha256": "197bf3f087dbeb4839ffa8376150df92d8a5631c0bdc795ca6d754e62919d3f1"
+      },
+      {
+        "path": "solver/mtt10-br-sampling-lab.js",
+        "bytes": 8440,
+        "sha256": "8925a5e16cdf4f1856b079fa95dc5bb7425f080552486f7793161953ba8b9d83"
+      },
+      {
+        "path": "docs/MTT10-BR-SAMPLING-LAB.md",
+        "bytes": 6740,
+        "sha256": "ae653d85818b05b6d088fd96f9e5dc2f693d09049741a0e654dc34afd6b11790"
+      },
+      {
+        "path": "index.html",
+        "bytes": 68694,
+        "sha256": "808181e990974fd4b28bff6bf9ca827953eb1b8aff04c8dfc8d2f2a3284f5597"
+      },
+      {
+        "path": "version.json",
+        "bytes": 82,
+        "sha256": "d0c64b1b7210791597d25ddd3403f967ee11120f40c5f99a716287d87f4686b6"
+      },
+      {
+        "path": "solver/data/mtt10-learned.json",
+        "bytes": 833093,
+        "sha256": "8d36ff384f404bb9f00382c3345aa15f33d82ad00018e917168df7864f0b9bea"
+      }
+    ]
+  },
+  "gtoVerified": false,
+  "liveEngineAdopted": false,
+  "liveVersion": "v1.5.0",
+  "liveRangeChanged": false,
+  "results": {
+    "finiteVarianceLowerRows": 24,
+    "finiteRows": 24,
+    "fitSeeds": [
+      170201,
+      170202,
+      170203
+    ],
+    "fitBudgets": [
+      64,
+      256,
+      1024
+    ],
+    "finiteCaseWithResponseImprovement": {
+      "samples": 64,
+      "seed": 170202,
+      "jointChoiceErrors": 2,
+      "conditionalChoiceErrors": 0
+    },
+    "holdoutHoeffdingConfirmsEVImprovement": false,
+    "selectionKeepsBaselineEverywhere": true
+  },
+  "next": "Check latest main and concurrent simple-hand-analysis PR, then follow the agreed plan; finite sampling results do not justify live-engine adoption."
+}

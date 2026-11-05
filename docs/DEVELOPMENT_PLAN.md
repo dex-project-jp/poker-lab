@@ -40,7 +40,7 @@
 
 ## 最新の確認状態
 
-以下は2026-11-05のP1診断統合・公開確認時点。次の作業では必ず再取得する。
+2026-11-05：最新の完了工程はP1条件付き抽選の有限検証（[PR #5](https://github.com/dex-project-jp/poker-lab/pull/5)、実装main `977814441efca408f6850fb9d2fbf8382e0338c6`）。148件・独立数値照合・Chromium/WebKitのmain CI成功とPages配布を確認。詳しい結果は末尾と受入記録を参照。下表は既存アプリと前工程の履歴。次の作業では必ず最新状態を再取得する。
 
 | 対象 | HEAD / 状態 | 内容 |
 |---|---|---|
@@ -174,6 +174,13 @@ GitHub Pagesによるv1.5.0の公開成功、および公開された6ファイ�
 - 全配札抽選と、手札/履歴reachで条件付けた抽選を同じ行動価値参照予算で比較。整数チケット/棄却法で剰余・CDF丸めの抽選バイアスを避け、正規化質量Zで非条件付きの価値差へ補正。提案分布構築とoracleの列挙費用は別枠で、速度改善を主張しない。
 - 3 fit seed（170201/170202/170203）×64/256/1024。選択・最終holdoutは別seed各8192配札、全比較の誤差配分を固定。pilot170101は除外。予算間の同一seedを独立反復と数えない。
 - 固定有限方策では全24行で推定分散低下。N64/seed170202のみ、従来の行動誤り2→候補0、厳密有限BRとの損失BTN0.974001/SB0.314303BB→0。他8条件は両者同じ。raw holdoutの保守的区間は0を含み、選択は全条件で固定方策を保持。未達を0の均衡証拠にしない。本番精度/収束/速度の改善は未確認で採用見送り。
-- 独立Python有理数実装で全配札のポット・到達質量・行動差・厳密有限BR・両推定分散・全候補成績を照合。148件（既存141＋新規7）全テスト成功。新レポート全再計算、前工程ESS再計算、v1.3全評価再計算/v1.4整合性/v1.5配布検査を実行。GitHub CI/統合結果は完了時に追記。
+- 独立Python有理数実装で全配札のポット・到達質量・行動差・厳密有限BR・両推定分散・全候補成績を照合。148件（既存141＋新規7）全テスト成功。新レポート全再計算、前工程ESS再計算、v1.3全評価再計算/v1.4整合性/v1.5配布検査を実行。GitHub反映と受入結果は以下。
+- [PR #5](https://github.com/dex-project-jp/poker-lab/pull/5) はmainへ統合済み。実装HEAD `05bf1ad100427a211cce21c571df6c5d05cb6467`、merge `977814441efca408f6850fb9d2fbf8382e0338c6`。PRとmainのtree `6c85cbbb8948afe951b50ed8d7da4230779c296b` が一致。受入記録の後続コミットは文書のみ。
+- [ブランチCI](https://github.com/dex-project-jp/poker-lab/actions/runs/41943349279) と [main CI](https://github.com/dex-project-jp/poker-lab/actions/runs/41943900704) の数値test・Chromium・WebKitがすべて成功。中断時に待機していたmainのWebKitも、再開時に成功を確認した。変更範囲外のHU全列挙と任意の全行列再生成は既存CI条件に従いskipされており、実行済みとは数えない。
+- [Pages run](https://github.com/dex-project-jp/poker-lab/actions/runs/41943900810) 成功。中断前に公開の実験JSON/コード/説明文と既存index/version/10BBデータをHTTP取得し、検証ファイルとのbyte/SHA256一致を確認。アプリv1.5.0と公開レンジは維持。詳細：[受入記録](validation/p1-br-sampling-acceptance.json)。
 - 既存UI・30BB・PWA・公開戦略・学習コード・認定基準は変更しない。100万回の不要な再学習はしていない。厳密BRは本有限ゲームだけであり、9人MTTのExploitabilityやGTOを認定しない。
 - 詳細：[実験資料](MTT10-BR-SAMPLING-LAB.md)、`solver/data/mtt10-br-sampling-lab.json`。次は上記52枚デッキ1履歴の条件付き抽選検証。次点はハンド/履歴条件付きEV評価基盤。
+
+### 2026-11-05：中断後の受入確定
+
+待機していたmain CIの全job成功を確認し、上記P1有限検証を完了として記録。再開時に別作業の簡易ハンド分析PR #6（`codex/simple-hand-analysis`、HEAD `b4d2bc631d02a0ff191f1fadd36dd2dd68a2ea00`）がopenだった。この受入確定では同PRの実装・統合を変更しない。次の合図ではmain/同PR/計画を再確認し、別作業の進展と優先順位を踏まえて着手対象を決める。
