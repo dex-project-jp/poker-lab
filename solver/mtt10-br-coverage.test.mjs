@@ -7,6 +7,7 @@ const policy=()=>Array(510*169).fill(.25);
 test('ESS independently matches equal, skew, zero and tiny weights',()=>{
  const m=createReachMoments(4);[1,1,1].forEach(w=>m.add(0,w));[1,.5,.25,0].forEach(w=>m.add(1,w));[1e-200,1e-200].forEach(w=>m.add(2,w));
  assert.equal(m.at(0).effectiveSamples,3);assert.equal(m.at(1).sumReach,1.75);assert.equal(m.at(1).sumSquaredReach,1.3125);assert.ok(Math.abs(m.at(1).effectiveSamples-49/21)<1e-14);assert.equal(m.at(2).effectiveSamples,2);assert.equal(m.at(2).squaredSumUnderflow,true);assert.equal(m.at(3).effectiveSamples,null);
+ const tiny=createReachMoments(1);for(let i=0;i<1000;i++)tiny.add(0,1e-162);assert.ok(tiny.at(0).sumSquaredReach>0);assert.equal(tiny.at(0).effectiveSamples,1000);
  assert.throws(()=>m.add(0,NaN));assert.throws(()=>m.add(0,-1));assert.throws(()=>m.add(4,1));
 });
 test('reach matches independent public history product for each row',()=>{

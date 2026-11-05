@@ -20,7 +20,7 @@ export function createReachMoments(size){
   if(!positive[row])return {nonzeroSamples:0,sumReach:0,sumSquaredReach:0,logSumSquaredReach:null,squaredSumUnderflow:false,effectiveSamples:null};
   const raw=sum[row]*(sum[row]/square[row]),tolerance=1e-10*(positive[row]+1);
   if(raw<1-tolerance||raw>positive[row]+tolerance)throw Error('Inconsistent ESS moments');
-  const sumSquaredReach=scale[row]*scale[row]*square[row];
+  const sumSquaredReach=scale[row]*(scale[row]*square[row]);
   return {nonzeroSamples:positive[row],sumReach:scale[row]*sum[row],sumSquaredReach,logSumSquaredReach:2*Math.log(scale[row])+Math.log(square[row]),squaredSumUnderflow:sumSquaredReach===0,effectiveSamples:Math.min(positive[row],Math.max(1,raw))};
  }
  function snapshot(){return {scale:Array.from(scale),scaledSum:Array.from(sum),scaledSquareSum:Array.from(square),nonzeroSamples:Array.from(positive)};}
