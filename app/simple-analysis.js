@@ -1,4 +1,4 @@
-import {deck,classes,validate} from '../solver/simple-analysis.js';
+import {deck,classes,validate} from '../solver/simple-analysis.js?v=analysis-19';
 const $=id=>document.getElementById(id),range={};let worker;
 function invalidate(message='入力後に「厳密計算する」を押してください'){
  worker?.terminate();worker=null;$('result').hidden=true;$('output').textContent='';$('progress').hidden=true;$('cancel').disabled=true;$('status').textContent=message;
@@ -34,14 +34,14 @@ $('calculate').onclick=()=>{
   if(selects[6].value&&!selects[5].value)throw Error('リバーを指定する場合はターンも指定してください');
   const input={hero:selects.slice(0,2).map(s=>s.value),board:selects.slice(2).filter(s=>s.value).map(s=>s.value),range:{...range},pot:$('pot').value===''?NaN:Number($('pot').value),bet:$('bet').value===''?NaN:Number($('bet').value)};
   if(selects.slice(0,5).some(s=>!s.value))throw Error('自分の2枚とフロップ3枚を指定してください');
-  validate(input);worker=new Worker(new URL('./simple-analysis-worker.js',import.meta.url),{type:'module'});const current=worker;
+  validate(input);worker=new Worker(new URL('./simple-analysis-worker.js?v=analysis-19',import.meta.url),{type:'module'});const current=worker;
   $('cancel').disabled=false;$('progress').hidden=false;$('progress').removeAttribute('value');$('status').textContent='全組み合わせを厳密計算中…';
   worker.onmessage=({data})=>{
    if(worker!==current)return;
    if(data.error){invalidate(data.error);return;}
    if(data.progress){const {done,total}=data.progress;$('progress').max=total;$('progress').value=done;$('status').textContent=`厳密計算中：${done.toLocaleString()} / ${total.toLocaleString()}（${(done/total*100).toFixed(1)}%）`;}
    if(data.result){const r=data.result;current.terminate();worker=null;$('cancel').disabled=true;$('progress').hidden=true;$('status').textContent='計算完了';const pct=n=>(n*100).toFixed(3)+'%';
-    const lines=[`エクイティ（引き分け込み）：${pct(r.equity)}`,`勝ち：${pct(r.win)} ／ 引き分け：${pct(r.tie)}`,`ポットオッズ（獲得可能額：コール額）：${r.odds===null?'ベット0・コール費用なし':r.odds.toFixed(3)+'：1'}`,`必要エクイティ：${pct(r.required)}`,`コールEV：${r.callEV.toFixed(4)} ／ フォールドEV：0（入力と同じ単位）`,r.favorable?'この計算条件下ではコール有利':r.callEV===0?'この計算条件下ではコールとフォールドは同EV':'この計算条件下ではフォールド有利',`厳密列挙：${r.total.toLocaleString()}通り ／ 除外後${r.combos}コンボ`,`GTO推奨ではありません。表示値は丸めています。`];
+    const lines=[`エクイティ（引き分け込み）：${pct(r.equity)}`,`勝ち：${pct(r.win)} ／ 引き分け：${pct(r.tie)}`,`ポットオッズ（獲得可能額：コール額）：${r.odds===null?'ベット0・コール費用なし':r.odds.toFixed(3)+'：1'}`,`必要エクイティ：${pct(r.required)}`,`コールEV：${r.callEV.toFixed(4)} ／ フォールドEV：0（入力と同じ単位）`,r.favorable?'この計算条件下ではコール有利':r.comparison==='equal'?'この計算条件下ではコールとフォールドは同EV':'この計算条件下ではフォールド有利',`厳密列挙：${r.total.toLocaleString()}通り ／ 除外後${r.combos}コンボ`,`GTO推奨ではありません。表示値は丸めています。`];
     $('output').replaceChildren(...lines.map(t=>{const p=document.createElement('p');p.textContent=t;return p;}));$('result').hidden=false;
    }
   };

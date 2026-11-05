@@ -25,3 +25,12 @@ test('weighted combos normalize after blockers, not by class',()=>{
 test('invalid and empty inputs never produce results',()=>{
  for(const patch of [{range:{}},{range:{AA:NaN}},{range:{AA:1.1}},{pot:0},{bet:-1},{pot:Infinity},{hero:['As','As']},{board:['As','2c','3d']}])assert.throws(()=>validate({...base,...patch}));
 });
+test('decimal range weights do not turn exact break-even into a call advantage',()=>{
+ const input={hero:['As','Kd'],board:['Ac','7h','8h','9d','2c'],range:{AA:.09,KK:.01},pot:12,bet:6};
+ // One AA combo loses and three KK combos win: equity 3/(9+3)=1/4.
+ const equal=analyze(input);assert.equal(equal.equity,.25);assert.equal(equal.required,.25);assert.equal(equal.callEV,0);assert.equal(equal.favorable,false);assert.equal(equal.comparison,'equal');
+ const lower=analyze({...input,pot:11.9999}),higher=analyze({...input,pot:12.0001});
+ assert.equal(lower.comparison,'fold');assert.equal(lower.callEV,-.000025);assert.equal(lower.favorable,false);
+ assert.equal(higher.comparison,'call');assert.equal(higher.callEV,.000025);assert.equal(higher.favorable,true);
+ assert.equal(analyze({...input,range:{KK:.01,AA:.09}}).comparison,'equal');
+});

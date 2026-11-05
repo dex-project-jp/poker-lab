@@ -34,18 +34,25 @@ def reference(case):
         for extra in itertools.combinations(rest,5-len(board)):
             h=best(hero+board+list(extra));v=best([a,b]+board+list(extra))
             value+=weight*(1 if h>v else Fraction(1,2) if h==v else 0);mass+=weight;total+=1
-    return float(value/mass),total
+    return value/mass,total
 cases=[
  {'hero':['As','Kd'],'board':['Qs','Js','2c'],'range':{'AA':.25,'AKs':.5}},
  {'hero':['Th','9h'],'board':['8h','7c','2h','Ad'],'range':{'AA':.5,'AKo':.25,'QJs':1}},
  {'hero':['As','Kd'],'board':['Ac','7h','8h','9d','2c'],'range':{'AA':.25,'KK':.75,'T9s':.5}},
  {'hero':['2c','3d'],'board':['As','Ks','Qs','Js','Ts'],'range':{'AA':1,'KK':.5}}
 ]
+edge={'hero':['As','Kd'],'board':['Ac','7h','8h','9d','2c'],'range':{'AA':.09,'KK':.01},'bet':6}
+cases += [dict(edge,pot=pot) for pot in (11.9999,12,12.0001)]
+cases=[dict({'pot':100,'bet':50},**case) for case in cases]
 script="import {analyze} from './solver/simple-analysis.js';let s='';for await(const c of process.stdin)s+=c;console.log(JSON.stringify(JSON.parse(s).map(analyze)));"
-results=json.loads(subprocess.check_output(['node','--input-type=module','-e',script],input=json.dumps([dict(c,pot=100,bet=50) for c in cases]).encode()))
+results=json.loads(subprocess.check_output(['node','--input-type=module','-e',script],input=json.dumps(cases).encode()))
 for case,result in zip(cases,results):
     equity,total=reference(case)
-    assert abs(equity-result['equity'])<1e-12,(equity,result)
+    p,b=Fraction(str(case['pot'])),Fraction(str(case['bet']))
+    ev=equity*(p+2*b)-b
+    assert abs(float(equity)-result['equity'])<1e-12,(equity,result)
     assert total==result['total']
-    assert abs(result['callEV']-(equity*200-50))<1e-10
-    print(f"PASS board={len(case['board'])} worlds={total} equity={equity:.12f}")
+    assert abs(result['callEV']-float(ev))<1e-10
+    assert result['favorable']==(ev>0)
+    assert result['comparison']==('call' if ev>0 else 'fold' if ev<0 else 'equal')
+    print(f"PASS board={len(case['board'])} worlds={total} equity={float(equity):.12f} decision={result['comparison']}")

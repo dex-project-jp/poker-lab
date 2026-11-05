@@ -22,6 +22,14 @@ const server=http.createServer((req,res)=>{let p=path.resolve(root,'.'+new URL(r
   await page.waitForFunction(()=>!document.querySelector('#result').hidden);
   await page.locator('#card6').selectOption('');await page.locator('#card5').selectOption('');await page.locator('#all').click();await page.locator('#calculate').click();await page.locator('#cancel').click();
   assert.equal(await page.locator('#result').isVisible(),false);assert.match(await page.locator('#status').textContent(),/中止/);
+  for(let i=0;i<7;i++)await page.locator('#card'+i).selectOption('');
+  for(const [i,c] of ['As','Kd','Ac','7h','8h','9d','2c'].entries())await page.locator('#card'+i).selectOption(c);
+  await page.locator('#pot').fill('12');await page.locator('#bet').fill('6');await page.locator('#clear').click();
+  for(const [hand,frequency] of [['AA','9'],['KK','1']]){
+   await page.locator('[data-hand='+hand+']').click();const input=page.getByRole('spinbutton',{name:hand+' 頻度',exact:true});await input.fill(frequency);await input.press('Tab');
+  }
+  await page.locator('#calculate').click();await page.waitForFunction(()=>!document.querySelector('#result').hidden);
+  assert.match(await page.locator('#output').textContent(),/コールとフォールドは同EV/);assert.doesNotMatch(await page.locator('#output').textContent(),/コール有利/);
   assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));assert.deepEqual(errors,[]);await page.close();
  }
  console.log(engine+': simple analysis passed at 375/390/430px');
