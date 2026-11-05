@@ -5,11 +5,18 @@
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <meta name="theme-color" content="#0b1220">
   <title>簡易ハンド分析 · Poker Lab</title>
-  <link rel="stylesheet" href="app/simple-analysis.css?v=analysis-20">
+  <link rel="stylesheet" href="app/simple-analysis.css?v=nav-21">
+
+<link rel="stylesheet" href="app/page-nav.css?v=nav-21">
 </head>
 <body>
 <main>
-  <header><a href="index.html">‹ Poker Lab</a><h1>簡易ハンド分析</h1><p>指定した相手レンジとのショーダウン比較。GTO推奨ではありません。</p></header>
+<nav class="page-nav" aria-label="メインナビゲーション">
+  <a href="index.html">GTOレンジ</a>
+  <a href="simple-analysis.html" aria-current="page">ハンド分析</a>
+  <a href="mccfr-learning.html">学習</a>
+</nav>
+  <header><h1>簡易ハンド分析</h1><p>指定した相手レンジとのショーダウン比較。GTO推奨ではありません。</p></header>
   <section aria-labelledby="cardsTitle">
     <h2 id="cardsTitle"><span>1</span> カード入力</h2>
     <div id="cards"></div>
@@ -76,6 +83,6 @@
     <button id="clearCard" hidden>カードを外す</button>
   </div>
 </dialog>
-<script type="module" src="app/simple-analysis.js?v=analysis-20"></script>
+<script type="module" src="app/simple-analysis.js?v=nav-21"></script>
 </body>
 </html>

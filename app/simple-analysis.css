@@ -1,9 +1,9 @@
 :root {
   color-scheme: dark;
   --page: #0b1220;
-  --surface: #151f30;
-  --control: #0f1829;
-  --line: #52647f;
+  --surface: #202d42;
+  --control: #101a2b;
+  --line: #667a95;
   --muted: #b6c5da;
   --accent: #95c4ff;
 }
@@ -12,10 +12,9 @@
 body { margin: 0; background: var(--page); color: #f1f5fc; font: 16px system-ui, sans-serif; }
 main { width: min(100%, 650px); margin: auto; padding: 16px 16px max(24px, env(safe-area-inset-bottom)); }
 a { color: var(--accent); }
-header a { display: inline-flex; min-height: 44px; align-items: center; }
 h1 { margin: 4px 0 8px; font-size: 27px; }
 header p, .muted, .conditions { color: var(--muted); font-size: 14px; line-height: 1.55; }
-section, .conditions { padding: 14px; margin: 12px 0; background: var(--surface); border: 1px solid #293954; border-radius: 14px; }
+section, .conditions { padding: 14px; margin: 12px 0; background: var(--surface); border: 1px solid #495c76; border-radius: 14px; }
 h2 { display: flex; align-items: center; gap: 8px; margin: 0 0 12px; font-size: 17px; }
 h2 span { display: grid; place-items: center; width: 25px; height: 25px; border-radius: 8px; color: var(--accent); background: #243a58; font-size: 14px; }
 button, input, select { font: inherit; color: inherit; }
@@ -31,18 +30,23 @@ select { width: 100%; }
 .card-row { display: grid; grid-template-columns: repeat(var(--count), minmax(0, 1fr)); gap: 4px; }
 .hero-cards { width: min(100%, 124px); }
 .card-slot { width: 100%; height: 59px; padding: 0; font-size: clamp(17px, 4.8vw, 24px); font-weight: 750; }
+.card-slot:not(.empty), .suit-options button {
+  background: #fff;
+  border-color: #bfcbd9;
+  color: var(--suit, #151922);
+}
 .card-slot.empty { border-style: dashed; color: var(--accent); }
-[data-suit=s] { color: #f8fafc; }
-[data-suit=h] { color: #ff8c9d; }
-[data-suit=c] { color: #77dfa2; }
-[data-suit=d] { color: #82bcff; }
+[data-suit=s] { --suit: #151922; }
+[data-suit=h] { --suit: #a71930; }
+[data-suit=c] { --suit: #11653e; }
+[data-suit=d] { --suit: #1855a5; }
 .amounts, .metrics { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 8px; }
 .amounts label { font-size: 13px; }
 .amount-field { display: flex; align-items: center; gap: 6px; margin-top: 5px; color: var(--muted); }
 .amount-field input { width: 100%; min-width: 0; color: #fff; font-size: 16px; }
 .actions, .frequency, .range-row { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; }
 .frequency { margin: 8px 0; }
-.frequency select, .range-row input { width: 100px; }
+.frequency select, .range-row input { width: 100px; max-width: 100%; }
 .range-row { justify-content: space-between; margin: 5px 0; }
 .scroll { overflow-x: auto; padding: 4px; }
 .grid { display: grid; grid-template-columns: repeat(13, minmax(39px, 1fr)); gap: 3px; min-width: 545px; }
@@ -53,9 +57,16 @@ summary { cursor: pointer; display: list-item; padding: 10px 0; min-height: 44px
 #calculate { flex: 1; background: #95c4ff; color: #081427; font-weight: 750; }
 #status { margin: 8px 0; color: var(--muted); font-size: 14px; }
 progress { width: 100%; }
-#verdict { display: block; font-size: 24px; }
-#verdict[data-outcome=call] { color: #77dfa2; }
-#verdict[data-outcome=fold] { color: #ff9dac; }
+#verdict {
+  display: block;
+  padding: 9px 10px;
+  border: 1px solid #61748e;
+  border-radius: 9px;
+  background: var(--control);
+  font-size: clamp(19px, 5.4vw, 24px);
+}
+#verdict[data-outcome=call] { background: #103728; color: #a2f0be; border-color: #57a982; }
+#verdict[data-outcome=fold] { background: #42202c; color: #ffc1cc; border-color: #b46d80; }
 .metrics { grid-template-columns: repeat(3, minmax(0,1fr)); margin: 10px 0; }
 .metrics div { padding: 8px 5px; border-radius: 8px; background: var(--control); }
 dt { color: var(--muted); font-size: 11px; }
