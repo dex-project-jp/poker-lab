@@ -36,6 +36,8 @@
     "train:mtt10-learning": "node tools/train-mtt10-learning.mjs",
     "check:mtt10-learning": "node tools/check-mtt10-learning.mjs",
     "export:mtt10-learned": "node tools/export-mtt10-learned.mjs",
-    "check:mtt10-learned": "node tools/check-mtt10-learned.mjs"
+    "check:mtt10-learned": "node tools/check-mtt10-learned.mjs",
+    "diagnose:mtt10-br": "node tools/run-mtt10-br-coverage.mjs",
+    "check:mtt10-br": "node tools/run-mtt10-br-coverage.mjs --check"
   }
 }
