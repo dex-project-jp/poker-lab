@@ -7,6 +7,7 @@ on:
       - 'engine-validation.html'
       - 'mccfr-validation.html'
       - 'mccfr-learning.html'
+      - 'simple-analysis.html'
       - 'app/**'
       - 'version.json'
       - '.github/workflows/solver-tests.yml'
@@ -33,6 +34,8 @@ jobs:
       - run: pip install scipy==1.17.0
       - name: Run all solver tests
         run: npm test --prefix solver
+      - name: Independent simple analysis verification
+        run: python3 solver/tools/check-simple-analysis.py
       - name: Detect changes to HU math and certified data
         id: scope
         run: |
@@ -124,4 +127,6 @@ jobs:
       - run: npm install --no-save playwright@1.62.1
       - run: npx playwright install --with-deps ${{ matrix.browser }}
       - name: Check mobile interactions and fail-closed display
-        run: node solver/tools/browser-check.cjs
+        run: |
+          node solver/tools/browser-check.cjs
+          node solver/tools/simple-analysis-browser.cjs
