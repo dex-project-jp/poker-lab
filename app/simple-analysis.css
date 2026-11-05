@@ -30,6 +30,15 @@ select { width: 100%; }
 [data-suit=h] { --suit: #a71930; }
 [data-suit=c] { --suit: #11653e; }
 [data-suit=d] { --suit: #1855a5; }
+.unit-switch { display: flex; gap: 6px; margin-bottom: 10px; }
+.unit-switch button { min-width: 64px; }
+.unit-switch button[aria-pressed=true] {
+  background: var(--dex-gold);
+  color: var(--dex-on-gold);
+  border-color: var(--dex-gold);
+}
+.rate-field { display: block; margin-bottom: 10px; font-size: 13px; }
+.rate-field .amount-field { max-width: 180px; }
 .amounts, .metrics { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 8px; }
 .amounts label { font-size: 13px; }
 .amount-field { display: flex; align-items: center; gap: 6px; margin-top: 5px; color: var(--dex-muted); }

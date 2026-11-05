@@ -43,6 +43,14 @@ const server=http.createServer((req,res)=>{let p=path.resolve(root,'.'+new URL(r
    });
    assert.deepEqual(colors, ['rgb(255, 255, 255)', suits[suit]]);
   }
+  assert.equal(await page.locator('#unitBB').getAttribute('aria-pressed'), 'true');
+  assert.equal(await page.locator('#rateField').isVisible(), false);
+  await page.locator('#pot').fill('1.234567890123456');
+  await page.locator('#unitPoints').tap();
+  assert.equal(await page.locator('#pointsPerBB').inputValue(), '6000');
+  assert.equal(await page.locator('#bet').inputValue(), '');
+  await page.locator('#unitBB').tap();
+  assert.equal(await page.locator('#pot').inputValue(), '1.234567890123456');
   await page.locator('#pot').fill('100');await page.locator('#bet').fill('50');
   assert.ok(await page.locator('.amounts').evaluate(el=>el.children[0].getBoundingClientRect().top===el.children[1].getBoundingClientRect().top));
   await page.locator('#calculate').tap();
@@ -70,6 +78,34 @@ const server=http.createServer((req,res)=>{let p=path.resolve(root,'.'+new URL(r
   assert.equal(await page.locator('#breakdown').isVisible(),false);
   await page.locator('#resultDetails summary').tap();
   assert.equal(await page.locator('#breakdown').isVisible(),true);
+  const equity = await page.locator('#equity').textContent();
+  const required = await page.locator('#required').textContent();
+  await page.locator('#unitPoints').tap();
+  assert.equal(await page.locator('#pot').inputValue(), '600000');
+  assert.equal(await page.locator('#bet').inputValue(), '300000');
+  assert.equal(await page.locator('#callEV').textContent(), '900,000 点');
+  assert.equal(await page.locator('#equity').textContent(), equity);
+  assert.equal(await page.locator('#required').textContent(), required);
+  assert.equal(await page.locator('#verdict').textContent(), 'コール有利');
+  assert.equal(await page.locator('#breakdown').isVisible(), true);
+  assert.match(await page.locator('#breakdown').textContent(), /フォールドEV0 点/);
+  for (const invalid of ['', '0', '-6000']) {
+   await page.locator('#pointsPerBB').fill(invalid);
+   assert.equal(await page.locator('#result').isVisible(), false);
+   assert.equal(await page.locator('#calculate').isDisabled(), true);
+  }
+  await page.locator('#pointsPerBB').fill('6000.5');
+  assert.equal(await page.locator('#pot').inputValue(), '600050');
+  assert.equal(await page.locator('#callEV').textContent(), '900,075 点');
+  await page.locator('#calculate').tap();
+  await page.waitForFunction(() => !document.querySelector('#result').hidden);
+  assert.equal(await page.locator('#equity').textContent(), equity);
+  assert.equal(await page.locator('#required').textContent(), required);
+  assert.equal(await page.locator('#callEV').textContent(), '900,075 点');
+  await page.locator('#unitBB').tap();
+  assert.equal(await page.locator('#pot').inputValue(), '100');
+  assert.equal(await page.locator('#bet').inputValue(), '50');
+  assert.equal(await page.locator('#callEV').textContent(), '150.0000 BB');
   await page.locator('#bet').fill('51');
   assert.equal(await page.locator('#result').isVisible(),false);
   for(const i of [6,5]){
@@ -93,6 +129,19 @@ const server=http.createServer((req,res)=>{let p=path.resolve(root,'.'+new URL(r
   assert.equal(await page.locator('#verdict').textContent(),'コールとフォールドは同EV');
   assert.equal(await page.locator('#required').textContent(),'25.000%');
   assert.equal(await page.locator('#callEV').textContent(),'0.0000 BB');
+  await page.locator('#unitPoints').tap();
+  await page.locator('#pointsPerBB').fill('7');
+  await page.locator('#pot').fill('12.6');
+  await page.locator('#bet').fill('6.3');
+  await page.locator('#calculate').tap();
+  await page.waitForFunction(() => !document.querySelector('#result').hidden);
+  assert.equal(await page.locator('#verdict').textContent(), 'コールとフォールドは同EV');
+  assert.equal(await page.locator('#callEV').textContent(), '0 点');
+  await page.locator('#unitBB').tap();
+  assert.equal(await page.locator('#pot').inputValue(), '1.8');
+  assert.equal(await page.locator('#bet').inputValue(), '0.9');
+  assert.equal(await page.locator('#callEV').textContent(), '0.0000 BB');
+  await page.locator('#bet').fill('6');
   await page.locator('#pot').fill('11.9');await page.locator('#calculate').tap();
   await page.waitForFunction(()=>!document.querySelector('#result').hidden);
   assert.equal(await page.locator('#verdict').textContent(),'フォールド有利');
