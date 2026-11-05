@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "revision": 17,
-  "version": "1.5.0",
-  "build": "ranges-17"
+  "revision": 18,
+  "version": "1.6.0",
+  "build": "analysis-18"
 }
