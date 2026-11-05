@@ -1,4 +1,4 @@
-import {ranks, classes, validate} from '../solver/simple-analysis.js?v=dex-22';
+import {ranks, classes, validate} from '../solver/simple-analysis.js?v=units-23';
 
 const $ = id => document.getElementById(id);
 const suits = {s: '♠', h: '♥', c: '♣', d: '♦'};
@@ -19,10 +19,17 @@ const presets = {all: classes, tight, middle, loose};
 let worker = null;
 let activeCard = 0;
 let chosenRank = '';
+const amountIds = ['pot', 'bet'];
+// Keep the amounts and scale from the last edit, independent of display rounding.
+let amounts = {pot: null, bet: null};
+let inputRate = 1;
+let pointsMode = false;
+let lastResult = null;
 
 function invalidate(message = '') {
   worker?.terminate();
   worker = null;
+  lastResult = null;
   $('result').hidden = true;
   for (const id of ['verdict', 'equity', 'required', 'callEV', 'breakdown']) $(id).textContent = '';
   $('progress').hidden = true;
@@ -210,7 +217,35 @@ $('preset').onchange = () => {
     : 'プリセットは参考用です。GTOレンジではありません。';
 };
 
-function showResult(result) {
+function displayRate() {
+  return pointsMode ? $('pointsPerBB').valueAsNumber : 1;
+}
+
+function unitError() {
+  const rate = displayRate();
+  if (!Number.isFinite(rate) || rate <= 0) return '1BBの点数を0より大きい数で入力してください。';
+  if (rate === inputRate) return '';
+  const scale = rate / inputRate;
+  const {pot, bet} = amounts;
+  const values = [pot ?? 0, bet ?? 0, (pot ?? 0) + 2 * (bet ?? 0)];
+  if (!Number.isFinite(scale) || scale === 0 || values.some(value => !Number.isNaN(value) &&
+      (!Number.isFinite(value * scale) || (value !== 0 && value * scale === 0)))) {
+    return '金額を換算できる範囲を超えています。換算レートを調整してください。';
+  }
+  return '';
+}
+
+function formatEV(value) {
+  const converted = value * (displayRate() / inputRate);
+  if (!pointsMode) return converted.toFixed(4) + ' BB';
+  return converted.toLocaleString('ja-JP', {maximumFractionDigits: 4}) + ' 点';
+}
+
+function showResult(result, closeDetails = true) {
+  if (unitError()) {
+    $('result').hidden = true;
+    return;
+  }
   const percent = value => (value * 100).toFixed(3) + '%';
   $('verdict').dataset.outcome = result.comparison;
   $('verdict').textContent = {
@@ -220,11 +255,11 @@ function showResult(result) {
   }[result.comparison];
   $('equity').textContent = percent(result.equity);
   $('required').textContent = percent(result.required);
-  $('callEV').textContent = result.callEV.toFixed(4) + ' BB';
+  $('callEV').textContent = formatEV(result.callEV);
   const rows = [
     ['勝ち・引き分け', percent(result.win) + ' ／ ' + percent(result.tie)],
     ['ポットオッズ', result.odds === null ? 'ベット0・コール費用なし' : result.odds.toFixed(3) + '：1'],
-    ['フォールドEV', '0 BB'],
+    ['フォールドEV', pointsMode ? '0 点' : '0 BB'],
     ['厳密列挙', result.total.toLocaleString() + '通り ／ 除外後' + result.combos + 'コンボ']
   ];
   $('breakdown').replaceChildren(...rows.map(([label, value]) => {
@@ -236,15 +271,61 @@ function showResult(result) {
     row.append(term, detail);
     return row;
   }));
-  $('resultDetails').open = false;
+  if (closeDetails) $('resultDetails').open = false;
   $('result').hidden = false;
 }
 
-for (const id of ['pot', 'bet']) $(id).oninput = () => invalidate();
+function refreshUnits() {
+  const error = unitError();
+  $('unitError').textContent = error;
+  $('unitError').hidden = !error;
+  $('calculate').disabled = Boolean(error);
+  for (const id of amountIds) {
+    const field = $(id);
+    const amount = amounts[id] * (displayRate() / inputRate);
+    field.disabled = Boolean(error);
+    field.value = error || amounts[id] === null || !Number.isFinite(amount)
+      ? '' : String(displayRate() === inputRate ? amount : Number(amount.toPrecision(15)));
+    field.placeholder = pointsMode ? '' : id === 'pot' ? '12' : '6';
+  }
+  const label = pointsMode ? '点' : 'BB';
+  document.querySelectorAll('[data-amount-unit]').forEach(element => { element.textContent = label; });
+  $('unitBB').setAttribute('aria-pressed', String(!pointsMode));
+  $('unitPoints').setAttribute('aria-pressed', String(pointsMode));
+  $('rateField').hidden = !pointsMode;
+  if (lastResult) showResult(lastResult, false);
+}
+
+function selectUnit(usePoints) {
+  if (pointsMode === usePoints) return;
+  if (amountIds.some(id => $(id).validity.badInput)) {
+    $('unitError').hidden = false;
+    $('unitError').textContent = '入力途中の金額を確定するか、空欄にしてから切り替えてください。';
+    return;
+  }
+  pointsMode = usePoints;
+  refreshUnits();
+}
+
+$('unitBB').onclick = () => selectUnit(false);
+$('unitPoints').onclick = () => selectUnit(true);
+$('pointsPerBB').oninput = refreshUnits;
+for (const id of amountIds) {
+  $(id).oninput = () => {
+    inputRate = displayRate();
+    amounts = Object.fromEntries(amountIds.map(key => {
+      const input = $(key);
+      return [key, input.value === '' && !input.validity.badInput ? null : input.valueAsNumber];
+    }));
+    $('unitError').hidden = true;
+    invalidate();
+  };
+}
 $('cancel').onclick = () => invalidate('計算を中止しました。');
 $('calculate').onclick = () => {
   invalidate();
   try {
+    if (unitError()) throw Error(unitError());
     if (cards.slice(0, 5).some(card => !card)) throw Error('自分の2枚とフロップ3枚を指定してください');
     if (cards[6] && !cards[5]) throw Error('リバーを指定する場合はターンも指定してください');
     const mode = $('preset').value;
@@ -254,11 +335,11 @@ $('calculate').onclick = () => {
       hero: cards.slice(0, 2),
       board: cards.slice(2).filter(Boolean),
       range,
-      pot: $('pot').valueAsNumber,
-      bet: $('bet').valueAsNumber
+      pot: amounts.pot ?? NaN,
+      bet: amounts.bet ?? NaN
     };
     validate(input);
-    const current = new Worker(new URL('./simple-analysis-worker.js?v=dex-22', import.meta.url), {type: 'module'});
+    const current = new Worker(new URL('./simple-analysis-worker.js?v=units-23', import.meta.url), {type: 'module'});
     worker = current;
     $('cancel').disabled = false;
     $('cancel').hidden = false;
@@ -275,7 +356,8 @@ $('calculate').onclick = () => {
         $('status').textContent = '厳密計算中：' + done.toLocaleString() + ' / ' + total.toLocaleString();
       } else if (data.result) {
         invalidate('計算完了');
-        showResult(data.result);
+        lastResult = data.result;
+        showResult(lastResult);
       }
     };
     current.onerror = () => {

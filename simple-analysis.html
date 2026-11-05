@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <meta name="theme-color" content="#101014">
   <title>簡易ハンド分析 · Poker Lab</title>
-  <link rel="stylesheet" href="app/dex-theme.css?v=dex-22">
-<link rel="stylesheet" href="app/simple-analysis.css?v=dex-22">
+  <link rel="stylesheet" href="app/dex-theme.css?v=units-23">
+<link rel="stylesheet" href="app/simple-analysis.css?v=units-23">
 
-<link rel="stylesheet" href="app/page-nav.css?v=dex-22">
+<link rel="stylesheet" href="app/page-nav.css?v=units-23">
 </head>
 <body>
 <main>
@@ -25,9 +25,17 @@
   </section>
   <section aria-labelledby="amountTitle">
     <h2 id="amountTitle"><span>2</span> ポット・ベット</h2>
+    <div class="unit-switch" role="group" aria-label="金額の単位">
+      <button id="unitBB" type="button" aria-pressed="true">BB</button>
+      <button id="unitPoints" type="button" aria-pressed="false">点数</button>
+    </div>
+    <label id="rateField" class="rate-field" hidden>1BBの点数
+      <span class="amount-field"><input id="pointsPerBB" type="number" inputmode="decimal" min="0" step="any" value="6000"><span>点</span></span>
+    </label>
+    <p id="unitError" class="muted" role="status" hidden></p>
     <div class="amounts">
-      <label>ベット前のポット<span class="amount-field"><input id="pot" type="number" inputmode="decimal" min="0" step="any" placeholder="12"><span>BB</span></span></label>
-      <label>相手のベット<span class="amount-field"><input id="bet" type="number" inputmode="decimal" min="0" step="any" placeholder="6"><span>BB</span></span></label>
+      <label>ベット前のポット<span class="amount-field"><input id="pot" type="number" inputmode="decimal" min="0" step="any" placeholder="12"><span data-amount-unit>BB</span></span></label>
+      <label>相手のベット<span class="amount-field"><input id="bet" type="number" inputmode="decimal" min="0" step="any" placeholder="6"><span data-amount-unit>BB</span></span></label>
     </div>
   </section>
   <section aria-labelledby="rangeTitle">
@@ -70,7 +78,7 @@
     <summary>計算条件・ポットオッズの式</summary>
     <p>相手は1人。コール後は追加ベットなしでショーダウンします。未知のボードと相手コンボを厳密列挙し、引き分けは半分の取り分として集計します。フロップで広いレンジを選ぶと時間がかかります。</p>
     <p>頻度は各クラスに属するコンボの重みです。使用済みカードを除外し、残ったコンボで正規化します。</p>
-    <p>必要エクイティ＝ベット÷（ベット前ポット＋2×ベット）。コールEV＝エクイティ×（ベット前ポット＋2×ベット）−ベット。フォールドEVは0 BBです。判定には丸め前の値を使います。</p>
+    <p>必要エクイティ＝ベット÷（ベット前ポット＋2×ベット）。コールEV＝エクイティ×（ベット前ポット＋2×ベット）−ベット。フォールドEVは選択した単位で0です。判定には丸め前の値を使います。</p>
     <p>スタック上限、サイドポット、レーキ、将来のアクション、フォールドエクイティ、ICMはモデルの対象外です。</p>
   </details>
 </main>
@@ -84,6 +92,6 @@
     <button id="clearCard" hidden>カードを外す</button>
   </div>
 </dialog>
-<script type="module" src="app/simple-analysis.js?v=dex-22"></script>
+<script type="module" src="app/simple-analysis.js?v=units-23"></script>
 </body>
 </html>
