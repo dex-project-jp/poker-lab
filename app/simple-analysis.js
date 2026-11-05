@@ -1,5 +1,5 @@
 import {ranks, classes, validate} from '../solver/simple-analysis.js?v=pot-25';
-import {setupPotCalculator} from './pot-calculator.js?v=pot-26';
+import {setupPotCalculator} from './pot-calculator.js?v=pot-27';
 
 const $ = id => document.getElementById(id);
 const suits = {s: '♠', h: '♥', c: '♣', d: '♦'};

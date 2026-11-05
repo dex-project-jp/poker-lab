@@ -198,4 +198,4 @@ $('tenLabShortcut').onclick=openTenLab;['tenOpener','tenCaller'].forEach(id=>$(i
 for(const [id,preset]of [['openRaise','openPreset'],['sbRaise','openPreset'],['threeRaise','threePreset'],['fourRaise','fourPreset']]){const el=$(id);el.step='.01';el.min='.01';el.max='500';el.inputMode='decimal';el.oninput=()=>{$(preset).value='custom';update();};el.onchange=el.oninput;}
 $('scenario').onchange=()=>{sizeUnlocked=false;rebuildPositions();stepTo($('scenario').value==='open'?'sceneStep':'roleStep');};
 if(mtt)openMTT();else{$('dataFlag').textContent='未対応';$('dataNote').textContent='MTT設定を読み込めません。最新版を読み込んでください。';rebuildPositions();}revealSteps();
-</script><script id="appRelease" type="application/json">{"schema":1,"revision":25,"version":"2.1.0","build":"pot-25"}</script><script src="app/updates.js?v=pot-25"></script></body></html>
+</script><script id="appRelease" type="application/json">{"schema":1,"revision":27,"version":"2.1.1","build":"pot-27"}</script><script src="app/updates.js?v=pot-25"></script></body></html>

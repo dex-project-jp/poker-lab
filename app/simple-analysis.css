@@ -103,6 +103,6 @@ dialog::backdrop { background: #000b; }
 .pot-expression { background: var(--dex-control); padding: 8px; border-radius: 8px; }
 .pot-keys { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 5px; }
 .pot-keys [data-pot-key="equals"] { grid-row: span 2; }
-.pot-keys [data-pot-key="0"] { grid-column: span 2; }
+.pot-keys button { touch-action: manipulation; }
 .pot-keys [data-pot-key="equals"], #potCalcApply { background: var(--dex-gold); color: var(--dex-on-gold); }
 #potCalcApply { margin-top: 8px; width: 100%; }

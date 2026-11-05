@@ -36,7 +36,7 @@ export function evaluatePotExpression(expression) {
 
 export function setupPotCalculator({pot, toggle, panel, current, expression, result, insert, apply, unit}) {
   let formula = '';
-  let pending = null;
+  let evaluation;
   function updatePot() {
     const value = pot.valueAsNumber;
     const valid = Number.isFinite(value) && value >= 0;
@@ -49,8 +49,12 @@ export function setupPotCalculator({pot, toggle, panel, current, expression, res
     formula = value;
     expression.textContent = formula || '0';
     result.textContent = '';
-    pending = null;
-    apply.disabled = true;
+    try {
+      evaluation = {value: evaluatePotExpression(formula)};
+    } catch (error) {
+      evaluation = {error: error.message};
+    }
+    apply.disabled = !(evaluation.value >= 0);
   }
 
   toggle.onclick = () => {
@@ -67,18 +71,7 @@ export function setupPotCalculator({pot, toggle, panel, current, expression, res
       if (key === 'clear') edit('');
       else if (key === 'delete') edit(formula.slice(0, -1));
       else if (key === 'equals') {
-        pending = null;
-        apply.disabled = true;
-        try {
-          const value = evaluatePotExpression(formula);
-          result.textContent = value.toLocaleString('ja-JP', {maximumSignificantDigits: 16}) + ' ' + unit();
-          if (value > 0) {
-            pending = value;
-            apply.disabled = false;
-          }
-        } catch (error) {
-          result.textContent = error.message;
-        }
+        result.textContent = evaluation.error ?? evaluation.value.toLocaleString('ja-JP', {maximumSignificantDigits: 16}) + ' ' + unit();
       } else edit(formula + key);
     };
   });
@@ -89,14 +82,13 @@ export function setupPotCalculator({pot, toggle, panel, current, expression, res
     edit(`${value}+`);
   };
   apply.onclick = () => {
-    if (pending === null) return;
-    const value = pending;
-    edit('');
-    pot.value = String(value);
+    if (apply.disabled) return;
+    pot.value = String(evaluation.value);
     pot.dispatchEvent(new Event('input', {bubbles: true}));
     result.textContent = 'POTに反映しました。';
   };
   pot.addEventListener('input', updatePot);
+  edit('');
   updatePot();
   return () => {
     edit('');

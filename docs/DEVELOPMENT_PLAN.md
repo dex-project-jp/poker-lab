@@ -229,3 +229,8 @@ GitHub Pagesによるv1.5.0の公開成功、および公開された6ファイ�
 - 単体156件、独立計算7ケースが成功。Chromium／WebKitの375・390・430pxで18,100＋4,700×2、計算と反映の分離、再利用、二重反映防止、ゼロ除算と削除を検証。[CI](https://github.com/dex-project-jp/poker-lab/actions/runs/42014858683)
 - 実装 `31f898d73371f89cf59c3279effb25eb6fc5a6f3` とmain merge `9aca15147dff2fed7ad2979ff9ebca67c818bed9` のtreeが一致。公開先の7ファイルを照合し、v2.1.0を確認。[PR #13](https://github.com/dex-project-jp/poker-lab/pull/13)・[Pages配布](https://github.com/dex-project-jp/poker-lab/actions/runs/42016286122)
 - 次は52枚デッキの固定1履歴での条件付き抽選検証。開始時にmainの自動再テスト結果を確認する。[main CI](https://github.com/dex-project-jp/poker-lab/actions/runs/42016286964)
+
+### v2.1.1 POT電卓
+
+- 00キー、連続タップ時のズーム抑止、計算可能な非負の式の直接反映、反映後の式保持を追加。POT挿入時は末尾に + を付ける。
+- モバイルUIの回帰テストを更新。簡易ハンド分析の数値照合は7ケース成功。次の開発候補は上記P1の条件付き抽選。
