@@ -40,16 +40,20 @@
 
 ## 最新の確認状態
 
-以下は2026-11-05の運用設定時点。次の作業では必ず再取得する。
+以下は2026-11-05のP0受入・統合・公開確認時点。次の作業では必ず再取得する。
 
 | 対象 | HEAD / 状態 | 内容 |
 |---|---|---|
-| main | `df073603510b8d1e3557d47bca26ae5cfe93e0fc` | v1.2相当。v1.3〜v1.5はまだmain未統合 |
-| [PR #1](https://github.com/dex-project-jp/poker-lab/pull/1) | Draft / base main / `7b8f6ec4d42a64c3ac6e699828482b3af918adf2` | v1.3 精度診断 |
-| [PR #2](https://github.com/dex-project-jp/poker-lab/pull/2) | Draft / base #1のブランチ / `232f6e94fc1b544f74f97a4c43ac9bfcd4d79497` | v1.4 学習比較・kernel・Worker保存再開 |
-| [PR #3](https://github.com/dex-project-jp/poker-lab/pull/3) | Draft / base #2のブランチ / `703582600c81e35e67dc99dc2b876bb223801e83` | v1.5 学習参考レンジ統合。最新実装ブランチは `codex/poker-lab-v1.5-ranges` |
+| main | アプリ実装HEAD `328454cf544dc8969aa549540a82398ce4a80e8f` | v1.5統合済み・GitHub Pages公開確認済み |
+| [PR #1](https://github.com/dex-project-jp/poker-lab/pull/1) | mainへMerged / merge `f3b1eabe44ddb38aff97ddd665cc6769f846ecaf` | v1.3 精度診断 |
+| [PR #2](https://github.com/dex-project-jp/poker-lab/pull/2) | baseをmainへ変更してMerged / merge `bda1a37de45590213971a86fe833381d081ac4c4` | v1.4 学習比較・kernel・Worker保存再開 |
+| [PR #3](https://github.com/dex-project-jp/poker-lab/pull/3) | baseをmainへ変更してMerged / merge `328454cf544dc8969aa549540a82398ce4a80e8f` | v1.5 学習参考レンジ統合 |
 
-この表のmain SHAは計画ファイル追加前のアプリ実装HEADを示す。計画追加コミットはアプリ実装を統合しない。
+mainの後続コミットがこの計画・受入記録だけを更新する場合、上のアプリ実装HEADと区別する。新工程は最新mainから始める。旧作業ブランチはドキュメントの参照URLが残っているため、確認せず削除しない。
+
+公開先：[Poker Lab](https://dex-project-jp.github.io/poker-lab/)。公開 `version.json` はv1.5.0 / revision17 / ranges-17。公開前はv1.2.0だった。
+
+[GitHub Pages配布run](https://github.com/dex-project-jp/poker-lab/actions/runs/41937835254) は上記main実装HEADで成功。公開版のindex・版manifest・10BBデータ/manifest・表示adapter・更新処理の6ファイルをHTTP取得し、検証したローカルファイルとbyte/SHA256一致を確認した。詳細は [受入記録](validation/v1.5-acceptance.json)。
 
 ### v1.5で確認済みの結果
 
@@ -59,25 +63,37 @@
 - 既存MTTモードの10BB選択で表示。30BBの独自参考表、既知ボードの実験モード、HU等は区別する。
 - 136件のテスト、ローカルの既存独立検証、データ整合性検査が成功。
 - 同じv1.5 HEADについて、[push CI](https://github.com/dex-project-jp/poker-lab/actions/runs/41933172182) の数値test・Chromium・WebKitがすべて成功していることを今回確認した。
-- [PR CI](https://github.com/dex-project-jp/poker-lab/actions/runs/41933180450) は数値test・Chromiumが成功、WebKitは確認時点では進行中。同一HEADのpush CI成功と区別する。
+- [PR CI](https://github.com/dex-project-jp/poker-lab/actions/runs/41933180450) も同一v1.5 HEADで数値test・Chromium・WebKitすべて成功。
+- mainへの統合結果のtree `c7b014967e2c8e2432bc47e9dcd2328162910a83` は、事前に構築して受入検査したtreeと完全一致。統合後のmain再CI [run 41937835780](https://github.com/dex-project-jp/poker-lab/actions/runs/41937835780) も、数値test・Chromium・WebKitがすべて成功。受入JSONに記録済み。次の工程開始時は新しい変更やCI結果を再取得する。
 - **学習は未収束・GTO未認定。** 位置別/配札前EVのみ。厳密Exploitability上限、ハンド別・履歴条件付きEV、通常Raise/Limp/3bet/4bet・ポストフロップ・ICMは未対応。先行Callは内部データ全履歴対応、UI選択は1人まで。
 
 ### v1.4での重要な判断
 
 LCFR候補は2学習seedで均等重みより改善を確認できず、初期方式は均等重みを維持。100万回時の平均戦略変化は旧方式約21.5〜21.7pt、候補約29.5pt。最適化kernelの1万反復は中央値1494→1141ms（その環境で約24%短縮）で、元の均等重み戦略と一致。速度向上を精度向上と呼ばない。
 
-## 次の1工程：P0 v1.5の受入・統合整理
+## 次の1工程：P1 近似BRの有効標本数の診断
 
-**目的：最新の実装・main・実際の配布状態の隔たりを整理し、未統合PRを増やし続けない。**
+**目的：近似応答の信頼性不足を数値で把握し、次の精度改善を判断できるようにする。**
 
-開始時にPR #1→#2→#3の現在のHEAD・差分・CI・依存関係を再確認する。競合や回帰があればこの工程で修正し、既存ルールに従って統合を進める。保護/レビュー要件などで統合できない場合は、具体的な未完了項目を記録する。main統合後は、実配布先・リリース版・更新ボタンで到達する版を確認する。配布先が未設定なら、設定済みと推測しない。
+開始時にmain再CIの完了を確認し、失敗があれば回帰修正を最優先する。新機能を並行して増やさない。成功していれば、既存の近似BR評価経路を読み、手札クラスの観測回数だけでは低到達履歴の有効な情報量を表せない問題を診断する。
+
+既存の精度レポートと配布データは源コードハッシュで結び付いている。診断の追加で無関係の配布データを失効させないよう、診断モジュールを分離する等の最小変更を検討する。
+
+履歴・手札ごとにcounterfactual reachの合計、二乗和、非ゼロ標本数、ESSなどを検討し、独立した小さな計算例・固定seedで集計の正当性と再現性を検査する。ESSは重みの偏りを見る診断であり、GTO認定や真のBR精度の保証として使わない。必要な集計と表示範囲を小さく決め、低標本・到達重み0・未評価を明示する。
 
 完了条件：
 
-- 受入対象のコードと成功CIのSHAが一致し、依存関係・統合先・未完了の処理が明確。
-- 通常の30BB、10BB学習参考、条件不一致時の非表示、データ破損/旧版、保存再開、更新/PWAの回帰確認がある。
-- 計画に「実装済み」「main統合済み」「利用者向け公開済み」を分けて記録。
-- この工程では新しい通常Raise/ポストフロップゲーム木や有償大規模計算を追加しない。
+- BR候補がどの履歴・クラスで有効標本不足かを確認でき、クラス観測回数と区別できる。
+- 診断値の集計・ゼロ重み・再現性を独立した小規模計算と回帰テストで照合。
+- 既存の学習頻度・認定基準を変更せず、未確認のBR/GTO改善を主張しない。
+- 136件を含む既存回帰テスト、関連するデータ/精度検証を維持し、main/PR/公開状態と次課題をこの計画へ記録。
+- 通常Raise/ポストフロップの新ゲーム木や有償計算はこの工程で始めない。診断に不要な100万回再学習はしない。
+
+## 完了済み：P0 v1.5の受入・統合整理
+
+依存順にPR #1→#2→#3をmainへ統合。新機能・学習式・戦略データの追加変更なし。統合前にmainの引き継ぎ文書と最新v1.5を合わせたtreeを作り、136件のテスト、10BB配布データ検査、v1.4比較レポート検査、v1.3の全応答探索/holdout再計算を再実行して成功。リリースmanifestとindex内の版も一致。
+
+GitHub Pagesによるv1.5.0の公開成功、および公開された6ファイルの検証済みファイルとの一致を確認。GTO精度や対応ゲーム範囲は拡大していない。
 
 ## その後の開発候補（毎回の最新状況で優先順位を再判断）
 
@@ -117,3 +133,12 @@ LCFR候補は2学習seedで均等重みより改善を確認できず、初期�
 ### 2026-11-05：半自動開発の運用設定
 
 ユーザーの明示指示により、この計画とroot AGENTS.mdを追加。GitHubのmain/未統合PR/同一HEADのCIを取得して状態を記録。アプリ・学習式・戦略データは変更しない。次の「次の作業」はP0受入・統合整理から始める。
+
+### 2026-11-05：P0受入・統合・公開
+
+- 開始点：main `2487371bf4cc0ca08fff0ccf1f48ba488f144235`、最新v1.5 `703582600c81e35e67dc99dc2b876bb223801e83`。3PRすべての対応HEADで成功CIを確認。レビュー要求・保護ルール・競合を確認し、通常の統合を実行。
+- 反映先：3PRをmainへmerge。アプリ実装HEAD `328454cf544dc8969aa549540a82398ce4a80e8f`。この計画更新と受入JSONは後続の文書コミット。
+- 検査：ローカル136件・配布データ全510履歴×169クラス・v1.4レポート・v1.3全評価再計算が成功。同一treeに対する既存Chromium/WebKit CI成功結果も照合。ブラウザー本体をこのローカル実行環境へ再取得しての再実行や100万回再学習は、コードが同一で追加の精度変更がないため繰り返していない。
+- 公開：Pages run 41937835254成功。公開版v1.5.0。index・version.json・学習データ/manifest・adapter・更新処理のHTTP200とbyte/SHA256一致を確認。
+- 限界：未収束・GTO未認定、厳密Exploitability/ハンド別EV等は未算出のまま。今回の工程は統合/公開であり、精度改善を行ったと報告しない。
+- 次：P1の近似BR有効標本数診断。main再CIの未完了/失敗が残れば、開始時に先に対応する。

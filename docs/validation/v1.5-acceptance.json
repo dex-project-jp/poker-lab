@@ -1,0 +1,153 @@
+{
+  "mainChecksAtCompletion": [
+    {
+      "name": "report-build-status",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/dex-project-jp/poker-lab/actions/runs/41937835254/job/126951029861"
+    },
+    {
+      "name": "deploy",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/dex-project-jp/poker-lab/actions/runs/41937835254/job/126951029775"
+    },
+    {
+      "name": "build",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/dex-project-jp/poker-lab/actions/runs/41937835254/job/126950848286"
+    },
+    {
+      "name": "mobile-ui (chromium)",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/dex-project-jp/poker-lab/actions/runs/41937835780/job/126950716811"
+    },
+    {
+      "name": "mobile-ui (webkit)",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/dex-project-jp/poker-lab/actions/runs/41937835780/job/126950716808"
+    },
+    {
+      "name": "test",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/dex-project-jp/poker-lab/actions/runs/41937835780/job/126950716795"
+    }
+  ],
+  "schemaVersion": 1,
+  "checkedOnJapanDate": "2026-11-05",
+  "stage": "P0 v1.5 acceptance / integration / publication",
+  "applicationCommit": "328454cf544dc8969aa549540a82398ce4a80e8f",
+  "testedTree": "c7b014967e2c8e2432bc47e9dcd2328162910a83",
+  "sourceHead": "703582600c81e35e67dc99dc2b876bb223801e83",
+  "mergedPRs": [
+    1,
+    2,
+    3
+  ],
+  "release": {
+    "version": "1.5.0",
+    "revision": 17,
+    "build": "ranges-17"
+  },
+  "localChecks": [
+    {
+      "command": "npm test --prefix solver",
+      "passed": true
+    },
+    {
+      "command": "npm run check:mtt10-learned --prefix solver",
+      "passed": true
+    },
+    {
+      "command": "npm run check:mtt10-learning --prefix solver",
+      "passed": true
+    },
+    {
+      "command": "npm run check:mccfr-accuracy --prefix solver",
+      "passed": true
+    }
+  ],
+  "unitTests": {
+    "passed": 136,
+    "failed": 0
+  },
+  "browserEvidence": {
+    "sourceHeadMatchesTestedApplication": true,
+    "chromium": "success",
+    "webkit": "success",
+    "run": "https://github.com/dex-project-jp/poker-lab/actions/runs/41933180450",
+    "localBrowserRerun": false
+  },
+  "deployment": {
+    "status": "success",
+    "run": "https://github.com/dex-project-jp/poker-lab/actions/runs/41937835254",
+    "url": "https://dex-project-jp.github.io/poker-lab/"
+  },
+  "publicFiles": [
+    {
+      "path": "version.json",
+      "status": 200,
+      "bytes": 82,
+      "sha256": "d0c64b1b7210791597d25ddd3403f967ee11120f40c5f99a716287d87f4686b6",
+      "matchesTestedFile": true,
+      "release": {
+        "schema": 1,
+        "revision": 17,
+        "version": "1.5.0",
+        "build": "ranges-17"
+      }
+    },
+    {
+      "path": "index.html",
+      "status": 200,
+      "bytes": 68694,
+      "sha256": "808181e990974fd4b28bff6bf9ca827953eb1b8aff04c8dfc8d2f2a3284f5597",
+      "matchesTestedFile": true
+    },
+    {
+      "path": "solver/data/mtt10-learned-manifest.json",
+      "status": 200,
+      "bytes": 288,
+      "sha256": "8002ff88888e124c5d01f1f0f9bb05d1c70936143be775d951b9cf148f54f245",
+      "matchesTestedFile": true
+    },
+    {
+      "path": "solver/data/mtt10-learned.json",
+      "status": 200,
+      "bytes": 833093,
+      "sha256": "8d36ff384f404bb9f00382c3345aa15f33d82ad00018e917168df7864f0b9bea",
+      "matchesTestedFile": true
+    },
+    {
+      "path": "app/learned-range.js",
+      "status": 200,
+      "bytes": 7585,
+      "sha256": "175689165f0d1b3844e5e33975c9d6c8e469b9bb7f203a8360733b3c0ceaae3f",
+      "matchesTestedFile": true
+    },
+    {
+      "path": "app/updates.js",
+      "status": 200,
+      "bytes": 4077,
+      "sha256": "cef571d94d2d07c85f25cd82312042b134671487f6a8eee4b9110b9e157d0738",
+      "matchesTestedFile": true
+    }
+  ],
+  "fullMTTGTO": false,
+  "precisionImprovementClaimed": false,
+  "limits": [
+    "unconverged reference strategies only",
+    "true full-deck BR / exploitability upper bound unverified",
+    "no hand-specific or history-conditional EV",
+    "normal raises / postflop / ICM excluded"
+  ],
+  "mainValidationRun": {
+    "url": "https://github.com/dex-project-jp/poker-lab/actions/runs/41937835780",
+    "status": "completed",
+    "conclusion": "success"
+  }
+}
