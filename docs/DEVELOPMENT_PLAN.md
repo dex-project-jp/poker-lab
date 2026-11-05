@@ -40,12 +40,12 @@
 
 ## 最新の確認状態
 
-2026-11-05：最新の完了工程は「簡易ハンド分析」の公開と同EV判定修正（[PR #6](https://github.com/dex-project-jp/poker-lab/pull/6)・[PR #7](https://github.com/dex-project-jp/poker-lab/pull/7)）。v1.6.1の検証済みtreeをmainへ統合し、Pages配布と公開ファイル照合を確認。GTOの長期目標・次のP1工程は維持。次の作業では最新状態を再取得する。
+2026-11-05。v1.8.0の配色と共通ナビゲーションを公開。検証結果は末尾のv1.8.0公開記録を参照。
 
 | 対象 | HEAD / 状態 | 内容 |
 |---|---|---|
 | P1診断 | main merge `f9768e31aed0ea3cce4d811b3a2ce874a696cc96` / [PR #4](https://github.com/dex-project-jp/poker-lab/pull/4) Merged | 到達重み/ESS診断、141件・数値CI・Chromium/WebKit成功。公開ファイル照合済み |
-| アプリ（現行） | main merge `3a1546dbe450669a67900d36e9da4f1588518990` | 簡易ハンド分析v1.6.1、公開ファイル照合済み |
+| アプリ（現行） | main merge `9b661999bd6541f527a72839027ed63b40bc025e` | v1.8.0 配色と共通ナビゲーション、公開ファイル照合済み |
 | 10BB統合時 | アプリ実装HEAD `328454cf544dc8969aa549540a82398ce4a80e8f` | v1.5の10BB参考レンジ統合・当時のPages公開確認済み |
 | [PR #1](https://github.com/dex-project-jp/poker-lab/pull/1) | mainへMerged / merge `f3b1eabe44ddb38aff97ddd665cc6769f846ecaf` | v1.3 精度診断 |
 | [PR #2](https://github.com/dex-project-jp/poker-lab/pull/2) | baseをmainへ変更してMerged / merge `bda1a37de45590213971a86fe833381d081ac4c4` | v1.4 学習比較・kernel・Worker保存再開 |
@@ -53,7 +53,7 @@
 
 mainの後続コミットがこの計画・受入記録だけを更新する場合、上のアプリ実装HEADと区別する。新工程は最新mainから始める。旧作業ブランチはドキュメントの参照URLが残っているため、確認せず削除しない。
 
-公開先：[Poker Lab](https://dex-project-jp.github.io/poker-lab/)・[簡易ハンド分析](https://dex-project-jp.github.io/poker-lab/simple-analysis.html)。公開 `version.json` はv1.6.1 / revision19 / analysis-19。
+公開先：[Poker Lab](https://dex-project-jp.github.io/poker-lab/)・[簡易ハンド分析](https://dex-project-jp.github.io/poker-lab/simple-analysis.html)。公開 `version.json` はv1.8.0 / revision21 / nav-21。
 
 [GitHub Pages配布run](https://github.com/dex-project-jp/poker-lab/actions/runs/41937835254) は上記main実装HEADで成功。公開版のindex・版manifest・10BBデータ/manifest・表示adapter・更新処理の6ファイルをHTTP取得し、検証したローカルファイルとbyte/SHA256一致を確認した。詳細は [受入記録](validation/v1.5-acceptance.json)。
 
@@ -194,3 +194,10 @@ GitHub Pagesによるv1.5.0の公開成功、および公開された6ファイ�
 - [main自動再実行](https://github.com/dex-project-jp/poker-lab/actions/runs/41970654471) は記録時点で実行中。上記の検証済みtreeと区別して、次回の開始時に最新結果を確認する。ローカルのブラウザー取得は繰り返さず、CIで確認した。
 - [v1.6.1のPages](https://github.com/dex-project-jp/poker-lab/actions/runs/41970654250) 成功。HTTP200の8ファイル（版・ホーム・分析ページ・画面/Worker/計算の3モジュール・10BBデータ/manifest）を取得し、検証済み内容とbyte/SHA256一致。詳細は [機能と受入記録](SIMPLE-HAND-ANALYSIS.md)。公開レンジ・認定基準は変更なし。
 - 1対1でコール後の追加ベットなしの全列挙分析。GTOや将来のベットを評価しない。広いフロップレンジでは計算量が大きく、実機iPhoneの所要時間は未測定。次は最新状態を確認して、上記52枚デッキの固定1履歴の条件付き抽選検証に戻る。
+
+### 2026-11-05 v1.8.0の配色とナビゲーション
+
+- 分析画面の背景・セクション・入力欄に明度差をつけた。選択済みカードとスート選択は白地に♠黒・♥赤・♣緑・♦青。結果はラベルに加え緑と赤の背景で区別する。共通の3タブを検証ページを含む5ページに配置し、学習から両方の検証ページへ移動できる。
+- 既存154件と独立計算7ケースが成功。Chromium／WebKitで375・390・430pxのカード選択、レンジ設定、結果、全タブと検証ページの移動、ページの横はみ出し、更新操作を検証。数値回帰を含む修正版CIが成功。[CI](https://github.com/dex-project-jp/poker-lab/actions/runs/41978094347)
+- 実装 `59bc9234a1ef4e55c834de4cb95bb49ba1826615` とmain merge `9b661999bd6541f527a72839027ed63b40bc025e` のtreeが一致。v1.8.0の5ページ、版情報、CSSと分析用モジュール計10ファイルを公開先から取得し、検証済みの内容とバイト一致を確認。[PR #9](https://github.com/dex-project-jp/poker-lab/pull/9)・[Pages配布](https://github.com/dex-project-jp/poker-lab/actions/runs/41978486940)
+- 次の工程は52枚デッキの固定1履歴での条件付き抽選検証。開始時にmainの自動再テストの結果を確認する。[main CI](https://github.com/dex-project-jp/poker-lab/actions/runs/41978487551)
