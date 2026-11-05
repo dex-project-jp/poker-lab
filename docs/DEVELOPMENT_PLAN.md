@@ -40,12 +40,12 @@
 
 ## 最新の確認状態
 
-2026-11-05。v1.8.0の配色と共通ナビゲーションを公開。検証結果は末尾のv1.8.0公開記録を参照。
+2026-11-05。v1.9.0のDEX黒×ゴールドテーマを公開。検証結果は末尾の公開記録を参照。
 
 | 対象 | HEAD / 状態 | 内容 |
 |---|---|---|
 | P1診断 | main merge `f9768e31aed0ea3cce4d811b3a2ce874a696cc96` / [PR #4](https://github.com/dex-project-jp/poker-lab/pull/4) Merged | 到達重み/ESS診断、141件・数値CI・Chromium/WebKit成功。公開ファイル照合済み |
-| アプリ（現行） | main merge `9b661999bd6541f527a72839027ed63b40bc025e` | v1.8.0 配色と共通ナビゲーション、公開ファイル照合済み |
+| アプリ（現行） | main merge `7a238003a3342a4ee2182d2efefc1d03e20bfd36` | v1.9.0 DEXテーマ、公開ファイル照合済み |
 | 10BB統合時 | アプリ実装HEAD `328454cf544dc8969aa549540a82398ce4a80e8f` | v1.5の10BB参考レンジ統合・当時のPages公開確認済み |
 | [PR #1](https://github.com/dex-project-jp/poker-lab/pull/1) | mainへMerged / merge `f3b1eabe44ddb38aff97ddd665cc6769f846ecaf` | v1.3 精度診断 |
 | [PR #2](https://github.com/dex-project-jp/poker-lab/pull/2) | baseをmainへ変更してMerged / merge `bda1a37de45590213971a86fe833381d081ac4c4` | v1.4 学習比較・kernel・Worker保存再開 |
@@ -53,7 +53,7 @@
 
 mainの後続コミットがこの計画・受入記録だけを更新する場合、上のアプリ実装HEADと区別する。新工程は最新mainから始める。旧作業ブランチはドキュメントの参照URLが残っているため、確認せず削除しない。
 
-公開先：[Poker Lab](https://dex-project-jp.github.io/poker-lab/)・[簡易ハンド分析](https://dex-project-jp.github.io/poker-lab/simple-analysis.html)。公開 `version.json` はv1.8.0 / revision21 / nav-21。
+公開先：[Poker Lab](https://dex-project-jp.github.io/poker-lab/)・[簡易ハンド分析](https://dex-project-jp.github.io/poker-lab/simple-analysis.html)。公開 `version.json` はv1.9.0 / revision22 / dex-22。
 
 [GitHub Pages配布run](https://github.com/dex-project-jp/poker-lab/actions/runs/41937835254) は上記main実装HEADで成功。公開版のindex・版manifest・10BBデータ/manifest・表示adapter・更新処理の6ファイルをHTTP取得し、検証したローカルファイルとbyte/SHA256一致を確認した。詳細は [受入記録](validation/v1.5-acceptance.json)。
 
@@ -201,3 +201,10 @@ GitHub Pagesによるv1.5.0の公開成功、および公開された6ファイ�
 - 既存154件と独立計算7ケースが成功。Chromium／WebKitで375・390・430pxのカード選択、レンジ設定、結果、全タブと検証ページの移動、ページの横はみ出し、更新操作を検証。数値回帰を含む修正版CIが成功。[CI](https://github.com/dex-project-jp/poker-lab/actions/runs/41978094347)
 - 実装 `59bc9234a1ef4e55c834de4cb95bb49ba1826615` とmain merge `9b661999bd6541f527a72839027ed63b40bc025e` のtreeが一致。v1.8.0の5ページ、版情報、CSSと分析用モジュール計10ファイルを公開先から取得し、検証済みの内容とバイト一致を確認。[PR #9](https://github.com/dex-project-jp/poker-lab/pull/9)・[Pages配布](https://github.com/dex-project-jp/poker-lab/actions/runs/41978486940)
 - 次の工程は52枚デッキの固定1履歴での条件付き抽選検証。開始時にmainの自動再テストの結果を確認する。[main CI](https://github.com/dex-project-jp/poker-lab/actions/runs/41978487551)
+
+### 2026-11-05 v1.9.0 DEXテーマの公開
+
+- 黒の背景、チャコールのセクション、グレーの枠線を持つ黒い入力欄、控えめなゴールドを全5ページと設定へ適用。白いカードと4色スートを使い、コール・フォールド・同EVをラベルで区別する。
+- 既存154件、独立計算7ケース、主要な文字と背景のコントラストを確認。Chromium／WebKitの375・390・430pxで配色、カード、結果、タブ、設定、更新の操作を確認。WebKitの背景確認は文書全体の色を測るよう修正した。[CI](https://github.com/dex-project-jp/poker-lab/actions/runs/41981256551)
+- 実装 `4ce174b1083c54dea66d2209c63b67f445207f3f` とmain merge `7a238003a3342a4ee2182d2efefc1d03e20bfd36` のtreeが一致。公開先の11ファイルを検証済みファイルとバイト照合し、版情報v1.9.0を確認。[PR #10](https://github.com/dex-project-jp/poker-lab/pull/10)・[Pages配布](https://github.com/dex-project-jp/poker-lab/actions/runs/41981948999)
+- 次は52枚デッキの固定1履歴での条件付き抽選検証。開始時にmainの自動再テストの結果を確認する。[main CI](https://github.com/dex-project-jp/poker-lab/actions/runs/41981949701)
