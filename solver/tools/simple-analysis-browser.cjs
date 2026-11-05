@@ -102,7 +102,13 @@ const server=http.createServer((req,res)=>{let p=path.resolve(root,'.'+new URL(r
   const nav = page.getByRole('navigation', {name: 'メインナビゲーション'});
   const checkNav = async active => {
    await page.waitForLoadState("load");
-   assert.equal(await color('body', 'backgroundColor'), 'rgb(16, 16, 20)');
+   const canvas = await page.evaluate(() => {
+    const bodyColor = getComputedStyle(document.body).backgroundColor;
+    return bodyColor === 'rgba(0, 0, 0, 0)'
+      ? getComputedStyle(document.documentElement).backgroundColor
+      : bodyColor;
+   });
+   assert.equal(canvas, 'rgb(16, 16, 20)');
    assert.equal(await color('.page-nav [aria-current]', 'backgroundColor'), gold);
    assert.deepEqual(await nav.getByRole('link').allTextContents(), ['GTOレンジ', 'ハンド分析', '学習']);
    assert.equal(await nav.locator('[aria-current]').textContent(), active);

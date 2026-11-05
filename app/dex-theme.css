@@ -12,6 +12,7 @@
   --dex-gold-light: #edce91;
   --dex-gold-muted: #43361f;
   --dex-on-gold: #19150f;
+  background-color: var(--dex-background);
 }
 
 :where(input:not([type="checkbox"]):not([type="radio"]), select) {
