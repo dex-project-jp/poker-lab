@@ -1,0 +1,67 @@
+{
+  "date": "2026-11-05",
+  "scope": "P1 approximate BR reach/ESS diagnostics only",
+  "baseline": "fd8853cfd06c68a26b28261747ac2b800fffd2f6",
+  "implementationHead": "4ababf3a341b223943f225eb2ccb127b4a7ed562",
+  "mainMerge": "f9768e31aed0ea3cce4d811b3a2ce874a696cc96",
+  "testedTree": "1f8f4ad8b2131ad15ba7d5c607d5a96c46001e14",
+  "pullRequest": "https://github.com/dex-project-jp/poker-lab/pull/4",
+  "localChecks": {
+    "tests": {
+      "passed": 141,
+      "failed": 0
+    },
+    "coverageReplay": "passed",
+    "v13EVDeviationReplay": "passed",
+    "v14ReportIntegrity": "passed",
+    "v15DistributionDisplayContracts": "passed",
+    "whitespace": "passed"
+  },
+  "ci": {
+    "branch": "https://github.com/dex-project-jp/poker-lab/actions/runs/41940697473",
+    "branchConclusion": "success",
+    "main": "https://github.com/dex-project-jp/poker-lab/actions/runs/41941315675",
+    "mainConclusion": "success"
+  },
+  "pages": {
+    "run": "https://github.com/dex-project-jp/poker-lab/actions/runs/41941315234",
+    "conclusion": "success",
+    "publicFiles": [
+      {
+        "path": "solver/data/mtt10-br-coverage.json",
+        "sha256": "6e0a167da3047b94a6a22a0307e832ff94f9b4209dad2ebef5978c3b39be77ad",
+        "bytes": 17315
+      },
+      {
+        "path": "solver/mtt10-br-coverage.js",
+        "sha256": "413bce5c1d70af15aa511bad419723be2f3e0698da03874d63e58825666d0578",
+        "bytes": 5670
+      },
+      {
+        "path": "docs/MTT10-BR-COVERAGE.md",
+        "sha256": "4aec37461d69029316a4e1b849d0dad3c6a5a3cd96361502416c98563209ffa6",
+        "bytes": 4622
+      },
+      {
+        "path": "index.html",
+        "sha256": "808181e990974fd4b28bff6bf9ca827953eb1b8aff04c8dfc8d2f2a3284f5597",
+        "bytes": 68694
+      },
+      {
+        "path": "version.json",
+        "sha256": "d0c64b1b7210791597d25ddd3403f967ee11120f40c5f99a716287d87f4686b6",
+        "bytes": 82
+      },
+      {
+        "path": "solver/data/mtt10-learned.json",
+        "sha256": "8d36ff384f404bb9f00382c3345aa15f33d82ad00018e917168df7864f0b9bea",
+        "bytes": 833093
+      }
+    ]
+  },
+  "gtoVerified": false,
+  "precisionImprovementMeasured": false,
+  "liveVersion": "v1.5.0",
+  "liveRangeChanged": false,
+  "next": "Validate response-search improvements for low-reach histories on a small independent game before adoption"
+}

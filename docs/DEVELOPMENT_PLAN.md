@@ -40,11 +40,12 @@
 
 ## 最新の確認状態
 
-以下は2026-11-05のP0受入・統合・公開確認時点。次の作業では必ず再取得する。
+以下は2026-11-05のP1診断統合・公開確認時点。次の作業では必ず再取得する。
 
 | 対象 | HEAD / 状態 | 内容 |
 |---|---|---|
-| main | アプリ実装HEAD `328454cf544dc8969aa549540a82398ce4a80e8f` | v1.5統合済み・GitHub Pages公開確認済み |
+| P1診断 | main merge `f9768e31aed0ea3cce4d811b3a2ce874a696cc96` / [PR #4](https://github.com/dex-project-jp/poker-lab/pull/4) Merged | 到達重み/ESS診断、141件・数値CI・Chromium/WebKit成功。公開ファイル照合済み |
+| アプリ | アプリ実装HEAD `328454cf544dc8969aa549540a82398ce4a80e8f` | v1.5統合済み・GitHub Pages公開確認済み |
 | [PR #1](https://github.com/dex-project-jp/poker-lab/pull/1) | mainへMerged / merge `f3b1eabe44ddb38aff97ddd665cc6769f846ecaf` | v1.3 精度診断 |
 | [PR #2](https://github.com/dex-project-jp/poker-lab/pull/2) | baseをmainへ変更してMerged / merge `bda1a37de45590213971a86fe833381d081ac4c4` | v1.4 学習比較・kernel・Worker保存再開 |
 | [PR #3](https://github.com/dex-project-jp/poker-lab/pull/3) | baseをmainへ変更してMerged / merge `328454cf544dc8969aa549540a82398ce4a80e8f` | v1.5 学習参考レンジ統合 |
@@ -116,6 +117,7 @@ GitHub Pagesによるv1.5.0の公開成功、および公開された6ファイ�
 コマンド・ファイルの存在は対象ブランチで確認する。main未統合の機能はmainにはまだ存在しない。
 
 - `npm test --prefix solver`
+- `npm run check:mtt10-br --prefix solver`（新規診断の両seed完全再計算。任意行は `-- --row=509:0`）
 - `npm run check:mtt10-learned --prefix solver`
 - `npm run check:mtt10-learning --prefix solver`
 - `npm run check:mccfr-accuracy --prefix solver`
@@ -155,5 +157,7 @@ GitHub Pagesによるv1.5.0の公開成功、および公開された6ファイ�
 - `npm test --prefix solver`：既存136件＋新規5件＝141件成功。手計算/独立木再帰/極小重み/ゼロ到達/欠損拒否/seed再現を照合。`check:mtt10-br` で全seed・保存集計・源コード指紋を再計算一致。v1.3評価再計算、v1.4比較整合性、v1.5配布/表示条件検査も成功。
 - 数値診断専用のCLIとJSONレポートを追加。既存UI・PWA・30BB・学習レンジ・認定基準は変更なし。100万回再学習は不要なので実行していない。
 - ESS30は調査用目安。EV/Exploitability/収束改善は今回未測定、GTO未認定。精度の未確認部分を認定へ昇格させない。詳しい適用範囲と限界：[診断資料](MTT10-BR-COVERAGE.md)。
-- GitHub反映/CI/main統合状態：このブランチのPRで追跡し、完了後に追記する。
+- 反映：[PR #4](https://github.com/dex-project-jp/poker-lab/pull/4) をmainへ統合。実装HEAD `4ababf3a341b223943f225eb2ccb127b4a7ed562`、merge `f9768e31aed0ea3cce4d811b3a2ce874a696cc96`。PRとmainのtreeが `1f8f4ad8b2131ad15ba7d5c607d5a96c46001e14` で一致。完了記録は後続の文書コミット。
+- CI：[ブランチ](https://github.com/dex-project-jp/poker-lab/actions/runs/41940697473) と [main](https://github.com/dex-project-jp/poker-lab/actions/runs/41941315675) の数値test・Chromium・WebKitがすべて成功。ローカルのブラウザー本体を再取得しての重複実行はせず、当該treeのCIで確認した。
+- 公開：[Pages run](https://github.com/dex-project-jp/poker-lab/actions/runs/41941315234) 成功。公開の診断JSON/モジュール/説明文と既存index/version/10BBデータをHTTP取得しbyte/SHA256一致。アプリ版はv1.5.0のまま。詳細：[受入記録](validation/p1-br-coverage-acceptance.json)。
 - 次の最優先は上記「低到達履歴の近似BR探索改善の検証」。次点はハンド/履歴条件付きEV評価。通常Raiseやポストフロップ拡張は別途設計確認。
