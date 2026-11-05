@@ -44,3 +44,9 @@ Python参照はJS evaluatorを利用せず、5枚部分集合をCounter/tupleで
 ブラウザーテストは375/390/430px、カード除外・空レンジ拒否・結果・頻度編集・入力変更・中止・横はみ出し・JSエラーを検査。
 
 境界の回帰例：AA 9%とKK 1%、除外後にAA 1コンボ・KK 3コンボ。エクイティ25%でポット12、ベット6なら同EV。ポット11.9999/12.0001では負/正に分かれる。
+
+## v1.6.1の受入記録
+
+2026-11-05。境界判定の[PR #7](https://github.com/dex-project-jp/poker-lab/pull/7)をmainへ統合。統合コミットは `3a1546dbe450669a67900d36e9da4f1588518990`。検証したブランチHEAD `99f542ee34f8338df152cb21eee08ecfbfe750c4` と統合後のファイルに差分なし。
+
+ローカル154件と独立Pythonの7ケースを再実行して成功。[CI](https://github.com/dex-project-jp/poker-lab/actions/runs/41969586197)の数値・Chromium・WebKitが成功。[Pages配布](https://github.com/dex-project-jp/poker-lab/actions/runs/41970654250)成功後、公開v1.6.1の版ファイル、ホーム、分析ページ、画面・Worker・計算の3モジュールを取得し、検証ファイルとバイト一致を確認。
