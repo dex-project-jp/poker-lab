@@ -92,3 +92,17 @@ dialog::backdrop { background: #000b; }
 .suit-options { grid-template-columns: repeat(4, minmax(0,1fr)); }
 .suit-options button { font-size: 24px; min-height: 52px; }
 .picker-footer label { display: flex; align-items: center; gap: 6px; min-height: 44px; }
+
+.amount-heading { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 8px; }
+.amount-heading h2 { margin: 0; }
+#potCalcToggle { min-width: 44px; color: var(--dex-gold-light); }
+.pot-calculator { margin-top: 12px; padding: 10px; border: 1px solid var(--dex-divider); border-radius: 10px; }
+.pot-calculator p { margin: 0 0 8px; }
+.pot-calculator strong, .pot-result { color: var(--dex-gold-light); }
+.pot-expression, .pot-result { display: block; margin: 6px 0; overflow-wrap: anywhere; font-variant-numeric: tabular-nums; }
+.pot-expression { background: var(--dex-control); padding: 8px; border-radius: 8px; }
+.pot-keys { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 5px; }
+.pot-keys [data-pot-key="equals"] { grid-row: span 2; }
+.pot-keys [data-pot-key="0"] { grid-column: span 2; }
+.pot-keys [data-pot-key="equals"], #potCalcApply { background: var(--dex-gold); color: var(--dex-on-gold); }
+#potCalcApply { margin-top: 8px; width: 100%; }

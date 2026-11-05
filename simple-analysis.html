@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <meta name="theme-color" content="#101014">
   <title>簡易ハンド分析 · Poker Lab</title>
-  <link rel="stylesheet" href="app/dex-theme.css?v=direct-24">
-<link rel="stylesheet" href="app/simple-analysis.css?v=direct-24">
+  <link rel="stylesheet" href="app/dex-theme.css?v=pot-25">
+<link rel="stylesheet" href="app/simple-analysis.css?v=pot-25">
 
-<link rel="stylesheet" href="app/page-nav.css?v=direct-24">
+<link rel="stylesheet" href="app/page-nav.css?v=pot-25">
 </head>
 <body>
 <main>
@@ -24,14 +24,44 @@
     <p class="muted">自分の2枚とフロップは必須。ターン・リバーは任意。</p>
   </section>
   <section aria-labelledby="amountTitle">
-    <h2 id="amountTitle"><span>2</span> ポット・ベット</h2>
+    <div class="amount-heading">
+      <h2 id="amountTitle"><span>2</span> ポット・ベット</h2>
+      <button id="potCalcToggle" type="button" aria-expanded="false" aria-controls="potCalculator" aria-label="POT電卓を開く">＋</button>
+    </div>
     <div class="unit-switch" role="group" aria-label="金額の単位">
       <button id="unitBB" type="button" aria-pressed="true">BB</button>
       <button id="unitPoints" type="button" aria-pressed="false">点数</button>
     </div>
     <div class="amounts">
-      <label>ベット前のポット<span class="amount-field"><input id="pot" type="number" inputmode="decimal" min="0" step="any"><span data-amount-unit>BB</span></span></label>
-      <label>相手のベット<span class="amount-field"><input id="bet" type="number" inputmode="decimal" min="0" step="any"><span data-amount-unit>BB</span></span></label>
+      <label>POT<span class="amount-field"><input id="pot" type="number" inputmode="decimal" min="0" step="any"><span data-amount-unit>BB</span></span></label>
+      <label>BET<span class="amount-field"><input id="bet" type="number" inputmode="decimal" min="0" step="any"><span data-amount-unit>BB</span></span></label>
+    </div>
+    <div id="potCalculator" class="pot-calculator" role="group" aria-label="POT電卓" hidden>
+      <p>現在のPOT <strong id="potCalcCurrent">—</strong></p>
+      <button id="potCalcInsert" type="button">現在のPOTを式に入力</button>
+      <output id="potCalcExpression" class="pot-expression" aria-label="計算式">0</output>
+      <output id="potCalcResult" class="pot-result" aria-label="電卓の結果"></output>
+      <div class="pot-keys">
+        <button type="button" data-pot-key="clear" aria-label="クリア">C</button>
+        <button type="button" data-pot-key="delete" aria-label="1文字削除">⌫</button>
+        <button type="button" data-pot-key="÷">÷</button>
+        <button type="button" data-pot-key="×">×</button>
+        <button type="button" data-pot-key="7">7</button>
+        <button type="button" data-pot-key="8">8</button>
+        <button type="button" data-pot-key="9">9</button>
+        <button type="button" data-pot-key="−">−</button>
+        <button type="button" data-pot-key="4">4</button>
+        <button type="button" data-pot-key="5">5</button>
+        <button type="button" data-pot-key="6">6</button>
+        <button type="button" data-pot-key="+">＋</button>
+        <button type="button" data-pot-key="1">1</button>
+        <button type="button" data-pot-key="2">2</button>
+        <button type="button" data-pot-key="3">3</button>
+        <button type="button" data-pot-key="equals" aria-label="計算する">＝</button>
+        <button type="button" data-pot-key="0">0</button>
+        <button type="button" data-pot-key=".">.</button>
+      </div>
+      <button id="potCalcApply" type="button" disabled>POTに反映</button>
     </div>
   </section>
   <section aria-labelledby="rangeTitle">
@@ -88,6 +118,6 @@
     <button id="clearCard" hidden>カードを外す</button>
   </div>
 </dialog>
-<script type="module" src="app/simple-analysis.js?v=direct-24"></script>
+<script type="module" src="app/simple-analysis.js?v=pot-25"></script>
 </body>
 </html>
