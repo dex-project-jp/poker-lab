@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "revision": 21,
-  "version": "1.8.0",
-  "build": "nav-21"
+  "revision": 22,
+  "version": "1.9.0",
+  "build": "dex-22"
 }

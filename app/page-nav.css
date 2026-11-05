@@ -6,8 +6,8 @@
   max-width: 650px;
   margin: 0 auto 12px;
   padding: 4px;
-  background: #131d2d;
-  border: 1px solid #495c76;
+  background: var(--dex-control);
+  border: 1px solid var(--dex-divider);
   border-radius: 14px;
 }
 
@@ -19,19 +19,19 @@
   padding: 4px;
   border: 1px solid transparent;
   border-radius: 9px;
-  color: #d2def0;
+  color: var(--dex-muted);
   font: 700 14px/1.3 system-ui, sans-serif;
   text-align: center;
   text-decoration: none;
 }
 
 .page-nav a[aria-current] {
-  background: #a8ccff;
-  color: #0c1e38;
-  border-color: #c9e0ff;
+  background: var(--dex-gold);
+  color: var(--dex-on-gold);
+  border-color: var(--dex-gold-light);
 }
 
 .page-nav a:focus-visible {
-  outline: 2px solid #eaf3ff;
+  outline: 2px solid var(--dex-gold-light);
   outline-offset: 1px;
 }

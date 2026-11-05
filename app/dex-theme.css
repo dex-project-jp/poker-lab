@@ -1,0 +1,26 @@
+:root {
+  color-scheme: dark;
+  --dex-background: #101014;
+  --dex-surface: #242428;
+  --dex-control: #17171b;
+  --dex-raised: #303036;
+  --dex-divider: #505057;
+  --dex-border: #777780;
+  --dex-text: #f5f4f2;
+  --dex-muted: #c5c2bd;
+  --dex-gold: #d5ac59;
+  --dex-gold-light: #edce91;
+  --dex-gold-muted: #43361f;
+  --dex-on-gold: #19150f;
+}
+
+:where(input:not([type="checkbox"]):not([type="radio"]), select) {
+  background: var(--dex-control);
+  color: var(--dex-text);
+  border: 1px solid var(--dex-border);
+}
+
+:where(a, button, input, select, summary):focus-visible {
+  outline: 2px solid var(--dex-gold-light);
+  outline-offset: 2px;
+}

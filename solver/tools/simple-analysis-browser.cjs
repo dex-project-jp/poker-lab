@@ -15,6 +15,14 @@ const server=http.createServer((req,res)=>{let p=path.resolve(root,'.'+new URL(r
    assert.equal(await page.locator('#card' + index).getAttribute('data-suit'),card[1]);
   };
   await page.waitForFunction(()=>document.querySelectorAll('#range button').length===169);
+  const color = (selector, property) => page.locator(selector).evaluate((element, key) => getComputedStyle(element)[key], property);
+  const gold = 'rgb(213, 172, 89)';
+  const charcoal = 'rgb(36, 36, 40)';
+  const control = 'rgb(23, 23, 27)';
+  assert.equal(await color('section[aria-labelledby=cardsTitle]', 'backgroundColor'), charcoal);
+  assert.equal(await color('#pot', 'backgroundColor'), control);
+  assert.equal(await color('#pot', 'borderTopColor'), 'rgb(119, 119, 128)');
+  assert.equal(await color('#calculate', 'backgroundColor'), gold);
   assert.equal(await page.locator('#customRange').isVisible(),false);
   assert.equal(await page.locator('#result').isVisible(),false);
   await page.locator('#card0').tap();
@@ -55,6 +63,7 @@ const server=http.createServer((req,res)=>{let p=path.resolve(root,'.'+new URL(r
   await page.locator('[data-hand=KK]').tap();await page.locator('#calculate').tap();
   await page.waitForFunction(()=>!document.querySelector('#result').hidden);
   assert.equal(await page.locator('#verdict').textContent(),'コール有利');
+  assert.equal(await color('#callEV', 'color'), 'rgb(237, 206, 145)');
   const callBackground = await page.locator('#verdict').evaluate(el => getComputedStyle(el).backgroundColor);
   assert.equal(await page.locator('#equity').textContent(),'100.000%');
   assert.equal(await page.locator('#callEV').textContent(),'150.0000 BB');
@@ -92,6 +101,8 @@ const server=http.createServer((req,res)=>{let p=path.resolve(root,'.'+new URL(r
   assert.equal(await page.locator('#result').isVisible(),false);
   const nav = page.getByRole('navigation', {name: 'メインナビゲーション'});
   const checkNav = async active => {
+   assert.equal(await color('body', 'backgroundColor'), 'rgb(16, 16, 20)');
+   assert.equal(await color('.page-nav [aria-current]', 'backgroundColor'), gold);
    assert.deepEqual(await nav.getByRole('link').allTextContents(), ['GTOレンジ', 'ハンド分析', '学習']);
    assert.equal(await nav.locator('[aria-current]').textContent(), active);
    assert.ok(await nav.evaluate(el => {
@@ -120,6 +131,11 @@ const server=http.createServer((req,res)=>{let p=path.resolve(root,'.'+new URL(r
   await nav.getByRole('link', {name: 'GTOレンジ', exact: true}).tap();
   await page.waitForURL('**/index.html');
   await checkNav('GTOレンジ');
+  await page.locator('#toggle').tap();
+  assert.equal(await color('#settingsDialog', 'backgroundColor'), charcoal);
+  assert.equal(await color('#studyMode', 'backgroundColor'), control);
+  assert.equal(await color('#close', 'backgroundColor'), gold);
+  await page.locator('#close').tap();
   await nav.getByRole('link', {name: 'ハンド分析', exact: true}).tap();
   await page.waitForURL('**/simple-analysis.html');
   await checkNav('ハンド分析');
