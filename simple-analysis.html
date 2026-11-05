@@ -1,8 +1,81 @@
-<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#111827"><title>簡易ハンド分析 · Poker Lab</title><style>
-*{box-sizing:border-box}body{margin:0;background:#0b1220;color:#e5e7eb;font:16px system-ui,sans-serif}main{max-width:720px;margin:auto;padding:16px}a{color:#93c5fd}h1{font-size:25px}h2{font-size:19px}section{padding:16px;margin:16px 0;background:#172033;border-radius:14px}p{line-height:1.65}label{display:block;margin:12px 0}button,select,input{font:inherit;min-height:44px;border:1px solid #65738c;border-radius:8px;background:#0f172a;color:#fff;padding:8px}button{cursor:pointer}button:disabled{opacity:.45}input{width:100%}.cards{display:flex;gap:6px;flex-wrap:wrap}.cards label{margin:0;flex:1;min-width:82px}.cards select{width:100%}.scroll{overflow-x:auto;padding-bottom:8px}.grid{display:grid;grid-template-columns:repeat(13,minmax(38px,1fr));gap:3px;min-width:530px}.grid button{padding:2px;font-size:12px;min-height:44px}.grid button[aria-pressed=true]{background:#2563eb}.muted{color:#bac5d6;font-size:14px}.actions{display:flex;gap:8px;flex-wrap:wrap}.range-row{display:flex;align-items:center;gap:12px;margin:8px 0}.range-row label{margin:0;flex:1}.range-row input{max-width:110px}output{display:block;line-height:1.8}progress{width:100%}[hidden]{display:none!important}#status{min-height:24px}
-</style></head><body><main><a href="index.html">← Poker Lab</a><h1>簡易ハンド分析</h1><p>相手レンジに対するエクイティとコールEVを計算します。GTO頻度・GTO推奨ではありません。</p>
-<section><h2>1. カードを選択</h2><p class="muted">自分の2枚＋フロップは必須。ターン・リバーは任意です。</p><div id="cards" class="cards"></div></section>
-<section><h2>2. ポットとベット</h2><label>相手ベット前のポット額<input id="pot" type="number" inputmode="decimal" min="0" step="any" placeholder="例：100"></label><label>相手のベット額<input id="bet" type="number" inputmode="decimal" min="0" step="any" placeholder="例：50"></label><p class="muted">同じ単位（BB・チップなど）で入力。相手は1人、ベット全額にコールできる前提です。</p></section>
-<section><h2>3. 相手レンジ</h2><label>追加時の頻度<select id="frequency"><option value="1">100%</option><option value="0.75">75%</option><option value="0.5">50%</option><option value="0.25">25%</option></select></label><p class="muted">タップして複数選択。選択済みをタップすると解除。各ハンドの頻度は下で1%刻みに編集できます。横にスクロールできます。</p><div class="actions"><button id="all">全ハンドを追加</button><button id="clear">全解除</button></div><div class="scroll"><div id="range" class="grid" aria-label="相手の169ハンド"></div></div><details><summary id="selectionSummary">選択したハンド：0</summary><div id="selected"></div></details><p class="muted">頻度はそのクラスの各コンボの重みです。カード除外後に正規化し、スートごとの重みは同一とします。</p></section>
-<div class="actions"><button id="calculate">厳密計算する</button><button id="cancel" disabled>中止</button></div><p id="status" role="status" aria-live="polite"></p><progress id="progress" hidden></progress><section id="result" hidden><h2>計算結果</h2><output id="output"></output></section>
-<section><h2>この計算の条件</h2><p class="muted">未知のターン・リバーと相手の全コンボを列挙する厳密計算です（表示は丸めますが、判定は丸め前の値で行います）。引き分けは半分の取り分として計算します。フロップで広いレンジを選ぶと数分以上かかる場合があります。完了前は判定を表示しません。</p><p class="muted">今回コールした後は追加ベットなしでショーダウンする単純モデルです。スタック上限、サイドポット、レーキ、将来のアクション、フォールドエクイティ、ICMを考慮しません。実戦の最適アクションを保証しません。</p><p class="muted">必要エクイティ＝ベット÷（ベット前ポット＋2×ベット）。コールEV＝エクイティ×（ベット前ポット＋2×ベット）−ベット。フォールドEV＝0（現在の判断時点）。</p></section></main><script type="module" src="app/simple-analysis.js?v=analysis-19"></script></body></html>
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#0b1220">
+  <title>簡易ハンド分析 · Poker Lab</title>
+  <link rel="stylesheet" href="app/simple-analysis.css?v=analysis-20">
+</head>
+<body>
+<main>
+  <header><a href="index.html">‹ Poker Lab</a><h1>簡易ハンド分析</h1><p>指定した相手レンジとのショーダウン比較。GTO推奨ではありません。</p></header>
+  <section aria-labelledby="cardsTitle">
+    <h2 id="cardsTitle"><span>1</span> カード入力</h2>
+    <div id="cards"></div>
+    <p class="muted">自分の2枚とフロップは必須。ターン・リバーは任意。</p>
+  </section>
+  <section aria-labelledby="amountTitle">
+    <h2 id="amountTitle"><span>2</span> ポット・ベット</h2>
+    <div class="amounts">
+      <label>ベット前のポット<span class="amount-field"><input id="pot" type="number" inputmode="decimal" min="0" step="any" placeholder="12"><span>BB</span></span></label>
+      <label>相手のベット<span class="amount-field"><input id="bet" type="number" inputmode="decimal" min="0" step="any" placeholder="6"><span>BB</span></span></label>
+    </div>
+  </section>
+  <section aria-labelledby="rangeTitle">
+    <h2 id="rangeTitle"><span>3</span> 相手レンジ</h2>
+    <label for="preset" class="sr-only">相手レンジ</label>
+    <select id="preset">
+      <option value="">レンジを選択</option>
+      <option value="all">全ハンド</option>
+      <option value="tight">タイト</option>
+      <option value="middle">ミドル</option>
+      <option value="loose">ルース</option>
+      <option value="custom">カスタム</option>
+    </select>
+    <p id="presetSummary" class="muted">プリセットは参考用です。GTOレンジではありません。</p>
+    <details id="presetDetails" hidden><summary>選択レンジの内訳</summary><p id="presetHands" class="muted"></p></details>
+    <div id="customRange" hidden>
+      <label class="frequency">追加時の頻度 <select id="frequency"><option value="1">100%</option><option value="0.75">75%</option><option value="0.5">50%</option><option value="0.25">25%</option></select></label>
+      <div class="actions"><button id="all">全ハンドを追加</button><button id="clear">全解除</button></div>
+      <p class="muted">横にスクロールして複数選択。選択済みのハンドを再タップすると解除できます。</p>
+      <div class="scroll" tabindex="0" aria-label="レンジ表を横にスクロール"><div id="range" class="grid" aria-label="相手の169ハンド"></div></div>
+      <details><summary id="selectionSummary">選択したハンド：0</summary><div id="selected"></div></details>
+    </div>
+  </section>
+  <div class="actions calculate-row"><button id="calculate">厳密計算する</button><button id="cancel" hidden disabled>中止</button></div>
+  <p id="status" role="status"></p><progress id="progress" aria-label="計算の進捗" hidden></progress>
+  <section id="result" aria-labelledby="resultTitle" hidden>
+    <h2 id="resultTitle"><span>4</span> 計算結果</h2>
+    <output id="output" aria-live="polite">
+      <strong id="verdict"></strong>
+      <dl class="metrics">
+        <div><dt>エクイティ</dt><dd id="equity"></dd></div>
+        <div><dt>必要エクイティ</dt><dd id="required"></dd></div>
+        <div><dt>コールEV</dt><dd id="callEV"></dd></div>
+      </dl>
+    </output>
+    <p class="muted">指定レンジとの比較です。GTO推奨ではありません。</p>
+    <details id="resultDetails"><summary>詳細数値</summary><dl id="breakdown"></dl></details>
+  </section>
+  <details class="conditions">
+    <summary>計算条件・ポットオッズの式</summary>
+    <p>相手は1人。コール後は追加ベットなしでショーダウンします。未知のボードと相手コンボを厳密列挙し、引き分けは半分の取り分として集計します。フロップで広いレンジを選ぶと時間がかかります。</p>
+    <p>頻度は各クラスに属するコンボの重みです。使用済みカードを除外し、残ったコンボで正規化します。</p>
+    <p>必要エクイティ＝ベット÷（ベット前ポット＋2×ベット）。コールEV＝エクイティ×（ベット前ポット＋2×ベット）−ベット。フォールドEVは0 BBです。判定には丸め前の値を使います。</p>
+    <p>スタック上限、サイドポット、レーキ、将来のアクション、フォールドエクイティ、ICMはモデルの対象外です。</p>
+  </details>
+</main>
+<dialog id="picker" aria-labelledby="pickerTitle">
+  <div class="picker-top"><h2 id="pickerTitle"></h2><button id="pickerClose" autofocus>閉じる</button></div>
+  <p id="pickerStep" role="status"></p>
+  <div id="rankOptions" class="rank-options" aria-label="ランク"></div>
+  <div id="suitOptions" class="suit-options" aria-label="スート" hidden></div>
+  <div class="picker-footer">
+    <label><input id="autoNext" type="checkbox" checked> 次の空欄へ</label>
+    <button id="clearCard" hidden>カードを外す</button>
+  </div>
+</dialog>
+<script type="module" src="app/simple-analysis.js?v=analysis-20"></script>
+</body>
+</html>
