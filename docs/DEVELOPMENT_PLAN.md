@@ -40,12 +40,12 @@
 
 ## 最新の確認状態
 
-2026-11-05。v2.0.0の簡易ハンド分析にBB／点数切り替えを公開。検証結果は末尾の公開記録を参照。
+2026-11-05。v2.0.1の簡易ハンド分析でBB／点数の直接入力を公開。検証結果は末尾の公開記録を参照。
 
 | 対象 | HEAD / 状態 | 内容 |
 |---|---|---|
 | P1診断 | main merge `f9768e31aed0ea3cce4d811b3a2ce874a696cc96` / [PR #4](https://github.com/dex-project-jp/poker-lab/pull/4) Merged | 到達重み/ESS診断、141件・数値CI・Chromium/WebKit成功。公開ファイル照合済み |
-| アプリ（現行） | main merge `3bf610ea33274928f0b5f9ed84da4c2cfe49ca0c` | v2.0.0 BB／点数切り替え、公開ファイル照合済み |
+| アプリ（現行） | main merge `978695a3105f5e6fc4bdf923a8f4efbed18bda65` | v2.0.1 BB／点数の直接入力、公開ファイル照合済み |
 | 10BB統合時 | アプリ実装HEAD `328454cf544dc8969aa549540a82398ce4a80e8f` | v1.5の10BB参考レンジ統合・当時のPages公開確認済み |
 | [PR #1](https://github.com/dex-project-jp/poker-lab/pull/1) | mainへMerged / merge `f3b1eabe44ddb38aff97ddd665cc6769f846ecaf` | v1.3 精度診断 |
 | [PR #2](https://github.com/dex-project-jp/poker-lab/pull/2) | baseをmainへ変更してMerged / merge `bda1a37de45590213971a86fe833381d081ac4c4` | v1.4 学習比較・kernel・Worker保存再開 |
@@ -53,7 +53,7 @@
 
 mainの後続コミットがこの計画・受入記録だけを更新する場合、上のアプリ実装HEADと区別する。新工程は最新mainから始める。旧作業ブランチはドキュメントの参照URLが残っているため、確認せず削除しない。
 
-公開先：[Poker Lab](https://dex-project-jp.github.io/poker-lab/)・[簡易ハンド分析](https://dex-project-jp.github.io/poker-lab/simple-analysis.html)。公開 `version.json` はv2.0.0 / revision23 / units-23。
+公開先：[Poker Lab](https://dex-project-jp.github.io/poker-lab/)・[簡易ハンド分析](https://dex-project-jp.github.io/poker-lab/simple-analysis.html)。公開 `version.json` はv2.0.1 / revision24 / direct-24。
 
 [GitHub Pages配布run](https://github.com/dex-project-jp/poker-lab/actions/runs/41937835254) は上記main実装HEADで成功。公開版のindex・版manifest・10BBデータ/manifest・表示adapter・更新処理の6ファイルをHTTP取得し、検証したローカルファイルとbyte/SHA256一致を確認した。詳細は [受入記録](validation/v1.5-acceptance.json)。
 
@@ -215,3 +215,10 @@ GitHub Pagesによるv1.5.0の公開成功、および公開された6ファイ�
 - 既存154件と独立計算7ケースが成功。Chromium／WebKitの375・390・430pxで空欄、小数の往復、無効なレート、単位変更後の再計算、同EVの判定を確認。[CI](https://github.com/dex-project-jp/poker-lab/actions/runs/41983401117)
 - 実装 `111821395554640417331899ee2022af7730137c` とmain merge `3bf610ea33274928f0b5f9ed84da4c2cfe49ca0c` のtreeが一致。公開先の9ファイルを検証済みの内容と照合し、v2.0.0を確認。[PR #11](https://github.com/dex-project-jp/poker-lab/pull/11)・[Pages配布](https://github.com/dex-project-jp/poker-lab/actions/runs/41984273711)
 - 次は52枚デッキの固定1履歴での条件付き抽選検証。開始時にmainの自動再テスト結果を確認する。[main CI](https://github.com/dex-project-jp/poker-lab/actions/runs/41984274015)
+
+### 2026-11-05 v2.0.1 BB／点数の直接入力
+
+- BBモードと空欄から開始。単位を切り替えると金額と結果を消し、進行中の計算を終了する。各単位で入力値を直接計算に使い、EVにその単位を付ける。
+- 既存154件、独立計算7ケースが成功。Chromium／WebKitの375・390・430pxで初期空欄、切り替え、空欄と負のベット、両単位のEVを検証。[CI](https://github.com/dex-project-jp/poker-lab/actions/runs/41988956827)
+- 実装 `557869a466d70b593e3c142c78f20176245e73ae` とmain merge `978695a3105f5e6fc4bdf923a8f4efbed18bda65` のtreeが一致。公開先の6ファイルをバイト照合し、v2.0.1を確認。[PR #12](https://github.com/dex-project-jp/poker-lab/pull/12)・[Pages配布](https://github.com/dex-project-jp/poker-lab/actions/runs/41989739906)
+- 次は52枚デッキの固定1履歴での条件付き抽選検証。開始時にmainの自動再テスト結果を確認する。[main CI](https://github.com/dex-project-jp/poker-lab/actions/runs/41989741622)
