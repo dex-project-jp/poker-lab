@@ -11,7 +11,7 @@ const server=http.createServer((req,res)=>{let p=path.resolve(root,'.'+new URL(r
   assert.equal(await page.locator('#result').isVisible(),false);
   await page.locator('#calculate').click();assert.equal(await page.locator('#result').isVisible(),false);
   for(const [i,c] of ['As','Ah','Ac','Ad','2c','3d','4h'].entries())await page.locator('#card'+i).selectOption(c);
-  assert.equal(await page.locator('#card1 option[value=As]').isDisabled(),true);
+  assert.equal(await page.locator('#card1 option[value=As]').evaluate(option=>option.disabled),true);
   await page.locator('#pot').fill('100');await page.locator('#bet').fill('50');
   await page.locator('#calculate').click();assert.match(await page.locator('#status').textContent(),/空/);
   await page.locator('[data-hand=KK]').click();await page.locator('#calculate').click();
