@@ -37,8 +37,6 @@ select { width: 100%; }
   color: var(--dex-on-gold);
   border-color: var(--dex-gold);
 }
-.rate-field { display: block; margin-bottom: 10px; font-size: 13px; }
-.rate-field .amount-field { max-width: 180px; }
 .amounts, .metrics { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 8px; }
 .amounts label { font-size: 13px; }
 .amount-field { display: flex; align-items: center; gap: 6px; margin-top: 5px; color: var(--dex-muted); }

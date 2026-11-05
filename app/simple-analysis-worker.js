@@ -1,4 +1,4 @@
-import {enumerateAnalysis} from '../solver/simple-analysis.js?v=units-23';
+import {enumerateAnalysis} from '../solver/simple-analysis.js?v=direct-24';
 self.onmessage=({data})=>{
  try{
   const iterator=enumerateAnalysis(data);let step;
