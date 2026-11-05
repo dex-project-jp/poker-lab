@@ -29,13 +29,12 @@ select { width: 100%; }
 .card-group > span { display: block; color: var(--muted); font-size: 12px; margin-bottom: 5px; }
 .card-row { display: grid; grid-template-columns: repeat(var(--count), minmax(0, 1fr)); gap: 4px; }
 .hero-cards { width: min(100%, 124px); }
-.card-slot { width: 100%; height: 59px; padding: 0; font-size: clamp(17px, 4.8vw, 24px); font-weight: 750; }
-.card-slot:not(.empty), .suit-options button {
+.card-row > button:not(.empty), .suit-options button {
   background: #fff;
   border-color: #bfcbd9;
   color: var(--suit, #151922);
 }
-.card-slot.empty { border-style: dashed; color: var(--accent); }
+.card-row > button.empty { border-style: dashed; color: var(--accent); }
 [data-suit=s] { --suit: #151922; }
 [data-suit=h] { --suit: #a71930; }
 [data-suit=c] { --suit: #11653e; }
