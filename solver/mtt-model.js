@@ -41,7 +41,7 @@
   if(hero==='BB')return {state:'not-applicable',label:'オープン対象外',note:'全員がフォールドするとBBはウォークです。オープン判断やCheckの頻度は表示しません。',dataset:null};
   if(!node(hero))return {state:'unsupported',label:'未対応',note:'このポジションは未対応です。',dataset:null};
   const d=datasets.find(d=>inspect(d,c,hero).ok);
-  if(d)return {state:'verified',label:'検証済み · MTT '+c.stacksBeforePostsBB[hero]+'BB',note:'表示中の計算条件に一致した検証済みデータです。',dataset:d};
+  if(d)return {state:'verified',label:'GTO検証済み · MTT '+c.stacksBeforePostsBB[hero]+'BB',note:'表示中の計算条件に一致した検証済みデータです。',dataset:d};
   const target=signature(c)===signature(defaults(30));
   return {state:target?'pending':'unsupported',label:target?'30BB · 検証待ち':'未対応',note:target?'30BBのポジション別オープンレンジは検証済みデータ未登録です。未計算を0%やFoldとして埋めません。':'このスタック・計算条件の検証済みレンジは未対応です。30BBのオープンレンジを優先しています。',dataset:null};
  }

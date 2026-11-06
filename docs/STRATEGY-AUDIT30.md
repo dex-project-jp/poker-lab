@@ -126,3 +126,23 @@ BTN対BBの最終ポット59.5BB、追加22BB。SB対BBは最終59BB、追加21B
 3. SB Limp後の応答と、情報が漏れにくいサイズ設計。混合頻度を感覚で追加しない。
 4. 許諾が明確な独立ソルバー資料と同条件比較。今回、再利用できる30BB全位置の正解表は取得していない。
 5. ICM・他スタック・コールド4bet・マルチウェイは別モデル。現在の条件付き計算を流用しない。
+
+## 30BBレンジの品質監査
+
+全152局面はPoker Lab独自のルールに基づく参考表。9人卓NLHE MTT、全員が強制ベット支払い前30BB、SB 0.5BB・BB 1BB・BBアンティ1BB、レーキ・ICM・バウンティなし。Chip EVを想定した設計で、均衡計算による頻度はない。アンティはライブベット額から除外し、BBのライブ上限は29BB。
+
+| 局面 | 参考表 | 既定の合計額 | 出典 |
+|---|---:|---|---|
+| オープン | 8 | 通常2BB、SB 2.5BBまたは1BBリンプ | `solver/practical-ranges.js` |
+| 対オープン | 36 | 上記オープンに対し3betは通常6BB、SB/BBからは7BB、SBオープンに対するBBは8BB | `solver/practical-ranges.js` |
+| 対3bet | 36 | 上記3betに対し14BBまたはジャム | `solver/practical-reraises.js` |
+| 対4bet | 72 | 14BBと30BBジャムが各36。ジャムに対してCall/Foldのみ | `solver/practical-reraises.js` |
+
+各局面169ハンド、計25,688行について、アクション、ライブ額、履歴とコンボの区別を自動検査する。対3bet・対4betの履歴対象外は空欄。指定相手レンジへのAll-in比較は別枠の条件付き計算。既存の10BB限定学習データは未収束の参考戦略として扱う。GTO検証済みの9人卓MTT公開データは0局面。数値入りのオープン候補は169ハンドの完全性・各ハンド100%・合法アクション・全席スタックを含むモデル条件・再配布根拠・独立検証の登録要件を通過したものだけ表示対象になる。対オープン以降の外部GTO頻度は今後の対応範囲。
+
+外部候補の判定（2026-11-06）
+
+- [poker-practiceのデータ仕様](https://github.com/jensbaagaard/poker-practice/blob/449993f78d995c77b72d0bcac418a8507dd6f783/data/openSourcePokerData/README.md)にはMTT 5/10/20/40/100BBを収録。30BBなし。20BBはSB 3BB・3betジャム、40BBは通常2.3BB・SB 3.5BB。9人分のポジション名はあるが、元の計算人数、アンティ徴収方式、Chip EV／ICM、均衡検証は確認できなかった。[リポジトリREADME](https://github.com/jensbaagaard/poker-practice/blob/449993f78d995c77b72d0bcac418a8507dd6f783/README.md#license)はMITとデータの利用可を掲示するが、データ説明は既存アプリからの抽出と記載しており、元の権利者による再配布許諾は確認できなかった。
+- [GTO Wizardの30BB公開資料](https://blog.gtowizard.com/mtt-postflop-solutions-and-breakdown-view/)で確認できた候補は8人卓。[利用規約](https://gtowizard.com/terms/)からレンジ表の再配布許諾は確認できなかった。
+
+未対応は別サイズ・非均一スタック・別アンティ・ICM・コールド4bet・スクイーズ等の複数人履歴、および通常のMTTレンジとしての30BB以外。BBまで全員フォールドはウォーク。
