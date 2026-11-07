@@ -240,4 +240,7 @@ GitHub Pagesによるv1.5.0の公開成功、および公開された6ファイ�
 - 基準main `d359d56b2da623a1e57f21f916c3a8bd0e683afa`。開始時に同HEADのCI成功と未統合PR #14（レンジ監査、HEAD 29fff096）を確認。PR #14は今回変更・統合しない。
 - 黒背景、金色スペード・王冠・チップ・POKER LAB文字の専用アイコンを追加。180/192/512px、favicon、全5ページの参照、PWA manifestを整備。URLと機能・既存データは維持。
 - ローカル単体156件成功。独立ハンド分析7ケース成功。app/solver配下の差分なし。iPhone実機のホーム追加は未確認。
-- main反映とPages公開、同一コミットのCI結果はGitHubで確認する。次の開発候補は既存P1の52枚デッキ条件付き抽選検証。
+- main実装 `963f2092b8a91e44094a9ede8f400bd9964dbfc9`。Pages [run 42366008840](https://github.com/dex-project-jp/poker-lab/actions/runs/42366008840) 成功、公開9ファイルのHTTP200・バイト一致を確認。公開版の169セル、UTG切替、分析ページ、POT電卓7+3=10と反映を確認。
+- [CI 42366009568](https://github.com/dex-project-jp/poker-lab/actions/runs/42366009568) のmobile-ui Chromium/WebKitは両方成功。数値監査jobは記録時点で実行中（全デッキshowdown sampling）。未完了を成功扱いしない。全5ページの既存scriptパス・インラインロジック、app/solver全ファイルの無変更も検証。
+- 次の開発候補は既存P1の52枚デッキ条件付き抽選検証。開始時に上記数値監査の結果とPR #14を再確認する。
+
