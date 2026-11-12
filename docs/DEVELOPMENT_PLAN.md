@@ -244,3 +244,8 @@ GitHub Pagesによるv1.5.0の公開成功、および公開された6ファイ�
 - [CI 42366009568](https://github.com/dex-project-jp/poker-lab/actions/runs/42366009568) のmobile-ui Chromium/WebKitは両方成功。数値監査jobは記録時点で実行中（全デッキshowdown sampling）。未完了を成功扱いしない。全5ページの既存scriptパス・インラインロジック、app/solver全ファイルの無変更も検証。
 - 次の開発候補は既存P1の52枚デッキ条件付き抽選検証。開始時に上記数値監査の結果とPR #14を再確認する。
 
+
+### 2026-11-12 アイコン統一 A案
+
+- CHAI LABの黒×金に合わせ、王冠の装飾を省いたトランプとスペードのアイコンに更新。PWA・Apple Touch Icon・faviconの参照を更新した。
+- アイコンの寸法と参照先をローカルで確認。GTOレンジ・ハンド分析・保存データへの変更なし。iPhone実機でのホーム画面表示は未確認。
